@@ -17,10 +17,10 @@
                 Non-veg Meal
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="non-veg-link">
-                <a href="" class="dropdown-item">Chicken</a>
-                <a href="" class="dropdown-item">Lamb</a>
-                <a href="" class="dropdown-item">Fish</a>
-                <a href="" class="dropdown-item">All</a>
+                <a href="{% url 'menu' %}?category=chicken" class="dropdown-item">Chicken</a>
+                <a href="{% url 'menu' %}?category=lamb" class="dropdown-item">Lamb</a>
+                <a href="{% url 'menu' %}?category=fish" class="dropdown-item">Fish</a>
+                <a href="{% url 'menu' %}?category=chicken,lamb,fish" class="dropdown-item">All</a>
             </div>
         </li>
 
@@ -29,10 +29,10 @@
                 Veg-Meal
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="veg-meal-link">
-                <a href="" class="dropdown-item">Soup</a>
-                <a href="" class="dropdown-item">Rice</a>
-                <a href="" class="dropdown-item">Curry</a>
-                <a href="" class="dropdown-item">All</a>
+                <a href="{% url 'menu' %}?category=soup" class="dropdown-item">Soup</a>
+                <a href="{% url 'menu' %}?category=curry" class="dropdown-item">Rice</a>
+                <a href="{% url 'menu' %}?category=rice" class="dropdown-item">Curry</a>
+                <a href="{% url 'menu' %}?category=soup,rice,curry" class="dropdown-item">All</a>
             </div>
         </li>
 
@@ -41,9 +41,9 @@
                 Specials
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Infused Drinks</a>
-                <a href="" class="dropdown-item">New Taste !</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'menu' %}?category=infused_drinks" class="dropdown-item">Infused Drinks</a>
+                <a href="{% url 'menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
+                <a href="{% url 'menu' %}?category=infused_drinks,new_taste" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>

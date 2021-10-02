@@ -54,3 +54,15 @@ body {
 /* .home-text{
     margin-top: 15%;
 } */
+
+/*----------all menu page -----*/
+
+/*code taken from walkthrough project of CI(start) */
+.overlay{
+    background: rgb(243, 240, 236);
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+/*code taken from walkthrough project of CI (end)- */
