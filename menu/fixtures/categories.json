@@ -1,0 +1,65 @@
+[{
+    "pk": 1,
+    "model": "menu.category",
+    "fields": {
+        "name": "chicken",
+        "display_name": "Chicken"
+    }
+},
+{
+    "pk": 2,
+    "model": "menu.category",
+    "fields": {
+        "name": "lamb",
+        "display_name": "Lamb"
+    }
+},
+{
+    "pk": 3,
+    "model": "menu.category",
+    "fields": {
+        "name": "fish",
+        "display_name": "Fish"
+    }
+},
+{
+    "pk": 4,
+    "model": "menu.category",
+    "fields": {
+        "name": "soup",
+        "display_name": "Soup"
+    }
+},
+{
+    "pk": 5,
+    "model": "menu.category",
+    "fields": {
+        "name": "curry",
+        "display_name": "Curry"
+    }
+},
+{
+    "pk": 6,
+    "model": "menu.category",
+    "fields": {
+        "name": "rice",
+        "display_name": "rice"
+    }
+},
+{
+    "pk": 7,
+    "model": "menu.category",
+    "fields": {
+        "name": "infused_drinks",
+        "display_name": "Infused Drinks"
+    }
+},
+{
+    "pk": 8,
+    "model": "menu.category",
+    "fields": {
+        "name": "new_taste",
+        "display_name": "New Taste!"
+    }
+}
+]
