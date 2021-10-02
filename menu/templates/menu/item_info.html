@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_main %}
+<div class="overlay"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container my-4">
+                        <a href="{{ item.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                        </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item-info mb-4 mt-md-5">
+                    <p class="display-4">{{ item.name }}</p>
+                    <p class="display-5">£{{ item.price }}</p>
+                    <p class="display-4 lead">{{ item.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
