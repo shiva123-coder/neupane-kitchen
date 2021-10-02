@@ -1,0 +1,56 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/hero-img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* height: 100vh; */
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+}
+/*---------specials--*/
+.header-container {
+    padding-top: 10%;
+}
+
+/*--------------navbar-----*/
+.main-logo {
+    width: fit-content;
+}
+
+.bg-white{
+    background: linear-gradient(to right, #9a5f5f45, #0c5f1f57);
+    background-color: #130202bd!important;
+}
+    
+
+.search-field{
+    background: top;
+}
+
+.search-btn{
+    background: white;
+}
+
+.text-black{
+    color: #000;
+    font-weight: bold;
+}
+
+/*--navbar icon (mobile device only)--*/
+.navbar-light .navbar-toggler-icon{
+    background-color: #fff;
+}
+
+/*--------------home page-----*/
+.flash-notice{
+    background-color: #393a2ced;
+    display: inline;
+    line-height: 2.5;
+    padding: 8px;
+}
+
+/* .home-text{
+    margin-top: 15%;
+} */
