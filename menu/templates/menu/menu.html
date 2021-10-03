@@ -16,17 +16,38 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col text-center mt-4">
-                    <h2 class="item">Item</h2>
+                    <h2 class="item">Item</h2> 
                 </div>
             </div>
-
-            <div class="row">
+            <div class="item-container col-10 offset-1">
+                <div class="row">
+                    <div class="col-10 offset-1 d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-option w-40 ">
+                            <select id="sort-selection" class="custom-select -{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if existing_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if existing_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if existing_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name_asc" {% if existing_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if existing_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p class="text-muted text-center text-md-left">  <!---Add order-md-first OR ordr-md-end class if required -->
+                            {% if search_term or existing_categories or existing_sorting != 'None_None' %}
+                                <span class="primary"><a href="{% url 'menu' %}">All Items</a> | </span>
+                            {% endif %}
+                            {{ items|length }} Items {% if search_term %}<strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
                 <div class="item-container">
                     <div class="row">
 
                     </div>
                     <div class="row">
-                        <div class="product-container col-10 offset-1">
+                        <div class="item-container-sub col-10 offset-1">
                             <div class="row mt-1 mb-2"></div>
                             <div class="row">
                                 {% for item in items %}
@@ -46,6 +67,19 @@
                                                 </div>
                                             </div>
                                             <!-- <p class="name">{{ item.name }} <span class="diaplay-3 text-right">£{{ item.price }}</span></p> -->
+                                        </div>
+                                        <div class="card-footer border-0 text-left">
+                                            <div class="row">
+                                                <div class="col">
+                                                    {% if item.category %}
+                                                    <p class="small mt-1 mb-0">
+                                                        <a class="text-muted" href="{% url 'menu' %}?category={{ item.category.name }}">
+                                                            <i class="fas fa-tag mr-1"></i>{{ item.category.display_name }}
+                                                        </a>
+                                                    </p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- <div class="card-footer text-left">
                                             <div class="row">

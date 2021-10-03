@@ -1,16 +1,34 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Item, Category
+from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q
+from .models import Item, Category
 
 
 def all_menu(request):
-    """ A view to return the items and search queries """
-
+    """
+    A view to return the items.
+    view also include sorting and seaching
+    """
     items = Item.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
     # code taken from walktrough project of CI and modified (start)
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == "name":
+                sortkey = 'lower_name'
+                items = items.annotate(lower_name=Lower('name'))
+
+            if direction in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            items = items.order_by(sortkey)
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -26,11 +44,14 @@ def all_menu(request):
                 
                 queries = Q(name__icontains=query) | Q(description__icontains=query)
                 items = items.filter(queries)
+
+    existing_sorting = f'{sort}_{direction}'
     # code taken from walktrough project of CI and modified (End)
     context = {
         'items': items,
         'search_term': query,
         'existing_categories': categories,
+        'existing_sorting': existing_sorting,
     }
     return render(request, 'menu/menu.html', context)
 
