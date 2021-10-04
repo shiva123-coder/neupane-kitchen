@@ -30,7 +30,7 @@ python3 manage.py migrate
     Applying menu.0002_auto_20210930_1749... OK 
 ```
 
-- I was testing my live site after creating menu app,and during test images passed on menu template did not displayed on browser however alt attributes were working fine , in this case I thought it was definitely naming mismatch and start cross checking the images name however I couldnt see any error on this. Finally after doing some resaerch on *** how to render images using django *** I understood that my template required image url as I had imageField in my model/database and this required to supply image url while passing to template. I have updated image url to my template accordingly and this fixed issue.
+- I was testing my live site after creating menu app,and during test images passed on menu template did not displayed on browser however alt attributes were working fine , in this case I thought it was definitely naming mismatch and start cross checking the images name however I couldnt see any error on this. Finally after doing some resaerch on ***how to render images using django*** I understood that my template required image url as I had imageField in my model/database and this required to supply image url while passing to template. I have updated image url to my template accordingly and this fixed issue.
 ```
 before
   <img class="card-img-top img-fluid" src="{{ item.image }}" alt="{{ item.name }}">
