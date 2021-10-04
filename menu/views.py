@@ -20,15 +20,19 @@ def all_menu(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == "name":
+            if sortkey == 'name':
                 sortkey = 'lower_name'
                 items = items.annotate(lower_name=Lower('name'))
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
 
             if direction in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             items = items.order_by(sortkey)
+            
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')

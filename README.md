@@ -38,3 +38,10 @@ before
 after
   <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
 ```
+
+- Issue with scrolling behavior as upon clicked on up-arrow icon, page did not scroll back to the top. I could not see any issue with my codes in HTML and jQuery and decided to checked on dev tool console and noticed there was an error which stating as below:
+```
+Uncaught TypeError: $(...).fadeOut is not a function
+Uncaught TypeError: $(...).fadeIn is not a function
+```
+  - I then did further research on the console error and fount that I needed to ***update the CDN for jQuery*** on my file, I was using ***slim version of jQuery*** which was causing an issue as only full version of jQuery support animation effects. I have then replaced slim version on jQuery CDN with full version which then solved my problem.

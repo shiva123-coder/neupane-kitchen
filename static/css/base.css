@@ -57,7 +57,7 @@ body {
 
 /*----------all menu page -----*/
 
-/*code taken from walkthrough project of CI(start) */
+/*code taken from walkthrough project of CI and modified as per project requirements(start) */
 .overlay{
     background: rgb(243, 240, 236);
     z-index: -1;
@@ -66,3 +66,18 @@ body {
     position: fixed;
 }
 /*code taken from walkthrough project of CI (end)- */
+
+
+#scroll-icon{
+    position: fixed;
+    width: 35px;
+    bottom: 35px;
+    right: 0;
+    color: #000;
+    font-size: 1.75em;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: none;
+   
+}

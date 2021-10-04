@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-
+<div id="scroll-icon"><i class="far fa-arrow-alt-circle-up"></i></div>
     <div class="container-fluid">
             <div class="row">
                 <div class="col text-center mt-4">
@@ -23,12 +23,18 @@
                 <div class="row">
                     <div class="col-10 offset-1 d-flex justify-content-center justify-content-md-end">
                         <div class="sort-option w-40 ">
-                            <select id="sort-selection" class="custom-select -{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if existing_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if existing_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if existing_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="name_asc" {% if existing_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if existing_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <select id="sort-selection"
+                                class="custom-select -{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if existing_sorting == 'None_None' %}selected{% endif %}>Sort
+                                    by...</option>
+                                <option value="price_asc" {% if existing_sorting == 'price_asc' %}selected{% endif %}>
+                                    Price (low to high)</option>
+                                <option value="price_desc" {% if existing_sorting == 'price_desc' %}selected{% endif %}>
+                                    Price (high to low)</option>
+                                <option value="name_asc" {% if existing_sorting == 'name_asc' %}selected{% endif %}>Name
+                                    (A-Z)</option>
+                                <option value="name_desc" {% if existing_sorting == 'name_desc' %}selected{% endif %}>
+                                    Name (Z-A)</option>
                             </select>
                         </div>
                     </div>
