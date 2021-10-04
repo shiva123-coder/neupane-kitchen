@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block header_main %}
     <div class="container header-container">
@@ -21,8 +22,66 @@
     <div class="row text-center">
         <div class="col">
             {% if basket_items %}
-                <div>
-
+                <div class="table">
+                    <table class="table">
+                        <thead class="display-6">
+                            <tr>
+                                <th scope="col">Selected Item</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        {% for ib in basket_items %}
+                            <tr>
+                                <td class="item-image">
+                                    <img class="img-fluid" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                </td>
+                                <td class="item-name">
+                                    <p class="item-name"><strong>{{ ib.item.name }}<strong</p>
+                                </td>
+                                <td class="item-price">
+                                    <p class="item-price">£{{ ib.item.price }}</p>
+                                </td>
+                                <td class="item-qty">
+                                    <p class="item-qty">{{ ib.quantity }}</p>
+                                </td>
+                                <td class="total-price">
+                                    <p class="total-price">£{{ ib.item.price | calculate_total:item.quantity }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="5" class="text-right">
+                                <h5>Basket Total : £{{ total|floatformat:2 }}<strong</h5>
+                                <h6>Delivery : £{{ delivery_cost|floatformat:2 }}</h6>
+                                <h4 class="mt-4"><strong>Sub Total : £{{ sum_total|floatformat:2 }}</strong></h4>
+                                {% if free_delivery_eligibility > 0 %}
+                                <p class="mb-1 text-danger">
+                                    You could get free delivery by spending just
+                                    <strong>${{ free_delivery_eligibility }}</strong> more!
+                                </p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn btn-black rounded-0 btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                    </table>
                 </div>
             {% else %}
                 <p class="basket-heading mt-3"><strong>Your basket is currently empty.</strong></p>
