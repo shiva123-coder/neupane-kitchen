@@ -79,5 +79,10 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: none;
-   
+}
+
+/*------update and remove quantity option on basket--*/
+.update-qty,
+.remove-qty{
+    cursor: pointer;
 }

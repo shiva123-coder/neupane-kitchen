@@ -36,7 +36,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="btn btn-dark font-weight-bold decrease-qty"
-                                                data-item_id="{{ item.id }}" id="decrease-qty_{{ item.id }}" onclick="decrease()">-</button>
+                                                data-item_id="{{ item.id }}" id="decrease-qty_{{ item.id }}">-</button>
                                             </button>
                                         </div>
 
@@ -46,7 +46,7 @@
 
                                         <div class="input-group-append">
                                             <button class="btn btn-dark font-weight-bold increase-qty"
-                                                data-item_id="{{ item.id }}" id="increase-qty_{{ item.id }}" onclick="increase()">+</button>
+                                                data-item_id="{{ item.id }}" id="increase-qty_{{ item.id }}">+</button>
                                             </button>
                                         </div>
 
@@ -71,8 +71,13 @@
             </div>
         </div>
     </div>
-    <script src="{% static 'js/item.js' %}"></script>
-    <script>
-        let csrfToken = "{{ csrf_token }}"
-    </script>
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+        <script>
+            let csrfToken = "{{ csrf_token }}"
+        </script>
+        <!-- <script src="{% static 'js/main.js' %}"></script> -->
+        <script src="{% static 'basket/js/basket.js' %}"></script>
+
 {% endblock %}

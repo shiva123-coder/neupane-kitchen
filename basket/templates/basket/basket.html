@@ -46,20 +46,21 @@
                                 </td>
                     
                                 <td class="w-25">
-                                    <form class="form update-form" method="POST" action="">
+                                    <form class="form update-form" method="POST" action="{% url 'update_basket' ib.item_id %}">
                                         {% csrf_token %}
                                         <div class="form-group ">
                                             <div class="input-group">
+                                                <!---- button to decrease the qty(-)-->
                                                 <div class="input-group-prepend">
                                                     <button class="btn btn-dark btn-sm font-weight-bold decrease-qty"
                                                         data-item_id="{{ ib.item_id }}" id="decrease-qty{{ ib.item_id }}">-</button>
                                                     </button>
                                                 </div>
-
+                                                <!-------qty input field--->
                                                 <input class="form-control-sm qty_input border-dark" type="number"
                                                     name="quantity" value="{{ ib.quantity }}" min="1" max="50" data-item_id="{{ ib.item_id }}"
                                                     id="id_qty_{{ ib.item_id }}">
-
+                                                  <!---- button to increase the qty(+)-->
                                                 <div class="input-group-append">
                                                     <button class="btn btn-dark btn-sm font-weight-bold increase-qty"
                                                         data-item_id="{{ ib.item.id }}" id="increase-qty_{{ ib.item.id }}">+</button>
@@ -68,6 +69,9 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <a class="update-qty"><small>Update</small></a>
+                                    <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                </td>
                                 </td>
                                 <td class="item-qty">
                                     <p class="item-qty">{{ ib.quantity }}</p>
@@ -75,9 +79,7 @@
                                 <td class="total-price">
                                     <p class="total-price">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
                                 </td>
-                                <a class="update-qty"><small>Update</small></a>
-                                    <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
-                                </td>
+                                
                             </tr>
                         {% endfor %}
                         <tr>
@@ -123,4 +125,12 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+        <script>
+            let csrfToken = "{{ csrf_token }}"
+        </script>
+        <!-- <script src="{% static 'js/main.js' %}"></script> -->
+        <script src="{% static 'basket/js/basket.js' %}"></script>
 {% endblock %}
