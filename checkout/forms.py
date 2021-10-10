@@ -14,6 +14,7 @@ class OrderForm(forms.ModelForm):
             'town_or_city',
             'postcode',)
 
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes
@@ -37,4 +38,3 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-input'
             self.fields[field].label = False
-

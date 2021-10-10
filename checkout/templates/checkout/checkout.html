@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css">
+{% endblock %}
+
+{% block header_main %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container basket-container">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="basket-title mt-5">Shopping Basket</h2>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col">
+            <p class="display-4 text-primary">Please provide us with completed form below for your order to be delivered</p>
+             
+        </div>
+    </div>
+</div>
+{% endblock %}
