@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import (
+    render, redirect, get_object_or_404, reverse, HttpResponse)
+
 from menu.models import Item
 from django.contrib import messages
 
 
 def view_basket(request):
     """ render the shopping basket page """
-    
     return render(request, 'basket/basket.html')
 
 
@@ -25,12 +26,12 @@ def add_to_basket(request, item_id):
 
 
 def update_basket(request, item_id):
-    """update the quantity of the selected product in the basket"""
+    """update the quantity of the selected item in the basket"""
     if request.method == "POST":
         item = get_object_or_404(Item, pk=item_id)
-        quantity = int(request.POST.get("quantity"))
+        quantity = int(request.POST.get('quantity'))
 
-        basket = request.session.get("basket", {})
+        basket = request.session.get('basket', {})
 
         if quantity > 0:
             basket[item_id] = quantity
@@ -44,9 +45,31 @@ def update_basket(request, item_id):
 
         request.session["cart"] = basket
 
-        return redirect(reverse("view_basket"))
+        return redirect(reverse('view_basket'))
     else:
         messages.error(request, "Error!  you do not have permission perform this action.")
-        return redirect(reverse("home_page"))
+        return redirect(reverse('home'))
 
-         
+
+def remove_basket(request, item_id):
+    """Remove item from the basket"""
+    if request.method == "POST":
+        try:
+            item = get_object_or_404(Item, pk=item_id)
+
+            basket = request.session.get('basket', {})
+
+            basket.pop(item_id)
+            messages.success(request,
+                             f"{item.name}has now removed from your basket.")
+
+            request.session["basket"] = basket
+            return HttpResponse(status=200)
+
+        except Exception as error:
+            messages.error(request, f"Sorry, We have encountered an error while removing item {error}")
+            return HttpResponse(status=500)
+
+    else:
+        messages.error(request, "Sorry! you are not authorised to perform this.")
+        return redirect('home')
