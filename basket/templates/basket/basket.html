@@ -44,11 +44,39 @@
                                 <td class="item-price">
                                     <p class="item-price">£{{ ib.item.price }}</p>
                                 </td>
+                    
+                                <td class="w-25">
+                                    <form class="form update-form" method="POST" action="">
+                                        {% csrf_token %}
+                                        <div class="form-group ">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn btn-dark btn-sm font-weight-bold decrease-qty"
+                                                        data-item_id="{{ ib.item_id }}" id="decrease-qty{{ ib.item_id }}">-</button>
+                                                    </button>
+                                                </div>
+
+                                                <input class="form-control-sm qty_input border-dark" type="number"
+                                                    name="quantity" value="{{ ib.quantity }}" min="1" max="50" data-item_id="{{ ib.item_id }}"
+                                                    id="id_qty_{{ ib.item_id }}">
+
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-dark btn-sm font-weight-bold increase-qty"
+                                                        data-item_id="{{ ib.item.id }}" id="increase-qty_{{ ib.item.id }}">+</button>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
                                 <td class="item-qty">
                                     <p class="item-qty">{{ ib.quantity }}</p>
                                 </td>
                                 <td class="total-price">
                                     <p class="total-price">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                                </td>
+                                <a class="update-qty"><small>Update</small></a>
+                                    <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -69,9 +97,9 @@
                                 <td colspan="5" class="text-right">
                                     <a href="{% url 'menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                         <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
+                                            <i class="fas fa-arrow-circle-left"></i>
                                         </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
+                                        <span class="text-uppercase">Add More Item</span>
                                     </a>
                                     <a href="" class="btn btn-black rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>

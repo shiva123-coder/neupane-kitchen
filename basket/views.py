@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
-
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from menu.models import Item
+from django.contrib import messages
 
 
 def view_basket(request):
@@ -21,3 +22,27 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def update_basket(request, item_id):
+    """update the quantity of the selected product in the basket"""
+    if request.method == "POST":
+        item = get_object_or_404(Item, pk=item_id)
+        quantity = int(request.POST.get("item_quantity"))
+
+        basket = request.session.get('basket', {})
+
+        if quantity > 0:
+            basket[item_id] = quantity
+            messages.success(request, f"{item.name}'s \ quantity has been updated")
+        else:
+            basket.pop(item_id)
+            messages.success(
+                request, f"{item.name} has been removed from your basket.")
+
+        request.session['basket'] = basket
+
+        return redirect(reverse('view_basket'))
+    else:
+        messages.error(request, "Sorry, you do not have permission perform this action.")
+        return redirect(reverse('view_basket'))

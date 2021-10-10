@@ -32,7 +32,7 @@ def basket_contents(request):
         free_delivery_eligibility = 0
 
     sum_total = delivery_cost + total
-    
+   
     context = {
         'basket_items': basket_items,
         'total': total,
