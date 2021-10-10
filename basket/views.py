@@ -11,8 +11,8 @@ def view_basket(request):
 
 def add_to_basket(request, item_id):
     """add quantity of selected item to the basket"""
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+    quantity = int(request.POST.get('quantity'))    
+    # redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
 
     if item_id in list(basket.keys()):
@@ -21,28 +21,32 @@ def add_to_basket(request, item_id):
         basket[item_id] = quantity
 
     request.session['basket'] = basket
-    return redirect(redirect_url)
+    return redirect(reverse('view_basket'))
 
 
 def update_basket(request, item_id):
     """update the quantity of the selected product in the basket"""
     if request.method == "POST":
         item = get_object_or_404(Item, pk=item_id)
-        quantity = int(request.POST.get("item_quantity"))
+        quantity = int(request.POST.get("quantity"))
 
-        basket = request.session.get('basket', {})
+        basket = request.session.get("basket", {})
 
         if quantity > 0:
             basket[item_id] = quantity
-            messages.success(request, f"{item.name}'s \ quantity has been updated")
+            messages.success(request,
+                             f"{item.name}'s \
+ quantity has been updated to {basket[item_id]}")
         else:
             basket.pop(item_id)
-            messages.success(
-                request, f"{item.name} has been removed from your basket.")
+            messages.success(request,
+                             f"{item.name} has been removed from your cart.")
 
-        request.session['basket'] = basket
+        request.session["cart"] = basket
 
-        return redirect(reverse('view_basket'))
+        return redirect(reverse("view_basket"))
     else:
-        messages.error(request, "Sorry, you do not have permission perform this action.")
-        return redirect(reverse('view_basket'))
+        messages.error(request, "Error!  you do not have permission perform this action.")
+        return redirect(reverse("home_page"))
+
+         
