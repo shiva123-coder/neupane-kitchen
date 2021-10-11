@@ -103,7 +103,7 @@
                                         </span>
                                         <span class="text-uppercase">Add More Item</span>
                                     </a>
-                                    <a href="" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -127,10 +127,28 @@
 </div>
 {% endblock %}
 {% block postloadjs %}
-    {{ block.super }}
-        <script>
-            let csrfToken = "{{ csrf_token }}"
-        </script>
-        <!-- <script src="{% static 'js/main.js' %}"></script> -->
-        <script src="{% static 'basket/js/basket.js' %}"></script>
+{{ block.super }}
+    <script>
+        let csrfToken = "{{ csrf_token }}"
+    </script>
+    <script>
+        // update and remove option in the basket after quantity modification
+            // update option
+            $('.update-qty').click(function(e) {
+                var form = $(this).prev('.update-form');
+                form.submit();
+            })
+            // remove option
+            $('.remove-qty').click(function(e) {
+                var csrfToken = "{{ csrf_token }}";
+                var itemId = $(this).attr('id').split('remove_')[1];
+                var url = `/basket/remove/${itemId}/`;
+                var data = {'csrfmiddlewaretoken': csrfToken};
+
+                $.post(url, data)
+                .done(function() {
+                    location.reload();
+                });
+        })
+    </script>
 {% endblock %}
