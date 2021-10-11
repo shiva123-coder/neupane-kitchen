@@ -64,9 +64,49 @@
                 </p>
             </form>
         </div>
-       
-       
-
+        <!----order summary---->
+        <div class="col-6">
+            <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <p class="text-muted">Order Summary ({{ item_count }} Items)</p>
+                <div class="row">
+                    <div class="col-9">
+                        <p class=" text-muted">Item</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="text-muted">Total</p>
+                    </div>
+                </div>
+                {% for ib in basket_items %}
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'item_info' ib.item.id %}">
+                                <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                            </a>
+                        </div>
+                        <div class="col-7">
+                            <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
+                            <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr class="my-0">
+                <div class="row text-black text-right">
+                    <div class="col-7 offset-2">
+                        <p class="my-0">Basket Total:</p>
+                        <p class="my-0">Delivery Charge:</p>
+                        <p class="my-0">Sub-total:</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="my-0">£{{ total | floatformat:2 }}</p>
+                        <p class="my-0">£{{ delivery_cost | floatformat:2 }}</p>
+                        <p class="my-0"><strong>£{{ sum_total | floatformat:2 }}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

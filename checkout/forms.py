@@ -26,8 +26,9 @@ class OrderForm(forms.ModelForm):
             'contact_number': 'Contact Number',
             'address': 'Street Name',
             'door_no': 'Door Number',
-            'postcode': 'Post Code',
             'town_or_city': 'Town or City',
+            'postcode': 'Post Code',
+           
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True

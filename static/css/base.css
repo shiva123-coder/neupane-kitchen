@@ -51,10 +51,6 @@ body {
     padding: 8px;
 }
 
-/* .home-text{
-    margin-top: 15%;
-} */
-
 /*----------all menu page -----*/
 
 /*code taken from walkthrough project of CI and modified as per project requirements(start) */
@@ -64,6 +60,13 @@ body {
     height: 100%;
     width: 100%;
     position: fixed;
+}
+
+.message-container{
+    position: fixed;
+    top: 14%;
+    right: 20px;
+    z-index: 9999999999;
 }
 /*code taken from walkthrough project of CI (end)- */
 
@@ -85,4 +88,12 @@ body {
 .update-qty,
 .remove-qty{
     cursor: pointer;
+}
+
+/*----------toasts----*/
+.success-toast{
+    overflow: visible;
+    background: #fafafa;
+    border: 1px solid #000;
+    
 }

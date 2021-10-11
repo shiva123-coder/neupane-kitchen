@@ -12,17 +12,18 @@ def view_basket(request):
 
 def add_to_basket(request, item_id):
     """add quantity of selected item to the basket"""
+    item = Item.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))    
-    # redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
 
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
     else:
         basket[item_id] = quantity
+        messages.success(request, f'{item.name} added to your basket')
 
     request.session['basket'] = basket
-    return redirect(reverse('view_basket'))
+    return redirect(reverse('menu'))
 
 
 def update_basket(request, item_id):
@@ -41,9 +42,9 @@ def update_basket(request, item_id):
         else:
             basket.pop(item_id)
             messages.success(request,
-                             f"{item.name} has been removed from your cart.")
+                             f"{item.name} has been removed from your basket.")
 
-        request.session["cart"] = basket
+        request.session["basket"] = basket
 
         return redirect(reverse('view_basket'))
     else:
@@ -61,7 +62,7 @@ def remove_basket(request, item_id):
 
             basket.pop(item_id)
             messages.success(request,
-                             f"{item.name}has now removed from your basket.")
+                             f"{item.name} has now removed from your basket.")
 
             request.session["basket"] = basket
             return HttpResponse(status=200)
