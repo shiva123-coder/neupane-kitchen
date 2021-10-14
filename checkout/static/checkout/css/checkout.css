@@ -38,4 +38,10 @@ documentation and modified as per project requirement (start)--*/
     color: #000;
     border: 1px solid #dee2e6!important;
 }
+
+
+.form-control,
+.CardField {
+  font-weight: bold;
+}
 /*-----End-----*/
