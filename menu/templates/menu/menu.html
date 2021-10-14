@@ -41,7 +41,7 @@
                     <div class="col-12 col-md-6">
                         <p class="text-muted text-center text-md-left">  <!---Add order-md-first OR ordr-md-end class if required -->
                             {% if search_term or existing_categories or existing_sorting != 'None_None' %}
-                                <span class="primary"><a href="{% url 'menu' %}">All Items</a> | </span>
+                                <span class="primary"><a href="{% url 'all_menu' %}">All Items</a> | </span>
                             {% endif %}
                             {{ items|length }} Items {% if search_term %}<strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -79,7 +79,7 @@
                                                 <div class="col">
                                                     {% if item.category %}
                                                     <p class="small mt-1 mb-0">
-                                                        <a class="text-muted" href="{% url 'menu' %}?category={{ item.category.name }}">
+                                                        <a class="text-muted" href="{% url 'all_menu' %}?category={{ item.category.name }}">
                                                             <i class="fas fa-utensils mr-1"></i>{{ item.category.display_name }}
                                                         </a>
                                                     </p>

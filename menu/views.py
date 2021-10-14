@@ -45,7 +45,7 @@ def all_menu(request):
                 query = request.GET['q1']
                 if not query:
                     messages.error(request, "No search criteria entered!")
-                    return redirect(reverse('menu'))
+                    return redirect(reverse('all_menu'))
                 
                 queries = Q(name__icontains=query) | Q(description__icontains=query)
                 items = items.filter(queries)

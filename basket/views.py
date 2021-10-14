@@ -23,7 +23,7 @@ def add_to_basket(request, item_id):
         messages.success(request, f'{item.name} added to your basket')
 
     request.session['basket'] = basket
-    return redirect(reverse('menu'))
+    return redirect(reverse('all_menu'))
 
 
 def update_basket(request, item_id):
