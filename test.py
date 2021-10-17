@@ -77,42 +77,42 @@ def checkout(request):
             messages.error(request, "Theres was an error checking out.\
                 Please check your details.")
 
-    else:
-        cart = request.session.get("cart", {})
-        if not cart:
-            messages.error(request, "Your cart is currently empty.")
-            return redirect(reverse("all_items"))
+    # else:
+    cart = request.session.get("cart", {})
+    if not cart:
+        messages.error(request, "Your cart is currently empty.")
+        return redirect(reverse("all_items"))
 
-        # get total for stripe
-        current_cart = cart_contents(request)
-        cart_total = current_cart["grand_total"]
-        stripe_total = round(cart_total * 100)
+    # get total for stripe
+    current_cart = cart_contents(request)
+    cart_total = current_cart["grand_total"]
+    stripe_total = round(cart_total * 100)
 
-        # create stripe payment intent
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY
-        )
+    # create stripe payment intent
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY
+    )
 
-        if request.user.is_authenticated:
-            try:
-                user_profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm(initial={
-                    "full_name": user_profile.user.get_full_name(),
-                    "email": user_profile.user.email,
-                    "contact_number": user_profile.user_contact_number,
-                    "street_address_1": user_profile.user_street_address_1,
-                    "street_address_2": user_profile.user_street_address_2,
-                    "town_or_city": user_profile.user_town_or_city,
-                    "county": user_profile.user_county,
-                    "eircode": user_profile.user_eircode,
-                    "country": user_profile.user_country,
-                })
-            except UserProfile.DoesNotExist:
-                order_form = OrderForm()
-        else:
+    if request.user.is_authenticated:
+        try:
+            user_profile = UserProfile.objects.get(user=request.user)
+            order_form = OrderForm(initial={
+                "full_name": user_profile.user.get_full_name(),
+                "email": user_profile.user.email,
+                "contact_number": user_profile.user_contact_number,
+                "street_address_1": user_profile.user_street_address_1,
+                "street_address_2": user_profile.user_street_address_2,
+                "town_or_city": user_profile.user_town_or_city,
+                "county": user_profile.user_county,
+                "eircode": user_profile.user_eircode,
+                "country": user_profile.user_country,
+            })
+        except UserProfile.DoesNotExist:
             order_form = OrderForm()
+    else:
+        order_form = OrderForm()
 
     template = "checkout/checkout.html"
 
@@ -191,4 +191,3 @@ def cache_checkout_data(request):
         messages.error(request, "Sorry your payment \
             can't be proceeed right now. Please try again later.")
         return HttpResponse(content=e, status=400)
-
