@@ -1,4 +1,5 @@
 {% load basket_tools %}
+{% load static %}
 
 <div class="toast success-toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="10000">
     <div class="toast-header">
@@ -16,18 +17,21 @@
         </div>
         {% if sum_total %}
             <p class="display-6">Your basket has {{ item_count }} items</p>
+            <div class="item-summary-container">
                 {% for ib in basket_items %}
-                <div class="row">
-                    <div class="col-3">
-                        <img class="w-100" src="{{ ib.item.image.url }}">
+                    <div class="row">
+                        <div class="col-3 col-img-success mb-2 mt-2">
+                            <img class="w-100" src="{{ ib.item.image.url }}">
+                        </div>
+                        <div class="col-9">
+                            <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
+                            <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
+                            <p class="total-price">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                        </div>
                     </div>
-                    <div class="col-9">
-                        <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
-                        <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
-                        <p class="total-price">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
-                    </div>
-                </div>
-        {% endfor %}
+                {% endfor %}
+            </div>
+        
         <div class="row">
             <div class="col">
                 <a href="{% url 'view_basket' %}" class="btn btn-success">View

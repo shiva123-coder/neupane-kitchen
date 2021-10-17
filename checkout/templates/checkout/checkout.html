@@ -77,7 +77,7 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <div class="row">
-                    <div class="col-6 ">
+                    <div class="col-6">
                         <a href="{% url 'view_basket' %}" class="btn btn-light border-secondary mt-4 mx-3 p-1">
                             Review Basket
                         </a>
@@ -104,22 +104,24 @@
                         <p class="text-muted">Total</p>
                     </div>
                 </div>
-                {% for ib in basket_items %}
-                    <div class="row">
-                        <div class="col-2 mb-1">
-                            <a href="{% url 'item_info' ib.item.id %}">
-                                <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
-                            </a>
+                <div class="item-summary-checkout-container">
+                    {% for ib in basket_items %}
+                        <div class="row">
+                            <div class="col-2 mb-1 mt-1 col-img-success">
+                                <a href="{% url 'item_info' ib.item.id %}">
+                                    <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                </a>
+                            </div>
+                            <div class="col-7">
+                                <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
+                                <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <p class="my-0 small text-muted">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                            </div>
                         </div>
-                        <div class="col-7">
-                            <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
-                        </div>
-                        <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
                 <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">

@@ -84,6 +84,33 @@ body {
     display: none;
 }
 
+
+.menu-card{
+    max-height: 450px;
+}
+
+.item-image{
+    height: 320px;
+}
+
+.item-image img{
+    min-height: 320px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*-----item-info page---*/
+.item-image-info{
+    height: 50vh;
+}
+
+.item-image-info img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /*------update and remove quantity option on basket--*/
 .update-qty,
 .remove-qty{
@@ -98,6 +125,22 @@ body {
     
 }
 
+.col-img-success{
+    height: 65px;
+}
+
+.col-img-success img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
-
+/*---css to create scrolling option to the basket and 
+item details on order summary page ---*/
+.item-summary-container{
+    max-height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  

@@ -45,3 +45,29 @@ documentation and modified as per project requirement (start)--*/
   font-weight: bold;
 }
 /*-----End-----*/
+
+/*---css to create scrolling option to the basket and 
+item details on order summary page and also for success
+toast after updating qty ---*/
+.item-summary-container{
+  max-height: 30vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.item-summary-checkout-container{
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+.checkout-img-col{
+  height: 140px;
+}
+
+.checkout-img-col img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
