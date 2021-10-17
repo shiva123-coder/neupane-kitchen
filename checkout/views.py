@@ -10,7 +10,6 @@ from basket.contexts import basket_contents
 import stripe
 
 
-
 def checkout(request):
     """ checkout page view """
     # stripe  variables
@@ -19,22 +18,28 @@ def checkout(request):
     
 
     if request.method == 'POST':
-        basket = request.session.get("basket", {})
+        basket = request.session.get('basket', {})
 
         form_data = {
             "full_name": request.POST["full_name"],
             "email": request.POST["email"],
             "contact_number": request.POST["contact_number"],
             "address": request.POST["address"],
+            "door_no": request.POST["door_no"],
             "town_or_city": request.POST["town_or_city"],
             "postcode": request.POST["postcode"],
         }
         order_form = OrderForm(form_data)
 
+        # print(form_data)
+        # print("test")
+        # print(order_form)
+        # print(order_form.is_valid())
+
         # order create once valid form sent
         if order_form.is_valid():
             order = order_form.save()
-            
+
             for item_id, quantity in basket.items():
                 try:
                     item = Item.objects.get(id=item_id)
@@ -45,7 +50,7 @@ def checkout(request):
                         quantity=quantity,
                         )
                     order_line_item.save()
-                   
+
                 # item not found
                 except Item.DoesNotExist:
                     messages.error(request, (
@@ -53,40 +58,42 @@ def checkout(request):
                            You may need to contat support team"
                     ))
                     order.delete()
-                    return redirect(reverse("view_basket"))
+                    return redirect(reverse('view_basket'))
 
             # save the users info
-            request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success",
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
             messages.error(request, "Theres was an error.\
                 Please re-check the information")
+  
+        
 
-    else:
-        basket = request.session.get("basket", {})
-        if not basket:
-            messages.error(request, "There's no items \
-                 in your basket at the moment.")
-            return redirect(reverse("all_menu"))
+    # else:
+    # basket = request.session.get("basket", {})
+    # if not basket:
+    #     messages.error(request, "There's no items \
+    #             in your basket at the moment.")
+    #     return redirect(reverse("all_menu"))
 
-        current_basket = basket_contents(request)
-        total = current_basket['sum_total']
-        stripe_total = round(total * 100)
+    current_basket = basket_contents(request)
+    total = current_basket['sum_total']
+    stripe_total = round(total * 100)
 
-        # stripe payment intent
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+    # stripe payment intent
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
 
-        order_form = OrderForm()
+    order_form = OrderForm()
 
     # warning message, if forgot to set stripe public key
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing,\
-             please set public key to your environment')
+        messages.warning(request, "Stripe public key is missing,\
+             please set public key to your environment")
 
     template = 'checkout/checkout.html'
     context = {
