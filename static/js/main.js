@@ -14,5 +14,3 @@ $('.decrease-qty').click(function(e) {
     var newValue = parseInt($(newInput).val());
     $(newInput).val(newValue - 1);
 });
-
-

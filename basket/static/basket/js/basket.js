@@ -1,4 +1,4 @@
-// update link to allow users to update the qunatity once clicket
+// update link to allow users to update the qunatity once clicked
 $('.update-qty').click(function(e) {
     var form = $(this).prev('.update-form');
     form.submit();
