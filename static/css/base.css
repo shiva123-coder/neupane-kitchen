@@ -14,6 +14,23 @@ body {
     padding-top: 10%;
 }
 
+/*---blinking effect on delivery notice--*/
+/*--code taken from stackOverflow and modified--(start)--*/
+.blinker{
+    color: aqua;
+}
+
+.blinker{
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    60% {
+      opacity: 0;
+    }
+  }
+/*--(end)--*/
+
 /*--------------navbar-----*/
 .main-logo {
     width: fit-content;
@@ -21,7 +38,7 @@ body {
 
 .bg-white{
     background: linear-gradient(to right, #9a5f5f45, #0c5f1f57);
-    background-color: #130202bd!important;
+    background-color: #402c2c!important;
 }
     
 
@@ -45,10 +62,12 @@ body {
 
 /*--------------home page-----*/
 .flash-notice{
-    background-color: #393a2ced;
+    background-color: #b6bb7b00;
     display: inline;
     line-height: 2.5;
     padding: 8px;
+    font-style: italic;
+    font-size: 1.25rem;
 }
 
 /*----------all menu page -----*/
@@ -146,3 +165,4 @@ item details on order summary page ---*/
   
 
 /*-----footer---*/
+
