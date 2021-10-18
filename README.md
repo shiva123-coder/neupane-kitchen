@@ -73,4 +73,8 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
 ## Credit
 - Thanks to JustDjango on their [youtube video](https://www.youtube.com/watch?v=cdRj9eNR0KI) on stripe payment, this video help me to understand the handling of validation and error while creating stripe payment functionality.
-- 
+
+
+ - ***Code***
+  - I have taken some CSS and JS code from CI walkthrough project and modified as per project requirement while creating loading spinner in checkout section of the project
+  - 
