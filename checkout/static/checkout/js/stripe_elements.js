@@ -44,6 +44,8 @@ form.addEventListener('submit', (event) => {
     // disable card element and submit button to prevent multiple submissions
     card.update({"disabled": true});
     $('#checkout-btn').attr('disabled', true);
+    $('#checkout-form').fadeIn();
+    $('.loading-overlay').fadeIn(-3000);
 
     stripe.confirmCardPayment(clientSecret, {
         payment_method:{
@@ -57,6 +59,8 @@ form.addEventListener('submit', (event) => {
                 <i class="fas fa-exclamation" aria-hidden="true"></i>
                 ${outcome.error.message}</p>`;
             errorMsg.innerHTML = html;
+            $('#checkout-form').fadeIn();
+            $('.loading-overlay').fadeIn();
             // re-enable card-element and checkout button for user if there is an error
             card.update({"disabled": false});
             $('#checkout-btn').attr('disabled', false);

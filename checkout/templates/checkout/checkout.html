@@ -95,7 +95,7 @@
         <!----order summary---->
         <div class="col-sm-12 col-md-6 order-md-last">
             <!-- <div class="col-12 col-lg-6 order-lg-last mb-5"> -->
-                <p class="text-muted">Order Summary ({{ item_count }} Items)</p>
+                <p class="display-5 text-center font-weight-bold">Order Summary ( {{ item_count }} Items )</p>
                 <div class="row">
                     <div class="col-9">
                         <p class=" text-muted">Item</p>
@@ -137,6 +137,13 @@
                 </div>
         </div>
     </div>
+</div>
+<!-----loading spinner----->
+<div class="loading-overlay">
+    <h1 class="spinner-icon text-white font font-weight-bold">
+        <span class="spinner-grow spinner-grow-lg"></span>
+           Please Wait .......
+    </h1> 
 </div>
 {% endblock %}
 

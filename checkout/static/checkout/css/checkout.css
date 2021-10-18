@@ -71,3 +71,27 @@ toast after updating qty ---*/
   width: 100%;
   object-fit: cover;
 }
+
+
+/*------spinner---*/
+/*----code taken from CI walkthrough project
+and modified as per project requirement---(start)--*/
+.loading-overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(215 164 164 / 67%);
+  z-index: 9999;
+}
+
+.spinner-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+}
+/*---end---*/
