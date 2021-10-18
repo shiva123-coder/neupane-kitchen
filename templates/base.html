@@ -110,12 +110,17 @@
                 {% include 'includes/nav.html' %}
                 {% include 'includes/side_nav.html' %}
             </nav>
+            <div id="flash-banner" class="row text-center mx-auto">
+                <div class="col text-white align-item-center">
+                    <h4 class="flash-notice my-1 text-center">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
+                </div>            
+            </div>
         </div>
-         <div id="flash-banner" class="row text-center">
+         <!-- <div id="flash-banner" class="row text-center">
             <div class="col text-white">
                 <h4 class="flash-notice my-1">Free delivery within 3 miles of radius if your order is over £{{ free_delivery_outset }}</h4>                
             </div>            
-        </div>
+        </div> -->
     </header>
 
     {% if messages %}

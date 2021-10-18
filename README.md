@@ -77,4 +77,4 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
  - ***Code***
   - I have taken some CSS and JS code from CI walkthrough project and modified as per project requirement while creating loading spinner in checkout section of the project
-  - 
+  - I have taken the code from [stackoverflow](https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3) and modified as per my requirement while creating animation effect on my delivery promo text on Navbar.
