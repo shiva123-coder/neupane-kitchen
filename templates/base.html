@@ -62,7 +62,7 @@
                 </form>
             </div>
            
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,6 +116,7 @@
                 </div>            
             </div>
         </div>
+       
          <!-- <div id="flash-banner" class="row text-center">
             <div class="col text-white">
                 <h4 class="flash-notice my-1">Free delivery within 3 miles of radius if your order is over £{{ free_delivery_outset }}</h4>                
@@ -143,17 +144,19 @@
 
     {% block header_main %}
     {% endblock %}
+    <footer>
+        <div class="container-fluid footer-container"></div>
+    </footer>
 
     {% block content %}
     {% endblock %}
 
-   
+    
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
     {% endblock %}
-
     <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

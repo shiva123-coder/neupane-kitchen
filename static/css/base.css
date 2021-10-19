@@ -64,7 +64,7 @@ body {
 .flash-notice{
     background-color: #b6bb7b00;
     display: inline;
-    line-height: 2.5;
+    line-height: 0.1;
     padding: 8px;
     font-style: italic;
     font-size: 1.25rem;
@@ -165,4 +165,13 @@ item details on order summary page ---*/
   
 
 /*-----footer---*/
-
+.footer-container{
+    background: linear-gradient(to right, #9a5f5f45, #0c5f1f57);
+    background-color: #402c2c!important;
+    width: 100vw;
+    height: 3vh;
+    background: red;
+    position: fixed;
+    bottom: 0;
+    z-index: 99999999;
+}
