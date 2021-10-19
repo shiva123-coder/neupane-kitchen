@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -116,12 +115,6 @@
                 </div>            
             </div>
         </div>
-       
-         <!-- <div id="flash-banner" class="row text-center">
-            <div class="col text-white">
-                <h4 class="flash-notice my-1">Free delivery within 3 miles of radius if your order is over £{{ free_delivery_outset }}</h4>                
-            </div>            
-        </div> -->
     </header>
 
     {% if messages %}
@@ -144,9 +137,8 @@
 
     {% block header_main %}
     {% endblock %}
-    <footer>
-        <div class="container-fluid footer-container"></div>
-    </footer>
+
+    {% include 'includes/footer.html' %}
 
     {% block content %}
     {% endblock %}

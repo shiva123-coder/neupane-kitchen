@@ -52,8 +52,9 @@ body {
 }
 
 .bg-white{
-    background: linear-gradient(to right, #9a5f5f45, #0c5f1f57);
-    background-color: #402c2c!important;
+    background: linear-gradient(to right, #bf15158c, #0c5f1f);
+    /* background-color: #402c2c!important; */
+    background-color: #287271 !important;
 }
     
 
@@ -77,12 +78,14 @@ body {
 
 /*--------------home page-----*/
 .flash-notice{
-    background-color: #b6bb7b00;
+    background-color: #264653;
     display: inline;
     line-height: 0.1;
-    padding: 8px;
+    padding: 1px;
     font-style: italic;
     font-size: 1.25rem;
+    font-weight: bold;
+    
 }
 
 .main-text{
@@ -199,10 +202,10 @@ item details on order summary page ---*/
 
 /*-----footer---*/
 .footer-container{
-    background: linear-gradient(to right, #9a5f5f45, #0c5f1f57);
+    background: linear-gradient(to right, #bf15158c, #0c5f1f);
     background-color: #402c2c!important;
     width: 100vw;
-    height: 3vh;
+    height: auto;
     position: fixed;
     bottom: 0;
     z-index: 99999999;

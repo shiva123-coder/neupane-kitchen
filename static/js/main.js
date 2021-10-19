@@ -1,3 +1,4 @@
+
 // + and - sign to increase and decrease the quantity once clicked
 // + buttton to increase
 $('.increase-qty').click(function(e) {
