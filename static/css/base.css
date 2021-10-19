@@ -1,5 +1,14 @@
+
+ *{
+    box-sizing: border-box;
+}
+
+
+
 html {
     height: 100%;
+    top: 0;
+    bottom: 0;
 }
 
 body {
@@ -9,10 +18,16 @@ body {
     height: 100%;
     font-family: 'Dosis', sans-serif;
 }
+
+:root{
+    --white: #FFFFFF;
+}
+
 /*---------specials--*/
 .header-container {
     padding-top: 10%;
 }
+
 
 /*---blinking effect on delivery notice--*/
 /*--code taken from stackOverflow and modified--(start)--*/
@@ -57,7 +72,7 @@ body {
 
 /*--navbar icon (mobile device only)--*/
 .navbar-light .navbar-toggler-icon{
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 /*--------------home page-----*/
@@ -70,6 +85,24 @@ body {
     font-size: 1.25rem;
 }
 
+.main-text{
+    position: fixed;
+    top: 50%;
+    left: 1%;
+}
+
+.text-wrapper{
+   /* background-color: #0000009c; */
+   width: fit-content;
+   /* padding: 2px;
+   padding-left: 4%; */
+  
+}
+
+.home-text{
+    text-align: center;
+    color: var(--white);
+}
 /*----------all menu page -----*/
 
 /*code taken from walkthrough project of CI and modified as per project requirements(start) */
@@ -170,8 +203,20 @@ item details on order summary page ---*/
     background-color: #402c2c!important;
     width: 100vw;
     height: 3vh;
-    background: red;
     position: fixed;
     bottom: 0;
     z-index: 99999999;
+}
+
+
+/*------media----------*/
+
+@media screen and (max-width:992px){
+    body{
+        background-position-x: unset;
+    }
+
+    .main-text{
+        left: 6%;
+    }
 }
