@@ -11,7 +11,7 @@ from checkout.webhook_handler import StripeWebhookHandler
 @csrf_exempt
 def webhook(request):
     """Listen to Stripe webhooks"""
-    wh_secret = settings.STRIPE_WH_SECRET
+    wh_secret = settings.STRIPE_WEBHOOK_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # get the webhook data and verify signature
