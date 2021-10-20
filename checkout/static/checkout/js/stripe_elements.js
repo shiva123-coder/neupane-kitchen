@@ -44,13 +44,41 @@ form.addEventListener('submit', (event) => {
     // disable card element and submit button to prevent multiple submissions
     card.update({"disabled": true});
     $('#checkout-btn').attr('disabled', true);
-    $('#checkout-form').fadeIn();
-    $('.loading-overlay').fadeIn(-3000);
+    $('#checkout-form').fadeToggle();
+    $('.loading-overlay').fadeToggle();
 
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method:{
-            card: card,
-            billing_details: {
+
+    let btnSave = document.getElementById('save-info');
+    let saveInfo = false;
+    if (btnSave){
+        saveInfo = Boolean($('btnSave').attr('checked'))
+    }
+    // let saveInfo = Boolean($('#id-save-info').attr('checked'));
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
+
+    $.post(url, postData).done(function(){
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method:{
+                card: card,
+                billing_details: {
+                    name: form.full_name.value.trim(),
+                    phone: form.contact_number.value.trim(),
+                    email: form.email.value.trim(),
+                    full_address: {
+                        address: form.address.value.trim(),
+                        door_no: form.door_no.value.trim(),
+                        postcode: form.postcode.value.trim(),
+                        town_or_city: form.town_or_city.value.trim(),
+                    }
+                }
+            },
+            delivery_details: {
                 name: form.full_name.value.trim(),
                 phone: form.contact_number.value.trim(),
                 email: form.email.value.trim(),
@@ -60,38 +88,29 @@ form.addEventListener('submit', (event) => {
                     postcode: form.postcode.value.trim(),
                     town_or_city: form.town_or_city.value.trim(),
                 }
-        },
-        delivery_details: {
-            name: form.full_name.value.trim(),
-            phone: form.contact_number.value.trim(),
-            email: form.email.value.trim(),
-            full_address: {
-                address: form.address.value.trim(),
-                door_no: form.door_no.value.trim(),
-                postcode: form.postcode.value.trim(),
-                town_or_city: form.town_or_city.value.trim(),
+            },
+        }).then(function(outcome){
+            if (outcome.error){
+                let errorMsg = document.getElementById("card-errors");
+                let html = `
+                    <p class="text-danger mt-1">
+                    <i class="fas fa-exclamation" aria-hidden="true"></i>
+                    ${outcome.error.message}</p>`;
+                errorMsg.innerHTML = html;
+                $('#checkout-form').fadeToggle();
+                $('.loading-overlay').fadeToggle();
+                // re-enable card-element and checkout button for user if there is an error
+                card.update({"disabled": false});
+                $('#checkout-btn').attr('disabled', false);
+    
+            } else {
+                if (outcome.paymentIntent.status === 'succeeded'){
+                    form.submit();
+                }
             }
-    }
-
-    }
-    }).then(function(outcome){
-        if (outcome.error){
-            let errorMsg = document.getElementById("card-errors");
-            let html = `
-                <p class="text-danger mt-1">
-                <i class="fas fa-exclamation" aria-hidden="true"></i>
-                ${outcome.error.message}</p>`;
-            errorMsg.innerHTML = html;
-            $('#checkout-form').fadeIn();
-            $('.loading-overlay').fadeIn();
-            // re-enable card-element and checkout button for user if there is an error
-            card.update({"disabled": false});
-            $('#checkout-btn').attr('disabled', false);
-
-        } else {
-            if (outcome.paymentIntent.status === 'succeeded'){
-                form.submit();
-            }
-        }
-    });
+        });
+    }).fail(function(){
+        // reload the page
+        location.reload();
+    })
 });
