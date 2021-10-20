@@ -41,7 +41,8 @@ card.addEventListener('change', (event) => {
 let form = document.getElementById('checkout-form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    // disable card element and submit button to prevent multiple submissions
+    // eventlistener prevent the form from submitting once user click the button
+    // disable card element and trigger loading overlay
     card.update({"disabled": true});
     $('#checkout-btn').attr('disabled', true);
     $('#checkout-form').fadeToggle();
@@ -53,7 +54,6 @@ form.addEventListener('submit', (event) => {
     if (btnSave){
         saveInfo = Boolean($('btnSave').attr('checked'))
     }
-    // let saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
@@ -67,26 +67,26 @@ form.addEventListener('submit', (event) => {
             payment_method:{
                 card: card,
                 billing_details: {
-                    name: form.full_name.value.trim(),
-                    phone: form.contact_number.value.trim(),
-                    email: form.email.value.trim(),
+                    name: $.trim(form.full_name.value),
+                    phone: $.trim(form.contact_number.value),
+                    email: $.trim(form.email.value),
                     full_address: {
-                        address: form.address.value.trim(),
-                        door_no: form.door_no.value.trim(),
-                        postcode: form.postcode.value.trim(),
-                        town_or_city: form.town_or_city.value.trim(),
+                        address: $.trim(form.address.value),
+                        door_no: $.trim(form.door_no.value),
+                        postcode: $.trim(form.postcode.value),
+                        town_or_city: $.trim(form.town_or_city.value),
                     }
                 }
             },
             delivery_details: {
-                name: form.full_name.value.trim(),
-                phone: form.contact_number.value.trim(),
-                email: form.email.value.trim(),
+                name: $.trim(form.full_name.value),
+                phone: $.trim(form.contact_number.value),
+                email: $.trim(form.email.value),
                 full_address: {
-                    address: form.address.value.trim(),
-                    door_no: form.door_no.value.trim(),
-                    postcode: form.postcode.value.trim(),
-                    town_or_city: form.town_or_city.value.trim(),
+                    address: $.trim(form.address.value),
+                    door_no: $.trim(form.door_no.value),
+                    postcode: $.trim(form.postcode.value),
+                    town_or_city: $.trim(form.town_or_city.value),
                 }
             },
         }).then(function(outcome){
