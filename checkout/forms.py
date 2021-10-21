@@ -9,10 +9,8 @@ class OrderForm(forms.ModelForm):
             'full_name',
             'email',
             'contact_number',
-            'address',
-            'door_no',
-            'town_or_city',
-            'postcode',)
+            'street_address',
+            'postal_code',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -23,10 +21,8 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'contact_number': 'Contact Number',
-            'address': 'Address',
-            'door_no': 'Door Number',
-            'town_or_city': 'Town or City',
-            'postcode': 'Post Code',
+            'street_address': 'Address',
+            'postal_code': 'Post Code',
           
         }
 
