@@ -37,16 +37,8 @@
                 </fieldset>
                 <fieldset class="mb-2">
                     <legend>Delivery Details</legend>
-                    {{ order_form.address | as_crispy_field }}
-                    {{ order_form.door_no | as_crispy_field }}
-                    <div class="row">
-                        <div class="col-6">
-                            {{ order_form.town_or_city | as_crispy_field }}
-                        </div>
-                        <div class="col-6">
-                            {{ order_form.postcode | as_crispy_field }}
-                        </div>
-                    </div>
+                    {{ order_form.street_address | as_crispy_field }}
+                    {{ order_form.postal_code | as_crispy_field }}
                 </fieldset>
                 <!---option to create account or login---->
                 <div class="form-check ms-5">
