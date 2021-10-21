@@ -18,6 +18,8 @@ class OrderAdmin(admin.ModelAdmin):
         "delivery_cost",
         "total",
         "sum_total",
+        "original_basket",
+        "stripe_payment_intent_id"
     )
 
     fields = (
@@ -26,13 +28,13 @@ class OrderAdmin(admin.ModelAdmin):
         "full_name",
         "email",
         "contact_number",
-        "address",
-        "door_no",
-        "town_or_city",
-        "postcode",
+        "street_address",
+        "postal_code",
         "delivery_cost",
         "total",
         "sum_total",
+        "original_basket",
+        "stripe_payment_intent_id"
     )
 
     list_display = (
