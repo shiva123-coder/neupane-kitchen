@@ -70,23 +70,18 @@ form.addEventListener('submit', (event) => {
                     name: $.trim(form.full_name.value),
                     phone: $.trim(form.contact_number.value),
                     email: $.trim(form.email.value),
-                    full_address: {
-                        address: $.trim(form.address.value),
-                        door_no: $.trim(form.door_no.value),
-                        postcode: $.trim(form.postcode.value),
-                        town_or_city: $.trim(form.town_or_city.value),
+                    address: {
+                        line1: $.trim(form.street_address.value),
+                        postal_code: $.trim(form.postal_code.value),
                     }
                 }
             },
-            delivery_details: {
+            shipping: {
                 name: $.trim(form.full_name.value),
                 phone: $.trim(form.contact_number.value),
-                email: $.trim(form.email.value),
-                full_address: {
-                    address: $.trim(form.address.value),
-                    door_no: $.trim(form.door_no.value),
-                    postcode: $.trim(form.postcode.value),
-                    town_or_city: $.trim(form.town_or_city.value),
+                address: {
+                    line1: $.trim(form.street_address.value),
+                    postal_code: $.trim(form.postal_code.value),
                 }
             },
         }).then(function(outcome){
