@@ -48,10 +48,8 @@ def checkout(request):
             "full_name": request.POST["full_name"],
             "email": request.POST["email"],
             "contact_number": request.POST["contact_number"],
-            "address": request.POST["address"],
-            "door_no": request.POST["door_no"],
-            "town_or_city": request.POST["town_or_city"],
-            "postcode": request.POST["postcode"],
+            "street_address": request.POST["street_address"],
+            "postal_code": request.POST["postal_code"],
         }
         order_form = OrderForm(form_data)
 
@@ -67,7 +65,6 @@ def checkout(request):
             for item_id, quantity in basket.items():
                 try:
                     item = Item.objects.get(id=item_id)
-                    # if item found, create the line items
                     order_line_item = OrderLineItem(
                         order=order,
                         item=item,
