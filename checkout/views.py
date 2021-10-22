@@ -6,6 +6,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+
 from menu.models import Item
 from basket.contexts import basket_contents
 
@@ -51,12 +52,13 @@ def checkout(request):
             "street_address": request.POST["street_address"],
             "postal_code": request.POST["postal_code"],
         }
+
+        print(form_data)
         order_form = OrderForm(form_data)
 
-        # print(form_data)
-        # print("test")
-        # print(order_form)
-        # print(order_form.is_valid())
+        print("test")
+        print(order_form)
+        
 
         # order create once valid form sent
         if order_form.is_valid():
@@ -89,8 +91,6 @@ def checkout(request):
             messages.error(request, "Theres was an error.\
                 Please re-check the information")
   
-        
-
     # else:
     # basket = request.session.get("basket", {})
     # if not basket:
@@ -110,6 +110,7 @@ def checkout(request):
     )
 
     order_form = OrderForm()
+    
 
     # warning message, if forgot to set stripe public key
     if not stripe_public_key:
