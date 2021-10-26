@@ -5,7 +5,7 @@ def profile(request):
     """
     Display user's profile.
     """
-    template = 'profiles/profile.html'
+    template = 'profiles/user_profile.html'
     context = {
 
     }
