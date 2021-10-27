@@ -27,9 +27,9 @@ body {
 }
 
 /*---------specials--*/
-/* .header-container {
-    padding-top: 10%;
-} */
+.header-container {
+    padding-top: 150px;
+}
 
 
 /*---blinking effect on delivery notice--*/
@@ -127,9 +127,9 @@ body {
     z-index: 9999999999;
 }
 
-.item-container{
+/* .item-container{
     margin-bottom: 50px;
-}
+} */
 /*code taken from walkthrough project of CI (end)- */
 
 
@@ -205,7 +205,12 @@ item details on order summary page ---*/
     overflow-x: hidden;
     overflow-y: auto;
   }
-  
+
+/*-----checkout page---*/
+.checkout-container{
+    margin-top: 50px;
+}
+
 /*-----login form---*/
 .login-heading{
     padding-top: 350px;

@@ -56,8 +56,8 @@ def checkout(request):
         print(form_data)
         order_form = OrderForm(form_data)
 
-        print("test")
-        print(order_form)
+        # print("test")
+        # print(order_form)
         
 
         # order create once valid form sent
