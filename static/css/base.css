@@ -220,6 +220,12 @@ item details on order summary page ---*/
     padding-top: 250px;
 }
 
+/*-----signup form---*/
+#signup_form{
+    margin-bottom: 150px;
+}
+
+
 /*-----footer---*/
 .footer-container{
     background: linear-gradient(to right, #bf15158c, #0c5f1f);
