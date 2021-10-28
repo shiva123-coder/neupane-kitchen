@@ -7,6 +7,8 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from menu.models import Item
 from basket.contexts import basket_contents
 
@@ -53,12 +55,7 @@ def checkout(request):
             "postal_code": request.POST["postal_code"],
         }
 
-        print(form_data)
         order_form = OrderForm(form_data)
-
-        # print("test")
-        # print(order_form)
-        
 
         # order create once valid form sent
         if order_form.is_valid():
@@ -133,6 +130,24 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # connect user's profile to the order
+        order.user_profile = profile
+        order.save()
+
+        # save user's info
+        if save_info:
+            profile_data = {
+                'user_contact_number': order.contact_number,
+                'user_street_address': order.street_address,
+                'user_postal_code': order.postcode,
+            }
+
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
   
     messages.success(request, f'Thank you ! order successfully processed! \
         Your order number is {order_number}. A confirmation \
