@@ -14,9 +14,7 @@ class UserProfile(models.Model):
     user_email = models.EmailField(max_length=50, null=False, blank=False)
     user_contact_number = models.CharField(max_length=11, null=False, blank=False)
     user_address = models.CharField(max_length=60, null=False, blank=False)
-    user_door_no = models.CharField(max_length=5, null=False, blank=False)
-    user_town_or_city = models.CharField(max_length=20, null=False, blank=False)
-    user_postcode = models.CharField(max_length=10, null=True, blank=False)
+    user_postal_code = models.CharField(max_length=10, null=True, blank=False)
 
     def __str__(self):
         return self.user.username
