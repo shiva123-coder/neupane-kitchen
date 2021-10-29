@@ -6,3 +6,9 @@
     color: #000000;
     font-weight: bold;
 }
+
+.order-history-table{
+    max-height: 450px;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
