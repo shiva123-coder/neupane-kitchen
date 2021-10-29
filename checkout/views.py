@@ -142,7 +142,7 @@ def checkout_success(request, order_number):
             profile_data = {
                 'user_contact_number': order.contact_number,
                 'user_street_address': order.street_address,
-                'user_postal_code': order.postcode,
+                'user_postal_code': order.postal_code,
             }
 
             user_profile_form = UserProfileForm(profile_data, instance=profile)

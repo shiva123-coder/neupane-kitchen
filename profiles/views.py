@@ -47,7 +47,8 @@ def order_history(request, order_number):
 
     messages.info(request, "This is your order from past")
 
-    template = "checkout/checkout_success.html"
+    template = "profiles/order_history.html"
+    
     context = {
         "order": order,
         "past_order": True,
