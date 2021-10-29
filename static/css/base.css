@@ -31,7 +31,16 @@ body {
     padding-top: 150px;
 }
 
+/*----------block-divider--*/
+.block-divider{
+ width: 150px;
+ margin-top: -40px;
+ border: 0.25px solid #c3b0b0;
+}
 
+.block-divider-checkout{
+margin-top: -20px;
+}
 /*---blinking effect on delivery notice--*/
 /*--code taken from stackOverflow and modified--(start)--*/
 .blinker{

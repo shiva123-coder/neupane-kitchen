@@ -19,18 +19,19 @@
 <div class="container checkout-container">
     <div class="row text-center">
         <div class="col">
-            <h2 class="checkout-title mt-3 mb-4 font-weight-bold"><u>Checkout</u></h2>
+            <h1 class="checkout-title mt-3 mb-4">Checkout</h1>
+            <hr class="block-divider block-divider-checkout">
         </div>
     </div>
 
     <div class="row no-gutter text-center">
         <!---- customer details/payment form-->
         <div class="col-sm-12 col-md-6">
-            <p class="display-6 text-primary">Please provide us with completed form below for your order to be delivered</p>
+            <p class="text-dark h4 font-weight-bold">Please completed the form below</p>
             <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
                 {% csrf_token %}
                 <fieldset class="mb-2">
-                    <legend>Contact Details</legend>
+                    <legend class="h5">Contact Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.contact_number | as_crispy_field }}
@@ -87,7 +88,7 @@
         <!----order summary---->
         <div class="col-sm-12 col-md-6 order-md-last">
             <!-- <div class="col-12 col-lg-6 order-lg-last mb-5"> -->
-                <p class="display-5 text-center font-weight-bold">Order Summary ( {{ item_count }} Items )</p>
+                <p class="text-dark h4 font-weight-bold">Order Summary ( {{ item_count }} Items )</p>
                 <div class="row">
                     <div class="col-9">
                         <p class=" text-muted">Item</p>
