@@ -23,7 +23,8 @@
     </div>
    <div class="row">
        <div class="col-12 col-lg-6">
-            <p class="display-4 font-weight-bold">Delivery Information</p>
+            <h1 class="font-weight-bold">Delivery Information</h1>
+            <p class="text-muted">Chnaged your delivery information? please update below.</p>
             <form id="userprofile-form" method="POST" action="{% url 'profile' %}">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -31,7 +32,40 @@
             </form>
        </div>
        <div class="col-12 col-lg-6">
-            <p class="display-4 font-weight-bold">Order History</p>
+            <h1 class="font-weight-bold">Order History</h1>
+            <div class="table order-history-table">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Items</th>
+                        <th scope="col">Order Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <th scope="row">
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                    title={{ order.order_number }}>{{ order.order_number|truncatechars:4 }}</a>
+                                </th>
+                                <td>{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for ib in order.lineitems.all %}
+                                            <li class="small">
+                                                {{ ib.item.name }} X {{ ib.quantity }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>£{{ order.sum_total }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
        </div>
    </div>
 {% endblock %}
