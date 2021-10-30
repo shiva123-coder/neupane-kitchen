@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from profiles.models import UserProfile
 from .models import Order, OrderLineItem
@@ -13,6 +16,25 @@ class StripeWebhookHandler:
 
     def __init__(self, request):
         self.request = request
+
+
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        customer_email = order.email
+        print(order)
+        subject = render_to_string(
+            'checkout/email_confirmation/email_confirmation_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/email_confirmation/email_confirmation_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )
 
     def handle_event(self, event):
         """handle unknown webhook event"""
@@ -58,7 +80,7 @@ class StripeWebhookHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=del_details.name,
+                    full_name__iexact=delivery_details.name,
                     email__iexact=billing_details.email,
                     contact_number__iexact=delivery_details.phone,
                     street_address__iexact=delivery_details.address.line1,
@@ -76,6 +98,7 @@ class StripeWebhookHandler:
                 time.sleep(1)
        
         if order_exists:
+            self._send_confirmation_email(order)
            
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
@@ -88,6 +111,7 @@ class StripeWebhookHandler:
                
                 order = Order.objects.create(
                         full_name=delivery_details.name,
+                        user_profile=profile,
                         contact_number=delivery_details.phone,
                         email=billing_details.email,
                         street_address=delivery_details.address.line1,
@@ -113,6 +137,8 @@ class StripeWebhookHandler:
                     order.delete()
                 return HttpResponse(content="Webhook recieved \
                     : {event['type']} | ERROR : {e}", status=500)
+                    
+        self._send_confirmation_email(order)
 
         return HttpResponse(
             content=f"Webhook recieved : {event['type']} | \
