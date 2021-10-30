@@ -36,7 +36,21 @@ class StripeWebhookHandler:
             if value == "":
                 delivery_details.address[field] = None
 
+        """
+        profile information update once user
+        choose the option to save their
+        information by checking save_info box
+        on the checkout form
+        """
         profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.user_contact_number = delivery_details.phone
+                profile.user_street_address = delivery_details.address.line1
+                profile.user_postal_code = delivery_details.address.postal_code
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -44,7 +58,7 @@ class StripeWebhookHandler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=delivery_details.name,
+                    full_name__iexact=del_details.name,
                     email__iexact=billing_details.email,
                     contact_number__iexact=delivery_details.phone,
                     street_address__iexact=delivery_details.address.line1,
