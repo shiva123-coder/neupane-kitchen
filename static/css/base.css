@@ -201,6 +201,14 @@ margin-top: -20px;
     cursor: pointer;
 }
 
+.update-form{
+    margin-left: 20px;
+}
+
+.update-qty{
+    margin-left: -20px;
+}
+
 /*----------toasts----*/
 .success-toast{
     overflow-y: scroll;
@@ -286,3 +294,5 @@ item details on order summary page ---*/
 @media screen and (max-width:992px){
     
 }
+
+

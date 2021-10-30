@@ -12,7 +12,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- <div class="overlay"></div> -->
 <div class="container basket-container">
     <div class="row text-center">
         <div class="col">
@@ -47,7 +46,7 @@
                                         <p class="item-price">£{{ ib.item.price }}</p>
                                     </td>
                         
-                                    <td class="w-25">
+                                    <td class="">
                                         <form class="form update-form" method="POST" action="{% url 'update_basket' ib.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group ">
