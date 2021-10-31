@@ -75,9 +75,9 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
 
 ## Deployment
-- Project was deployed to Heroku and process are explained in detailed below :
+- Project was deployed to Heroku and process for setup and deployment are as below:
 #### Heroku setup
-1. Login to Heroku and create the app using create app button on heroku website
+1. Login to [Heroku](https://id.heroku.com/login) and create the app using create app button on heroku website once logged into the page.
 2. Give the desire name to the app and choose a region (In my case I have named my app as neupane-kitchen and choose a region as Europe)
 3. At this point, app has been created then click the resourses option and search for Heroku Postgres on add-ons section
 4. Select the Provision plan, for this project I have use the free plan by selecting ***Hobby Dev - Free*** plan
@@ -150,7 +150,7 @@ Uncaught TypeError: $(...).fadeIn is not a function
  8. Disable collect data to avoid heroku from collecting static data when project is deployed initially. 
     ```
     heroku config:set DISABLE_COLLECTSTATIC=1 --app <app name>
-    note : --flag required if project has more than one app
+    note : -- app flag required if project has more than one app
     ```
  9. Back in the settings.py update ALLOWED_HOSTS as below
     ```
@@ -158,13 +158,14 @@ Uncaught TypeError: $(...).fadeIn is not a function
     note : localhost added on ALLOWED_HOST to ensure gitpod will still work too.
     ```
  #### Deploy to Heroku
-     - After git add and git push command, below steps were taken to deploy the app to heroku from the terminal 
-       ```
-       first type heroku git:remote -a <heroku app name> on terminal
-       note : above command required to initialize the heroku git remote due to app was created from Heroku website directly (not with CLI)
+ - After git add and git push command, below steps were taken to deploy the app to heroku from the terminal 
+    
+ - first type heroku git:remote -a <heroku app name> on terminal
+    (note : above command required to initialize the heroku git remote due to app was created from Heroku website directly (not with CLI))
        
-       then type git push heroku main on the terminal 
-            
+ - then type git push heroku main on the terminal 
+
+    ```
              gitpod /workspace/neupane-kitchen $ git push heroku main
              Enumerating objects: 1027, done.
              Counting objects: 100% (1027/1027), done.
@@ -198,18 +199,18 @@ Uncaught TypeError: $(...).fadeIn is not a function
              remote:        Released v6
              remote:        https://neupane-kitchen.herokuapp.com/ deployed to Heroku
         
-         ```
+    ```
          
-         - Project is now deployed to Heroku.
+ - Project is now deployed to Heroku.
   
  #### Automatic Deploy to heroku.
-     - Visit heroku website and select the app and click on Deploy option
-     - Scroll down to Deployment method option and select connect to Github option and type the name of github repository on search field
-     - Select connect option and now heroku app is connected to github repo.
-     - Scroll further down on deploy option on dashboard and select ' Enable Automatic Deploy' option in order to automatic deployment everytime when the work is is pushed to github.
-     - Automatic deployment process can be checked by selecting activity option on heroku dashboard once work is pushed to github, below is the snapshot of building activito on heroku dashboard
+ - Visit heroku website and select the app and click on Deploy option
+ - Scroll down to Deployment method option and select connect to Github option and type the name of github repository on search field
+ - Select connect option and now heroku app is connected to github repo.
+ - Scroll further down on deploy option on dashboard and select ' Enable Automatic Deploy' option in order to automatic deployment everytime when the work is is pushed to github.
+ - Automatic deployment process can be checked by selecting activity option on heroku dashboard once work is pushed to github, below is the snapshot of building activity from heroku dashboard
 
-       ```
+    ```
       -----> Building on the Heroku-20 stack
       -----> Using buildpack: heroku/python
       -----> Python app detected
@@ -229,7 +230,7 @@ Uncaught TypeError: $(...).fadeIn is not a function
        Released v8
        https://neupane-kitchen.herokuapp.com/ deployed to Heroku
 
-      ```
+    ```
 
 
 ## Credit
