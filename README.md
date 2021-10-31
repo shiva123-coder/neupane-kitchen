@@ -81,7 +81,7 @@ Uncaught TypeError: $(...).fadeIn is not a function
 2. Give the desire name to the app and choose a region (In my case I have named my app as neupane-kitchen and choose a region as Europe)
 3. At this point, app has been created then click the resourses option and search for Heroku Postgres on add-ons section
 4. Select the Provision plan, for this project I have use the free plan by selecting ***Hobby Dev - Free*** plan
-5. In order to user Postgres few install requirement on gitpod workspace, head up to gitpod terminal and use CLI below to install ***jango database and psycopg2-binary***
+5. In order to use Postgres few install requirement on gitpod workspace, head up to gitpod terminal and use CLI below to install ***jango database and psycopg2-binary***
    ```
    pip3 install dj_database_url
    pip3 install psycopg2-binary
