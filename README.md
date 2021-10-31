@@ -75,7 +75,16 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
 
 ## Deployment
+- This project was initially set up on GitHub using the Code Institue Gitpod Template. I have used the Code Institute gitpod template and named my repository.
+- After creating repository in github I then open the repository with Gitpod using green GitPod button on the github page.
+- I then use gitpod terminal throughout the build process to install library/packages and to create folders and files
+- git was used throughout the build process of this project as version control to Github
+  - git add was used to add the files to staging area
+  - git commit was used to commit my work with commit message
+  - git push was used to updates my committed changes and allows send them to remote repository.
+
 - Project was deployed to Heroku and process for setup and deployment are as below:
+
 #### Heroku setup
 1. Login to [Heroku](https://id.heroku.com/login) and create the app using create app button on heroku website once logged into the page.
 2. Give the desire name to the app and choose a region (In my case I have named my app as neupane-kitchen and choose a region as Europe)
@@ -231,6 +240,145 @@ Uncaught TypeError: $(...).fadeIn is not a function
        https://neupane-kitchen.herokuapp.com/ deployed to Heroku
 
     ```
+
+
+## Amazon Web Service (AWS)
+
+  - AWS was used in this project to host static and media files for this project.
+  - AWS account was creating by completing the sign-up process through the [AWS website](https://aws.amazon.com).
+
+1.  Create the bucket
+    - Below steps were taken to create the bucket
+        - Create a new bucket on the AWS S3 service
+        - From the main dashboard search for S3 and then select get started option
+        - Select Create bucket button and give the bucket name and select your region
+        - Uncheck the block public access and acknowledge that the bucket will now be public
+        -  Select create bucket.
+    
+2. Bucket settings.
+   - Select bucket properties settings and turn on static website hosting
+   - Add index.html to index field and  and error.html to the error and save.
+
+   - Select bucket Permissions settings now, click on the buckets Permissions tabs and add below config :
+       ```
+       [
+          {
+              "AllowedHeaders": [
+                  "Authorization"
+              ],
+              "AllowedMethods": [
+                  "GET"
+              ],
+              "AllowedOrigins": [
+                  "*"
+              ],
+              "ExposeHeaders": []
+          }
+       ]
+
+       ```
+    - On the bucket policy option, click on generate policy and Select S3 bucket policy
+    - Add * to the principal field to select all principals
+    - Choose the action to get object.
+    - Paste in your ARN which is available on the previous page.
+    - Click, add statement
+    - Then click, generate policy.
+    - Now copy and paste your new policy into the bucket policy.
+    - Add /* onto the end of the resources key
+    - Click Save.
+    - Access control list
+    - In the access control list tab set the list objects permission to everyone.
+    
+3. Create a User
+
+   - Back in the AWS main dashboard search for IAM and follow the process below : 
+    - Firstly create a group to put user in.
+    - Click create a new group and name it.
+    - Click through to the end and save the group.
+    - Create a policy.
+    - In our group click, policy and then, create policy.
+    - Select the JSON tab and then import managed policies.
+    - Search S3 and select AmazonS3FullAccess and import.
+    - In the resources section paste in our ARN from before.
+    - click through to review the policy.
+    - Fill in name and description and then click generate policy.
+    - Back in your group click permission and then attach the policy.
+    - Find the policy which is just created and attach it.
+    
+
+    - Select Users from the sidebar and then click, add user.
+    - Create a user name and select programmatic access then click next.
+    - Then select your group to add your user to.
+    - Click through to the end and then click create user.
+    - download the CVS file and save it as it contains the users keys
+
+    (note: CVS file must be download and keep it safe/secret at this stage as after this process its not possible to download CVS file again)
+
+4. Connecting to Django
+  - Once AWS has been set up now this needs to be connect to Django. Steps below were taken to accomplish this.
+   - Head up to the gitpod terminal and use below command to install ***boto3 and django storages*** packages
+
+      ```
+       pip3 install boto3
+       pip3 install django-storages
+      ``` 
+
+    
+   - Then freeze the requirements by using below command in the terminal
+       ```
+       pip3 freeze > requirements.txt
+       ```
+   - Back to the settings.py add some settings as below:
+   - first add storages into installed apps in settings.py
+   - Back to heroku setting scroll down to 'Reveal config var' and create an environmental variable "USE_AWS" and set it to True in order only run this code when on Heroku.
+   - Now add below settings to the settings.py
+    
+       ```
+           if "USE_AWS" in os.environ:
+
+                # Bucket Config
+
+                AWS_STORAGE_BUCKET_NAME = '<bucket name>'
+                AWS_S3_REGION_NAME = '<your region>'
+                AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+                AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+                AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+                # static and media file storage
+                
+                STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+                STATICFILES_LOCATION = 'static'
+                DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+                MEDIAFILES_LOCATION = 'media'
+
+                # Override static and media URLs in production
+
+                STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+                MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+        ```
+    
+  - Create a custom_storages.py file on workspace to tell Django that in production we want to use s3 to store our static and media files.
+  - import S3Boto3Storage to the top of the custom_storages.py file
+  - Create new classes inside the custom_storages.py file and add location variable as below.
+
+
+    ``` 
+        class StaticStorage(S3Boto3Storage):
+        location = settings.STATICFILES_LOCATION
+
+        class MediaStorage(S3Boto3Storage):
+        location = settings.MEDIAFILES_LOCATION
+    ```
+  - All setup process has now completed.
+
+5. Add media to AWS.
+   - Below steps were taken to add the media to AWS
+   - Head back to AWS s3 and create a new folder called media.
+   - Select upload and add image files.
+   - Then select to grant public access.
+   - And then upload the files.
+   
 
 
 ## Credit
