@@ -101,12 +101,6 @@ def checkout(request):
             messages.error(request, "Theres was an error.\
                 Please re-check the information")
   
-    # else:
-    # basket = request.session.get("basket", {})
-    # if not basket:
-    #     messages.error(request, "There's no items \
-    #             in your basket at the moment.")
-    #     return redirect(reverse("all_menu"))
 
     current_basket = basket_contents(request)
     total = current_basket['sum_total']
