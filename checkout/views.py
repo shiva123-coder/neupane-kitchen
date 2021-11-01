@@ -101,7 +101,6 @@ def checkout(request):
             messages.error(request, "Theres was an error.\
                 Please re-check the information")
   
-
     current_basket = basket_contents(request)
     total = current_basket['sum_total']
     stripe_total = round(total * 100)
