@@ -17,11 +17,9 @@ class StripeWebhookHandler:
     def __init__(self, request):
         self.request = request
 
-
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         customer_email = order.email
-        print(order)
         subject = render_to_string(
             'checkout/email_confirmation/email_confirmation_subject.txt',
             {'order': order})
