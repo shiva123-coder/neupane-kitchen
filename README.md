@@ -73,7 +73,6 @@ Uncaught TypeError: $(...).fadeIn is not a function
 - I was still having an issue while testing the checkout functionality, I created and submit complete one order after completing the payment form, as a result of this form was submitted and order confirmation displayed on page however there was still ***401 error shown*** while checking the events on stripe and also two of the input field (Original basket and Stripe payment intend id) had empty field while checking the order from admin. I had done some further research on 401 error and found the solution of this problem over slack community channel. Issue here was my workspace was not shared at the time of the test which means webhook was not connected to the site. I have then shared my workspace and re-check the functionality again by creating another order and this time all the fields were populated while checking on admin, also no issue on stripe and code 200 was shown.
 
 
-
 ## Deployment
 - This project was initially set up on GitHub using the Code Institue Gitpod Template. I have used the Code Institute gitpod template and named my repository.
 - After creating repository in github I then open the repository with Gitpod using green GitPod button on the github page.
@@ -284,6 +283,27 @@ Uncaught TypeError: $(...).fadeIn is not a function
     - Click, add statement
     - Then click, generate policy.
     - Now copy and paste your new policy into the bucket policy.
+      ```
+      {
+         "Version": "2012-10-17",
+         "Id": "Policy1635692466356",
+         "Statement": [
+            {
+                  "Sid": "Stmt1635692462924",
+                  "Effect": "Allow",
+                  "Principal": "*",
+                  "Action": [
+                     "s3:GetObject",
+                     "s3:PutObject",
+                     "s3:DeleteObject"
+                  ],
+                  "Resource": "arn:aws:s3:::neupane-kitchen/*"
+            }
+         ]
+      }
+
+      ```
+
     - Add /* onto the end of the resources key
     - Click Save.
     - Access control list
