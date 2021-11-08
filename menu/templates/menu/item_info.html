@@ -70,8 +70,44 @@
                 </div>
             </div>
         </div>
+    </div> 
+
+    <!--review section-->
+    <div class="container">
+        <h3 class="text-uppercase text-center">Reviews</h3>
+        <div class="text-center">
+            <a href="{% url 'add_review' item.id %}" class="btn btn-info">
+                Add a Review
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <!--show existing reviews-->
+        <div class="row">
+            {% for rev in review %}
+            <div class="col">
+                <h3 class="mb-0">{{ rev.title }}</h3>
+                <p><small class="text-dark">rating: </small>{{ rev.rating }} / 5</p>
+                <p>"{{ rev.comment }}"</p>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center">{{ rev.reviewer }}</p>
+                        <p class="text-center"><small>{{ rev.date|date:"d M, Y" }}</small></p>
+                        <!---option to edit/delete the review only for authenticated user-->
+                        {% if request.user.is_authenticated %}
+                        <small class="text-center">
+                            <a class="text-primary" href="">Edit</a> |
+                            <a class="text-danger" href="">Delete</a>
+                        </small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
         <script>
