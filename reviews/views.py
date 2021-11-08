@@ -1,32 +1,42 @@
-from django.shortcuts import render
-from django.core.paginator import Paginator
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .forms import ReviewForm
 from .models import Review
+from django.db.models import Avg
+
+from menu.models import Item
+from profiles.models import UserProfile
 
 
-def food_reviews(request):
-    """show all reviews"""
-    if request.method == "POST":
+def add_review(request, item_id):
+    """view to add reviews"""
+    item = get_object_or_404(Item, pk=item_id)
+    user = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            review = form.save(commit=False)
-            review.reviewing_user = request.user
-            review.rating = int(request.POST.get('rating'))
-            review.save()
-            
-    reviews = Review.objects.all()
-    p = Paginator(reviews, 8)
-    page_number = request.GET.get('page')
-    page_obj = p.get_page(page_number)
-
-    form = ReviewForm()
-    template = "reviews/food_reviews.html"
-
+            title = form.cleaned_data['title']
+            comment = form.cleaned_data['comment']
+            rating = form.cleaned_data['rating']
+            Review.objects.create(
+                reviewer=user,
+                item=get_object_or_404(Item, pk=item_id),
+                title=title,
+                rating=rating,
+                comment=comment)
+            messages.success(request, 'Revied added.')
+            return redirect(reverse('item_info', args=[item_id]))
+        else:
+            messages.error(request, 'Sorry! we are unable to add your review. \
+                    Please check your input and try again')
+    else:
+        form = ReviewForm()
+    template = 'reviews/add_review.html'
     context = {
         'form': form,
-        'page_obj': page_obj,
+        'item': item,
     }
 
-    return render(request,
-                  template,
-                  context)
+    return render(request, template, context)
+
+
