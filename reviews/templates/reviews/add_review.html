@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container review-container">
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <h2 class="font-weight-bold">Reviews</h2>
+            <h4 class="text-muted">Add a Review</h4>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" action="{% url 'add_review' item.id %}" class="form"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a href="{% url 'item_info' item.id %}" class="btn btn-warning">Cancel</a>
+                    <button class="btn btn-success" type="submit">Add Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
