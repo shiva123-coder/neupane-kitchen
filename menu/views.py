@@ -3,6 +3,10 @@ from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q
 from .models import Item, Category
+from profiles.models import UserProfile
+
+from reviews.forms import ReviewForm
+from reviews.models import Review
 
 
 def all_menu(request):
@@ -65,9 +69,13 @@ def item_info(request, item_id):
     """ A view to render individual item details from menu """
 
     item = get_object_or_404(Item, pk=item_id)
+    review = Review.objects.filter(item=item)
+    review_form = ReviewForm()
 
     context = {
         'item': item,
+        "review": review,
+        "review_form": review_form,
     }
 
     return render(request, 'menu/item_info.html', context)
