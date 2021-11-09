@@ -73,6 +73,7 @@
     </div> 
 
     <!--review section-->
+    {% if request.user.is_authenticated %}
     <div class="container">
         <h3 class="text-uppercase text-center">Reviews</h3>
         <div class="text-center">
@@ -81,10 +82,11 @@
             </a>
         </div>
     </div>
+    {% endif %}
     <div class="container">
         <!--show existing reviews-->
         <div class="row">
-            {% for rev in review %}
+            {% for rev in reviews %}
             <div class="col">
                 <h3 class="mb-0">{{ rev.title }}</h3>
                 <p><small class="text-dark">rating: </small>{{ rev.rating }} / 5</p>
@@ -93,13 +95,10 @@
                     <div class="col">
                         <p class="text-center">{{ rev.reviewer }}</p>
                         <p class="text-center"><small>{{ rev.date|date:"d M, Y" }}</small></p>
-                        <!---option to edit/delete the review only for authenticated user-->
-                        {% if request.user.is_authenticated %}
                         <small class="text-center">
-                            <a class="text-primary" href="">Edit</a> |
-                            <a class="text-danger" href="">Delete</a>
+                            <a class="text-primary" href="{% url 'edit_review' rev.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_review' rev.id  %}">Delete</a>
                         </small>
-                        {% endif %}
                     </div>
                 </div>
             </div>
