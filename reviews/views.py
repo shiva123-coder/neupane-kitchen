@@ -40,3 +40,38 @@ def add_review(request, item_id):
     return render(request, template, context)
 
 
+def edit_review(request, review_id):
+    """
+    edit item review
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review edited')
+        else:
+            messages.error(request, 'Sorry! your review cant be edited now, \
+                    Please try again.')
+    else:
+        form = ReviewForm(instance=review)
+
+    template = "reviews/edit_review.html"
+
+    context = {
+        "form": form,
+        "review": review,
+        "item": review.item,
+    }
+
+    return render(request, template, context)
+
+
+def delete_review(request, review_id):
+    """
+    delete item review
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review has now deleted')
+    return redirect(reverse('item_info', args=(review.item.id,)))
