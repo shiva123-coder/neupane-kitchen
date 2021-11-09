@@ -202,6 +202,11 @@ margin-top: -20px;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
+
+.review-heading{
+    margin-top: 250px;
+}
+
 /*------update and remove quantity option on basket--*/
 .update-qty,
 .remove-qty{

@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container review-container mt-3">
+<div class="container review-container">
     <div class="row">
         <div class="col-12">
             <hr>
@@ -15,7 +15,7 @@
     
     <div class="row review-row">
         <div class="col-12">
-            <h2>Add your review here</h2>
+            <h2>Add your review</h2>
             <p class="text-mute pb-3">Review for <span class="text-primary font-weight-bold">{{ item.name }}</span></p>
             <form method="POST" action="{% url 'add_review' item.id %}" class="form review-form"
                 enctype="multipart/form-data">

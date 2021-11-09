@@ -65,7 +65,6 @@ def edit_review(request, review_id):
         'review': review,
         'item': review.item,
         'on_review_page': True,
-
     }
 
     return render(request, template, context)
