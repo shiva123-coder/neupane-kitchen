@@ -35,6 +35,7 @@ def add_review(request, item_id):
     context = {
         'form': form,
         'item': item,
+        'on_review_page': True,
     }
 
     return render(request, template, context)
@@ -49,7 +50,8 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Review edited')
+            messages.success(request, 'Review updated')
+            return redirect(reverse('item_info', args=(review.item.id,)))
         else:
             messages.error(request, 'Sorry! your review cant be edited now, \
                     Please try again.')
@@ -59,9 +61,11 @@ def edit_review(request, review_id):
     template = "reviews/edit_review.html"
 
     context = {
-        "form": form,
-        "review": review,
-        "item": review.item,
+        'form': form,
+        'review': review,
+        'item': review.item,
+        'on_review_page': True,
+
     }
 
     return render(request, template, context)
