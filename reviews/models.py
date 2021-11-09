@@ -18,7 +18,7 @@ class Review(models.Model):
         UserProfile, on_delete=models.SET_NULL, null=True)
     item = models.ForeignKey(Item, on_delete=models.SET_NULL, null=True)
     title = models.CharField(null=False, blank=True, max_length=50)
-    comment = models.TextField(null=False, blank=False)
+    comment = models.TextField(null=False, blank=False, max_length=300)
     rating = models.IntegerField(choices=RATE)
     date = models.DateTimeField(default=timezone.now, blank=True)
 
