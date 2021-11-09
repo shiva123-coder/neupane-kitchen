@@ -179,7 +179,7 @@ margin-top: -20px;
 
 /*-----item-info page---*/
 .item-image-info{
-    height: 30vh;
+    height: 50vh;
 }
 
 .item-image-info img{
@@ -188,6 +188,20 @@ margin-top: -20px;
     object-fit: cover;
 }
 
+/*------review section---*/
+.review-container{
+    padding-bottom: 120px;
+}
+
+.review-row{
+    margin-top: 150px;
+}
+
+.review-col{
+    border: 1px solid #ddc2c296;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
 /*------update and remove quantity option on basket--*/
 .update-qty,
 .remove-qty{
@@ -247,7 +261,6 @@ item details on order summary page ---*/
 #signup_form{
     margin-bottom: 150px;
 }
-
 
 /*-----footer---*/
 .footer-container{
