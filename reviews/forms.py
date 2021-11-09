@@ -22,7 +22,7 @@ class ReviewForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'title': 'Title',
-            'comment': 'comment',
+            'comment': 'Write your review here',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
