@@ -71,36 +71,32 @@
             </div>
         </div>
     </div> 
-
+    <hr>
     <!--review section-->
-    {% if request.user.is_authenticated %}
-    <div class="container">
-        <h3 class="text-uppercase text-center">Reviews</h3>
+    <div class="container-fluid review-container mt-2">
+        <h3 class="text-uppercase text-center">Reviews ({{ reviews.count }})</h3>
+        {% if request.user.is_authenticated %}
         <div class="text-center">
-            <a href="{% url 'add_review' item.id %}" class="btn btn-info">
+            <a href="{% url 'add_review' item.id %}" class="btn btn-info mt-3 mb-4">
                 Add a Review
             </a>
+            {% endif %}
         </div>
-    </div>
-    {% endif %}
-    <div class="container">
         <!--show existing reviews-->
         <div class="row">
             {% for rev in reviews %}
-            <div class="col">
-                <h3 class="mb-0">{{ rev.title }}</h3>
-                <p><small class="text-dark">rating: </small>{{ rev.rating }} / 5</p>
-                <p>"{{ rev.comment }}"</p>
-                <div class="row">
-                    <div class="col">
-                        <p class="text-center">{{ rev.reviewer }}</p>
-                        <p class="text-center"><small>{{ rev.date|date:"d M, Y" }}</small></p>
-                        <small class="text-center">
-                            <a class="text-primary" href="{% url 'edit_review' rev.id %}">Edit</a> |
-                            <a class="text-danger" href="{% url 'delete_review' rev.id  %}">Delete</a>
-                        </small>
-                    </div>
-                </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
+                <h3 class="mb-1">{{ rev.title }}</h3>
+                <h4><small class="text-dark">rating: </small>{{ rev.rating }} / 5</h4>
+                <h5>"{{ rev.comment }}"</h5>
+                <p class="text-capitalize">By: {{ rev.reviewer }}, on {{ rev.date|date:"d M, Y" }} </p>
+
+                {% if request.user.is_authenticated %}
+                <small class="text-center review-button">
+                    <a class="btn btn-warning btn-sm" href="{% url 'edit_review' rev.id %}">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'delete_review' rev.id  %}">Delete</a>
+                </small>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
