@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+{% block page_header %}>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+ 
+{% block content %}
+<div class="overlay"></div>
+<div class="container review-container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="review-heading">Reviews</h2>
+            <h4 class="review-heading-sub text-muted">Edit a Review</h4>
+        </div>
+    </div>
+    <!--render existing reviews from database and allow user to edit-->
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" action="{% url 'edit_review' review.id %}" class="form review-form"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <!--edit/cancel review buttons-->
+                <div class="text-right">
+                    <a href="{% url 'item_info' item.id %}" class="btn btn-danger">Cancel</a>
+                    <button class="btn btn-warning" type="submit">Edit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
