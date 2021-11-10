@@ -93,6 +93,13 @@
                                                         </a>
                                                     </p>
                                                     {% endif %}
+                                                    <!---edit/delete button for admin to edit/delet item from the page-->
+                                                    {% if request.user.is_superuser %}
+                                                        <small class="badges">
+                                                            <a href="{% url 'edit_item' item.id %}" class="badge badge-warning">Edit</a> | 
+                                                            <a class="badge badge-danger" href="{% url 'delete_item' item.id %}">Delete</a>
+                                                        </small>
+                                                   {% endif %}
                                                 </div>
                                             </div>
                                         </div>
