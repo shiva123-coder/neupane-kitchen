@@ -37,7 +37,11 @@
                             {% for ib in basket_items %}
                                 <tr>
                                     <td class="item-image">
+                                    {% if ib.item.image %}
                                         <img class="img-fluid" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                    {% else %}
+                                        <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ ib.item.name }}">
+                                    {% endif %}
                                     </td>
                                     <td class="item-name">
                                         <p class="item-name"><strong>{{ ib.item.name }}<strong</p>

@@ -9,6 +9,7 @@ from reviews.forms import ReviewForm
 from reviews.models import Review
 from .forms import ItemForm
 
+
 def all_menu(request):
     """
     A view to return the items.
@@ -91,11 +92,11 @@ def add_item(request):
         if form.is_valid():
             item = form.save()
             messages.success(request, 'Thank you!, Item added succesfully!')
-            return redirect(reverse('all_menu', args=[item.id]))
+            return redirect(reverse('all_menu'))
         else:
             messages.error(request,
-                           ('Sorry, Something went wrong. '
-                            'Please recheck the form and try again.'))
+                           ('Sorry! Something went wrong,\
+                                Please recheck the form and try again.'))
     else:
         form = ItemForm()
 

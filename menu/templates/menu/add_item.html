@@ -11,23 +11,26 @@
 {% endblock %}
 
 {% block content %}
-<div class="container checkout-container">
+<div class="container checkout-container admin-container">
     <div class="row text-center">
-        <div class="col">
-            <h1 class="item-title mt-3 mb-4">Welcome to Admin page</h1>
+        <div class="col text-center">
+            <h1 class="item-title mb-4">Welcome to Admin page</h1>
             <hr class="block-divider block-divider-checkout">
             <h3 class="item-title-sub">Add New Item</h3>
         </div>
     </div>
-
-
-
     <div class="row no-gutter text-center">
-        <div class="col-12 col-md-6 text-left">
+        <div class="col-12 col-md-6 offset-md-3 text-left">
             <form method="POST" action="{% url 'add_item' %}" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form | crispy }}
-                <div class="text-right">
+                {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                {% endfor %}
+                <div class="text-center">
                     <a class="btn btn-warning" href="{% url 'all_menu' %}">Cancel</a>
                     <button class="btn btn-success" type="submit">Add item</button>
                 </div>

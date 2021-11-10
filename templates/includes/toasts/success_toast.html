@@ -21,7 +21,10 @@
                 {% for ib in basket_items %}
                     <div class="row">
                         <div class="col-3 col-img-success mb-2 mt-2">
-                            <img class="w-100" src="{{ ib.item.image.url }}">
+                        {% if ib.item.image %}
+                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">>
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ ib.item.name }}">
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
