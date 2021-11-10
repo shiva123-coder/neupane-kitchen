@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_main %}
+<div class="overlay"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container checkout-container admin-container">
+    <div class="row text-center">
+        <div class="col text-center">
+            <h1 class="item-title mb-4">Welcome to Admin page</h1>
+            <hr class="block-divider block-divider-checkout">
+            <h3 class="item-title-sub">Edit Item on the page</h3>
+        </div>
+    </div>
+    <div class="row no-gutter text-center">
+        <div class="col-12 col-md-6 offset-md-3 text-left">
+            <form method="POST" action="{% url 'edit_item' item.id %}" class="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                {% endfor %}
+                <div class="text-center">
+                    <a class="btn btn-warning" href="{% url 'all_menu' %}">Cancel</a>
+                    <button class="btn btn-success" type="submit">Update item</button>
+                </div>
+            </form>
+        </div>  
+       
+    </div>
+</div>
+
+{% endblock %}
+
