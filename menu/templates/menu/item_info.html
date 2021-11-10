@@ -74,10 +74,14 @@
     <!--review section-->
     <div class="container-fluid review-container mt-2">
         <h3 class="text-uppercase text-center">Reviews ({{ reviews.count }})</h3>
+        {% if request.user.is_authenticated %}
         <div class="text-center">
             <a href="{% url 'add_review' item.id %}" class="btn btn-info mt-3 mb-4">
                 Add a Review
             </a>
+            {% else %}
+            <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to add/edit your review</p>
+        {% endif %}
         </div>
         <!--show existing reviews-->
         <div class="row">
@@ -87,6 +91,7 @@
                 <h4><small class="text-dark">rating: </small>{{ rev.rating }} / 5</h4>
                 <h5>"{{ rev.comment }}"</h5>
                 <p class="text-capitalize">By: {{ rev.reviewer }}, on {{ rev.date|date:"d M, Y" }} </p>
+
                 {% if request.user.is_authenticated %}
                 <small class="text-center review-button">
                     <a class="btn btn-warning btn-sm" href="{% url 'edit_review' rev.id %}">Edit</a>

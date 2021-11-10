@@ -11,29 +11,34 @@ from profiles.models import UserProfile
 def add_review(request, item_id):
     """view to add reviews"""
     item = get_object_or_404(Item, pk=item_id)
-  
-    if request.user.is_authenticated:
-        user = get_object_or_404(UserProfile, user=request.user)
-        if request.method == 'POST':
-            form = ReviewForm(request.POST)
-            if form.is_valid():
-                title = form.cleaned_data['title']
-                comment = form.cleaned_data['comment']
-                rating = form.cleaned_data['rating']
-                Review.objects.create(
-                    reviewer=user,
-                    item=get_object_or_404(Item, pk=item_id),
-                    title=title,
-                    rating=rating,
-                    comment=comment)
-                messages.success(request, 'Reviewd added.')
-                return redirect(reverse('item_info', args=[item_id]))
-            else:
-                messages.error(request, 'Sorry! we are unable to add your review. \
-                        Please check your input and try again')
-    else:
-        messages.info(request, 'You must be signed in to add review.')
-        return redirect(reverse('account_login'))
+    user = get_object_or_404(UserProfile, user=request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            comment = form.cleaned_data['comment']
+            rating = form.cleaned_data['rating']
+            Review.objects.create(
+                reviewer=user,
+                item=get_object_or_404(Item, pk=item_id),
+                title=title,
+                rating=rating,
+                comment=comment)
+            messages.success(request, 'Reviewd added.')
+            return redirect(reverse('item_info', args=[item_id]))
+        else:
+            messages.error(request, 'Sorry! we are unable to add your review. \
+                    Please check your input and try again')
+                    
+    form = ReviewForm()
+    template = 'reviews/add_review.html'
+    context = {
+        'form': form,
+        'item': item,
+        'on_review_page': True,
+    }
+
+    return render(request, template, context)
 
 
 def edit_review(request, review_id):
