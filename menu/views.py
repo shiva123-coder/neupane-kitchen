@@ -38,7 +38,7 @@ def all_menu(request):
                 items = items
             else:
                 items = items.order_by(sortkey)
-            
+           
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -107,3 +107,36 @@ def add_item(request):
     }
 
     return render(request, template, context)
+
+
+def edit_item(request, item_id):
+    """edit/update item and its info from the page"""
+    item = get_object_or_404(Item, pk=item_id)
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Item updated!')
+            return redirect(reverse('item_info', args=[item.id]))
+        else:
+            messages.error(request, 'Sorry, request failed, please re-check the form and try again')
+    else:
+        form = ItemForm(instance=item)
+        messages.info(request, f'You are editing {item.name}')
+
+    template = 'menu/edit_item.html'
+    context = {
+        'form': form,
+        'item': item,
+        'on_edit_page': True
+    }
+
+    return render(request, template, context)
+
+
+def delete_item(request, item_id):
+    """ Delete item from the page """
+    item = get_object_or_404(Item, pk=item_id)
+    item.delete()
+    messages.success(request, 'Item deleted!')
+    return redirect(reverse('all_menu'))
