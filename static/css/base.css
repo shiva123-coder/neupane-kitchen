@@ -275,6 +275,10 @@ item details on order summary page ---*/
     margin-bottom: 150px;
 }
 
+/*----admin page---*/
+.admin-container{
+    padding-bottom: 100px;
+}
 /*-----footer---*/
 .footer-container{
     background: linear-gradient(to right, #bf15158c, #0c5f1f);
