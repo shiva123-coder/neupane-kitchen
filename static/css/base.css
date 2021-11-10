@@ -69,6 +69,10 @@ margin-top: -20px;
 
 }
 
+/*--------form----*/
+.textarea.form-control {
+    resize: none;
+}
 
 /*--------------navbar-----*/
 .main-logo {
@@ -178,6 +182,10 @@ margin-top: -20px;
 }
 
 /*-----item-info page---*/
+.item-container{
+    padding-bottom: 100px;
+}
+
 .item-image-info{
     height: 50vh;
 }
@@ -296,6 +304,10 @@ item details on order summary page ---*/
     .item-container-sub{
         margin-bottom: 10%;
     }
+    .item-container{
+        padding-bottom: 80px;
+    }
+    
 }
 
 @media screen and (max-width:992px){
