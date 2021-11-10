@@ -7,7 +7,7 @@ from profiles.models import UserProfile
 
 from reviews.forms import ReviewForm
 from reviews.models import Review
-
+from .forms import ItemForm
 
 def all_menu(request):
     """
@@ -79,3 +79,30 @@ def item_info(request, item_id):
     }
 
     return render(request, 'menu/item_info.html', context)
+
+
+def add_item(request):
+    """
+    add item to the page
+    option only for superuser
+    """
+    if request.method == 'POST':
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save()
+            messages.success(request, 'Thank you!, Item added succesfully!')
+            return redirect(reverse('all_menu', args=[item.id]))
+        else:
+            messages.error(request,
+                           ('Sorry, Something went wrong. '
+                            'Please recheck the form and try again.'))
+    else:
+        form = ItemForm()
+
+    template = 'menu/add_item.html'
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
