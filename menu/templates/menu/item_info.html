@@ -74,12 +74,10 @@
     <!--review section-->
     <div class="container-fluid review-container mt-2">
         <h3 class="text-uppercase text-center">Reviews ({{ reviews.count }})</h3>
-        {% if request.user.is_authenticated %}
         <div class="text-center">
             <a href="{% url 'add_review' item.id %}" class="btn btn-info mt-3 mb-4">
                 Add a Review
             </a>
-            {% endif %}
         </div>
         <!--show existing reviews-->
         <div class="row">
