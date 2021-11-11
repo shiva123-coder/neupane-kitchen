@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Item, Category
 from profiles.models import UserProfile
@@ -82,11 +83,16 @@ def item_info(request, item_id):
     return render(request, 'menu/item_info.html', context)
 
 
+@login_required
 def add_item(request):
     """
     add item to the page
     option only for superuser
     """
+    if not request.user.is_superuser:
+        messages.warning(request, 'Access denied, only admin has access to this')
+        return redirect(reverse('all_menu'))
+
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
@@ -109,8 +115,13 @@ def add_item(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_item(request, item_id):
     """edit/update item and its info from the page"""
+    if not request.user.is_superuser:
+        messages.warning(request, 'Access denied, only admin has access to this')
+        return redirect(reverse('all_menu'))
+        
     item = get_object_or_404(Item, pk=item_id)
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES, instance=item)
@@ -134,8 +145,13 @@ def edit_item(request, item_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_item(request, item_id):
     """ Delete item from the page """
+    if not request.user.is_superuser:
+        messages.warning(request, 'Access denied, only admin has access to this')
+        return redirect(reverse('all_menu'))
+
     item = get_object_or_404(Item, pk=item_id)
     item.delete()
     messages.success(request, 'Item deleted!')
