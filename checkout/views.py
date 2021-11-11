@@ -115,11 +115,18 @@ def checkout(request):
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
+
+            name_of_user = profile.user_full_name
+            address_of_user = profile.user_address
+
+            print(f'profile name: {name_of_user}')
+            print(f'profile address: {address_of_user}')
+
             order_form = OrderForm(initial={
-                'full_name': profile.user.get_full_name(),
+                'full_name': profile.user_full_name,
                 'email': profile.user.email,
                 'contact_number': profile.user_contact_number,
-                'address': profile.user_address,
+                'street_address': profile.user_address,
                 'postal_code': profile.user_postal_code,
             })
         except UserProfile.DoesNotExist:

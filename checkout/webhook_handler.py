@@ -67,8 +67,9 @@ class StripeWebhookHandler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
+                profile.user_full_name = delivery_details.name
                 profile.user_contact_number = delivery_details.phone
-                profile.user_street_address = delivery_details.address.line1
+                profile.user_address = delivery_details.address.line1
                 profile.user_postal_code = delivery_details.address.postal_code
                 profile.save()
 
