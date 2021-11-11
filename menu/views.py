@@ -128,7 +128,7 @@ def edit_item(request, item_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Item updated!')
-            return redirect(reverse('item_info', args=[item.id]))
+            return redirect(reverse('all_menu'))
         else:
             messages.error(request, 'Sorry, request failed, please re-check the form and try again')
     else:
