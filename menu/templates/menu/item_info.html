@@ -17,11 +17,11 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container item-image-info my-4 ">
                         {% if item.image %}
-                            <a href="{{ item.image.url }}" target="_blank">
+                            <a href="{% url 'item_info' item.id %}" target="_blank">
                                 <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
                             </a>
                         {% else %}
-                            <a href="{{ item.image.url }}">
+                            <a href="{% url 'item_info' item.id %}">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                             </a>
                         {% endif %}
