@@ -21,7 +21,8 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request,
-                             "Thank you ! Your profile has been updated successfully")
+                             "Thank you ! Your profile has been\
+                                updated successfully")
         else:
             messages.error(request,
                            "Sorry! your details can't be save now,\

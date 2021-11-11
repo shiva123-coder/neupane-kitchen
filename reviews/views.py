@@ -24,6 +24,7 @@ def add_review(request, item_id):
                 title=title,
                 rating=rating,
                 comment=comment)
+
             messages.success(request, 'Reviewd added.')
             return redirect(reverse('item_info', args=[item_id]))
         else:
