@@ -72,6 +72,23 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
 - I was still having an issue while testing the checkout functionality, I created and submit complete one order after completing the payment form, as a result of this form was submitted and order confirmation displayed on page however there was still ***401 error shown*** while checking the events on stripe and also two of the input field (Original basket and Stripe payment intend id) had empty field while checking the order from admin. I had done some further research on 401 error and found the solution of this problem over slack community channel. Issue here was my workspace was not shared at the time of the test which means webhook was not connected to the site. I have then shared my workspace and re-check the functionality again by creating another order and this time all the fields were populated while checking on admin, also no issue on stripe and code 200 was shown.
 
+- Issue with form field on Profile app: after building the functionality to store and display user profile, I was testing the functionality on the live site and spotted 2 issues as below :
+  - Full name field and address field on the form appeared empty once info saved to profile and viewed from my profile option
+    - I checked for any possible error on speeling and assigned value on forms.py, models.py and views.py however couldnt see any issue. I then run some print statement on address and full name field and noticed nothing printed on terminal, I then check on my weebhook view and JS code. somehow I have noticed that I had naming mismatch on couple of field for address and fullname, also i was using incorrect get method to retrive the user's name so I had to correct all the address mismatch and update get method, after this process I saw that details were printed on terminal and upadted on profile accordingly.
+
+  - Placeholders text on the profile page form were not showing for address and contact number field.
+    - I have checked all the possible errors on my view and form and couldnt spot any issue, I have then did plenty of research on google/slack but no tips found. Thanks to tutor support team from CI who advised me to check the indentation, indeed It was just as very silly error on form.py as I intended the if block incorrectly which resulted this issue and resolved once indentation fixed.
+
+- Issue on admin profile while adding the item image: while admin adding the new item to the page I created an option to add the item without any image too however in this case default image should be displayed on the page indicating item has no image but this process failed while testing and default image did not showed on the item image. I built an if statement on all image tag to ensure default image to be only display if item has no image but for some reason this failed.
+  - First this for at this stage was to check django setting for MEDIA_URL variable as this variable was used in template fo no image, I then checked any possible issue on if/else block and across all the settings and view but couldnt see any issue. Upon checking on Slack/Google and stack overflow I have seen plenty of post related to this issue however none of the post helped me as I had all setting correct. Finally I decided to check on the Django documantation page and [I found the solution over there](https://docs.djangoproject.com/en/3.2/ref/settings/), I simply needed to add below to the context_processors of my django setting
+  ```
+  'django.template.context_processors.media',
+  ```
+
+
+
+
+ 
 
 ## Deployment
 - This project was initially set up on GitHub using the Code Institue Gitpod Template. I have used the Code Institute gitpod template and named my repository.
