@@ -30,14 +30,20 @@ def post_info(request, post_id):
             comment.blogger = request.user
             comment.save()
 
+            messages.success(request, 'Thank you,\
+                your comment has been added.')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(request, 'Sorry! something went wrong,\
+                 please try again')
             return redirect(reverse('post_info', args=[post_id]))
+
     else:
         form = CommentForm()
+        template = 'blog/post_info.html'
+        context = {
+            'post': post,
+            'form': form,
+        }
 
-    template = 'blog/post_info.html'
-    context = {
-        'post': post,
-        'form': form,
-    }
-
-    return render(request, template, context)
+        return render(request, template, context)
