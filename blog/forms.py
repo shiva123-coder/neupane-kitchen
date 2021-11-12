@@ -1,20 +1,21 @@
 from django import forms
-from .models import Post, Feedback
+from .models import Post, Comment
 
 
-class FeedbackForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = Feedback
-        fields = (
-            'feedback',
-        )
+        model = Comment
+        exclude = ('post', 'blogger')
+
+        fields = ['comment']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-            'title': 'Title',
-            'feedback': 'write your feedback here',
+            'comment': 'write your comment here',
         }
+
+        self.fields['comment'].widget.attrs['placeholder'] = 'write your comment here'
 
 
 class PostForm(forms.ModelForm):
@@ -30,5 +31,12 @@ class PostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields["title"].widget.attrs["placeholder"] = "Post Title"
-        self.fields["content"].widget.attrs["placeholder"] = "Post Content"
+        placeholders = {
+            'title': 'Title',
+            'content': 'Write post information here',
+            'image': 'image',
+        }
+
+        self.fields['title'].widget.attrs['placeholder'] = 'Post Title'
+        self.fields['content'].widget.attrs["placeholder"] = 'Post Content'
+        self.fields['image'].widget.attrs['placeholder'] = 'Image'
