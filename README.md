@@ -40,23 +40,23 @@ after
 ```
 
 - Issue with scrolling behavior as upon clicked on up-arrow icon, page did not scroll back to the top. I could not see any issue with my codes in HTML and jQuery and decided to checked on dev tool console and noticed there was an error which stating as below:
-```
-Uncaught TypeError: $(...).fadeOut is not a function
-Uncaught TypeError: $(...).fadeIn is not a function
-```
-  - I then did further research on the console error and fount that I needed to ***update the CDN for jQuery*** on my file, I was using ***slim version of jQuery*** which was causing an issue as only full version of jQuery support animation effects. I have then replaced slim version on jQuery CDN with full version which then solved my problem.
+   ```
+   Uncaught TypeError: $(...).fadeOut is not a function
+   Uncaught TypeError: $(...).fadeIn is not a function
+   ```
+   - I then did further research on the console error and found that I needed to ***update the CDN for jQuery*** on my file, I was using ***slim version of jQuery*** which was causing an issue as only full version of jQuery support animation effects. I have then replaced slim version on jQuery CDN with full version which then solved my problem.
 
 - After I create functionality to add and update items on the basket, I was testing the site on browser however update functionality didnt worked and quantity increased/decreased by 2 everytime on a single click to ***+*** and ***-*** button.
-  - I then checked all codes on my views and html file line by line and spotted 2 issue which causing above issue and everything worked as expected after I addressed those issues.
+   - I then checked all codes on my views and html file line by line and spotted 2 issue which causing above issue and everything worked as expected after I addressed those issues.
     - I was using script tag to load javascript files on both of the templates i.e , base template and basket template which causing an issue as this resulted action to perform twice and resulted quantity doubled everytime when  ***+*** or ***-*** button clicked, I have then removed script tag from basket template which then resolve this issue.
     - Update option on the basket page did not work upon clicking to it after modifying the item quantiy as quantity and price remained unchanged after modifying the quantity and clicking update option. This issue was causing by naming mismatch while creating views to update basket, input element inside the form had ***name=quantity*** however on views.py file I was using ***item_quantity*** while retriving name from the input element using request.get method this was causing an issue. I have updated this on my views according to the HTML template which fixed this issue
-    ```
-    before:
-    - quantity = int(request.POST.get("item_quantity"))
+        ```
+        before:
+        - quantity = int(request.POST.get("item_quantity"))
 
-    after:
-    - quantity = int(request.POST.get("quantity"))
-    ```
+        after:
+        - quantity = int(request.POST.get("quantity"))
+        ```
 
 - I have encountered similar issue while testing remove option as it didnt worked and upon checking on terminal there was an error shown, I have done some research on the error and fixed everything as per some information I found on stack overflow and google however same error was shown on terminal , then I reached out to CI tutor support team and as per tutor advised I needed to move the remove part of JS code to my html file which was on static file, which then solved issue. as per tutor advice, for some reason Django post security is not allowing the post request to be successful which is causing a 500 error, which is bit strange to me and I am looking to do further research and study on this. Furthermore I have then decided to move JS code for both update and remove functionality to the bottom of HTML file just to make it simple to understand.
 
@@ -81,9 +81,9 @@ Uncaught TypeError: $(...).fadeIn is not a function
 
 - Issue on admin profile while adding the item image: while admin adding the new item to the page I created an option to add the item without any image too however in this case default image should be displayed on the page indicating item has no image but this process failed while testing and default image did not showed on the item image. I built an if statement on all image tag to ensure default image to be only display if item has no image but for some reason this failed.
   - First this for at this stage was to check django setting for MEDIA_URL variable as this variable was used in template fo no image, I then checked any possible issue on if/else block and across all the settings and view but couldnt see any issue. Upon checking on Slack/Google and stack overflow I have seen plenty of post related to this issue however none of the post helped me as I had all setting correct. Finally I decided to check on the Django documantation page and [I found the solution over there](https://docs.djangoproject.com/en/3.2/ref/settings/), I simply needed to add below to the context_processors of my django setting
-  ```
-  'django.template.context_processors.media',
-  ```
+    ```
+    'django.template.context_processors.media',
+    ```
 
 
 
