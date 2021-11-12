@@ -3,13 +3,16 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container review-container">
+<div class="container blog-container">
     <div class="row blog-row">
-        <div class="col-12">
-            <hr>
-            <h2 class="font-weight-bold">Blog</h2>
-            <h4 class="text-muted">Add Here</h4>
-            <hr>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+               {% for post in posts %}
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.content }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+               {% endfor %}
+            </div>
         </div>
     </div>
     
