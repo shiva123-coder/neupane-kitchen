@@ -12,18 +12,18 @@ class Post(models.Model):
     class Meta:
         ordering = ['-date']
 
-
     def __str__(self):
         return self.title
 
 
-class Feedback(models.Model):
+class Comment(models.Model):
     post = models.ForeignKey(Post,
                              on_delete=models.CASCADE,
-                             related_name="feedback")
+                             related_name="comments")
+    
     blogger = models.ForeignKey(User, on_delete=models.CASCADE)
-    feedback = models.TextField()
+    comment = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Feedback on {self.post.title} by {self.blogger}"
+        return f"Comment on {self.post.title} by {self.blogger}"
