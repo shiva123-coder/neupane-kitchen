@@ -22,5 +22,8 @@ class Review(models.Model):
     rating = models.IntegerField(choices=RATE)
     date = models.DateTimeField(default=timezone.now, blank=True)
 
+    class Meta:
+        ordering = ['-date']
+
     def __str__(self):
         return f'{self.reviewer}'
