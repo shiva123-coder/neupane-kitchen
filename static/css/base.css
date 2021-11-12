@@ -166,6 +166,7 @@ margin-top: -20px;
 }
 
 
+/*--menu & blog page (for card and image)--*/
 .menu-card{
     max-height: 450px;
 }
@@ -178,10 +179,11 @@ margin-top: -20px;
     min-height: 320px;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
-/*-----item-info page---*/
+/*-----item-info page ---*/
+
 .item-container{
     padding-bottom: 100px;
 }

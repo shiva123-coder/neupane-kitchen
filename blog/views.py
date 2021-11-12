@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-from .forms import FeedbackForm, PostForm
-from .models import Post, Feedback
+from .forms import CommentForm, PostForm
+from .models import Post, Comment
 
 
 def blog(request):
@@ -18,3 +18,26 @@ def blog(request):
     return render(request, template, context)
 
 
+def post_info(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.blogger = request.user
+            comment.save()
+
+            return redirect(reverse('post_info', args=[post_id]))
+    else:
+        form = CommentForm()
+
+    template = 'blog/post_info.html'
+    context = {
+        'post': post,
+        'form': form,
+    }
+
+    return render(request, template, context)
