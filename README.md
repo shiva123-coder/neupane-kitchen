@@ -4,11 +4,10 @@ This is the last and final project milestone which aims to build and develop a f
 My main target is the food and beverage industry for my e-commerce web application.
 My web application features e-commerce functionality, payments using Stripe, user login, blog section, review section for registered customers / users, email confirmation and notification, CRUD functionality for admin to access database records, add, edit, delete items, such as menu, information and blog.
 This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details below.
-Card number : 4242 4242 4242 4242
-Any date
-Any CCV number
-Any 5 digits ZIP code
-
+ -Card number : 4242 4242 4242 4242
+ - Any date
+ - Any CCV number
+ - Any 5 digits ZIP code
 
 
 
@@ -37,7 +36,7 @@ User Stories
  - As a site user, I want to be able to have a personalized user profile so that I can recover the access to my account and use the website
  - As a site user, I want to be able to add reviews to the available menu so that I can provide useful feedback for other customers and help them to select the favorite menu
  - As a site user, I want to be able to add comments to the articles in the blog so that I can interact with other users or customers and share interesting information related to the articles
- - As a site user, I want to be able to search the menu by name and / or description so that I can find a specific food from the available menu which I like to order
+ - As a site user, I want to be able to search the menu by name and/or description so that I can find a specific food from the available menu which I like to order
  - As a site user, I want to be able to sort the list of available menu so that I can easily identify the menu by cheapest price, most expensive price  and alphabetical order
  - As a site user, I want to be able to sort a specific category from the available menu so that I can easily find the menu from specific category by cheapest price, most expensive price  and alphabetical order to suit my diet
 
@@ -48,8 +47,6 @@ User Stories
  - As an Admin user, I want to be able to add a new article to the blog so that I can allow users and customers to find and read new interesting article and information
  - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information
  - As an Admin user, I want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
-
-
 
 
 

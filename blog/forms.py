@@ -16,6 +16,7 @@ class CommentForm(forms.ModelForm):
         }
 
         self.fields['comment'].widget.attrs['placeholder'] = 'write your comment here'
+        self.fields['comment'].label = False
 
 
 class PostForm(forms.ModelForm):
@@ -38,5 +39,6 @@ class PostForm(forms.ModelForm):
         }
 
         self.fields['title'].widget.attrs['placeholder'] = 'Post Title'
-        self.fields['content'].widget.attrs["placeholder"] = 'Post Content'
+        self.fields['content'].widget.attrs['placeholder'] = 'Post Content'
         self.fields['image'].widget.attrs['placeholder'] = 'Image'
+        
