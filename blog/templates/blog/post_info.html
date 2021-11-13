@@ -2,39 +2,57 @@
 {% load static %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container blog-container">
-        
-        <div class="row blog-row">
-            <div class="col">
-                <h1 class="blog-title font-weight-bold">{{ post.title }}</h1>
-                <small>Posted at {{ post.date }}</small>
-                <p class="post-info">{{ post.content }}</p>
+<div class="overlay"></div>
+    <div class="container-fluid blog-container">
+        <div class="row mt-4 pt-4">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container item-image-info my-4 ">
+                        {% if post.image %}
+                            <a href="{% url 'post_info' post.id %}" target="_blank">
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.name }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'post_info' post.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ post.name }}">
+                            </a>
+                        {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item-info mb-4 mt-md-5">
+                    <p class="h4 font-weight-bold">{{ post.title }}</p>
+                    <p class="display-6">{{ post.content }}</p>
+                </div>
             </div>
         </div>
-        
-        
-        <div class="row review-row">
-            <div class="col">
-                <h2 class="comment-heading">Comments</h2>
-
-                {% for comment in post.comments.all %}
-                    <strong>{{ comment.blogger }}</strong> <small>{{ comment.date }}</small>
-                    {{ comment.comment }}        
-                {% empty %}
-                    <h4>No comments yet!</h4>
-                {% endfor %}
-            </div>
+        <!--all comments related to the post-->
+        <div class="row review-row comment-row">
+            {% for comment in post.comments.all %}
+                <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
+                        <h3><strong> by: {{ comment.blogger }}</strong> on <small>{{ comment.date }}</small></h3>
+                        <h5> {{ comment.comment }}  </h5>
+                    <!---restrict edit/delete option to authenticated users only-->
+                    {% if request.user.is_authenticated %}
+                        <small class="text-center review-button">
+                            <a class="btn btn-warning btn-sm" href="">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="">Delete</a>
+                        </small>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
-    
+        <!---section to add comment--->
         <div class="row">
-            <div class="col">
-                <h2 class="comment-heading comment-heading-sub">Add comment</h2>
-
-                <form action="{% url 'post_info' post.id %}" method="POST">
-                    {% csrf_token %}
-                    {{ form|crispy }}
+            <div class="col-10 offset-1 col-md-4 offset-md-4">
+                {% if request.user.is_authenticated %}
+                    <h2 class="comment-heading comment-heading-sub">Add comment</h2>
+                    <form action="{% url 'post_info' post.id %}" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
                     <button class="btn btn-success" type="submit">Add Review</button>
+                {% else %}
+                    <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to add/edit your review</p>
+                {% endif %}
                 </form>
             </div>
         </div>
