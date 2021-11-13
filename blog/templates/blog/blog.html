@@ -15,7 +15,6 @@
                     {% endif %}
                     <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{ post.content }}</p>
                     <a href="{% url 'post_info' post.id %}" class="btn btn-primary">Read More</a>
                     </div>
                 {% endfor %}
