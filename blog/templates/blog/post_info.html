@@ -25,21 +25,25 @@
                 </div>
             </div>
         </div>
+        <hr>
         <!--all comments related to the post-->
-        <div class="row review-row comment-row">
-            {% for comment in post.comments.all %}
-                <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
-                        <h3><strong> by: {{ comment.blogger }}</strong> on <small>{{ comment.date }}</small></h3>
-                        <h5> {{ comment.comment }}  </h5>
-                    <!---restrict edit/delete option to authenticated users only-->
-                    {% if request.user.is_authenticated %}
-                        <small class="text-center review-button">
-                            <a class="btn btn-warning btn-sm" href="">Edit</a>
-                            <a class="btn btn-danger btn-sm" href="">Delete</a>
-                        </small>
-                    {% endif %}
-                </div>
-            {% endfor %}
+        <div class="container">
+            <h3 class="comment-heading text-left mb-3 pb-3">Comments ({{ post.comments.count }})</h3>
+            <div class="row comment-row">
+                {% for comment in post.comments.all %}
+                    <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
+                            <h3><strong> by: {{ comment.blogger }}</strong> on <small>{{ comment.date }}</small></h3>
+                            <h5> {{ comment.comment }}  </h5>
+                        <!---restrict edit/delete option to authenticated users only-->
+                        {% if request.user.is_authenticated %}
+                            <small class="text-center review-button">
+                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                <a class="btn btn-danger btn-sm" href="">Delete</a>
+                            </small>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         <!---section to add comment--->
         <div class="row">
@@ -49,7 +53,7 @@
                     <form action="{% url 'post_info' post.id %}" method="POST">
                         {% csrf_token %}
                         {{ form|crispy }}
-                    <button class="btn btn-success" type="submit">Add Review</button>
+                    <button class="btn btn-success" type="submit">Post</button>
                 {% else %}
                     <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to add/edit your review</p>
                 {% endif %}
