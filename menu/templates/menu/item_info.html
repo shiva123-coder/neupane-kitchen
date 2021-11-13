@@ -98,8 +98,7 @@
                     <h4><small class="text-dark">rating: </small>{{ rev.rating }} / 5</h4>
                     <h5>"{{ rev.comment }}"</h5>
                     <p class="text-capitalize">By: {{ rev.reviewer }}, on {{ rev.date|date:"d M, Y" }} </p>
-
-                    {% if request.user.is_authenticated %}
+                    {% if user.is_authenticated and user.get_username == rev.reviewer.user.username %}
                     <small class="text-center review-button">
                         <a class="btn btn-warning btn-sm" href="{% url 'edit_review' rev.id %}">Edit</a>
                         <a class="btn btn-danger btn-sm" href="{% url 'delete_review' rev.id  %}">Delete</a>
