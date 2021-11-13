@@ -9,6 +9,7 @@ def blog(request):
     view to the blog page
     """
     posts = Post.objects.all()
+    form = CommentForm(request.POST)
     template = 'blog/blog.html'
 
     context = {
