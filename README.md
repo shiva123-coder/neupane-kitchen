@@ -1,39 +1,53 @@
+## AIM / PURPOSE
+
+This is the last and final project milestone which aims to build and develop a full-stack web application using Python, Django, HTML, CSS, JavaScript, MySQL or Postgres, Stripe and external APIs. The main goal is to create an e-commerce web application for business purposes.
+My main target is the food and beverage industry for my e-commerce web application.
+My web application features e-commerce functionality, payments using Stripe, user login, blog section, review section for registered customers / users, email confirmation and notification, CRUD functionality for admin to access database records, add, edit, delete items, such as menu, information and blog.
+This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details below.
+Card number : 4242 4242 4242 4242
+Any date
+Any CCV number
+Any 5 digits ZIP code
+
+
+
+
 ## User experiences
 
 User Stories
 #### Customer
- - As a Customer I want to be able to view all of the available menu so that I can identify the image, price, information, and review 
- - As a Customer I want to be able to view specific category from the available menu so that I can identify the image, price, information, and review which suitable for my diet
- - As a Customer I want to be able to easily identify promotions, such as discounts and / or special offers so that I can Take advantage of extra savings on the menu and reduction of my total spending
- - As a Customer I want to be able to view / access the interesting articles via blog so that I can to get useful knowledge and read interesting information about the food and traditions
- - As a Customer I want to be able to easily see / display what I have searched for and the number of results so that I can quickly decide whether the food I want is available in the menu for order
- - As a Customer I want to be able to select from the available the menu and manage / adjust the order quantity so that I can place the order into basket and easily make changes to my order before check-out
- - As a Customer I want to be able to easily check my basket so that I can ensure I do not accidentally select the wrong products and / or quantity
- - As a Customer I want to be able to easily check the total amount of my orde so that I can control and avoid unnecessary spending
- - As a Customer I want to be able to easily enter my payment information in a secured process so that I can check-out quickly with no hassle and protected payment
- - As a Customer I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the necessary information to place an order
- - As a Customer I want to be able to view an order confirmation after check-out so that I can verify that my order has been placed and confirmed with no mistake
- - As a Customer I want to be able to receive an email confirmation after check-out so that I can keep the confirmation of my order and able to track my transaction history as my records
+ - As a Customer, I want to be able to view all of the available menu so that I can identify the image, price, information, and review 
+ - As a Customer, I want to be able to view specific category from the available menu so that I can identify the image, price, information, and review which suitable for my diet
+ - As a Customer, I want to be able to easily identify promotions, such as discounts and / or special offers so that I can Take advantage of extra savings on the menu and reduction of my total spending
+ - As a Customer, I want to be able to view / access the interesting articles via blog so that I can to get useful knowledge and read interesting information about the food and traditions
+ - As a Customer, I want to be able to easily see / display what I have searched for and the number of results so that I can quickly decide whether the food I want is available in the menu for order
+ - As a Customer, I want to be able to select from the available the menu and manage / adjust the order quantity so that I can place the order into basket and easily make changes to my order before check-out
+ - As a Customer, I want to be able to easily check my basket so that I can ensure I do not accidentally select the wrong products and / or quantity
+ - As a Customer, I want to be able to easily check the total amount of my orde so that I can control and avoid unnecessary spending
+ - As a Customer, I want to be able to easily enter my payment information in a secured process so that I can check-out quickly with no hassle and protected payment
+ - As a Customer, I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the necessary information to place an order
+ - As a Customer, I want to be able to view an order confirmation after check-out so that I can verify that my order has been placed and confirmed with no mistake
+ - As a Customer, I want to be able to receive an email confirmation after check-out so that I can keep the confirmation of my order and able to track my transaction history as my records
 
 #### Site User
- - As a site user I want to easily register/create an account so that I can have my personal account and be able to view my profile and transactions
- - As a site user I want to Receive an email confirmation after registering so that I can verify my account and ensure the registration was successful
- - As a site user I want to Easily login and / or logout so that I can access my personal profile, information and history transaction, also secure my account when not in use
- - As a site user I want to be able to easily recover my password in case I forget about it so that I can Recover the access to my account and use the website
- - As a site user I want to be able to have a personalized user profile so that I can recover the access to my account and use the website
- - As a site user I want to be able to add reviews to the available menu so that I can provide useful feedback for other customers and help them to select the favorite menu
- - As a site user I want to be able to add comments to the articles in the blog so that I can interact with other users or customers and share interesting information related to the articles
- - As a site user I want to be able to search the menu by name and / or description so that I can find a specific food from the available menu which I like to order
- - As a site user I want to be able to sort the list of available menu so that I can easily identify the menu by cheapest price, most expensive price  and alphabetical order
- - As a site user I want to be able to sort a specific category from the available menu so that I can easily find the menu from specific category by cheapest price, most expensive price  and alphabetical order to suit my diet
+ - As a site user, I want to be able to easily register/create an account so that I can have my personal account and be able to view my profile and transactions
+ - As a site user, I want to be able to Receive an email confirmation after registering so that I can verify my account and ensure the registration was successful
+ - As a site user, I want to be able to Easily login and / or logout so that I can access my personal profile, information and history transaction, also secure my account when not in use
+ - As a site user, I want to be able to easily recover my password in case I forget about it so that I can Recover the access to my account and use the website
+ - As a site user, I want to be able to have a personalized user profile so that I can recover the access to my account and use the website
+ - As a site user, I want to be able to add reviews to the available menu so that I can provide useful feedback for other customers and help them to select the favorite menu
+ - As a site user, I want to be able to add comments to the articles in the blog so that I can interact with other users or customers and share interesting information related to the articles
+ - As a site user, I want to be able to search the menu by name and / or description so that I can find a specific food from the available menu which I like to order
+ - As a site user, I want to be able to sort the list of available menu so that I can easily identify the menu by cheapest price, most expensive price  and alphabetical order
+ - As a site user, I want to be able to sort a specific category from the available menu so that I can easily find the menu from specific category by cheapest price, most expensive price  and alphabetical order to suit my diet
 
 #### Admin User
- - As an Admin user I want to be able to add a new menu so that I can introduce new menu to my customers
- - As an Admin user I want to be able to edit/update a menu so that I can change the prices, descriptions, images and other information of the food
- - As an Admin user I want to be able to delete a menu so that I can remove menu which are no longer available
- - As an Admin user I want to be able to add a new article to the blog so that I can allow users and customers to find and read new interesting article and information
- - As an Admin user I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information
- - As an Admin user I want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
+ - As an Admin user, I want to be able to add a new menu so that I can introduce new menu to my customers
+ - As an Admin user, I want to be able to edit/update a menu so that I can change the prices, descriptions, images and other information of the food
+ - As an Admin user, I want to be able to delete a menu so that I can remove menu which are no longer available
+ - As an Admin user, I want to be able to add a new article to the blog so that I can allow users and customers to find and read new interesting article and information
+ - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information
+ - As an Admin user, I want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
 
 
 
@@ -268,6 +282,8 @@ User Stories
     ```
          
  - Project is now deployed to Heroku.
+
+
   
  #### Automatic Deploy to heroku.
  - Visit heroku website and select the app and click on Deploy option
@@ -298,6 +314,76 @@ User Stories
 
     ```
 
+
+### Making a Local Clone 
+
+   - Following setps required to clone the project to the local machine.
+     - Log in to GitHub and locate the GitHub Repository
+     - Under the repository name, click "Clone or download".
+     - To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+     - Open Git Bash on computer (Command Prompt can also be use instead of git bash) 
+     - Change the current working directory to the location where you want the cloned directory to be made.
+     - Type git clone, and then paste the URL you copied in Step 3.
+        
+        ```
+        git clone https://github.com/shiva123-coder/neupane-kitchen.git
+   
+        ```
+
+       - Press Enter. Your local clone will be created.
+          
+         ```
+         Cloning into 'neupane-kitchen'...
+         remote: Enumerating objects: 1061, done.
+         remote: Counting objects: 100% (1061/1061), done.
+         remote: Compressing objects: 100% (590/590), done.
+         Receiving objects:  91% (966/10remote: Total 1061 (delta 521), reused 832 (delta 296), pack-reused 0
+         Receiving objects:  92% (977/1061
+         Receiving objects: 100% (1061/1061), 12.89 MiB | 7.06 MiB/s, done.
+         Resolving deltas: 100% (521/521), done.
+
+         ```
+
+
+     - In order to use the full functionality of the site following environment variables must be set up
+
+       - SECRET_KEY = <secret key>.
+
+       - STRIPE_PUBLIC_KEY = <stripe public key>
+
+       - STRIPE_SECRET_KEY = <stripe secret key>
+
+       - STRIPE_WEBHOOK_SECRET = <stripe webhook secret>
+
+       - IN_DEVELOPMENT = True
+     
+     - Additionally project required to install all the required packages and dependecies which can be installed by using the following command
+      
+       ```
+       pip3 install -r requirements.txt
+
+       ```
+
+
+     - Last step is to migrate the models to set up database by using commands below
+       
+       ```
+        python3 manage.py makemigrations --dry-run    # check 
+        
+        python3 manage.py makemigrations              # make migrations
+
+        python3 manage.py migrate --plan              # check migration plan
+
+        python3 manage.py migrate                     # migrate
+
+       ```
+
+     - Now project can be run by using the command below
+
+       ```
+       python3 manage.py runserver
+
+       ```
 
 ## Amazon Web Service (AWS)
 
