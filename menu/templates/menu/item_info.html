@@ -90,9 +90,10 @@
         {% endif %}
         </div>
         <!--show existing reviews-->
-        <div class="row">
-            {% for rev in reviews %}
-                <div class="col-sm-12 col-md-6 col-lg-3  text-center p-2">
+        <div class="container">
+            <div class="row">
+                {% for rev in reviews %}
+                <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
                     <h3 class="mb-1">{{ rev.title }}</h3>
                     <h4><small class="text-dark">rating: </small>{{ rev.rating }} / 5</h4>
                     <h5>"{{ rev.comment }}"</h5>
@@ -105,7 +106,8 @@
                     </small>
                     {% endif %}
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
