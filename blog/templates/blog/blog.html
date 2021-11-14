@@ -49,8 +49,8 @@
                                 <!---edit/delete button for admin to edit/delet item from the page-->
                                 {% if request.user.is_superuser %}
                                     <small class="badges">
-                                        <a href="{% url 'post_info' post.id %}" class="badge badge-warning">Edit</a> 
-                                        <a class="badge badge-danger" href="">Delete</a>
+                                        <a href="{% url 'edit_post' post.id %}" class="badge badge-warning">Edit</a> 
+                                        <a class="badge badge-danger" href="{% url 'delete_post' post.id %}">Delete</a>
                                     </small>
                             {% endif %}
                             </div>
