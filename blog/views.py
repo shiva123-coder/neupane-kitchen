@@ -19,6 +19,9 @@ def blog(request):
 
 
 def post_info(request, post_id):
+    """
+    
+    """
     post = get_object_or_404(Post, pk=post_id)
 
     if request.method == 'POST':
@@ -47,3 +50,13 @@ def post_info(request, post_id):
         }
 
         return render(request, template, context)
+
+
+def delete_comment(request, post_id):
+    """
+    view to delete comment
+    """
+    comment = get_object_or_404(Comment, pk=post_id)
+    comment.delete()
+    messages.success(request, 'Your comment has now deleted')
+    return redirect(reverse('post_info', args=(comment.post.id,)))
