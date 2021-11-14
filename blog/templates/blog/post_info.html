@@ -34,16 +34,13 @@
                     <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
                             <h3><strong> by: {{ comment.blogger }}</strong> on <small>{{ comment.date }}</small></h3>
                             <h5> {{ comment.comment }}  </h5>
-                        <!---restrict edit/delete option to authenticated users only-->
-                        {% if request.user == comment.blogger %}
-                            <small class="text-center review-button">
-                                <a class="btn btn-warning btn-sm" href="">Edit</a>
-                                <a class="btn btn-danger btn-sm" href="">Delete</a>
-                            </small>
-                        {% elif request.user.is_superuser %}
-                            <small>
-                                <a class="btn btn-danger btn-sm" href="">Delete</a>
-                            </small>
+                        <!---restrict delete option to authenticated users and superuser only-->
+                        {% if user.is_authenticated %}
+                            {% if request.user == comment.blogger or request.user.is_superuser %}
+                                <small>
+                                    <a class="btn btn-danger btn-sm" href="{% url 'delete_comment' comment.id  %}">Delete</a>
+                                </small>
+                            {% endif %}
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -60,7 +57,7 @@
                             {{ form|crispy }}
                         <button class="btn btn-success" type="submit">Post</button>
                     {% else %}
-                        <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to add/edit your review</p>
+                        <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to comment on our blog</p>
                     {% endif %}
                     </form>
                 </div>
