@@ -39,7 +39,7 @@ def all_menu(request):
                 items = items
             else:
                 items = items.order_by(sortkey)
-           
+
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -52,8 +52,8 @@ def all_menu(request):
                 if not query:
                     messages.error(request, "No search criteria entered!")
                     return redirect(reverse('all_menu'))
-                
-                queries = Q(name__icontains=query) | Q(description__icontains=query)
+                queries = Q(name__icontains=query) | Q(
+                    description__icontains=query)
                 items = items.filter(queries)
 
     existing_sorting = f'{sort}_{direction}'
@@ -121,7 +121,7 @@ def edit_item(request, item_id):
     if not request.user.is_superuser:
         messages.warning(request, 'Access denied, only admin has access to this')
         return redirect(reverse('all_menu'))
-        
+      
     item = get_object_or_404(Item, pk=item_id)
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES, instance=item)
