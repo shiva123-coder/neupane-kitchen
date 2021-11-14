@@ -1,30 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-    <div class="overlay"></div>
-    <div class="container blog-container">
-        
+{% block header_main %}
+<div class="overlay"></div>
+    <div class="container header-container">
         <div class="row">
-            {% for post in posts %}
-            <div class="card" >
-                    {% if post.image %}
-                        <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.name }}">
-                    {% else %}
-                        <img class="card-img-top" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ post.name }}">
-                    {% endif %}
-                    <div class="card-body">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <a href="{% url 'post_info' post.id %}" class="btn btn-primary">Read More</a>
-                    </div>
-                {% endfor %}
-              </div>
-        </div>
-
-        <div class="row review-row">
-            {% if request.user.is_superuser %}
-                <a class="btn btn-success" href="{% url 'add_post' %}">Add New Post</a>
-            {% endif %}    
+            <div class="col">
+            </div>
         </div>
     </div>
+{% endblock %}
+
+{% block content %}
+<div class="container pb-4 pt-4">
+    <h1 class="text-center font-weight-bold">Culture and History of Nepalese food</h1>
+    <hr>
+    <div class="row">
+        <div class="col text-center">
+        {% if request.user.is_superuser %}
+            <a class="btn btn-success" href="{% url 'add_post' %}">Add New Post</a>
+        {% endif %}    
+        </div>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-sm-12 col-lg-6 p-4">
+                <div class="card menu-card">
+                    <div class="item-image">
+                        {% if post.image %}
+                            <a href="{% url 'post_info' post.id %}">
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}"alt="{{ post.title }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'post_info' post.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ post.title }}">
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                    </div>
+                    <div class="card-footer border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'post_info' post.id %}" class="btn btn-primary">Read More</a>
+                            </div>
+                            <div class="col">                                              
+                                <!---edit/delete button for admin to edit/delet item from the page-->
+                                {% if request.user.is_superuser %}
+                                    <small class="badges">
+                                        <a href="{% url 'post_info' post.id %}" class="badge badge-warning">Edit</a> 
+                                        <a class="badge badge-danger" href="">Delete</a>
+                                    </small>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
