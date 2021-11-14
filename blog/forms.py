@@ -23,22 +23,21 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = {
-            'title',
             'content',
             'image',
+            'title',
 
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        placeholders = {
-            'title': 'Title',
-            'content': 'Write post information here',
-            'image': 'image',
-        }
+        # placeholders = {
+        #     'title': 'Title',
+        #     'content': 'Write post information here',
+        #     'image': 'image',
+        # }
 
         self.fields['title'].widget.attrs['placeholder'] = 'Post Title'
         self.fields['content'].widget.attrs['placeholder'] = 'Post Content'
         self.fields['image'].widget.attrs['placeholder'] = 'Image'
-        

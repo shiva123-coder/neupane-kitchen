@@ -6,8 +6,8 @@
     <div class="container blog-container">
         
         <div class="row">
+            {% for post in posts %}
             <div class="card" >
-                {% for post in posts %}
                     {% if post.image %}
                         <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.name }}">
                     {% else %}
@@ -22,7 +22,9 @@
         </div>
 
         <div class="row review-row">
-        
+            {% if request.user.is_superuser %}
+                <a class="btn btn-success" href="{% url 'add_post' %}">Add New Post</a>
+            {% endif %}    
         </div>
     </div>
 {% endblock %}
