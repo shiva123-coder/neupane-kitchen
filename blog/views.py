@@ -94,3 +94,46 @@ def add_post(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_post(request, post_id):
+    """edit/update post and its info from the page"""
+    if not request.user.is_superuser:
+        messages.warning(request, 'Access denied, only admin has access to this')
+        return redirect(reverse('blog'))
+        
+    post = get_object_or_404(Post, pk=post_id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post Succesfully updated!')
+            return redirect(reverse('blog'))
+        else:
+            messages.error(request, 'Sorry, request failed, please re-check the form and try again')
+    else:
+        form = PostForm(instance=post)
+        messages.info(request, f'You are editing {post.title}')
+
+    template = 'blog/edit_post.html'
+    context = {
+        'form': form,
+        'post': post,
+        'on_edit_page': True
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_post(request, post_id):
+    """ Delete post from the page """
+    if not request.user.is_superuser:
+        messages.warning(request, 'Access denied, only admin has access to this')
+        return redirect(reverse('blog'))
+
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('blog'))
