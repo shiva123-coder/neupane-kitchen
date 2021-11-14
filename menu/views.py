@@ -90,13 +90,13 @@ def add_item(request):
     option only for superuser
     """
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this')
+        messages.warning(request, 'Access denied, only admin has access to this page')
         return redirect(reverse('all_menu'))
 
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES)
         if form.is_valid():
-            item = form.save()
+            form.save()
             messages.success(request, 'Thank you!, Item added succesfully!')
             return redirect(reverse('all_menu'))
         else:
