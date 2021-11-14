@@ -11,7 +11,7 @@
                     {% if post.image %}
                         <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.name }}">
                     {% else %}
-                        <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ post.name }}">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ post.name }}">
                     {% endif %}
                     <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
