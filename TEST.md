@@ -1,0 +1,2 @@
+- Linting errors shown on the few python files, however upon checking on PEP8 online tool, there was [no error shown](readme-files/images/pep8-error-1.jpg) and all python codes were PEP8 compliant.
+ - 

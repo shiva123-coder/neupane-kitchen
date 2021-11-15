@@ -13,7 +13,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     ]
-    
+
     reviewer = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True)
     item = models.ForeignKey(Item, on_delete=models.SET_NULL, null=True)

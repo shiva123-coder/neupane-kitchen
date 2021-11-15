@@ -15,7 +15,8 @@ class CommentForm(forms.ModelForm):
             'comment': 'write your comment here',
         }
 
-        self.fields['comment'].widget.attrs['placeholder'] = 'write your comment here'
+        self.fields['comment'].widget.attrs[
+            'placeholder'] = 'write your comment here'
         self.fields['comment'].label = False
 
 
@@ -31,12 +32,6 @@ class PostForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
-        # placeholders = {
-        #     'title': 'Title',
-        #     'content': 'Write post information here',
-        #     'image': 'image',
-        # }
 
         self.fields['title'].widget.attrs['placeholder'] = 'Post Title'
         self.fields['content'].widget.attrs['placeholder'] = 'Post Content'

@@ -21,7 +21,7 @@ def blog(request):
 
 def post_info(request, post_id):
     """
-   
+    view to add comment to the post
     """
     post = get_object_or_404(Post, pk=post_id)
 
@@ -71,14 +71,16 @@ def add_post(request):
     option only for superuser
     """
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this page')
+        messages.warning(request, 'Access denied, \
+             only admin has access to this page')
         return redirect(reverse('blog'))
 
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you!, Post added the blog succesfully!')
+            messages.success(request, 'Thank you!,\
+                 Post added the blog succesfully!')
             return redirect(reverse('blog'))
         else:
             messages.error(request,
@@ -100,9 +102,9 @@ def add_post(request):
 def edit_post(request, post_id):
     """edit/update post and its info from the page"""
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this')
+        messages.warning(request, 'Access denied,\
+             only admin has access to this')
         return redirect(reverse('blog'))
-        
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
@@ -111,7 +113,8 @@ def edit_post(request, post_id):
             messages.success(request, 'Post Succesfully updated!')
             return redirect(reverse('blog'))
         else:
-            messages.error(request, 'Sorry, request failed, please re-check the form and try again')
+            messages.error(request, 'Sorry, request failed,\
+                 please re-check the form and try again')
     else:
         form = PostForm(instance=post)
         messages.info(request, f'You are editing {post.title}')
@@ -130,7 +133,8 @@ def edit_post(request, post_id):
 def delete_post(request, post_id):
     """ Delete post from the page """
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this')
+        messages.warning(request, 'Access denied,\
+             only admin has access to this')
         return redirect(reverse('blog'))
 
     post = get_object_or_404(Post, pk=post_id)

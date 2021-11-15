@@ -22,7 +22,8 @@ class Category(models.Model):
 
 
 class Item(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True,
+                                 blank=True, on_delete=models.SET_NULL)
     tag = models.CharField(max_length=170, null=True, blank=True)
     name = models.CharField(max_length=170)
     description = models.TextField()

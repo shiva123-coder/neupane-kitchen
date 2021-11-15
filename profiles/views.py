@@ -38,7 +38,7 @@ def profile(request):
         'orders': orders,
         "on_profile_page": True,
     }
-        
+
     return render(request, template, context)
 
 
@@ -51,7 +51,7 @@ def order_history(request, order_number):
     messages.info(request, "This is your order from past")
 
     template = "profiles/order_history.html"
-    
+
     context = {
         "order": order,
         "past_order": True,

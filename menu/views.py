@@ -90,7 +90,8 @@ def add_item(request):
     option only for superuser
     """
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this page')
+        messages.warning(request, 'Access denied,\
+             only admin has access to this page')
         return redirect(reverse('all_menu'))
 
     if request.method == 'POST':
@@ -119,9 +120,10 @@ def add_item(request):
 def edit_item(request, item_id):
     """edit/update item and its info from the page"""
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this')
+        messages.warning(request, 'Access denied,\
+            only admin has access to this')
         return redirect(reverse('all_menu'))
-      
+
     item = get_object_or_404(Item, pk=item_id)
     if request.method == 'POST':
         form = ItemForm(request.POST, request.FILES, instance=item)
@@ -130,7 +132,8 @@ def edit_item(request, item_id):
             messages.success(request, 'Item updated!')
             return redirect(reverse('all_menu'))
         else:
-            messages.error(request, 'Sorry, request failed, please re-check the form and try again')
+            messages.error(request, 'Sorry,\
+            request failed, please re-check the form and try again')
     else:
         form = ItemForm(instance=item)
         messages.info(request, f'You are editing {item.name}')
@@ -149,7 +152,8 @@ def edit_item(request, item_id):
 def delete_item(request, item_id):
     """ Delete item from the page """
     if not request.user.is_superuser:
-        messages.warning(request, 'Access denied, only admin has access to this')
+        messages.warning(request, 'Access denied,\
+             only admin has access to this')
         return redirect(reverse('all_menu'))
 
     item = get_object_or_404(Item, pk=item_id)

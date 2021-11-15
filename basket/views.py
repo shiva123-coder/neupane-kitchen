@@ -13,7 +13,7 @@ def view_basket(request):
 def add_to_basket(request, item_id):
     """add quantity of selected item to the basket"""
     item = Item.objects.get(pk=item_id)
-    quantity = int(request.POST.get('quantity'))    
+    quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
 
     if item_id in list(basket.keys()):
@@ -48,7 +48,8 @@ def update_basket(request, item_id):
 
         return redirect(reverse('view_basket'))
     else:
-        messages.error(request, "Error!  you do not have permission perform this action.")
+        messages.error(request, "Error!\
+            you do not have permission perform this action.")
         return redirect(reverse('home'))
 
 
@@ -68,9 +69,11 @@ def remove_basket(request, item_id):
             return HttpResponse(status=200)
 
         except Exception as error:
-            messages.error(request, f"Sorry, We have encountered an error while removing item {error}")
+            messages.error(request, f"Sorry,\
+                We have encountered an error while removing item {error}")
             return HttpResponse(status=500)
 
     else:
-        messages.error(request, "Sorry! you are not authorised to perform this.")
+        messages.error(request, "Sorry! \
+            you are not authorised to perform this.")
         return redirect('home')

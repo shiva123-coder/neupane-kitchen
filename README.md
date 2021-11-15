@@ -90,7 +90,7 @@ User Stories
 
 - Database Diagram
 
-  - The database diagram of this project was created by using [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) diagram shows a list of the fields in each object and relationships between each object.
+  - The database diagram of this project was created by using [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) which shows a list of the fields in each object and relationships between each object.
 
     <div align="center"><img src="readme-files/images/database-diagram.jpg" alt="database diagram image"></div>
 

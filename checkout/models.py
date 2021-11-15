@@ -10,7 +10,8 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     """ create order model"""
-    order_number = models.CharField(max_length=32, null=False, editable=False)
+    order_number = models.CharField(max_length=32,
+                                    null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name="orders")
@@ -20,9 +21,13 @@ class Order(models.Model):
     street_address = models.CharField(max_length=60, null=False, blank=False)
     postal_code = models.CharField(max_length=10, null=True, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
-    sum_total = models.DecimalField(max_digits=8, decimal_places=2, null=False, default=0)
+    delivery_cost = models.DecimalField(max_digits=6,
+                                        decimal_places=2,
+                                        null=False, default=0)
+    total = models.DecimalField(max_digits=8,
+                                decimal_places=2, null=False, default=0)
+    sum_total = models.DecimalField(max_digits=8,
+                                    decimal_places=2, null=False, default=0)
     original_basket = models.TextField(null=False, blank=False, default="")
     stripe_payment_intent_id = models.CharField(max_length=254,
                                                 blank=False, default="")
@@ -46,9 +51,11 @@ class Order(models.Model):
         """
         Update sub-total each time a new line item is added
         """
-        self.total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.total < settings.FREE_DELIVERY_OUTSET:
-            self.delivery_cost = self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            self.delivery_cost = (
+                self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         else:
             self.delivery_cost = 0
         self.sum_total = self.total + self.delivery_cost
@@ -59,10 +66,16 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    item = models.ForeignKey(Item, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order, null=False, blank=False,
+        on_delete=models.CASCADE, related_name='lineitems')
+    item = models.ForeignKey(
+        Item, null=False, blank=False,
+        on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=6, decimal_places=2,
+        null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
         self.lineitem_total = self.item.price * self.quantity

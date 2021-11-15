@@ -30,7 +30,7 @@ def add_review(request, item_id):
         else:
             messages.error(request, 'Sorry! we are unable to add your review. \
                     Please check your input and try again')
-                    
+
     form = ReviewForm()
     template = 'reviews/add_review.html'
     context = {

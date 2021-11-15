@@ -56,7 +56,7 @@ def checkout(request):
     # stripe  variables
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    
+
     if request.method == 'POST':
         basket = request.session.get('basket', {})
 
@@ -100,7 +100,7 @@ def checkout(request):
         else:
             messages.error(request, "Theres was an error.\
                 Please re-check the information")
-  
+
     current_basket = basket_contents(request)
     total = current_basket['sum_total']
     stripe_total = round(total * 100)
@@ -132,7 +132,7 @@ def checkout(request):
         except UserProfile.DoesNotExist:
             order_form = OrderForm()
     else:
-        order_form = OrderForm()    
+        order_form = OrderForm()
 
     # warning message, if forgot to set stripe public key
     if not stripe_public_key:
@@ -174,7 +174,7 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-  
+
     messages.success(request, f'Thank you ! order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')

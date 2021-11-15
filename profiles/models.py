@@ -12,7 +12,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_full_name = models.CharField(max_length=40, null=False, blank=False)
     user_email = models.EmailField(max_length=50, null=False, blank=False)
-    user_contact_number = models.CharField(max_length=11, null=False, blank=False)
+    user_contact_number = models.CharField(max_length=11,
+                                           null=False, blank=False)
     user_address = models.CharField(max_length=60, null=False, blank=False)
     user_postal_code = models.CharField(max_length=10, null=True, blank=False)
 
@@ -22,7 +23,7 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_the_userprofile(sender, instance, created, **kwargs):
-    """ 
+    """
     create the user profile and
     save the updated profile if
     already existed
