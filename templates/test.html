@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <a class="navbar-brand text-white" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
+                    Home
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" aria-haspopup="true" aria-expanded="false">
+                    All Menus
+                </a>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="non-veg-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Non-veg Meal
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="non-veg-link">
+                    <a href="{% url 'all_menu' %}?category=chicken" class="dropdown-item">Chicken</a>
+                    <a href="{% url 'all_menu' %}?category=lamb" class="dropdown-item">Lamb</a>
+                    <a href="{% url 'all_menu' %}?category=fish" class="dropdown-item">Fish</a>
+                    <a href="{% url 'all_menu' %}?category=chicken,lamb,fish" class="dropdown-item">All</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="veg-meal-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Veg-Meal
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="veg-meal-link">
+                    <a href="{% url 'all_menu' %}?category=soup" class="dropdown-item">Soup</a>
+                    <a href="{% url 'all_menu' %}?category=curry" class="dropdown-item">Rice</a>
+                    <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Curry</a>
+                    <a href="{% url 'all_menu' %}?category=soup,rice,curry" class="dropdown-item">All</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Specials
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                    <a href="{% url 'all_menu' %}?category=infused_drinks" class="dropdown-item">Infused Drinks</a>
+                    <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
+                    <a href="{% url 'all_menu' %}?category=infused_drinks,new_taste" class="dropdown-item">All Specials</a>
+                </div>
+            </li>
+        </ul>
+        <form method="GET" action="{% url 'all_menu' %}" class="form-inline my-2 my-lg-0">
+            <div class="input-group">
+                <input class="form-control" type="text" name="q1" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="form-control btn btn-black border border-black search-btn" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
+</div>

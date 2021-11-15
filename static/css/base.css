@@ -75,10 +75,12 @@ margin-top: -20px;
 }
 
 /*--------------navbar-----*/
-.main-logo {
+/* .main-logo {
     width: fit-content;
-}
+} */
 
+
+/*--navbar --*/
 .bg-white{
     background: linear-gradient(to right, #bf15158c, #0c5f1f);
     background-color: #287271 !important;
@@ -223,13 +225,13 @@ margin-top: -20px;
     cursor: pointer;
 }
 
-.update-form{
+/* .update-form{
     margin-left: 20px;
 }
 
 .update-qty{
     margin-left: -20px;
-}
+} */
 
 /*----------toasts----*/
 .success-toast{
@@ -303,17 +305,44 @@ item details on order summary page ---*/
 
 /*------media----------*/
 
+@media screen and (min-width:992px){
+    /* .input-qty-group {
+        padding-left:100px;
+    } */
+
+}
+
 @media screen and (max-width:992px){
     body{
         background-position-x: unset;
     }
 
+    /* .update-form {
+        margin-right: 20px;
+    } */
+
     .main-text{
         left: 6%;
     }
+
+    /* .input-qty-group {
+        padding-left:50px;
+    } */
+
+}
+
+@media screen and (max-width:768px){
+    /* .navbar-brand{
+        padding-right: 60%;
+    } */
+
 }
 
 @media screen and (max-width:576px){
+    /* .navbar-brand{
+        padding-right: 50%;
+    } */
+
     .item-container-sub{
         margin-bottom: 10%;
     }
@@ -323,12 +352,8 @@ item details on order summary page ---*/
     
 }
 
-@media screen and (max-width:992px){
-    
+@media screen and (max-width:412px){
+    /* .navbar-brand{
+        display: none;
+    } */
 }
-
-@media screen and (max-width:992px){
-    
-}
-
-

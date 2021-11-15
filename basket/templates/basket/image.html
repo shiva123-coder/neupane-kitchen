@@ -1,0 +1,5 @@
+{% if ib.item.image %}
+    <img class="img-fluid" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+{% else %}
+    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ ib.item.name }}">
+{% endif %}
