@@ -9,8 +9,6 @@ This website is only for educational purposes, the Stripe functionality is set u
  - Any CCV number
  - Any 5 digits ZIP code
 
-
-
 ## User experiences
 
 User Stories
@@ -48,6 +46,91 @@ User Stories
  - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information
  - As an Admin user, I want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
 
+
+## Wireframes
+
+- As an initial process of the project design, wireframes were created for desktop, iPad and mobile screen sizes using [Balsamiq](https://balsamiq.com/).
+
+* Desktop Wireframe - [View](readme-files/wireframes/wireframe-ms4-desktop.pdf)
+
+* iPad Wireframe - [View](readme-files/wireframes/wireframe-ms4-ipad.pdf)
+
+* Mobile Wireframe - [View](readme-files/wireframes/wireframe-ms4-mobile.pdf)
+
+## Technologies Used
+
+### Languages Used
+- [Python](https://www.python.org/)
+    - I have used  **Python** as the back-end programming language for my project.
+- [HTML](en.wikipedia.org/wiki/HTML)
+    - I have used **HTML** as the main structural element of my project.
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - The project uses **CSS** to style and theme pages..
+ - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+    - The project uses **Javascript** to allow for DOM manipulation.
+
+### Frameworks, Libraries, extensions and Resources Used  
+- [Django](https://www.djangoproject.com/)
+  - Django was used to create the project.
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
+  - Django allauth was used to create the user sign-in function for the site.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - Django Crispy Forms were used to utilise the bootstrap form classes.
+- [Stripe](https://stripe.com/ie)
+  - Stripe has been used for the payment section of the site.
+- [Amazon AWS](https://aws.amazon.com/)
+  - Amazon AWS was used to store the static files and the images for the site.
+- [Quick Database Diagrams](https://www.quickdatabasediagrams.com/)
+  - quick database diagrams was used to make a diagram of database schema.
+- [JQuery](https://jquery.com)
+  - The project uses **jQuery** as the primary JavaScript functionality. This is both the standard jQuery that is built with Materialize components, and my custom jQuery used in my script.js file. 
+- [Bootstrap 4](https://getbootstrap.com/)
+  - Bootstrap 4 was used for its grid system and its form inputs and its helper classes to make page responsive with minimum code.       
+- [Google Fonts:](https://fonts.google.com/)
+    - Google font was used to embed the Dosis types font which are used on all pages throughout the website.
+- [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used to add icons for aesthetic and UX purposes.
+- [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the wireframes during the design process.
+- [Gitpod](https://www.gitpod.io/)
+    - Gitpod was used as IDE for local development.
+- [GitHub](https://github.com/)
+    - GitHub was used to store the projects code after being pushed from Gitpod.
+- [Git](https://git-scm.com/)
+  - Git was used as aversion control system to regularly and add commit changes made to project and pushing them to GitHub
+- [Gunicorn](https://gunicorn.org/)
+  - Gunicorn was used for deploying the project to Heroku.
+- [Heroku](https://id.heroku.com/login)
+  - Heroku was used as the hosting platform to deploy my project.
+- [HTML Formatter](https://htmlformatter.com/) 
+    - HTML formatter was used to format HTML code
+- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln/related) 
+    - Unicorn Revealer tool was used to identify any overflow issues
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+    - Lighthouse was used to test the performance and loading speed of the website
+- [Am I responsive](http://ami.responsivedesign.is/)
+  - Am I responsive was used to taking screenshots of the page at different screen sizes.
+- [W3.CSS](https://www.w3schools.com/w3css/defaulT.asp) 
+    - General resources.
+- [Stack Overflow](https://pt.stackoverflow.com/)
+    - General resources.
+- [Youtube](https://www.youtube.com/) 
+   - General resources.
+- Code Institute SLACK Community
+   -General resources
+
+## Code Validation
+
+- [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
+  - W3C Markup Validation was used throughout the process to validate HTML codes
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
+  - W3C CSS Validation was used to vaildate CSS codes
+- [JSHINT](https://jshint.com/) 
+  - JSHINT was used for JavaScript code warning & error check.
+- [PEP8 online](http://pep8online.com/)
+  - PEP8 online tool was used to ensure all python codes on projects are PEP8 compliant.
+- [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
+  - Python tutor was used to visualize the python code and identify any error.
 
 
 ## Issues and Resolutions
