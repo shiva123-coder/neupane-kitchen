@@ -57,6 +57,43 @@ User Stories
 
 * Mobile Wireframe - [View](readme-files/wireframes/wireframe-ms4-mobile.pdf)
 
+
+### Database models and schema
+#### Models
+- Profiles
+  - User
+    - From Django Allauth containing the username, email, and password.
+  - Userprofile
+    - Model containing the user's details for delivery and future order.
+
+- Menu
+  - Items
+    - Contains the item information of each items on the page
+  - Categories
+    - The categories for the each of the items.
+
+- Checkout
+  - Order
+    - Information on customer's details and order placed by customers.
+  - Orderline item
+    - Information on the customer order, quantity and the total.
+
+- Reviews
+  - Review
+    - details of reviewer, review title, description and date of review
+
+- Blog
+  - Post
+    - the blog post and details of blogger and post title.
+  - Comments
+    - Comments added by users on each post 
+
+- Database Diagram
+
+  - The database diagram of this project was created by using [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) diagram shows a list of the fields in each object and relationships between each object.
+
+    <div align="center"><img src="readme-files/images/database-diagram.jpg" alt="database diagram image"></div>
+
 ## Technologies Used
 
 ### Languages Used
