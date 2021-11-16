@@ -302,6 +302,13 @@ item details on order summary page ---*/
     .main-text{
         left: 6%;
     }
+
+    .navbar-toggler {
+        position: fixed;
+        top: 1%;
+        left: 1%;
+    }
+
 }
 
 @media screen and (max-width:768px){
