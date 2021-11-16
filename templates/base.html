@@ -37,6 +37,7 @@
         <title>Neupane Kitchen {% block extra_title %}{% endblock %}</title>
   </head>
     <body>
+        <div id="scroll-icon"><i class="far fa-arrow-alt-circle-up"></i></div>
         <header class="container-fluid fixed-top">
             <div class="my-auto d-sm-block d-lg-none">
                 {% include 'includes/side_nav_main.html' %}
@@ -129,7 +130,7 @@
                     
                 </nav>
             </div>
-        </header>
+        </header>        
         <!---django messages for success, warning, error and info-->
         {% if messages %}
             <div class="message-container">
