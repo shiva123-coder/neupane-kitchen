@@ -208,7 +208,7 @@ header {
 }
 
 .review-row{
-    margin-top: 150px;
+    padding-top: 150px;
 }
 
 .review-col{
@@ -279,11 +279,14 @@ item details on order summary page ---*/
 }
 
 /*-----blog page---*/
-.blog-container{
-    padding-top: 280px;
+.post-container{
+    padding-top: 240px;
     padding-bottom: 120px;
 }
 
+.blog-container-main{
+    padding-bottom: 80px;
+}
 /*-----footer---*/
 .footer-container{
     background: linear-gradient(to right, #bf15158c, #0c5f1f);
@@ -308,7 +311,12 @@ item details on order summary page ---*/
     .message-container{
         top: 20%;
     }
+
+    .review-row{
+        padding-top: 250px;
+    }
 }
+
 
 @media screen and (max-width:992px){
     body{
@@ -342,6 +350,10 @@ item details on order summary page ---*/
         padding-bottom: 20px;
     }
 
+    .post-container {
+        padding-top: 100px;
+    }
+
 }
 
 @media screen and (max-width:768px){
@@ -355,7 +367,7 @@ item details on order summary page ---*/
     .item-container-sub{
         padding-bottom: 30px;
     }
-    
+
     .navbar{
         margin-top:-25px;
     }
@@ -390,6 +402,10 @@ item details on order summary page ---*/
     .item-container-sub,
     #scroll-icon {
         padding-bottom: 80px;
+    }
+
+    .blog-container-main{
+        padding-bottom: 110px;
     }
 }
 
@@ -426,5 +442,9 @@ item details on order summary page ---*/
 
     .btn-add{
         padding-bottom: 30px;
+    }
+
+    .review-row{
+        padding-top: 250px;
     }
 }
