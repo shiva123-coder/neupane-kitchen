@@ -1,18 +1,3 @@
-// scroll icon only visible once screen is scroll down to over 100px
-$(window).scroll(function(){
-    var screenHeight = $(window).scrollTop();
-    if (screenHeight > 100) {
-        $('#scroll-icon').fadeIn();
-    } else {
-        $('#scroll-icon').fadeOut(2000);
-    }
-});
-
-// once click on scroll icon, page scroll back to the top
-$('#scroll-icon').click(function(e){
-    window.scrollTo(0,0)
-});
-
 
 // sort option from the select box
 $('#sort-selection').change(function() {
