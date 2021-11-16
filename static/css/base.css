@@ -203,8 +203,8 @@ header {
 }
 
 /*------review section---*/
-.review-container{
-    padding-bottom: 120px;
+.existing-review-container{
+    padding-bottom: 80px;
 }
 
 .review-row{
@@ -351,7 +351,7 @@ item details on order summary page ---*/
     }
 
     .post-container {
-        padding-top: 100px;
+        padding-top: 130px;
     }
 
 }
@@ -396,6 +396,14 @@ item details on order summary page ---*/
     .login-form{
         padding-bottom: 100px;
     }
+
+    .post-container {
+        padding-top: 100px;
+    }
+
+    .existing-review-container{
+        padding-bottom: 120px;
+    }
 }
 
 @media screen and (max-width:315px){
@@ -429,9 +437,13 @@ item details on order summary page ---*/
     .btn-add{
         padding-bottom: 30px;
     }
+
+    .post-container {
+        padding-top: 210px;
+    }
 }
 
-@media screen and (max-width: 197px){
+@media screen and (max-width: 198px){
     .signup-heading {
         padding-top: 220px;
     }
@@ -446,5 +458,9 @@ item details on order summary page ---*/
 
     .review-row{
         padding-top: 250px;
+    }
+
+    .post-container {
+        padding-top: 210px;
     }
 }
