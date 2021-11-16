@@ -74,6 +74,10 @@ margin-top: -20px;
     resize: none;
 }
 
+input .form-control{
+    width: min-content;
+} 
+
 /*--navbar --*/
 .bg-white{
     background: linear-gradient(to right, #bf15158c, #0c5f1f);
@@ -254,6 +258,11 @@ item details on order summary page ---*/
     overflow-x: hidden;
     overflow-y: auto;
   }
+
+/*-----basket summary page ---*/
+.basket-container{
+    padding-bottom: 120px;
+}
 
 /*-----checkout page---*/
 .checkout-container{
