@@ -1,17 +1,18 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
+        <!---home--->
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
                 Home
             </a>
         </li>
-
+        <!---all menu--->
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" aria-haspopup="true" aria-expanded="false">
                 All Menus
             </a>
         </li>
-
+        <!---non-veg meal option--->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="non-veg-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Non-veg Meal
@@ -23,7 +24,7 @@
                 <a href="{% url 'all_menu' %}?category=chicken,lamb,fish" class="dropdown-item">All</a>
             </div>
         </li>
-
+        <!---veg meal option--->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="veg-meal-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Veg-Meal
@@ -35,7 +36,7 @@
                 <a href="{% url 'all_menu' %}?category=soup,rice,veg_curry" class="dropdown-item">All</a>
             </div>
         </li>
-
+        <!---special item options-->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Specials
@@ -46,7 +47,7 @@
                 <a href="{% url 'all_menu' %}?category=infused_drinks,new_taste" class="dropdown-item">All Specials</a>
             </div>
         </li>
-
+        <!----search field-->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white text-right"  href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {% include 'includes/side_nav_search.html' %}

@@ -24,7 +24,7 @@
                         {% if ib.item.image %}
                             <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">>
                         {% else %}
-                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ ib.item.name }}">
+                            <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ ib.item.name }}">
                         {% endif %}
                         </div>
                         <div class="col-9">
@@ -35,17 +35,17 @@
                     </div>
                 {% endfor %}
             </div>
-        
-        <div class="row">
-            <div class="col">
-                <a href="{% url 'view_basket' %}" class="btn btn-success">View
-                    basket
-                </a>
-                <a href="{% url 'checkout' %}" class="btn btn-info">
-                    Checkout <span><i class="fas fa-lock"></i></span>
-                </a>
+            
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'view_basket' %}" class="btn btn-success">View
+                        basket
+                    </a>
+                    <a href="{% url 'checkout' %}" class="btn btn-info">
+                        Checkout <span><i class="fas fa-lock"></i></span>
+                    </a>
+                </div>
             </div>
-        </div>
         {% endif %}
     </div>
 </div>

@@ -1,6 +1,6 @@
-
 <div class="col-12 col-lg-4 my-auto">
     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+        <!-----account-->
         <li class="list-inline-item">
             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
@@ -21,7 +21,7 @@
                 {% endif %}
             </div>
         </li>
-      
+        <!-----basket-->
         <li class="list-inline-item">
             <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
                 <div class="text-center">
@@ -36,7 +36,7 @@
                 </div>
             </a>
         </li>
-
+        <!------blog-->
         <li class="list-inline-item">
             <a class="text-white nav-link" href="{% url 'blog' %}">
                 <div class="text-center">
@@ -45,6 +45,5 @@
                 </div>
             </a>
         </li>
-
     </ul>
 </div>
