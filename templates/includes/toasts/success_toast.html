@@ -15,7 +15,7 @@
                 <hr>
             </div>
         </div>
-        {% if sum_total and not on_review_page and not on_profile_page and not on_edit_page %}
+        {% if sum_total and not on_review_page or not on_profile_page or not on_edit_page %}
             <p class="display-6">Your basket has {{ item_count }} items</p>
             <div class="item-summary-container">
                 {% for ib in basket_items %}

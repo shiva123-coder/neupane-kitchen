@@ -304,6 +304,10 @@ item details on order summary page ---*/
         padding-top: 5px;
         font-style: italic;
     }
+
+    .message-container{
+        top: 20%;
+    }
 }
 
 @media screen and (max-width:992px){
@@ -327,6 +331,15 @@ item details on order summary page ---*/
 
     .header-container{
         padding-top: 90px;
+    }
+
+    .signup-heading{
+        padding-top: 200px;
+    }
+
+    .btn-add{
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
 }
@@ -359,6 +372,18 @@ item details on order summary page ---*/
     #scroll-icon {
         padding-bottom: 80px;
     }
+
+    .signup-heading{
+        padding-top: 100px;
+    }
+
+    .login-heading{
+        padding-top: 180px;
+    }
+
+    .login-form{
+        padding-bottom: 100px;
+    }
 }
 
 @media screen and (max-width:315px){
@@ -371,5 +396,35 @@ item details on order summary page ---*/
 @media screen and (max-width:290px){
     .header-container{
         padding-top: 180px;
+    }
+
+    .login-heading{
+        padding-top: 180px;
+    }
+
+    .login-form{
+        padding-bottom: 150px;
+    }
+
+    .signup-heading{
+        padding-top: 150px;
+    }
+
+    .btn-add{
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 197px){
+    .signup-heading {
+        padding-top: 220px;
+    }
+
+    .login-heading{
+        padding-top: 220px;
+    }
+
+    .btn-add{
+        padding-bottom: 30px;
     }
 }
