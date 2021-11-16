@@ -98,6 +98,10 @@ header {
     background: white;
 }
 
+.search-item{
+    margin-top: -30px;
+}
+
 .text-black{
     color: #000;
     font-weight: bold;
@@ -106,7 +110,7 @@ header {
 
 /*--navbar icon (mobile device only)--*/
 .navbar-light .navbar-toggler-icon{
-    background-color: var(--white);
+    background-color: #724141;
 }
 
 /*--------------home page-----*/
@@ -303,6 +307,10 @@ item details on order summary page ---*/
         left: 6%;
     }
 
+    .navbar{
+        margin-top:-40px;
+    }
+
     .navbar-toggler {
         position: fixed;
         top: 1%;
@@ -312,17 +320,25 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width:768px){
+    .text-nav{
+        font-size: medium;
+    }
     
-
 }
 
 @media screen and (max-width:576px){
-   
-
     .item-container-sub{
         padding-bottom: 30px;
     }
     
+    .navbar{
+        margin-top:-25px;
+    }
+
+    .main-text{
+        position: fixed;
+        top: 40%;
+    }
 }
 
 @media screen and (max-width:412px){
