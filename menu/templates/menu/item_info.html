@@ -87,7 +87,8 @@
                 Add a Review
             </a>
             {% else %}
-            <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to add/edit your review</p>
+            <!---url to redirect user to the same page after login, code taken from stackoverflow -->
+            <p class="login-text text-center"><a href="{% url 'account_login' %}?next={{request.path}}">Login </a>to the page to add/edit your review</p>
         {% endif %}
         </div>
         <!--show existing reviews-->

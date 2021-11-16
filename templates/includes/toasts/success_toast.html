@@ -15,7 +15,7 @@
                 <hr>
             </div>
         </div>
-        {% if sum_total and not on_review_page or not on_profile_page or not on_edit_page %}
+        {% if sum_total and not on_profile_page %}
             <p class="display-6">Your basket has {{ item_count }} items</p>
             <div class="item-summary-container">
                 {% for ib in basket_items %}
@@ -35,7 +35,6 @@
                     </div>
                 {% endfor %}
             </div>
-            
             <div class="row">
                 <div class="col">
                     <a href="{% url 'view_basket' %}" class="btn btn-success">View
@@ -46,6 +45,6 @@
                     </a>
                 </div>
             </div>
-        {% endif %}
+        {% endif %}        
     </div>
 </div>

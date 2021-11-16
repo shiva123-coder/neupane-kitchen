@@ -3,9 +3,10 @@
 
 {% block content %}
 <div class="overlay"></div>
-    <div class="container-fluid blog-container">
-        <div class="row mt-4 pt-4">
+    <div class="container-fluid post-container">
+        <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <p class="h4 font-weight-bold d-sm-block d-md-none">{{ post.title }}</p>
                 <div class="image-container item-image-info my-4 ">
                         {% if post.image %}
                             <a href="{% url 'post_info' post.id %}" target="_blank">
@@ -20,7 +21,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="item-info mb-4 mt-md-5">
-                    <p class="h4 font-weight-bold">{{ post.title }}</p>
+                    <p class="h4 font-weight-bold d-none d-md-block">{{ post.title }}</p>
                     <p class="display-6">{{ post.content }}</p>
                 </div>
             </div>
@@ -57,7 +58,8 @@
                             {{ form|crispy }}
                         <button class="btn btn-success" type="submit">Post</button>
                     {% else %}
-                        <p class="login-text text-center"><a href="{% url 'account_login' %}">Login </a>to the page to comment on our blog</p>
+                        <!---url to redirect user to the same page after login, code taken from stackoverflow -->
+                        <p class="login-text text-center"><a href="{% url 'account_login' %}?next={{request.path}}">Login </a>to the page to comment on our blog</p>
                     {% endif %}
                     </form>
                 </div>

@@ -5,12 +5,12 @@
 <div class="overlay"></div>
 <div class="container review-container">
     <div class="row">
-        <div class="col-12">
+        <!-- <div class="col-12">
             <hr>
             <h2 class="font-weight-bold">Reviews</h2>
             <h4 class="text-muted">Add a Review</h4>
             <hr>
-        </div>
+        </div> -->
     </div>
     
     <div class="row review-row">
@@ -21,7 +21,7 @@
                 enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div class="text-right">
+                <div class="text-left btn-add">
                     <a href="{% url 'item_info' item.id %}" class="btn btn-warning">Cancel</a>
                     <button class="btn btn-success" type="submit">Add Review</button>
                 </div>
