@@ -44,7 +44,7 @@
             <!---delivery promo message-->
             <div id="flash-banner"class="row text-center mx-auto d-none d-sm-block">
                 <div class="col text-white align-item-center">
-                    <h4 class="flash-notice my-1 text-center text-nav">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
+                    <h4 class="flash-notice my-1 text-center text-nav blinker">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
                 </div>            
             </div>
             <!--navbar brand-->
@@ -94,12 +94,12 @@
                         </li>
                         <!---basket-->
                         <li class="list-inline-item">
-                            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
+                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket text-nav"></i></div>
                                     <p class="my-0 text-nav">
                                         {% if sum_total %}
-                                            £{{ sum_total|floatformat:2 }}
+                                            £ {{ sum_total|floatformat:2 }}
                                         {% else %}
                                             £0.00
                                         {% endif %}

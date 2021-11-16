@@ -44,15 +44,15 @@ margin-top: -20px;
 /*---blinking effect on delivery notice--*/
 /*--code taken from stackOverflow and modified--(start)--*/
 .blinker{
-    color: aqua;
+    color: var(--white);
 }
 
 .blinker{
-    animation: blinker 1s linear infinite;
+    animation: blinker 2s linear infinite;
   }
   
   @keyframes blinker {
-    60% {
+    10% {
       opacity: 0;
     }
   }
@@ -175,11 +175,16 @@ header {
 }
 
 .item-image img{
-    /* min-height: 320px; */
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
+.item-heading{
+    text-decoration:wavy;
+}
+
+
 
 /*-----item-info page ---*/
 .item-container-sub{
@@ -295,7 +300,10 @@ item details on order summary page ---*/
 /*------media----------*/
 
 @media screen and (min-width:992px){
-
+    .flash-notice{
+        padding-top: 5px;
+        font-style: italic;
+    }
 }
 
 @media screen and (max-width:992px){
@@ -315,6 +323,10 @@ item details on order summary page ---*/
         position: fixed;
         top: 1%;
         left: 1%;
+    }
+
+    .header-container{
+        padding-top: 90px;
     }
 
 }
@@ -339,8 +351,25 @@ item details on order summary page ---*/
         position: fixed;
         top: 40%;
     }
+
+    .header-container{
+        padding-top: 50px;
+    }
+
+    #scroll-icon {
+        padding-bottom: 80px;
+    }
 }
 
-@media screen and (max-width:412px){
-    
+@media screen and (max-width:315px){
+    .item-container-sub,
+    #scroll-icon {
+        padding-bottom: 80px;
+    }
+}
+
+@media screen and (max-width:290px){
+    .header-container{
+        padding-top: 180px;
+    }
 }
