@@ -32,7 +32,7 @@ card.addEventListener('change', (event) => {
             <i class="fas fa-exclamation" aria-hidden="true"></i>
             ${event.error.message}</p>`;
             errorMsg.innerHTML = html;
-    } else {
+    }else {
         errorMsg.textContent = "";
     }
 });
@@ -52,7 +52,7 @@ form.addEventListener('submit', (event) => {
     let btnSave = document.getElementById('save-info');
     let saveInfo = false;
     if (btnSave){
-        saveInfo = Boolean($('btnSave').attr('checked'))
+        saveInfo = Boolean($('btnSave').attr('checked'));
     }
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -107,5 +107,5 @@ form.addEventListener('submit', (event) => {
     }).fail(function(){
         // reload the page
         location.reload();
-    })
+    });
 });

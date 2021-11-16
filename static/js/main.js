@@ -8,10 +8,10 @@ $('.increase-qty').click(function(e) {
 // + button disable once input value reach 50
     if( newValue > 49 ){
         $('increase-qty').disabled = true;
-     }
-     else {
+        }
+    else {
         $(newInput).val(newValue + 1);
-     }
+    }
 });
 
 // - button to decrease the input quantity
@@ -22,8 +22,8 @@ $('.decrease-qty').click(function(e) {
 // + button disable to restric user from iputting the quantity less than 1
     if( newValue < 2 ){
         $('decrease-qty').disabled = true;
-     }
-     else {
+        }
+    else {
         $(newInput).val(newValue - 1);
-     }
+    }
 });
