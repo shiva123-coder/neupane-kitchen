@@ -39,6 +39,12 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
+        <div id="flash-banner"class="row text-center mx-auto d-none d-md-block">
+            <div class="col text-white align-item-center">
+                <h4 class="flash-notice my-1 text-center text-nav">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
+            </div>            
+        </div>
+
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -46,7 +52,7 @@
                 </a>
             </div>
             
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'all_menu' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black search-field" type="text" name="q1" placeholder="Search">
@@ -61,20 +67,9 @@
                 </form>
             </div>
            
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 my-auto">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-
                     <li class="list-inline-item">
-                        <a class="text-white nav-link" href="{% url 'blog' %}">
-                            <div class="text-center">
-                                <div><i class="fas fa-blog"></i></div>
-                                <p class="my-0">Blog</p>
-                            </div>
-                        </a>
-                    </li>
-
-                      
-                    <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -109,6 +104,16 @@
                             </div>
                         </a>
                     </li>
+
+                    <li class="list-inline-item">
+                        <a class="text-white nav-link" href="{% url 'blog' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-blog"></i></div>
+                                <p class="my-0">Blog</p>
+                            </div>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -120,11 +125,6 @@
                 {% include 'includes/nav.html' %}
                 {% include 'includes/side_nav.html' %}
             </nav>
-            <div id="flash-banner" class="row text-center mx-auto">
-                <div class="col text-white align-item-center">
-                    <h4 class="flash-notice my-1 text-center text-nav">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
-                </div>            
-            </div>
         </div>
     </header>
 
