@@ -31,7 +31,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="veg-meal-link">
                 <a href="{% url 'all_menu' %}?category=soup" class="dropdown-item">Soup</a>
                 <a href="{% url 'all_menu' %}?category=veg_curry" class="dropdown-item">Rice</a>
-                <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Curry</a>
+                <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Veg Curry</a>
                 <a href="{% url 'all_menu' %}?category=soup,rice,veg_curry" class="dropdown-item">All</a>
             </div>
         </li>
@@ -45,6 +45,12 @@
                 <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
                 <a href="{% url 'all_menu' %}?category=infused_drinks,new_taste" class="dropdown-item">All Specials</a>
             </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white text-right"  href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% include 'includes/side_nav.html' %}
+            </a>
         </li>
     </ul>
 </div>
