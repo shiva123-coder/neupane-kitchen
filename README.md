@@ -672,4 +672,13 @@ User Stories
     - I have taken code from [stack overflow post](https://stackoverflow.com/questions/63886066/redirect-back-to-previous-page-after-login-in-django-allauth) for login url on my comment section of blog and also for add review section on menu app, code was added to url in order to redirect the user to the same page once they logged in
 - Thanks to [Stein for Youtube video](https://www.youtube.com/watch?v=m3hhLE1KR5Q) on Blog page, I took the concept from this video while making my blog app.
 - Thanks to [ Coding Stuff for Youtube video](https://www.youtube.com/watch?v=reFJ9hBLFUY&t=632s) on Django, This video help me to gain some knowledge in details for creating review app.
-- Thanks to CI on Boutique Ado video lesson, This project helped me to understand the django concept and explanation on the video lessons were very helpful and easy to understand, additionally massive thanks to tutor Chris(ckz8780) for explaining the several tricks to solve the issue and build the logic.
+- Thanks to CI on Boutique Ado video lesson, this video lesson helped me to understand the django concept and explanation on the video lessons were very helpful and easy to understand, additionally massive thanks to tutor Chris(ckz8780) for explaining the several tricks to solve the issue and build the logic.
+- I would like to thank my mentor Chris Quinn for his guidance and advice on this project.
+- Thanks to everyone on Slack Community for always being on-hand with requests and support.
+- Thanks to everyone on CI tutor support team for their amazing support and guidance.
+- Thanks to everyone from Student Care team (CI) for keeping me update with all changes such as tutor support availibility holiday period and most importantly checking regularly on my progress and always ready to support on my study.
+
+
+## Media
+- Most of the pictures for the project was taken from [Google](https://www.google.com/)
+- I have also taken some of the pictures from [Stock Adobe](https://stock.adobe.com/)
