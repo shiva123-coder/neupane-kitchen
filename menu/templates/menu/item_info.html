@@ -80,7 +80,7 @@
     </div> 
     <!--review section-->
     <div class="container-fluid review-container mt-2">
-        <h3 class="text-uppercase text-center">Reviews ({{ reviews.count }})</h3>
+        <h3 class="text-uppercase text-center font-weight-bold">Reviews ({{ reviews.count }})</h3>
         {% if request.user.is_authenticated %}
         <div class="text-center">
             <a href="{% url 'add_review' item.id %}" class="btn btn-info mt-3 mb-4">
@@ -92,12 +92,12 @@
         {% endif %}
         </div>
         <!--show existing reviews-->
-        <div class="container">
+        <div class="container existing-review-container">
             <div class="row">
                 {% for rev in reviews %}
                 <div class="col-sm-12 col-md-6 col-lg-3 review-col text-center p-2">
                     <h3 class="mb-1">{{ rev.title }}</h3>
-                    <h4><small class="text-dark">rating: </small>{{ rev.rating }} / 5</h4>
+                    <h4><small class="text-dark">rating: </small>{{ rev.rating }}/5</h4>
                     <h5>"{{ rev.comment }}"</h5>
                     <p class="text-capitalize">By: {{ rev.reviewer }}, on {{ rev.date|date:"d M, Y" }} </p>
                     {% if user.is_authenticated and user.get_username == rev.reviewer.user.username %}

@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col">
                         {% include "basket/checkout-btn.html" %}
-                        <p class="text-small">A summary of your bag contents is below</p>
+                        <p class="text-small">A summary of your basket contents is below</p>
                     </div>
                 </div>
                 {% for ib in basket_items %}
@@ -110,7 +110,7 @@
                     <span class="icon">
                         <i class="fas fa-arrow-circle-left"></i>
                     </span>
-                    <span class="basket-heading basket-heading-sub text-uppercase">Back to our menu</span>
+                    <span class="basket-heading basket-heading-sub text-uppercase ">Back to our menu</span>
                 </a>
             {% endif %}
         </div>
@@ -124,22 +124,22 @@
     </script>
     <script>
         // update and remove option in the basket after quantity modification
-            // update option
-            $('.update-qty').click(function(e) {
-                var form = $(this).prev('.update-form');
-                form.submit();
-            })
-            // remove option
-            $('.remove-qty').click(function(e) {
-                var csrfToken = "{{ csrf_token }}";
-                var itemId = $(this).attr('id').split('remove_')[1];
-                var url = `/basket/remove/${itemId}/`;
-                var data = {'csrfmiddlewaretoken': csrfToken};
+        // update option
+        $('.update-qty').click(function(e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        })
+        // remove option
+        $('.remove-qty').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/basket/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
 
-                $.post(url, data)
-                .done(function() {
-                    location.reload();
-                });
+            $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
         })
     </script>
 {% endblock %}
