@@ -162,6 +162,7 @@ header {
     cursor: pointer;
     text-decoration: none;
     display: none;
+    z-index: 999999;
 }
 
 
@@ -361,6 +362,9 @@ item details on order summary page ---*/
         font-size: medium;
     }
     
+    .basket-container{
+        padding-bottom: 50px;
+    }
 }
 
 @media screen and (max-width:576px){
@@ -414,6 +418,10 @@ item details on order summary page ---*/
 
     .blog-container-main{
         padding-bottom: 110px;
+    }
+
+    .basket-container{
+        padding-bottom: 90px;
     }
 }
 

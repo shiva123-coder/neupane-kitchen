@@ -42,8 +42,8 @@
             <div class="my-auto d-sm-block d-lg-none">
                 {% include 'includes/side_nav_main.html' %}
             </div>
-            <!---delivery promo message-->
-            <div id="flash-banner"class="row text-center mx-auto d-none d-sm-block">
+            <!--delivery promo message-->
+            <div id="flash-banner" class="row text-center mx-auto d-none d-sm-block">
                 <div class="col text-white align-item-center">
                     <h4 class="flash-notice my-1 text-center text-nav blinker">Free delivery within 3 miles of radius if your order is over <span class="blinker">£ {{ free_delivery_outset }}</span></h4>                
                 </div>            
@@ -55,7 +55,7 @@
                         <h2 class="logo-font text-white my-0 text-nav">Neupane Kitchen</h2>
                     </a>
                 </div>
-                <!---search field-->
+                <!--search field-->
                 <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'all_menu' %}">
                         <div class="input-group w-100">
@@ -70,7 +70,7 @@
                         </div>
                     </form>
                 </div>
-                <!---account options with if/else to check users and superusers-->
+                <!--account options with if/else to check users and superusers-->
                 <div class="col-12 col-lg-4 my-auto d-none d-md-block">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item">
@@ -93,7 +93,7 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <!---basket-->
+                        <!--basket-->
                         <li class="list-inline-item">
                             <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
                                 <div class="text-center">
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="row bg-white">
-                <!--main nav--->
+                <!--main nav-->
                 <nav class="navbar navbar-expand-lg navbar-light w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -131,7 +131,7 @@
                 </nav>
             </div>
         </header>        
-        <!---django messages for success, warning, error and info-->
+        <!--django messages for success, warning, error and info-->
         {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
@@ -152,7 +152,7 @@
 
         {% block header_main %}
         {% endblock %}
-        <!---footer -->
+        <!--footer -->
         {% include 'includes/footer.html' %}
 
         {% block content %}

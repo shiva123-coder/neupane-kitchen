@@ -12,8 +12,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="scroll-icon"><i class="far fa-arrow-alt-circle-up"></i></div>
-    <div class="container-fluid mt-4">
+        <div class="container-fluid mt-4">
             <div class="row mt-4 item-row">
                 <div class="col text-center mt-4">
                     <h2 class="item item-heading font-weight-bold">Our Menu</h2> 
@@ -48,93 +47,84 @@
                     </div>
                 </div>
             </div>
-                <div class="item-container">
+            <div class="item-container-sub col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
                     <div class="row">
-
-                    </div>
-                    <div class="row">
-                        <div class="item-container-sub col-10 offset-1">
-                            <div class="row mt-1 mb-2"></div>
-                            <div class="row">
-                                {% for item in items %}
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="card menu-card">
-                                        <div class="item-image">
-                                            {% if item.image %}
-                                                <a href="{% url 'item_info' item.id %}">
-                                                    <img class="card-img-top img-fluid" src="{{ item.image.url }}"
-                                                        alt="{{ item.name }}">
+                        {% for item in items %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card menu-card">
+                                <div class="item-image">
+                                    {% if item.image %}
+                                        <a href="{% url 'item_info' item.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ item.image.url }}"
+                                                alt="{{ item.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'item_info' item.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg"
+                                                alt="{{ item.name }}">
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="display-5 text-left">{{ item.name }}</p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="diaplay-3 text-right">£{{ item.price }}</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="card-footer border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            {% if item.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" href="{% url 'all_menu' %}?category={{ item.category.name }}">
+                                                    <i class="fas fa-utensils mr-1"></i>{{ item.category.display_name }}
                                                 </a>
-                                            {% else %}
-                                                <a href="{% url 'item_info' item.id %}">
-                                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg"
-                                                        alt="{{ item.name }}">
-                                                </a>
+                                            </p>
+                                            {% endif %}                                                    
+                                            <!--edit/delete button for admin to edit/delet item from the page-->
+                                            {% if request.user.is_superuser %}
+                                                <small class="badges">
+                                                    <a href="{% url 'edit_item' item.id %}" class="badge badge-warning">Edit</a> | 
+                                                    <a class="badge badge-danger" href="{% url 'delete_item' item.id %}">Delete</a>
+                                                </small>
                                             {% endif %}
                                         </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="display-5 text-left">{{ item.name }}</p>
-                                                </div>
-                                                <div class="col">
-                                                    <p class="diaplay-3 text-right">£{{ item.price }}</p>
-                                                </div>
-                                            </div>
-                                           
-                                        </div>
-                                        <div class="card-footer border-0 text-left">
-                                            <div class="row">
-                                                <div class="col">
-                                                    {% if item.category %}
-                                                    <p class="small mt-1 mb-0">
-                                                        <a class="text-muted" href="{% url 'all_menu' %}?category={{ item.category.name }}">
-                                                            <i class="fas fa-utensils mr-1"></i>{{ item.category.display_name }}
-                                                        </a>
-                                                    </p>
-                                                    {% endif %}                                                    
-                                                    <!---edit/delete button for admin to edit/delet item from the page-->
-                                                    {% if request.user.is_superuser %}
-                                                        <small class="badges">
-                                                            <a href="{% url 'edit_item' item.id %}" class="badge badge-warning">Edit</a> | 
-                                                            <a class="badge badge-danger" href="{% url 'delete_item' item.id %}">Delete</a>
-                                                        </small>
-                                                   {% endif %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                       
                                     </div>
                                 </div>
-                                <!--renders horizontal row between the card rows-->
-                                <!---thanks to Chris Z for explaining this trick on CI walkthrough project--->
-                                {% if forloop.counter|divisibleby:1 %}
-                                <div class="col-12 d-sm-none mb-4">
-                                    <hr>
-                                </div>
-                                {% endif %}
-                                {% if forloop.counter|divisibleby:2 %}
-                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
-                                    <hr>
-                                </div>
-                                {% endif %}
-                                {% if forloop.counter|divisibleby:3 %}
-                                <div class="col-12 d-none d-lg-block d-xl-none mb-4">
-                                    <hr>
-                                </div>
-                                {% endif %}
-                                {% if forloop.counter|divisibleby:4 %}
-                                <div class="col-12 d-none d-xl-block mb-4">
-                                    <hr>
-                                </div>
-                                {% endif %}
-                                {% endfor %}
                             </div>
                         </div>
+                        <!--renders horizontal row between the card rows-->
+                        <!--thanks to Chris Z for explaining this trick on CI walkthrough project-->
+                        {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-sm-none mb-4">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none mb-4">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                        <div class="col-12 d-none d-xl-block mb-4">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-    </div>
     <script src="{% static 'js/item.js' %}"></script>
     <script>
         let csrfToken = "{{ csrf_token }}"
