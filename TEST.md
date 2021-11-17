@@ -16,22 +16,26 @@
 ## Code Validation
 ### HTML Codes
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
-  - W3C Markup Validation was used throughout the process to validate HTML codes
+  - W3C Markup Validation was used throughout the process to validate HTML codes, all codes passed the test without any error
+
     <div align="center"><img src="readme-files/images/html-test-result.jpg" alt="html test result"></div>
 
 ### CSS Codes
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
   - W3C CSS Validation was used to vaildate CSS codes, all codes passed the test without any error
+
     <div align="center"><img src="readme-files/images/css-test-result.jpg" alt="css test result"></div>
 
 ### Javascript Codes
 - [JSHINT](https://jshint.com/) 
   - JSHINT was used for JavaScript code warning & error check. all codes passed the test without any error
+
     <div align="center"><img src="readme-files/images/js-test-result.jpg" alt="js test result"></div>
 
 ### Python Codes
 - [PEP8 online](http://pep8online.com/)
-  - PEP8 online tool was used to ensure all python codes on projects are PEP8 compliant.
+  - PEP8 online tool was used to ensure all python codes on projects are PEP8 compliant. all codes were PEP8 compliant.
+
     <div align="center"><img src="readme-files/images/python-test-result.jpg" alt="python test result"></div>
  
 
@@ -113,3 +117,35 @@
 - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information, I also want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
   - Each article/post had edit/delete buttons when logged in as a superuser, once edit button clicked form appeared on the page which has prefilled infromation on the post, I changed som etext on the content field and updated, Upon checking back to the same post again, text information were updated. This means edit/update functionality is working. I then clicked on the delete button which then removed the post from the blog. Upon checking on Django admin deleted post was not there too.
  I have then logged out and logged in with non-superuser login details and this time edit/delete buttons were not shown on the page which satisfy that only admin/superuser able to perform this
+
+
+## Defensive Programming and Security
+### Security
+- For security reasons I have followed standard practices and used os to declare the environmental variables for all of my sensitive information.
+- For Development, these variables are declared in the settings section of gitpod.
+- By doing this it means that sensitive information such as passwords and secret keys never expose to public.
+- To deploy on Heroku these environmental variables are also placed into thee config variables section of Heroku Setting.
+
+### Users passwords.
+- I have used Django all auth to handle the user's login and signup.
+- This stores the users password as a hashed key for security.
+- It also force the users to confirm their emails as an extra layer of security.
+
+### Defensive Programming.
+- I have added various codes in my project to make sure site can not be access by copy the url and pasting into different browser, I have tested this to ensure that logic behind this is working and error shown in the browser or redirect the user to somewhereelse if trying to access the brouser using url copied. 
+- To test above, I copied the url from my running site when I was in the admin section of the page, I then paste the url to different browser which then showed me error straightway. I have carried this test with all the page urls from the website and I was not able to access the page and getting errors all the time ehen accessing page by using url
+
+
+### Manual Testing
+
+#### Navbar and Navigating functionality test
+
+ - All the nav-link items were shown correctly, clicked on every links and they were redirecting to the correct page dropdown option were showing their sub-links and they were also redirecting to the right page once clicked
+ - Layout of the Navbar changed while viewng on small/medium devices, Navbar toggler icon appear and all nav-links items were showing upon clicking on the icon, collapsing behaviour of toggler icon was functioning well 
+ - Account, Basket and Blog options were still showing on the top of the page while viewing on small/medium devices and they were not hidden as expected, also clicked on each option and they were working.
+ - Search field tested to ensure that functionality is working, typed 'lamb' on the search field and all lamb dish shown in the page, then typed 'gkgkgkjg' and no items shown. similarly typed 'homemade' and 1 item found which had homemade word on the item description. This now satisfy that Item can be search by using any word from the item name and also any matching word on the item description
+
+  - <p float="left"><img src="readme-files/images/nav1.jpg" alt="navbar test image" height="320px" width="500px"/></p>
+  - <p float="left"><img src="readme-files/images/nav2.jpg" alt="navbar test image" height="320px" width="500px"/></p>
+  - <p float="left"><img src="readme-files/images/nav3.jpg" alt="navbar test image" height="320px" width="500px"/></p>
+
