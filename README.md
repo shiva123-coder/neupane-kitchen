@@ -286,7 +286,14 @@ User Stories
   - Sort by Name(Z to A)
 Top left of the page show the numbers of the items on the page. Aditionally edit and delete button also found below each item image however this option is restricted to superuser only and this allow anyone with superuser access user to edit/update and delete the item information to the site anytime. Backend logic has created using django and python to identify the superusers.
 
-### Shopping Basket
+#### Item info page
+- Main content of this page is divided into two sections, bootstrap grid has been utilized to create this page and added container with row and column to seperate each section and their subsections to make page responsive on small devices.
+ - Item information section
+    - User can View the bigger image of the item, item description and price. This section also allow user to add the items to the basket if they wish to do so, user can simply input the quantity on the quantity field or select the quantity by clicking + or - button and then click the button below to add to the basket. Success message will be display on the screen to inform user about their action and success message will also show the basket summary. User also has an option to go back to the main menu if they wish to order more item, by clicking order more button next to the image will navigate user to the menu page.
+ - Review Section
+    - This section shows all the reviews added by users to the item, reviews section in just below the image and will show review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the form. all the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review. back end logic fron django/python will check if reviewer and logged in person is same then edit/delete will be displayed below the review for user to add/delete their review
+
+#### Shopping Basket
 - Entire section of this page is reserved just for basket information only and main aim is to give user clear view of their order. This page will show item added in the basket with image and name, price of each item, quantity and total spending per item. This page will also show the basket total, delivery fee and sub-total amount. User still has an oppurtinity to remove or add/reduce item quantity just by using the input form and clicking update/remove option below the input form. At the botton of the page user can see how much will be their total spending based on the quantity selected, backend functionality added on this page to let user know that how much extra they will be charged if their order do not reach minimun order requirement for free delivery, therefore message will appear on the screen encouraging user to spend more to save delivery fee. If user is happy with their order then they can proceed to checkout by selecting checkout button or they can add few other items just by selecting select more item button which will then navigate the user back to main menu page.
 
 
@@ -304,7 +311,33 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
             - Card Expiry date: Any date in the future
             - CVC : Any 3 digit number
             - ZIP : Any 5 digit number
-        - Once form validated and click complete order button,  order will complete and then order confirmation will be display and also sent to user's email.
+        - Once form validated and click complete order button,  order will complete and then order confirmation will be display and also sent to user's email. All orders will be stored into the database
+        - during this process, user has an the save-info checkbox next to the form so that their profile will be created and stored in database, this is really good features for returning user as this avoid user from entering their details everytime when they want to order from site which hassle free and also minimize the time.
+
+#### Review 
+- Add Review
+    - Review setion has added to the item info page and all the review will be displayed below the item with the review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the simple  form, form have only 3 field: title, review and rating. Title field in the form can be blank however rest of the fields are mandatory. All the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review.
+
+- Edit/delete Review
+    - Once user logged into the page, if block in the backend execute and check the user info against the record on database and if logged in user is the same user who post the review than only show edit and delete option. In order to edit the review, user simply need to click edit button and form will appear on the page which will already be prefilled with the information provided by user, user just need to update the field and click update button then updated review will be stored in database and display on the page, User can also delete the review just by clicking the delete button which then completly remove the review from the page and database. user with superuser access can delete any reviews on the page but cant edit therefore only delete button will be display when user logged in as a supersuer.
+
+#### User Profile
+    - User has option to view their profile once they logged into the page, All of their past orders will be displayed on their profile and if any changes on their delivery address or contact details, this can also be updated on this page just by updating the form in this page which already prefilled with their details provided to the site previously.
+
+#### Blog
+    - This website also consist of blog where site owner can add various post/articles on variety of things. Once user logged in as a superuser, page will automatically disply the button to add post and upon clicking on the button user will be taken to the another page to add the post then user just need to complete the form with details and add post. Details will be then saved to database and post will be added to the page, Siilarly user can perform edit and delet action to the page just by clicking the button below each post.
+    All non-logged in user and user without superuser access can view the post and comment on the post however user must be logged in to add or delete the post. user do not have option to edit the post therefore only option is to add and delete the post.
+
+#### Superuser
+- Anyone with superuser access of the page will have full control of the page and supersuser is able to perform all CRUD functionality. In order to make process simple and less time consuming, all logic has been added in order to grant the access to various action in very less steps. If user logged in as a superuser then all items on the menu will have edit/delete button which allow superuser to easily update items to the page, similarly blog page will have add posy button displayed and all reviews and comment will also have delete buttons for superuser if in case any comment/review required to be deleted from the page due to the nature of review/comment.
+
+### Django messages
+    - This site utilizes the django messages framework to display various message to inform user on their action everytime when user perform an action, this include add, delete and update. four different types of messages template has been created and they will appear on the page as a bootstrap toast, below are the four different message level :
+        - Success messages
+        - Warning Messages
+        - Error Messages
+        - Info Messages
+
 
 
 
