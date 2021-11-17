@@ -12,35 +12,29 @@ User Stories
  - As a Customer, I want to be able to view specific category from the available menu so that I can identify the image, price, information, and review which suitable for my diet
  - As a Customer, I want to be able to easily identify promotions, such as discounts and / or special offers so that I can Take advantage of extra savings on the menu and reduction of my total spending
  - As a Customer, I want to be able to view / access the interesting articles via blog so that I can to get useful knowledge and read interesting information about the food and traditions
- - As a Customer, I want to be able to easily see / display what I have searched for and the number of results so that I can quickly decide whether the food I want is available in the menu for order
  - As a Customer, I want to be able to select from the available the menu and manage / adjust the order quantity so that I can place the order into basket and easily make changes to my order before check-out
  - As a Customer, I want to be able to easily check my basket so that I can ensure I do not accidentally select the wrong products and / or quantity
- - As a Customer, I want to be able to easily check the total amount of my orde so that I can control and avoid unnecessary spending
+ - As a Customer, I want to be able to easily check the total amount of my order so that I can control and avoid unnecessary spending
  - As a Customer, I want to be able to easily enter my payment information in a secured process so that I can check-out quickly with no hassle and protected payment
  - As a Customer, I want to be able to feel my personal and payment information is safe and secure so that I can confidently provide the necessary information to place an order
  - As a Customer, I want to be able to view an order confirmation after check-out so that I can verify that my order has been placed and confirmed with no mistake
- - As a Customer, I want to be able to receive an email confirmation after check-out so that I can keep the confirmation of my order and able to track my transaction history as my records
+
 
 #### Site User
  - As a site user, I want to be able to easily register/create an account so that I can have my personal account and be able to view my profile and transactions
  - As a site user, I want to be able to Receive an email confirmation after registering so that I can verify my account and ensure the registration was successful
  - As a site user, I want to be able to Easily login and / or logout so that I can access my personal profile, information and history transaction, also secure my account when not in use
  - As a site user, I want to be able to easily recover my password in case I forget about it so that I can Recover the access to my account and use the website
- - As a site user, I want to be able to have a personalized user profile so that I can recover the access to my account and use the website
  - As a site user, I want to be able to add reviews to the available menu so that I can provide useful feedback for other customers and help them to select the favorite menu
  - As a site user, I want to be able to add comments to the articles in the blog so that I can interact with other users or customers and share interesting information related to the articles
  - As a site user, I want to be able to search the menu by name and/or description so that I can find a specific food from the available menu which I like to order
- - As a site user, I want to be able to sort the list of available menu so that I can easily identify the menu by cheapest price, most expensive price  and alphabetical order
  - As a site user, I want to be able to sort a specific category from the available menu so that I can easily find the menu from specific category by cheapest price, most expensive price  and alphabetical order to suit my diet
 
 #### Admin User
  - As an Admin user, I want to be able to add a new menu so that I can introduce new menu to my customers
- - As an Admin user, I want to be able to edit/update a menu so that I can change the prices, descriptions, images and other information of the food
- - As an Admin user, I want to be able to delete a menu so that I can remove menu which are no longer available
+ - As an Admin user, I want to be able to edit/update and delete a menu so that I can change the prices, descriptions, images and other information of the food
  - As an Admin user, I want to be able to add a new article to the blog so that I can allow users and customers to find and read new interesting article and information
- - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information
- - As an Admin user, I want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
-
+ - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information, I also want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
 
 ## Wireframes
 
@@ -151,6 +145,94 @@ User Stories
 - Code Institute SLACK Community
    -General resources
 
+
+## Features
+### Existing Features
+
+- All the pages on this website are mainly divided into three sections: Navbar section, main content section and footer section. Navbar is fixed at the top of each page and footer is fixed at the bottom. All of the contents, images and information is displayed in between Navbar and footer section.
+
+#### Navbar
+- This project utilize the Bootstrap Navbar to create user friendly and attractive navbar with various nav-links with sub-links to ensure user is able to navigate throghout all the page easily from the navbar. Navbar is fixed an the top of the page and divided into three section itself from. Left corner of the navbar shows the name of the business and right corner has three options, Account, basket and blog. Center part of the navbar is divided into three section where top section has flashing delivery promo message, middle section has search field for user to search the items just by typing on the field and bottom section has various menu options to choose which give an option for user to choose the items from their desired category without having to browse to all the items. Nabar is designed to expand to the full screen on larger screen and layout of the navbar is designed to chnaged on small/medium screen. Navbar will collapse on small and medium screen and toggle icon will be appear on the right corner and upon clicking on the toggle icon, top section expand below and display the options and serch bar. Account, basket and blog option will be shoown on top of the navbar while viewing on small/medium devices.  
+- Further explanation on the Nav-links and functionlaity as below :
+ - Account Option
+   - Account option has two different view, logged in user view and non-logged in user view 
+   - Logged in user can see three options: Admin, My account and Logout. user will be redirected to right page upon clickin on the link
+   - Non logged in user can see two options: Login and Register, user will be redirected to right page upon clickin on the link for further activity to access the page
+  - Basket option
+    - Idea of having basket option on this project is to always show the user spendings without having to go through unnecessary steps, amount is shown below the basket in GBP and amount will always be shown as  £0.00 untill user add any items to the basket and price on the basket keep updating everytime user add/remove the item to the basket, this allow user to easily control on their spendings.
+  - Blog option
+    - User will be directed to the blog page once blog option is clicked where user will be able to see various post added by site owner and also be able to comment to the post
+  - Home - option for user to visit home page
+  - All Menus - user will be able to see all the menu available on the page just by clicking this option
+  - Non-veg Meal - This allow user to select only non-veg on the menu rather than browsing the whole menu to find the non-veg, this option has four sub-options to choose from which are chicken, lamb, fish and all non-veg meals.
+  - Veg Meal - This allow user to select only Veg items on the menu rather than browsing the whole menu to find the Veg item, this option has four sub-options to choose from which are soup, rice, veg-curry and all veg-meals.
+  - Specials - This option allow user to find the items from two sub-options, beverage and new taste. purpose of having this option is to attract more customers by regularly updating various new and special items.
+  - Search field - This field allow users to search their desire items just by typing name of the item or description/receipe, if any matches found then browser will show the items to the user, purpose of having this is to help users on saving their time to find the items
+
+#### Home Page
+- The background image on the home page is carefully choosen to show the nature of the food this site offer. The image serves as welcome getaway to encourage the curiosity and exploration sense of the users who are accessing the website. The image will draw the attention and give clear indicative of what the website is trying to display or share to the users. As image is the main focus on the homepage, therefore no other contents added to homepage except small slogan and button for user to order, once button clicked user will be taken to the menu page where all items will be displayed.
+
+#### All Menu page
+- This page mainly focus on attracting users to the site therefore text information is kept to minimum and carefully selected images are shown with just the name of the food, price and category with small cutlery icon to give extra look to the item. this section is created by utilizing the bootstrap card and upon selecting on the image, browser will then display the item information page. User also have an option to sort the items on the page. Sort opting is situated at the top right section and user has four option to sort the products :
+  - Sort by price(Low to High)
+  - Sort by price(High to Low)
+  - Sort by Name(A to Z)
+  - Sort by Name(Z to A)
+Top left of the page show the numbers of the items on the page. Aditionally edit and delete button also found below each item image however this option is restricted to superuser only and this allow anyone with superuser access user to edit/update and delete the item information to the site anytime. Backend logic has created using django and python to identify the superusers.
+
+#### Item info page
+- Main content of this page is divided into two sections, bootstrap grid has been utilized to create this page and added container with row and column to seperate each section and their subsections to make page responsive on small devices.
+ - Item information section
+    - User can View the bigger image of the item, item description and price. This section also allow user to add the items to the basket if they wish to do so, user can simply input the quantity on the quantity field or select the quantity by clicking + or - button and then click the button below to add to the basket. Success message will be display on the screen to inform user about their action and success message will also show the basket summary. User also has an option to go back to the main menu if they wish to order more item, by clicking order more button next to the image will navigate user to the menu page.
+ - Review Section
+    - This section shows all the reviews added by users to the item, reviews section in just below the image and will show review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the form. all the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review. back end logic fron django/python will check if reviewer and logged in person is same then edit/delete will be displayed below the review for user to add/delete their review
+
+#### Shopping Basket
+- Entire section of this page is reserved just for basket information only and main aim is to give user clear view of their order. This page will show item added in the basket with image and name, price of each item, quantity and total spending per item. This page will also show the basket total, delivery fee and sub-total amount. User still has an oppurtinity to remove or add/reduce item quantity just by using the input form and clicking update/remove option below the input form. At the botton of the page user can see how much will be their total spending based on the quantity selected, backend functionality added on this page to let user know that how much extra they will be charged if their order do not reach minimun order requirement for free delivery, therefore message will appear on the screen encouraging user to spend more to save delivery fee. If user is happy with their order then they can proceed to checkout by selecting checkout button or they can add few other items just by selecting select more item button which will then navigate the user back to main menu page.
+
+
+### Checkout
+- This is the one of the most important section section of this project and this was most complex section to develop, this section mainly use Stripe for payment and also utilize bootstrap and javascript/jquery for its responsiveness and functionality. This page is divided into two sections as below :
+  - Order Summary
+    - User will have final view of their order in this section before completing the order, this section will show item, price, quantity, basket total, any delivery fee and sub-total. User has no option to adjust their shopping basket at this stage however they can easily navigate back to their basket just by clicking Review Basket button on this page.
+  - Payment Section
+    - This section is the final section of the page and use the stripe payment method, user just need to provide their details, delivery details and then card details in the payment form to complete the payment. This form required to be fully validated before completing the order, stripe javascript handle the form validation process and display an error message if any field in the payment form is missing or incorrect
+      - Delivey address
+        - Aim behind this website is to make this as website for personal online food business in near future therefore main users/customers of this site will be local customers who live in the nearby area which is why only postal code and address field have been added on the payment section as no other field required such as country, town etc.
+      - Stripe payment form
+        - At this stage this project is build for education purpose only therefor stripe test card details can be use to make a test order, card details are below:
+            - Card Number : 4242424242424242
+            - Card Expiry date: Any date in the future
+            - CVC : Any 3 digit number
+            - ZIP : Any 5 digit number
+        - Once form validated and click complete order button,  order will complete and then order confirmation will be display and also sent to user's email. All orders will be stored into the database
+        - during this process, user has an the save-info checkbox next to the form so that their profile will be created and stored in database, this is really good features for returning user as this avoid user from entering their details everytime when they want to order from site which hassle free and also minimize the time.
+
+#### Review 
+- Add Review
+    - Review setion has added to the item info page and all the review will be displayed below the item with the review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the simple  form, form have only 3 field: title, review and rating. Title field in the form can be blank however rest of the fields are mandatory. All the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review.
+
+- Edit/delete Review
+    - Once user logged into the page, if block in the backend execute and check the user info against the record on database and if logged in user is the same user who post the review than only show edit and delete option. In order to edit the review, user simply need to click edit button and form will appear on the page which will already be prefilled with the information provided by user, user just need to update the field and click update button then updated review will be stored in database and display on the page, User can also delete the review just by clicking the delete button which then completly remove the review from the page and database. user with superuser access can delete any reviews on the page but cant edit therefore only delete button will be display when user logged in as a supersuer.
+
+#### User Profile
+  - User has option to view their profile once they logged into the page, All of their past orders will be displayed on their profile and if any changes on their delivery address or contact details, this can also be updated on this page just by updating the form in this page which already prefilled with their details provided to the site previously.
+
+#### Blog
+   - This website also consist of blog where site owner can add various post/articles on variety of things. Once user logged in as a superuser, page will automatically disply the button to add post and upon clicking on the button user will be taken to the another page to add the post then user just need to complete the form with details and add post. Details will be then saved to database and post will be added to the page, Siilarly user can perform edit and delet action to the page just by clicking the button below each post.
+   All non-logged in user and user without superuser access can view the post and comment on the post however user must be logged in to add or delete the post. user do not have option to edit the post therefore only option is to add and delete the post.
+
+#### Superuser
+- Anyone with superuser access of the page will have full control of the page and supersuser is able to perform all CRUD functionality. In order to make process simple and less time consuming, all logic has been added in order to grant the access to various action in very less steps. If user logged in as a superuser then all items on the menu will have edit/delete button which allow superuser to easily update items to the page, similarly blog page will have add posy button displayed and all reviews and comment will also have delete buttons for superuser if in case any comment/review required to be deleted from the page due to the nature of review/comment.
+
+### Django messages
+  - This site utilizes the django messages framework to display various message to inform user on their action everytime when user perform an action, this include add, delete and update. four different types of messages template has been created and they will appear on the page as a bootstrap toast, below are the four different message level :
+     - Success messages
+     - Warning Messages
+     - Error Messages
+     - Info Messages
+
+
 ## Code Validation
 
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
@@ -251,98 +333,6 @@ User Stories
     ```
     'django.template.context_processors.media',
     ```
-
-## Features
-### Existing Features
-
-- All the pages on this website are mainly divided into three sections: Navbar section, main content section and footer section. Navbar is fixed at the top of each page and footer is fixed at the bottom. All of the contents, images and information is displayed in between Navbar and footer section.
-
-#### Navbar
-- This project utilize the Bootstrap Navbar to create user friendly and attractive navbar with various nav-links with sub-links to ensure user is able to navigate throghout all the page easily from the navbar. Navbar is fixed an the top of the page and divided into three section itself from. Left corner of the navbar shows the name of the business and right corner has three options, Account, basket and blog. Center part of the navbar is divided into three section where top section has flashing delivery promo message, middle section has search field for user to search the items just by typing on the field and bottom section has various menu options to choose which give an option for user to choose the items from their desired category without having to browse to all the items. Nabar is designed to expand to the full screen on larger screen and layout of the navbar is designed to chnaged on small/medium screen. Navbar will collapse on small and medium screen and toggle icon will be appear on the right corner and upon clicking on the toggle icon, top section expand below and display the options and serch bar. Account, basket and blog option will be shoown on top of the navbar while viewing on small/medium devices.  
-- Further explanation on the Nav-links and functionlaity as below :
- - Account Option
-   - Account option has two different view, logged in user view and non-logged in user view 
-   - Logged in user can see three options: Admin, My account and Logout. user will be redirected to right page upon clickin on the link
-   - Non logged in user can see two options: Login and Register, user will be redirected to right page upon clickin on the link for further activity to access the page
-  - Basket option
-    - Idea of having basket option on this project is to always show the user spendings without having to go through unnecessary steps, amount is shown below the basket in GBP and amount will always be shown as  £0.00 untill user add any items to the basket and price on the basket keep updating everytime user add/remove the item to the basket, this allow user to easily control on their spendings.
-  - Blog option
-    - User will be directed to the blog page once blog option is clicked where user will be able to see various post added by site owner and also be able to comment to the post
-  - Home - option for user to visit home page
-  - All Menus - user will be able to see all the menu available on the page just by clicking this option
-  - Non-veg Meal - This allow user to select only non-veg on the menu rather than browsing the whole menu to find the non-veg, this option has four sub-options to choose from which are chicken, lamb, fish and all non-veg meals.
-  - Veg Meal - This allow user to select only Veg items on the menu rather than browsing the whole menu to find the Veg item, this option has four sub-options to choose from which are soup, rice, veg-curry and all veg-meals.
-  - Specials - This option allow user to find the items from two sub-options, beverage and new taste. purpose of having this option is to attract more customers by regularly updating various new and special items.
-  - Search field - This field allow users to search their desire items just by typing name of the item or description/receipe, if any matches found then browser will show the items to the user, purpose of having this is to help users on saving their time to find the items
-
-#### Home Page
-- The background image on the home page is carefully choosen to show the nature of the food this site offer. The image serves as welcome getaway to encourage the curiosity and exploration sense of the users who are accessing the website. The image will draw the attention and give clear indicative of what the website is trying to display or share to the users. As image is the main focus on the homepage, therefore no other contents added to homepage except small slogan and button for user to order, once button clicked user will be taken to the menu page where all items will be displayed.
-
-#### All Menu page
-- This page mainly focus on attracting users to the site therefore text information is kept to minimum and carefully selected images are shown with just the name of the food, price and category with small cutlery icon to give extra look to the item. this section is created by utilizing the bootstrap card and upon selecting on the image, browser will then display the item information page. User also have an option to sort the items on the page. Sort opting is situated at the top right section and user has four option to sort the products :
-  - Sort by price(Low to High)
-  - Sort by price(High to Low)
-  - Sort by Name(A to Z)
-  - Sort by Name(Z to A)
-Top left of the page show the numbers of the items on the page. Aditionally edit and delete button also found below each item image however this option is restricted to superuser only and this allow anyone with superuser access user to edit/update and delete the item information to the site anytime. Backend logic has created using django and python to identify the superusers.
-
-#### Item info page
-- Main content of this page is divided into two sections, bootstrap grid has been utilized to create this page and added container with row and column to seperate each section and their subsections to make page responsive on small devices.
- - Item information section
-    - User can View the bigger image of the item, item description and price. This section also allow user to add the items to the basket if they wish to do so, user can simply input the quantity on the quantity field or select the quantity by clicking + or - button and then click the button below to add to the basket. Success message will be display on the screen to inform user about their action and success message will also show the basket summary. User also has an option to go back to the main menu if they wish to order more item, by clicking order more button next to the image will navigate user to the menu page.
- - Review Section
-    - This section shows all the reviews added by users to the item, reviews section in just below the image and will show review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the form. all the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review. back end logic fron django/python will check if reviewer and logged in person is same then edit/delete will be displayed below the review for user to add/delete their review
-
-#### Shopping Basket
-- Entire section of this page is reserved just for basket information only and main aim is to give user clear view of their order. This page will show item added in the basket with image and name, price of each item, quantity and total spending per item. This page will also show the basket total, delivery fee and sub-total amount. User still has an oppurtinity to remove or add/reduce item quantity just by using the input form and clicking update/remove option below the input form. At the botton of the page user can see how much will be their total spending based on the quantity selected, backend functionality added on this page to let user know that how much extra they will be charged if their order do not reach minimun order requirement for free delivery, therefore message will appear on the screen encouraging user to spend more to save delivery fee. If user is happy with their order then they can proceed to checkout by selecting checkout button or they can add few other items just by selecting select more item button which will then navigate the user back to main menu page.
-
-
-### Checkout
-- This is the one of the most important section section of this project and this was most complex section to develop, this section mainly use Stripe for payment and also utilize bootstrap and javascript/jquery for its responsiveness and functionality. This page is divided into two sections as below :
-  - Order Summary
-    - User will have final view of their order in this section before completing the order, this section will show item, price, quantity, basket total, any delivery fee and sub-total. User has no option to adjust their shopping basket at this stage however they can easily navigate back to their basket just by clicking Review Basket button on this page.
-  - Payment Section
-    - This section is the final section of the page and use the stripe payment method, user just need to provide their details, delivery details and then card details in the payment form to complete the payment. This form required to be fully validated before completing the order, stripe javascript handle the form validation process and display an error message if any field in the payment form is missing or incorrect
-      - Delivey address
-        - Aim behind this website is to make this as website for personal online food business in near future therefore main users/customers of this site will be local customers who live in the nearby area which is why only postal code and address field have been added on the payment section as no other field required such as country, town etc.
-      - Stripe payment form
-        - At this stage this project is build for education purpose only therefor stripe test card details can be use to make a test order, card details are below:
-            - Card Number : 4242424242424242
-            - Card Expiry date: Any date in the future
-            - CVC : Any 3 digit number
-            - ZIP : Any 5 digit number
-        - Once form validated and click complete order button,  order will complete and then order confirmation will be display and also sent to user's email. All orders will be stored into the database
-        - during this process, user has an the save-info checkbox next to the form so that their profile will be created and stored in database, this is really good features for returning user as this avoid user from entering their details everytime when they want to order from site which hassle free and also minimize the time.
-
-#### Review 
-- Add Review
-    - Review setion has added to the item info page and all the review will be displayed below the item with the review title, rating, description, name of the reviewer and date in dd.mm.y format. User must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the simple  form, form have only 3 field: title, review and rating. Title field in the form can be blank however rest of the fields are mandatory. All the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review.
-
-- Edit/delete Review
-    - Once user logged into the page, if block in the backend execute and check the user info against the record on database and if logged in user is the same user who post the review than only show edit and delete option. In order to edit the review, user simply need to click edit button and form will appear on the page which will already be prefilled with the information provided by user, user just need to update the field and click update button then updated review will be stored in database and display on the page, User can also delete the review just by clicking the delete button which then completly remove the review from the page and database. user with superuser access can delete any reviews on the page but cant edit therefore only delete button will be display when user logged in as a supersuer.
-
-#### User Profile
-    - User has option to view their profile once they logged into the page, All of their past orders will be displayed on their profile and if any changes on their delivery address or contact details, this can also be updated on this page just by updating the form in this page which already prefilled with their details provided to the site previously.
-
-#### Blog
-    - This website also consist of blog where site owner can add various post/articles on variety of things. Once user logged in as a superuser, page will automatically disply the button to add post and upon clicking on the button user will be taken to the another page to add the post then user just need to complete the form with details and add post. Details will be then saved to database and post will be added to the page, Siilarly user can perform edit and delet action to the page just by clicking the button below each post.
-    All non-logged in user and user without superuser access can view the post and comment on the post however user must be logged in to add or delete the post. user do not have option to edit the post therefore only option is to add and delete the post.
-
-#### Superuser
-- Anyone with superuser access of the page will have full control of the page and supersuser is able to perform all CRUD functionality. In order to make process simple and less time consuming, all logic has been added in order to grant the access to various action in very less steps. If user logged in as a superuser then all items on the menu will have edit/delete button which allow superuser to easily update items to the page, similarly blog page will have add posy button displayed and all reviews and comment will also have delete buttons for superuser if in case any comment/review required to be deleted from the page due to the nature of review/comment.
-
-### Django messages
-    - This site utilizes the django messages framework to display various message to inform user on their action everytime when user perform an action, this include add, delete and update. four different types of messages template has been created and they will appear on the page as a bootstrap toast, below are the four different message level :
-        - Success messages
-        - Warning Messages
-        - Error Messages
-        - Info Messages
-
-
-
-
-
-
 
 ## Deployment
 - This project was initially set up on GitHub using the Code Institue Gitpod Template. I have used the Code Institute gitpod template and named my repository.
