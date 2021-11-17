@@ -1,3 +1,40 @@
+## Testing
+
+## Table of Contents
+
+- [Code Validation](#code-validation)
+  - [HTML Codes](#html-codes)
+  - [CSS Codes](#css-codes)
+  - [Javascript Codes](#javascript-codes)
+  - [Python Codes](#python-codes)
+- [Testing User Stories](#testing-user-stories)
+  - [Customer](#customer)
+  - [Site User](#site-user)
+  - [Admin User](#admin-user)
+
+
+## Code Validation
+### HTML Codes
+- [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
+  - W3C Markup Validation was used throughout the process to validate HTML codes
+    <div align="center"><img src="readme-files/images/html-test-result.jpg" alt="html test result"></div>
+
+### CSS Codes
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
+  - W3C CSS Validation was used to vaildate CSS codes, all codes passed the test without any error
+    <div align="center"><img src="readme-files/images/css-test-result.jpg" alt="css test result"></div>
+
+### Javascript Codes
+- [JSHINT](https://jshint.com/) 
+  - JSHINT was used for JavaScript code warning & error check. all codes passed the test without any error
+    <div align="center"><img src="readme-files/images/js-test-result.jpg" alt="js test result"></div>
+
+### Python Codes
+- [PEP8 online](http://pep8online.com/)
+  - PEP8 online tool was used to ensure all python codes on projects are PEP8 compliant.
+    <div align="center"><img src="readme-files/images/python-test-result.jpg" alt="python test result"></div>
+ 
+
 ## Testing User Stories
 
 ### Customer

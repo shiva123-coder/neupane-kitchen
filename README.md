@@ -30,6 +30,7 @@ This website is only for educational purposes, the Stripe functionality is set u
    - [Superuser](#superuser)
    - [Django messages](#django-messages)
   - [Features to be added in future](#features-to-be-added-in-future)
+- [Code Validation](#code-validation)
 - [Issues and Resolutions](#issues-and-resolutions)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -42,6 +43,7 @@ This website is only for educational purposes, the Stripe functionality is set u
 - [Credit](#credit)
 - [Media](#media)
 - [Acknowledgements](#acknowledgements)
+- [Disclaimer](#disclaimer)
 
 
 ## User experiences
@@ -377,6 +379,10 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
     ```
     'django.template.context_processors.media',
     ```
+
+## Testing 
+ -Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
+
 
 ## Deployment
 - This project was initially set up on GitHub using the Code Institue Gitpod Template. I have used the Code Institute gitpod template and named my repository.
@@ -789,12 +795,16 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 - Thanks to [Stein for Youtube video](https://www.youtube.com/watch?v=m3hhLE1KR5Q) on Blog page, I took the concept from this video while making my blog app.
 - Thanks to [ Coding Stuff for Youtube video](https://www.youtube.com/watch?v=reFJ9hBLFUY&t=632s) on Django, This video help me to gain some knowledge in details for creating review app.
 - Thanks to CI on Boutique Ado video lesson, this video lesson helped me to understand the django concept and explanation on the video lessons were very helpful and easy to understand, additionally massive thanks to tutor Chris(ckz8780) for explaining the several tricks to solve the issue and build the logic.
-- I would like to thank my mentor Chris Quinn for his guidance and advice on this project.
-- Thanks to everyone on Slack Community for always being on-hand with requests and support.
-- Thanks to everyone on CI tutor support team for their amazing support and guidance.
-- Thanks to everyone from Student Care team (CI) for keeping me update with all changes such as tutor support availibility holiday period and most importantly checking regularly on my progress and always ready to support on my study.
-
 
 ## Media
 - Most of the pictures for the project was taken from [Google](https://www.google.com/)
 - I have also taken some of the pictures from [Stock Adobe](https://stock.adobe.com/)
+
+## Acknowledgements
+- I would like to thank my mentor Chris Quinn for his guidance and advice on this project.
+- Thanks to everyone on Slack Community for always being on-hand with requests and support.
+- Thanks to everyone on CI tutor support team for always providing with the support and guidance.
+- Thanks to everyone from Student Care team (CI) for keeping me update with all changes such as tutor support availibility holiday period and most importantly checking regularly on my progress and always ready to support on my study.
+
+## Disclaimer
+- This website was build for educational purpose only
