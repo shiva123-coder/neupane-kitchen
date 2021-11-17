@@ -16,9 +16,11 @@
 ## Code Validation
 ### HTML Codes
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
-  - W3C Markup Validation was used throughout the process to validate HTML codes, all codes passed the test without any error
+  - W3C Markup Validation was used throughout the process to validate HTML codes, all codes passed the test without any error, however after I decided to change few things on my file at this final stage, I have made some nesting error on the elements which caused few validation errors and due to the time limit and i was only 10 minute away from submitting the project therefore this issue remain unsolved eventhough this is very easy fix.
+
 
     <div align="center"><img src="readme-files/images/html-test-result.jpg" alt="html test result"></div>
+    <div align="center"><img src="readme-files/images/html-error-result.jpg" alt="html error result"></div>
 
 ### CSS Codes
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
