@@ -31,8 +31,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="veg-meal-link">
                 <a href="{% url 'all_menu' %}?category=soup" class="dropdown-item">Soup</a>
-                <a href="{% url 'all_menu' %}?category=veg_curry" class="dropdown-item">Rice</a>
-                <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Veg Curry</a>
+                <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Rice</a>
+                <a href="{% url 'all_menu' %}?category=veg-curry" class="dropdown-item">Veg Curry</a>
                 <a href="{% url 'all_menu' %}?category=soup,rice,veg_curry" class="dropdown-item">All</a>
             </div>
         </li>
@@ -44,7 +44,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item">Beverages</a>
                 <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
-                <a href="{% url 'all_menu' %}?category=infused_drinks,new_taste" class="dropdown-item">All Specials</a>
+                <a href="{% url 'all_menu' %}?category=beverages,new_taste" class="dropdown-item">All Specials</a>
             </div>
         </li>
         <!--search field-->
