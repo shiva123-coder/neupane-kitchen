@@ -5,6 +5,8 @@ My main target is the food and beverage industry for my e-commerce web applicati
 My web application features e-commerce functionality, payments using Stripe, user login, blog section, review section for registered customers / users, email confirmation and notification, CRUD functionality for admin to access database records, add, edit, delete items, such as menu, information and blog.
 This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details provided in the payment section inside the Features
 
+![image](readme-files/images/home.jpg)
+
 ## Table of Contents
 
 - [User Experiences](#user-experiences)
