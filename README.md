@@ -3,12 +3,7 @@
 This is the last and final project milestone which aims to build and develop a full-stack web application using Python, Django, HTML, CSS, JavaScript, MySQL or Postgres, Stripe and external APIs. The main goal is to create an e-commerce web application for business purposes.
 My main target is the food and beverage industry for my e-commerce web application.
 My web application features e-commerce functionality, payments using Stripe, user login, blog section, review section for registered customers / users, email confirmation and notification, CRUD functionality for admin to access database records, add, edit, delete items, such as menu, information and blog.
-This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details below.
- -Card number : 4242 4242 4242 4242
- - Any date
- - Any CCV number
- - Any 5 digits ZIP code
-
+This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details provided in the payment section inside the Features
 ## User experiences
 
 User Stories
@@ -266,40 +261,54 @@ User Stories
 - This project utilize the Bootstrap Navbar to create user friendly and attractive navbar with various nav-links with sub-links to ensure user is able to navigate throghout all the page easily from the navbar. Navbar is fixed an the top of the page and divided into three section itself from. Left corner of the navbar shows the name of the business and right corner has three options, Account, basket and blog. Center part of the navbar is divided into three section where top section has flashing delivery promo message, middle section has search field for user to search the items just by typing on the field and bottom section has various menu options to choose which give an option for user to choose the items from their desired category without having to browse to all the items. Nabar is designed to expand to the full screen on larger screen and layout of the navbar is designed to chnaged on small/medium screen. Navbar will collapse on small and medium screen and toggle icon will be appear on the right corner and upon clicking on the toggle icon, top section expand below and display the options and serch bar. Account, basket and blog option will be shoown on top of the navbar while viewing on small/medium devices.  
 - Further explanation on the Nav-links and functionlaity as below :
  - Account Option
-  - Account option has two different view, logged in user view and non-logged in user view 
+   - Account option has two different view, logged in user view and non-logged in user view 
    - Logged in user can see three options: Admin, My account and Logout. user will be redirected to right page upon clickin on the link
    - Non logged in user can see two options: Login and Register, user will be redirected to right page upon clickin on the link for further activity to access the page
   - Basket option
-   - Idea of having basket option on this project is to always show the user spendings without having to go through unnecessary steps, amount is shown below the basket in GBP and amount will always be shown as  £0.00 untill user add any items to the basket and price on the basket keep updating everytime user add/remove the item to the basket, this allow user to easily control on their spendings.
+    - Idea of having basket option on this project is to always show the user spendings without having to go through unnecessary steps, amount is shown below the basket in GBP and amount will always be shown as  £0.00 untill user add any items to the basket and price on the basket keep updating everytime user add/remove the item to the basket, this allow user to easily control on their spendings.
   - Blog option
-   - User will be directed to the blog page once blog option is clicked where user will be able to see various post added by site owner and also be able to comment to the post
+    - User will be directed to the blog page once blog option is clicked where user will be able to see various post added by site owner and also be able to comment to the post
   - Home - option for user to visit home page
   - All Menus - user will be able to see all the menu available on the page just by clicking this option
   - Non-veg Meal - This allow user to select only non-veg on the menu rather than browsing the whole menu to find the non-veg, this option has four sub-options to choose from which are chicken, lamb, fish and all non-veg meals.
   - Veg Meal - This allow user to select only Veg items on the menu rather than browsing the whole menu to find the Veg item, this option has four sub-options to choose from which are soup, rice, veg-curry and all veg-meals.
   - Specials - This option allow user to find the items from two sub-options, beverage and new taste. purpose of having this option is to attract more customers by regularly updating various new and special items.
- - Search field - This field allow users to search their desire items just by typing name of the item or description/receipe, if any matches found then browser will show the items to the user, purpose of having this is to help users on saving their time to find the items
+  - Search field - This field allow users to search their desire items just by typing name of the item or description/receipe, if any matches found then browser will show the items to the user, purpose of having this is to help users on saving their time to find the items
 
 #### Home Page
 - The background image on the home page is carefully choosen to show the nature of the food this site offer. The image serves as welcome getaway to encourage the curiosity and exploration sense of the users who are accessing the website. The image will draw the attention and give clear indicative of what the website is trying to display or share to the users. As image is the main focus on the homepage, therefore no other contents added to homepage except small slogan and button for user to order, once button clicked user will be taken to the menu page where all items will be displayed.
 
 #### All Menu page
 - This page mainly focus on attracting users to the site therefore text information is kept to minimum and carefully selected images are shown with just the name of the food, price and category with small cutlery icon to give extra look to the item. this section is created by utilizing the bootstrap card and upon selecting on the image, browser will then display the item information page. User also have an option to sort the items on the page. Sort opting is situated at the top right section and user has four option to sort the products :
-- Sort by price(Low to High)
-- Sort by price(High to Low)
-- Sort by Name(A to Z)
-- Sort by Name(Z to A)
+  - Sort by price(Low to High)
+  - Sort by price(High to Low)
+  - Sort by Name(A to Z)
+  - Sort by Name(Z to A)
 Top left of the page show the numbers of the items on the page. Aditionally edit and delete button also found below each item image however this option is restricted to superuser only and this allow anyone with superuser access user to edit/update and delete the item information to the site anytime. Backend logic has created using django and python to identify the superusers.
 
-#### Item info page
-- Main content of this page is divided into two sections, bootstrap grid has been utilized to create this page and added container with row and column to seperate each section and their subsections to make page responsive on small devices.
- - Item information section
-  - User can View the bigger image of the item, item description and price. This section also allow user to add the items to the basket if they wish to do so, user can simply input the quantity on the quantity field or select the quantity by clicking + or - button and then click the button below to add to the basket. Success message will be display on the screen to inform user about their action and success message will also show the basket summary. User also has an option to go back to the main menu if they wish to order more item, by clicking order more button next to the image will navigate user to the menu page.
- - Review Section
-  - This section shows all the reviews added by users to the item, reviews section in just below the image and will show review title, rating, description, name of the reviewer and date in dd.mm.y format
-  user must be logged in to add the review therefore link have been provided just below the image for user to login and once log in successful, user will be then redirected to the same page without having to navigate from the homepage. Once logged in, user will then see button to add review and review can be added by completing the form. all the added reviews can be seen just below the image immediately and user also has an option to edit or delete their review. back end logic fron django/python will check if reviewer and logged in person is same then edit/delete will be displayed below the review for user to add/delete their review
+### Shopping Basket
+- Entire section of this page is reserved just for basket information only and main aim is to give user clear view of their order. This page will show item added in the basket with image and name, price of each item, quantity and total spending per item. This page will also show the basket total, delivery fee and sub-total amount. User still has an oppurtinity to remove or add/reduce item quantity just by using the input form and clicking update/remove option below the input form. At the botton of the page user can see how much will be their total spending based on the quantity selected, backend functionality added on this page to let user know that how much extra they will be charged if their order do not reach minimun order requirement for free delivery, therefore message will appear on the screen encouraging user to spend more to save delivery fee. If user is happy with their order then they can proceed to checkout by selecting checkout button or they can add few other items just by selecting select more item button which will then navigate the user back to main menu page.
 
-### 
+
+### Checkout
+- This is the one of the most important section section of this project and this was most complex section to develop, this section mainly use Stripe for payment and also utilize bootstrap and javascript/jquery for its responsiveness and functionality. This page is divided into two sections as below :
+  - Order Summary
+    - User will have final view of their order in this section before completing the order, this section will show item, price, quantity, basket total, any delivery fee and sub-total. User has no option to adjust their shopping basket at this stage however they can easily navigate back to their basket just by clicking Review Basket button on this page.
+  - Payment Section
+    - This section is the final section of the page and use the stripe payment method, user just need to provide their details, delivery details and then card details in the payment form to complete the payment. This form required to be fully validated before completing the order, stripe javascript handle the form validation process and display an error message if any field in the payment form is missing or incorrect
+      - Delivey address
+        - Aim behind this website is to make this as website for personal online food business in near future therefore main users/customers of this site will be local customers who live in the nearby area which is why only postal code and address field have been added on the payment section as no other field required such as country, town etc.
+      - Stripe payment form
+        - At this stage this project is build for education purpose only therefor stripe test card details can be use to make a test order, card details are below:
+            - Card Number : 4242424242424242
+            - Card Expiry date: Any date in the future
+            - CVC : Any 3 digit number
+            - ZIP : Any 5 digit number
+        - Once form validated and click complete order button,  order will complete and then order confirmation will be display and also sent to user's email.
+
+
+
+
 
 
 ## Deployment
