@@ -191,7 +191,7 @@ if 'USE_AWS' in os.environ:
 
 # valiables for delivery option
 FREE_DELIVERY_OUTSET = 20
-STANDARD_DELIVERY_PERCENTAGE = 3
+STANDARD_DELIVERY_PERCENTAGE = 10
 # stripe
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
