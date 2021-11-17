@@ -29,11 +29,11 @@
                     <div class="item-image">
                         {% if post.image %}
                             <a href="{% url 'post_info' post.id %}">
-                                <img class="card-img-top img-fluid" src="{{ post.image.url }}"alt="{{ post.title }}">
+                                <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
                             </a>
                         {% else %}
                             <a href="{% url 'post_info' post.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ post.title }}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ post.title }}">
                             </a>
                         {% endif %}
                     </div>

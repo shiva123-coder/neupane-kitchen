@@ -25,8 +25,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = {
             'title',
-            'image',
             'content',
+            'image',
 
         }
 
@@ -35,4 +35,3 @@ class PostForm(forms.ModelForm):
 
         self.fields['title'].widget.attrs['placeholder'] = 'Post Title'
         self.fields['content'].widget.attrs['placeholder'] = 'Post Content'
-        self.fields['image'].widget.attrs['placeholder'] = 'Image'

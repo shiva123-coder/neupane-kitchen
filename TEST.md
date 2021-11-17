@@ -145,7 +145,77 @@
  - Account, Basket and Blog options were still showing on the top of the page while viewing on small/medium devices and they were not hidden as expected, also clicked on each option and they were working.
  - Search field tested to ensure that functionality is working, typed 'lamb' on the search field and all lamb dish shown in the page, then typed 'gkgkgkjg' and no items shown. similarly typed 'homemade' and 1 item found which had homemade word on the item description. This now satisfy that Item can be search by using any word from the item name and also any matching word on the item description
 
-  - <p float="left"><img src="readme-files/images/nav1.jpg" alt="navbar test image" height="320px" width="500px"/></p>
-  - <p float="left"><img src="readme-files/images/nav2.jpg" alt="navbar test image" height="320px" width="500px"/></p>
-  - <p float="left"><img src="readme-files/images/nav3.jpg" alt="navbar test image" height="320px" width="500px"/></p>
+  - <p float="left"><img src="readme-files/images/nav1.jpg" alt="navbar test image"></p>
+  - <p float="left"><img src="readme-files/images/nav2.jpg" alt="navbar test image"></p>
+  - <p float="left"><img src="readme-files/images/nav3.jpg" alt="navbar test image"></p>
 
+#### Homepage test 
+- All Navigating options were tested from the home page and they were recirecting to the correct page, button on the centre of the page tested to ensure that its function as expected, clicked on the 'Order now' button and redirected to the main menu page, all the elements on the page were fully responsive
+
+#### Menu page test
+- Clicked All menu page and all the item images with their name, price and categories name displayed, number of item on the page shown on top left of the page and sort option was shown on the right, deleted one item from the page and number of item shown on top has changed, similarly select the sort box and sort options shown as dropdown, clicked all the dropdown options and they were populating the right item on the page
+- Edit and delete buttons on the image tested using supersuer login details, clicked on edit button and form appear on the page which was prefilled with item information, tried chnaging the input in the form and clicked update button, updated information displayed to the page. Similarly delete button was clicked and item removed from the page.
+- All the images and imformation on the pages were fully responsive across all devices.
+
+  - <p float="left"><img src="readme-files/images/menu1.jpg" alt="menu test image"></p>
+  - <p float="left"><img src="readme-files/images/menu2.jpg" alt="menu test image"></p>
+
+#### Item Info page
+ - Clicked on the image item from the menu page which then display item info page. Image, information and price of the item shown with input field and +/- button,
+ typed 1 in the input field and clicked both buttons + and - one by one, noth buttons were functioning as expected, input changed to 2 when + button clicked and changed to 1 again after - button clicked.
+ - Add to the basket button clicked and success message shown with basket summary
+ - Order More button clicked, redirected back to the menu page
+ - All the item reviews were shown below the item image with option to add the review.
+ - All elements on the page were fully responsive and no issue identified
+
+   - <p float="left"><img src="readme-files/images/item-info1.jpg" alt="item-info test image"></p>
+   - <p float="left"><img src="readme-files/images/item-info2.jpg" alt="item-info test image"></p>
+
+
+#### Basket page
+ - Basket page were showing the correct baket information with Image, name, item price, and delivery charge. also page had an option to update/ remove the quantity
+ - Tested quantity input form and +/- button by clicking on them and information was updated after every action and also success message with basket summary shown in the screen everytime when any change made to the quantity
+ - Clicked on Add more button and page redirected back to main menu, also clicked on Secure Checkout button which then redirect to checkout page
+ - All elements on the page were fully responsive and all the rows and cols were stacked correctly while viewing on the mobile devices
+
+  - <p float="left"><img src="readme-files/images/basket1.jpg" alt="basket test image"></p>
+  - <p float="left"><img src="readme-files/images/basket2.jpg" alt="basket test image"></p>
+
+
+#### Blog page
+ - Click on the ‘Blog’ menu, display the ‘Blog’ page which show all the available blogs then Click on the desired blog / article which then Redirect to the article page which display the detail information
+ - Successfully display the ‘Blog’ page with all the available blogs / articles Successfully display the contents of selected blog / article 
+
+  - <p float="left"><img src="readme-files/images/blog1.jpg" alt="blog test image"></p>
+   - <p float="left"><img src="readme-files/images/blog1.jpg" alt="blog test image"></p>
+
+#### Login/Register functionality
+
+  - Click on the ‘Register’ menu, Display Register / Sign-Up page with the form to fill-in the user details, Fill-in the user details Click the ‘Sign-Up’ button
+  - Successfully select the ‘Register’ option
+  - Successfully display the ‘Sign-Up’ form
+  - All the fields are accessible and ‘Sign-Up’ form is now completed Successfully click the ‘Sign-Up’ button
+  - Success message show up on the top right of the page to inform the user
+  - Email notification is sent to the registered email for user validation
+  - Filled in the form with only 2 character, validation error shown and registration process failed, entered an existing email address to register, error message shown informing that email already exist
+  - same process repeated to check login functionlaity by selecting the login option, provided incorrect email/ password and validation error shown
+
+     - <p float="left"><img src="readme-files/images/login1.jpg" alt="login test image"></p>
+     - <p float="left"><img src="readme-files/images/login2.jpg" alt="login test image"></p>
+
+#### Checkout functionality
+ - Checkout page had all the basket summary displayed and also payment form that required to complete in order to process the order
+ - Entered All the delivery details and personal info, then select save info box to store my details to the database, privided stripe test card details on the payment field and clicked complete order, loading spinner appear on the page and confirmation message displayed on the screen
+ - Added incorrect card nummber and also added past date on the card expirt date, on both occasion validation errors shown
+
+   - <p float="left"><img src="readme-files/images/checkout1.jpg" alt="checkout test image"></p>
+   - <p float="left"><img src="readme-files/images/checkout2.jpg" alt="checkout test image"></p>
+   - <p float="left"><img src="readme-files/images/checkout3.jpg" alt="checkout test image"></p>
+
+
+#### Add/edit/delete Review and comment
+ - Clicked on the add review form on the item info page and form appear on the page, after filling and submit the form review then sppear on the page, also edit and delete options were appeared on the review that I made, however no option for edit/delete the review made by other user. both edit and delete buttons were tested and they were functioning as expected, review deleted from the page once I click delete button and i was able to edit my review by selecting edit button.
+- I have then tested comment section in the blog page in same way and all functionality was working
+
+
+All above test have now conclude that functionality on the site is working without any issue and is fully responsive 

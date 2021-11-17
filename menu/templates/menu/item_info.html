@@ -16,16 +16,16 @@
         <div class="row mt-4 pt-4">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container item-image-info my-4 ">
-                        {% if item.image %}
-                            <p class="h4 font-weight-bold d-sm-block d-md-none">{{ item.name }}</p>
-                            <a href="{% url 'item_info' item.id %}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
-                            </a>
-                        {% else %}
-                            <a href="{% url 'item_info' item.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpg" alt="{{ item.name }}">
-                            </a>
-                        {% endif %}
+                    {% if item.image %}
+                        <p class="h4 font-weight-bold d-sm-block d-md-none">{{ item.name }}</p>
+                        <a href="{% url 'item_info' item.id %}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                        </a>
+                    {% else %}
+                        <a href="{% url 'item_info' item.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.name }}">
+                        </a>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
@@ -44,7 +44,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="btn btn-dark font-weight-bold decrease-qty"
-                                                data-item_id="{{ item.id }}" id="decrease-qty_{{ item.id }}">-</button>
+                                                data-item_id="{{ item.id }}" id="decrease-qty_{{ item.id }}">-
                                             </button>
                                         </div>
 
@@ -54,10 +54,9 @@
 
                                         <div class="input-group-append">
                                             <button class="btn btn-dark font-weight-bold increase-qty"
-                                                data-item_id="{{ item.id }}" id="increase-qty_{{ item.id }}">+</button>
+                                                data-item_id="{{ item.id }}" id="increase-qty_{{ item.id }}">+
                                             </button>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +72,6 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
