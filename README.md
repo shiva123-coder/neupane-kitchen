@@ -4,9 +4,49 @@ This is the last and final project milestone which aims to build and develop a f
 My main target is the food and beverage industry for my e-commerce web application.
 My web application features e-commerce functionality, payments using Stripe, user login, blog section, review section for registered customers / users, email confirmation and notification, CRUD functionality for admin to access database records, add, edit, delete items, such as menu, information and blog.
 This website is only for educational purposes, the Stripe functionality is set up to accept the test card, please do not enter your personal details, instead please use card details provided in the payment section inside the Features
+
+## Table of Contents
+
+- [User Experiences](#user-experiences)
+  - [User Stories](#user-stories)
+  - [Wireframes](#wireframes)
+- [Database models and schema](#database-models-and-schema)
+  - [Models](#models)
+  - [Database Diagram](#database-diagram)
+- [Technoligies Used](#technologies-used)
+  - [Languages used](#languages-used)
+  - [Frameworks, Libraries, Extensions and Resources Used](#frameworks-libraries-extensions-and-resources-used)
+- [Features](#features)
+ - [Existing Features](#existing-features)
+   - [Navbar](#navbar)
+   - [Home Page](#home-page)
+   - [All manu page](#all-menu-page)
+   - [Item info page](#item-info-page)
+   - [Shopping Basket](#shopping-basket)
+   - [Checkout](#checkout)
+   - [Review](#review)
+   - [User Profile](#user-profile)
+   - [Blog](#blog)
+   - [Superuser](#superuser)
+   - [Django messages](#django-messages)
+  - [Features to be added in future](#features-to-be-added-in-future)
+- [Issues and Resolutions](#issues-and-resolutions)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Heroku Setup](#heroku-setup)
+  - [Database Setup](#database-setup)
+  - [Deploy to Heroku](#deploy-to-heroku)
+  - [Automatic Deploy to Heroku](#automatic-deploy-to-heroku)
+  - [Making a Local Clone](#making-a-local-clone)
+- [Amazon Web Service](#amazon-web-service)
+- [Credit](#credit)
+- [Media](#media)
+- [Acknowledgements](#acknowledgements)
+
+
 ## User experiences
 
-User Stories
+### User Stories
 #### Customer
  - As a Customer, I want to be able to view all of the available menu so that I can identify the image, price, information, and review 
  - As a Customer, I want to be able to view specific category from the available menu so that I can identify the image, price, information, and review which suitable for my diet
@@ -36,7 +76,7 @@ User Stories
  - As an Admin user, I want to be able to add a new article to the blog so that I can allow users and customers to find and read new interesting article and information
  - As an Admin user, I want to be able to edit/update an article in the blog so that I can change the details in the article to reflect the latest information, I also want to be able to delete an article in the blog so that I can remove obsolete articles from the blog
 
-## Wireframes
+### Wireframes
 
 - As an initial process of the project design, wireframes were created for desktop, iPad and mobile screen sizes using [Balsamiq](https://balsamiq.com/).
 
@@ -47,8 +87,8 @@ User Stories
 * Mobile Wireframe - [View](readme-files/wireframes/wireframe-ms4-mobile.pdf)
 
 
-### Database models and schema
-#### Models
+## Database models and schema
+### Models
 - Profiles
   - User
     - From Django Allauth containing the username, email, and password.
@@ -77,7 +117,7 @@ User Stories
   - Comments
     - Comments added by users on each post 
 
-- Database Diagram
+### Database Diagram
 
   - The database diagram of this project was created by using [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) which shows a list of the fields in each object and relationships between each object.
 
@@ -95,7 +135,7 @@ User Stories
  - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
     - The project uses **Javascript** to allow for DOM manipulation.
 
-### Frameworks, Libraries, extensions and Resources Used  
+### Frameworks, Libraries, Extensions and Resources Used  
 - [Django](https://www.djangoproject.com/)
   - Django was used to create the project.
 - [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
@@ -191,7 +231,7 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 - Entire section of this page is reserved just for basket information only and main aim is to give user clear view of their order. This page will show item added in the basket with image and name, price of each item, quantity and total spending per item. This page will also show the basket total, delivery fee and sub-total amount. User still has an oppurtinity to remove or add/reduce item quantity just by using the input form and clicking update/remove option below the input form. At the botton of the page user can see how much will be their total spending based on the quantity selected, backend functionality added on this page to let user know that how much extra they will be charged if their order do not reach minimun order requirement for free delivery, therefore message will appear on the screen encouraging user to spend more to save delivery fee. If user is happy with their order then they can proceed to checkout by selecting checkout button or they can add few other items just by selecting select more item button which will then navigate the user back to main menu page.
 
 
-### Checkout
+#### Checkout
 - This is the one of the most important section section of this project and this was most complex section to develop, this section mainly use Stripe for payment and also utilize bootstrap and javascript/jquery for its responsiveness and functionality. This page is divided into two sections as below :
   - Order Summary
     - User will have final view of their order in this section before completing the order, this section will show item, price, quantity, basket total, any delivery fee and sub-total. User has no option to adjust their shopping basket at this stage however they can easily navigate back to their basket just by clicking Review Basket button on this page.
@@ -225,13 +265,17 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 #### Superuser
 - Anyone with superuser access of the page will have full control of the page and supersuser is able to perform all CRUD functionality. In order to make process simple and less time consuming, all logic has been added in order to grant the access to various action in very less steps. If user logged in as a superuser then all items on the menu will have edit/delete button which allow superuser to easily update items to the page, similarly blog page will have add posy button displayed and all reviews and comment will also have delete buttons for superuser if in case any comment/review required to be deleted from the page due to the nature of review/comment.
 
-### Django messages
+#### Django messages
   - This site utilizes the django messages framework to display various message to inform user on their action everytime when user perform an action, this include add, delete and update. four different types of messages template has been created and they will appear on the page as a bootstrap toast, below are the four different message level :
      - Success messages
      - Warning Messages
      - Error Messages
      - Info Messages
 
+#### Features to be added in future
+ - Distance calculation based on user's delivery address and delivery charge based on distance
+ - Average rating calculation and display average rating of each item below the item image.
+ - Option for users to delete their account  
 
 ## Code Validation
 
@@ -474,7 +518,7 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 
 
   
- #### Automatic Deploy to heroku.
+ #### Automatic Deploy to Heroku.
  - Visit heroku website and select the app and click on Deploy option
  - Scroll down to Deployment method option and select connect to Github option and type the name of github repository on search field
  - Select connect option and now heroku app is connected to github repo.
@@ -574,7 +618,7 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 
        ```
 
-## Amazon Web Service (AWS)
+## Amazon Web Service
 
   - AWS was used in this project to host static and media files for this project.
   - AWS account was creating by completing the sign-up process through the [AWS website](https://aws.amazon.com).
