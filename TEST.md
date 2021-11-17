@@ -187,7 +187,7 @@
  - Successfully display the ‘Blog’ page with all the available blogs / articles Successfully display the contents of selected blog / article 
 
   - <p float="left"><img src="readme-files/images/blog1.jpg" alt="blog test image"></p>
-   - <p float="left"><img src="readme-files/images/blog1.jpg" alt="blog test image"></p>
+   - <p float="left"><img src="readme-files/images/blog2.jpg" alt="blog test image"></p>
 
 #### Login/Register functionality
 
@@ -200,8 +200,8 @@
   - Filled in the form with only 2 character, validation error shown and registration process failed, entered an existing email address to register, error message shown informing that email already exist
   - same process repeated to check login functionlaity by selecting the login option, provided incorrect email/ password and validation error shown
 
-     - <p float="left"><img src="readme-files/images/login1.jpg" alt="login test image"></p>
-     - <p float="left"><img src="readme-files/images/login2.jpg" alt="login test image"></p>
+     - <p float="left"><img src="readme-files/images/register1.jpg" alt="login test image"></p>
+     - <p float="left"><img src="readme-files/images/register2.jpg" alt="login test image"></p>
 
 #### Checkout functionality
  - Checkout page had all the basket summary displayed and also payment form that required to complete in order to process the order
@@ -216,6 +216,10 @@
 #### Add/edit/delete Review and comment
  - Clicked on the add review form on the item info page and form appear on the page, after filling and submit the form review then sppear on the page, also edit and delete options were appeared on the review that I made, however no option for edit/delete the review made by other user. both edit and delete buttons were tested and they were functioning as expected, review deleted from the page once I click delete button and i was able to edit my review by selecting edit button.
 - I have then tested comment section in the blog page in same way and all functionality was working
+
+ - <p float="left"><img src="readme-files/images/review1.jpg" alt="review test image"></p>
+ - <p float="left"><img src="readme-files/images/review2.jpg" alt="review test image"></p>
+ - <p float="left"><img src="readme-files/images/comment.jpg" alt="comment test image"></p>
 
 
 All above test have now conclude that functionality on the site is working without any issue and is fully responsive 
