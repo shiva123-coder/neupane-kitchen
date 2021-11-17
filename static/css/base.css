@@ -266,7 +266,8 @@ item details on order summary page ---*/
 
 /*-----checkout page---*/
 .checkout-container{
-    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 /*-----login form---*/
@@ -457,6 +458,10 @@ item details on order summary page ---*/
 
     .post-container {
         padding-top: 210px;
+    }
+
+    .checkout-container{
+        padding-bottom: 160px;
     }
 }
 
