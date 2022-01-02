@@ -33,7 +33,8 @@ if "IN_DEVELOPMENT" in os.environ:
 else:
     DEBUG = False
 
-    
+# DEBUG = True
+
 ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'neupane-kitchen.herokuapp.com', 'localhost']
 
 
