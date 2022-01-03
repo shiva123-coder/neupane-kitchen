@@ -6,7 +6,7 @@ $('.increase-qty').click(function(e) {
     var newInput = $(this).closest('.input-group').find('.qty_input');
     var newValue = parseInt($(newInput).val());
 // + button disable once input value reach 50
-    if( newValue > 49 ){
+    if( newValue > 3 ){
         $('increase-qty').disabled = true;
         }
     else {
@@ -43,3 +43,4 @@ $(window).scroll(function(){
 $('#scroll-icon').click(function(e){
     window.scrollTo(0,0)
 });
+
