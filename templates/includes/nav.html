@@ -6,71 +6,34 @@
                 Home
             </a>
         </li>
-        <!--all menu-->
+        <!--about-->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" aria-haspopup="true" aria-expanded="false">
-                All Menus
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="about-link" aria-haspopup="true" aria-expanded="false">
+                About Us
             </a>
         </li>
-        <!--non-veg meal option-->
+        <!--all menu-->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="non-veg-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Vegeterian & Vegan
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Our Menu
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="non-veg-link">
-                <a href="{% url 'all_menu' %}?category=chicken" class="dropdown-item">Chicken</a>
-                <a href="{% url 'all_menu' %}?category=lamb" class="dropdown-item">Lamb</a>
-                <a href="{% url 'all_menu' %}?category=fish" class="dropdown-item">Fish</a>
-                <a href="{% url 'all_menu' %}?category=chicken,lamb,fish" class="dropdown-item">All</a>
-            </div>
-        </li>
-        <!--veg meal option-->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="veg-meal-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Non Vegeterian
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="veg-meal-link">
-                <a href="{% url 'all_menu' %}?category=soup" class="dropdown-item">Soup</a>
-                <a href="{% url 'all_menu' %}?category=rice" class="dropdown-item">Rice</a>
-                <a href="{% url 'all_menu' %}?category=veg_curry" class="dropdown-item">Veg Curry</a>
-                <a href="{% url 'all_menu' %}?category=soup,rice,veg_curry" class="dropdown-item">All</a>
-            </div>
-        </li>
-        <!--special item options-->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Rice and Noodles
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <div class="dropdown-menu border-0" aria-labelledby="menu-link">
+                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item">Vegeterian & Vegan</a>
+                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item">Non Vegeterian</a>
+                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item">Rice & Noodles</a>
+                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item">House Specials</a>
                 <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item">Beverages</a>
-                <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
-                <a href="{% url 'all_menu' %}?category=beverages,new_taste" class="dropdown-item">All Specials</a>
+                <a href="{% url 'all_menu' %}"class="dropdown-item">All </a>
             </div>
         </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Specialities
+        <!--contact us-->
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="contact-link" aria-haspopup="true" aria-expanded="false">
+                Contact Us
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item">Beverages</a>
-                <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
-                <a href="{% url 'all_menu' %}?category=beverages,new_taste" class="dropdown-item">All Specials</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Beverages
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item">Beverages</a>
-                <a href="{% url 'all_menu' %}?category=new_taste" class="dropdown-item">New Taste !</a>
-                <a href="{% url 'all_menu' %}?category=beverages,new_taste" class="dropdown-item">All Specials</a>
-            </div>
         </li>
         <!--search field-->
-        <li class="">
+        <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white text-right"  href="#" id="specials-link1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {% include 'includes/side_nav_search.html' %}
             </a>

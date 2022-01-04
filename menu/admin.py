@@ -4,14 +4,13 @@ from .models import Category, Item
 
 class ItemAdmin(admin.ModelAdmin):
     list_display = (
-        'tag',
         'name',
         'category',
         'price',
         'image',
     )
 
-    ordering = ('tag',)
+    ordering = ('name',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

@@ -41,22 +41,6 @@ body {
 .block-divider-checkout{
 margin-top: -20px;
 }
-/*---blinking effect on delivery notice--*/
-/*--code taken from stackOverflow and modified--(start)--*/
-.blinker{
-    color: var(--white);
-}
-
-.blinker{
-    animation: blinker 2s linear infinite;
-  }
-  
-  @keyframes blinker {
-    10% {
-      opacity: 0;
-    }
-  }
-/*--(end)--*/
 
 /*--------buttons-----*/
 .btn-signout{
@@ -65,7 +49,7 @@ margin-top: -20px;
     font-size: 1rem;
     line-height: 1.5;
     padding: 2px;
-    border-radius: 0;  
+    border-radius: 0;
 
 }
 
@@ -76,7 +60,7 @@ margin-top: -20px;
 
 input .form-control{
     width: min-content;
-} 
+}
 
 /*--navbar --*/
 img.main-logo{
@@ -94,14 +78,15 @@ img.main-logo{
 }
 
 .bg-white{
-    background: linear-gradient(to right, #bf15158c, #0c5f1f);
-    background-color: #402c2c!important;
+    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
+    /* background-color: #665151!important; */
+    background-color: #561056!important;
 }
-    
+
 
 header {
-    background: linear-gradient(to right, #bf15158c, #0c5f1f);
-    background-color: #402c2c!important;
+    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
+    background-color: #561056!important;
 }
 
 .side-nav{
@@ -132,59 +117,38 @@ header {
 }
 
 /*--------------home page-----*/
-
-/*-----Carousel---*/
-.sign{
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 0 0 5px var(--dark), 0 0 10px var(--gray-dark), 0 0 15px #fff, 0 0 20px #dde2db, 0 0 30px var(--light), 0 0 40px var(--light), 0 0 55px var(--light), 0 0 75px #e0e5df;
-}
-
-.open-text{
-    background: #6610f2de;
-    font-weight: lighter;
-}
-
 .container-carousel{
     padding: 0;
 }
-
 .carousel-item{
     height: 85vh;
-    width: 100%;  
+    width: 100%;
     padding: 0;
     /* border: 2px solid red; */
 }
-
 .carousel-item1{
     background: url('/media/ban1.jpg') no-repeat;
     background-size: cover;
     background-position: top;
 }
-
 .carousel-item2{
-    background: linear-gradient(65deg, red, orange);
+    background: linear-gradient(65deg, #ff00009c, #ffa5006b);
     background-size: cover;
     background-position: center;
 }
-
 .carousel-item3{
     background: url('/media/ban3.jpg') no-repeat;
     background-size: cover;
-    background-position: center;  
+    background-position: center;
 }
-
-.truck1{
-    transform: scaleX(-1);
-}
-
 .carousel-item4{
     background: url('/media/ban3.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-   
+
 }
 
+/*-----1st slide of carousel on homepage---*/
 .banner-text{
     margin: 0;
     position: absolute;
@@ -193,24 +157,44 @@ header {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     /* transform-style: preserve-3d; */
-  } 
-
-/* .main-text{
-    position: fixed;
-    top: 50%;
-    left: 1%;
+}
+.sign{
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 100px;
+    text-shadow: 0 0 25px var(--dark), 0 0 25px var(--gray-dark), 0 0 25px #fff, 0 0 20px #dde2db, 0 0 25px var(--light), 0 0 25px var(--light), 0 0 50px var(--light), 0 0 50px #e0e5df;
+    animation: blinkingText .5s linear infinite;
 }
 
+@keyframes blinkingText {
+    50% {
+      opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
 
-.text-wrapper{
-   width: fit-content;
-  
+.open-text{
+    font-weight: lighter;
+    text-shadow: 0 0 25px var(--dark), 0 0 25px var(--gray-dark), 0 0 25px #fff, 0 0 20px #dde2db, 0 0 25px var(--light), 0 0 25px var(--light), 0 0 50px var(--light), 0 0 50px #e0e5df;
 }
 
-.home-text{
-    text-align: center;
-    color: var(--white);
-} */
+/*---2nd slide of carousel on the homepage--*/
+
+.truck1{
+    transform: scaleX(-1);
+}
+
+/*---3rd slide of carousel on the homepage--*/
+.btn-order{
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
 /*----------all menu page -----*/
 
 /*code taken from walkthrough project of CI and modified as per project requirements(start) */
@@ -313,7 +297,7 @@ header {
     overflow-y: scroll;
     background: #fafafa;
     border: 1px solid #000;
-    
+
 }
 
 .col-img-success{
@@ -327,7 +311,7 @@ header {
 }
 
 
-/*---css to create scrolling option to the basket and 
+/*---css to create scrolling option to the basket and
 item details on order summary page ---*/
 .item-summary-container{
     max-height: 30vh;
@@ -376,12 +360,18 @@ item details on order summary page ---*/
 }
 /*-----footer---*/
 .footer-container{
-    background: linear-gradient(to right, #bf15158c, #0c5f1f);
-    background-color: #402c2c!important;
+    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
+    background-color: #561056!important;
     width: 100vw;
     position: absolute;
     bottom: 0;
     z-index: 99999999;
+}
+
+.social-icon{
+    font-weight: 400;
+    font-size: 40px;
+    color: #FFFFFF;
 }
 
 
@@ -449,7 +439,7 @@ item details on order summary page ---*/
     .text-nav{
         font-size: medium;
     }
-    
+
     .basket-container{
         padding-bottom: 50px;
     }
