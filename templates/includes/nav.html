@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <!--home-->
-        <li class="nav-item">
+        <li class="nav-item nav-item-home">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
                 Home
             </a>
@@ -15,14 +15,14 @@
         <!--all menu-->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Our Menu
+                Our Menu  <span><i class="fas fa-caret-down"></i></span>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="menu-link">
-                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item">Vegeterian & Vegan</a>
-                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item">Non Vegeterian</a>
-                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item">Rice & Noodles</a>
-                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item">House Specials</a>
-                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item">Beverages</a>
+                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item item-list">Vegeterian & Vegan</a>
+                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item item-list">Non Vegeterian</a>
+                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item item-list">Rice & Noodles</a>
+                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item item-list">House Specials</a>
+                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item item-list">Beverages</a>
                 <a href="{% url 'all_menu' %}"class="dropdown-item">All </a>
             </div>
         </li>

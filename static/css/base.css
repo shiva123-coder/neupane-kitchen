@@ -22,8 +22,8 @@ body {
 
 :root{
     --white: #FFFFFF;
-    /* --yellow: #f8d90f;
-    --green: #d3dd18; */
+    --yellow: #f8d90f;
+    --green: #d3dd18;
 }
 
 /*---------specials--*/
@@ -71,26 +71,37 @@ img.main-logo{
 .brand-logo{
     height: 100px;
     width: fit-content;
-    background-color: aliceblue;
-    border-radius: 100%;
     margin-bottom: -30px;
     margin-top: -30px;
+    padding-top: 30px;
 }
 
 .bg-white{
-    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
-    /* background-color: #665151!important; */
-    background-color: #561056!important;
+    background: linear-gradient(to right, #760b14, #b35860);
+    
 }
-
-
 header {
-    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
-    background-color: #561056!important;
+    background: linear-gradient(to right, #760b14, #b35860);
+    
 }
 
 .side-nav{
     padding-left: 90px;
+}
+
+.item-list:hover{
+    background: linear-gradient(to right, #760b14, #b35860);
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+#menu-link{
+    border: 1px solid var(--light);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-left: -13px;
 }
 
 .search-field{
@@ -110,7 +121,6 @@ header {
     font-weight: bold;
 }
 
-
 /*--navbar icon (mobile device only)--*/
 .navbar-light .navbar-toggler-icon{
     background-color: #724141;
@@ -121,7 +131,7 @@ header {
     padding: 0;
 }
 .carousel-item{
-    height: 85vh;
+    height: 82vh;
     width: 100%;
     padding: 0;
     /* border: 2px solid red; */
@@ -142,7 +152,7 @@ header {
     background-position: center;
 }
 .carousel-item4{
-    background: url('/media/ban3.jpg') no-repeat;
+    background: url('/media/ban4.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -361,8 +371,7 @@ item details on order summary page ---*/
 /*-----footer---*/
 .footer-container{
     /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
-    background-color: #561056!important;
-    width: 100vw;
+    background: linear-gradient(to right, #760b14, #b35860);
     position: absolute;
     bottom: 0;
     z-index: 99999999;
@@ -412,12 +421,16 @@ item details on order summary page ---*/
         left: 1%;
     }
 
+    .nav-item-home{
+        padding-top: 40px;
+    }
+
     .header-container{
         padding-top: 65px;
     }
 
     .carousel-item{
-        height: 90vh;
+        height: 88vh;
     }
 
     .signup-heading{
@@ -443,6 +456,9 @@ item details on order summary page ---*/
     .basket-container{
         padding-bottom: 50px;
     }
+    .carousel-item{
+        height: 88vh;
+    }
 }
 
 @media screen and (max-width:576px){
@@ -452,6 +468,10 @@ item details on order summary page ---*/
 
     .navbar{
         margin-top:-25px;
+    }
+
+    .carousel-item{
+        height: 83vh;
     }
 
     .main-text{
@@ -554,5 +574,3 @@ item details on order summary page ---*/
         padding-top: 210px;
     }
 }
-
-
