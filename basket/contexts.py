@@ -25,8 +25,7 @@ def basket_contents(request):
         })
 
     if total < settings.FREE_DELIVERY_OUTSET:
-        delivery_cost = total * Decimal(
-            settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        delivery_cost = 3
         free_delivery_eligibility = settings.FREE_DELIVERY_OUTSET - total
     else:
         delivery_cost = 0

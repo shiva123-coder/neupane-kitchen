@@ -54,8 +54,7 @@ class Order(models.Model):
         self.total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.total < settings.FREE_DELIVERY_OUTSET:
-            self.delivery_cost = (
-                self.total * settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+            self.delivery_cost = 3
         else:
             self.delivery_cost = 0
         self.sum_total = self.total + self.delivery_cost
@@ -82,4 +81,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"Tag: {self.item.tag} on order {self.order.order_number}"
+        return f"Item: {self.item.name} on order {self.order.order_number}"

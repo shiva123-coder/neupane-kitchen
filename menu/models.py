@@ -36,7 +36,8 @@ ALLERGEN_CHOICES = (
         ('Peanuts', 'Peanuts'),
         ('Sesame Seeds', 'Sesame Seeds'),
         ('Soya', 'Soya'),
-        ('Sulphur Dioxide/Sulphite', 'Sulphur Dioxide/Sulphite')   
+        ('Sulphur Dioxide/Sulphite', 'Sulphur Dioxide/Sulphite'),
+        ('None', 'None'),   
     )
 
 
