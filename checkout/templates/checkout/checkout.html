@@ -102,9 +102,15 @@
                             {% for ib in basket_items %}
                                 <div class="row">
                                     <div class="col-2 mb-1 mt-1 col-img-success">
+                                        {% if item.image %}
                                         <a href="{% url 'item_info' ib.item.id %}">
                                             <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
                                         </a>
+                                        {% else %}
+                                        <a href="{% url 'item_info' ib.item.id %}">
+                                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                        </a>
+                                        {% endif %}
                                     </div>
                                     <div class="col-7">
                                         <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
@@ -150,9 +156,15 @@
                             {% for ib in basket_items %}
                                 <div class="row">
                                     <div class="col mb-1 mt-1 col-img-success">
+                                        {% if item.image %}
                                         <a href="{% url 'item_info' ib.item.id %}">
                                             <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
                                         </a>
+                                        {% else %}
+                                        <a href="{% url 'item_info' ib.item.id %}">
+                                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                        </a>
+                                        {% endif %}
                                     </div>
                                     <div class="col">
                                         <p class="my-0"><strong>{{ ib.item.name }}</strong></p>

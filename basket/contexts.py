@@ -24,7 +24,7 @@ def basket_contents(request):
             'item': item
         })
 
-    if total < settings.FREE_DELIVERY_OUTSET:
+    if total < settings.FREE_DELIVERY_OUTSET and basket_items:
         delivery_cost = 3
         free_delivery_eligibility = settings.FREE_DELIVERY_OUTSET - total
     else:

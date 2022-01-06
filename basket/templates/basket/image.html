@@ -1,2 +1,9 @@
-
-<img class="card-img-top img-fluid" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+{% if item.image %}
+    <a href="{% url 'item_info' ib.item.id %}">
+        <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+    </a>
+    {% else %}
+    <a href="{% url 'item_info' ib.item.id %}">
+        <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+    </a>
+{% endif %}

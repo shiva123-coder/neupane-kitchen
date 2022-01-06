@@ -52,13 +52,14 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # project apps
+    'basket',
+    'blog',
+    'checkout',
+    'contact',
     'home',
     'menu',
-    'basket',
-    'checkout',
     'profiles',
     'reviews',
-    'blog',
     # other
     'crispy_forms',
     'storages',
