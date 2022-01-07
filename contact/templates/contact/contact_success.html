@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load basket_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block header_main %}
+    <div class="overlay"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container checkout-container">
+    <!---page heading-->
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="mt-4 font-weight-bold">Thank You for your enquiry!</h2>
+            <p class="display-6">Your query has been submitted to Neupane Kitchen, One of our team will get in touch with you shortly</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
