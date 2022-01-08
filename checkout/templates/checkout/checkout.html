@@ -52,12 +52,12 @@
                                     </label>
                                 {% else %}
                                     <p class="form-check-label">
-                                        <a class="text-primary" 
-                                        href="{% url 'account_signup' %}">
-                                        Create an account</a> or
-                                        <a class="text-prinary" 
-                                        href="{% url 'account_login' %}">
-                                        login</a> to save this information
+                                        <a class="text-primary" href="{% url 'account_signup' %}">
+                                            Create an account
+                                        </a> or
+                                        <a class="text-prinary" href="{% url 'account_login' %}">
+                                            login
+                                        </a> to save this information
                                     </p>
                                 {% endif %}
                         </div>
@@ -91,28 +91,31 @@
                     <!-- <div class="col-12 col-lg-6 order-lg-last mb-5"> -->
                         <p class="text-dark h4 font-weight-bold">Order Summary ( {{ item_count }} Items )</p>
                         <div class="row">
-                            <div class="col-9">
+                            <div class="col-5">
                                 <p class=" text-muted">Item</p>
                             </div>
-                            <div class="col-3 text-right">
+                            <div class="col-7 text-right">
                                 <p class="text-muted">Total</p>
                             </div>
                         </div>
                         <div class="item-summary-checkout-container">
                             {% for ib in basket_items %}
                                 <div class="row">
-                                    <div class="col-2 mb-1 mt-1 col-img-success">
-                                        {% if item.image %}
-                                        <a href="{% url 'item_info' ib.item.id %}">
-                                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'item_info' ib.item.id %}">
-                                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
-                                        </a>
-                                        {% endif %}
-                                    </div>
-                                    <div class="col-7">
+                                    {% if ib.item.image %}
+                                        <div class="col-5 mb-1 mt-1 col-img-success">
+                                            <a href="{% url 'item_info' ib.item.id %}">
+                                                <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                            </a>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-5 mb-1 mt-1 col-img-success">
+                                            <a href="{% url 'item_info' ib.item.id %}">
+                                                <img class="w=100" src="{{ MEDIA_URL }}noimage.jpg"
+                                                    alt="{{ item.name }}">
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    <div class="col-4">
                                         <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
                                         <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
                                     </div>
@@ -140,33 +143,83 @@
         {% else %}
             <!--Checkout page, visible for non superuser only-->
             <div class="row no-gutter text-center">
+                <!---- customer details/payment form-->
+                <div class="col-sm-12 col-md-6">
+                    <p class="text-dark h4 font-weight-bold">Please Call us on 07411786691 to Complete your Order</p>
+                        <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
+                            {% csrf_token %}
+                            <fieldset class="mb-2">
+                                <legend class="h5">Contact Details</legend>
+                                {{ order_form.full_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                                {{ order_form.contact_number | as_crispy_field }}
+                            </fieldset>
+                            <fieldset class="mb-2">
+                                <legend>Delivery Details</legend>
+                                {{ order_form.street_address | as_crispy_field }}
+                                {{ order_form.postal_code | as_crispy_field }}
+                            </fieldset>
+                            <!---option to create account or login---->
+                            <div class="form-check ms-5">
+                                {% if user.is_authenticated %}
+                                    <input class="form-check-input form-check-inline " type="checkbox" id="save-info"
+                                        name="save_info" checked>
+                                    <label class="form-check-label" for="save-info">
+                                        Save info to profile.
+                                    </label>
+                                {% else %}
+                                    <p class="form-check-label">
+                                        <a class="text-primary" 
+                                        href="{% url 'account_signup' %}">
+                                        Create an account</a> or
+                                        <a class="text-prinary" 
+                                        href="{% url 'account_login' %}">
+                                        login</a> to save this information
+                                    </p>
+                                {% endif %}
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{% url 'view_basket' %}" class="btn btn-light border-secondary mt-4 mx-3 p-1">
+                                    Review Basket
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="payment-btn btn-secondary mt-4 mx-3 p-1 rounded"
+                                    id="checkout-btn">Complete Order</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <!----order summary---->
-                <div class="col order-md-last">
+                <div class="col-sm-12 col-md-6 order-md-last">
                     <!-- <div class="col-12 col-lg-6 order-lg-last mb-5"> -->
                         <p class="text-dark h4 font-weight-bold">Order Summary ( {{ item_count }} Items )</p>
                         <div class="row">
-                            <div class="col">
+                            <div class="col-9">
                                 <p class=" text-muted">Item</p>
                             </div>
-                            <div class="col text-right">
+                            <div class="col-3 text-right">
                                 <p class="text-muted">Total</p>
                             </div>
                         </div>
                         <div class="item-summary-checkout-container">
                             {% for ib in basket_items %}
                                 <div class="row">
-                                    <div class="col mb-1 mt-1 col-img-success">
-                                        {% if item.image %}
+                                    <div class="col-2 mb-1 mt-1 col-img-success">
+                                        {% if ib.item.image %}
                                         <a href="{% url 'item_info' ib.item.id %}">
                                             <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
                                         </a>
                                         {% else %}
                                         <a href="{% url 'item_info' ib.item.id %}">
-                                            <img class="w-100" src="{{ ib.item.image.url }}" alt="{{ ib.item.name }}">
+                                            <img class="w=100" src="{{ MEDIA_URL }}noimage.jpg"
+                                            alt="{{ item.name }}">
                                         </a>
                                         {% endif %}
                                     </div>
-                                    <div class="col">
+                                    <div class="col-7">
                                         <p class="my-0"><strong>{{ ib.item.name }}</strong></p>
                                         <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
                                     </div>
@@ -187,13 +240,6 @@
                                 <p class="my-0">£{{ total | floatformat:2 }}</p>
                                 <p class="my-0">£{{ delivery_cost | floatformat:2 }}</p>
                                 <p class="my-0"><strong>£{{ sum_total | floatformat:2 }}</strong></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'view_basket' %}" class="btn btn-light border-secondary mt-4 mx-3 p-1">
-                                    Review Basket
-                                </a>
                             </div>
                         </div>
                 </div>
