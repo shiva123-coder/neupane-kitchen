@@ -28,12 +28,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-if "IN_DEVELOPMENT" in os.environ:
-    DEBUG = True
-else:
-    DEBUG = False
+# if "IN_DEVELOPMENT" in os.environ:
+#     DEBUG = True
+# else:
+#     DEBUG = False
 
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'neupane-kitchen.herokuapp.com', 'localhost']
 
