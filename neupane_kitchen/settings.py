@@ -35,7 +35,7 @@ else:
 
 # DEBUG = True
 
-ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'neupane-kitchen.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'https://neupane-kitchen.herokuapp.com/', 'localhost']
 
 
 # Application definition
