@@ -17,15 +17,15 @@ def contact(request):
                 'contact_number': form.cleaned_data['contact_number'],
                 'message': form.cleaned_data['message'],
                 }
-            message = '\n'.join(body.values())
+            message = '\n''\n'.join(body.values())
             form.save()
 
         try:
             send_mail(
-                subject, message, 'admin@example.com', ['sb4_cbu@yahoo.com', 'cia.ribka@gmail.com'])
+                subject, message, 'admin@example.com',  ['sb4_cbu@yahoo.com', 'cia.ribka@gmail.com'])
             return render(request, 'contact/contact_success.html')
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-           
+         
     form = ContactForm()
     return render(request, 'contact/contact.html', {'form': form})
