@@ -142,7 +142,7 @@ header {
     background-position: top;
 }
 .carousel-item2{
-    background: linear-gradient(65deg, #ff00009c, #ffa5006b);
+    background: url('/media/ban2.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
