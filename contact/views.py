@@ -22,7 +22,7 @@ def contact(request):
 
         try:
             send_mail(
-                subject, message, 'admin@example.com', ['admin@example.com'])
+                subject, message, 'admin@example.com', ['admin@example.com', 'sb4_cbu@yahoo.com', 'cia.ribka@gmail.com'])
             return render(request, 'contact/contact_success.html')
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
