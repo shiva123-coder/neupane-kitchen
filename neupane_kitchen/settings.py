@@ -206,7 +206,7 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
-    DEFAULT_FROM_EMAIL = 'neupanekitchen.co.uk'
+    DEFAULT_FROM_EMAIL = 'neupanekitchen@example.com'
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

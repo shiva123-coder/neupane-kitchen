@@ -384,7 +384,7 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
 
 - [404 error](media/bugs/heroku404.jpg) while opening the app from heroku after deployed. 
  - Since it's "no item matches the given query" and request url is the home page, any chance I may have deleted a product that may have still been in the cart? If so, the steps below should help:
- open up Dev Tools, go to the Application tab, select Storage from the sidebar, then click the "Clear Site Data" button, it fixed the issue by emptying cart (use deployed site to Clear site data)
+  - open up Dev Tools, go to the Application tab, select Storage from the sidebar, then click the "Clear Site Data" button, it fixed the issue by emptying cart (use deployed site to Clear site data)
 
 ## Testing 
  -Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
