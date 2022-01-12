@@ -16,6 +16,8 @@ html {
 
 body {
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: 'Dosis', sans-serif;
     position: relative;
 }
@@ -84,7 +86,6 @@ img.main-logo{
 }
 header {
     background:  var(--main-mix);
-    
 }
 
 .side-nav{
@@ -133,10 +134,9 @@ header {
     padding: 0;
 }
 .carousel-item{
-    height: 82vh;
+    height: 95vh;
     width: 100%;
     padding: 0;
-    /* border: 2px solid red; */
 }
 .carousel-item1{
     background: url('/media/ban1.jpg') no-repeat;
@@ -239,7 +239,7 @@ background-color: var(--main);
 #scroll-icon{
     position: fixed;
     width: 35px;
-    bottom: 35px;
+    bottom: 55px;
     right: 0;
     color: #000;
     font-size: 1.75em;
@@ -396,6 +396,11 @@ item details on order summary page ---*/
 
 
 /*------media----------*/
+@media (min-width: 1024px) and (max-width: 1024px){
+    .carousel-item{
+        height: 97vh;
+    }
+}
 
 @media screen and (min-width:992px){
     .flash-notice{
@@ -440,9 +445,9 @@ item details on order summary page ---*/
         padding-top: 65px;
     }
 
-    .carousel-item{
+    /* .carousel-item{
         height: 88vh;
-    }
+    } */
 
     .signup-heading{
         padding-top: 200px;
@@ -464,35 +469,41 @@ item details on order summary page ---*/
         font-size: medium;
     }
 
-    .basket-container{
+    /* .basket-container{
         padding-bottom: 50px;
-    }
-    .carousel-item{
+    } */
+    /* .carousel-item{
         height: 88vh;
-    }
+    } */
+
+    /* .carousel-indicators li {
+        margin-bottom: 10%; */
 }
 
 @media screen and (max-width:576px){
-    .item-container-sub{
+    /* .item-container-sub{
         padding-bottom: 30px;
-    }
+    } */
 
     .navbar{
         margin-top:-25px;
     }
 
-    .carousel-item{
+    /* .carousel-item{
         height: 83vh;
-    }
+    } */
 
+    .carousel-indicators li {
+        margin-bottom: 40%;
+    }
     .main-text{
         position: fixed;
         top: 40%;
     }
 
-    /* .header-container{
+    .header-container{
         padding-top: 50px;
-    } */
+    }
 
     #scroll-icon {
         padding-bottom: 80px;

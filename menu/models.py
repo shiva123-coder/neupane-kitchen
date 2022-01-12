@@ -50,7 +50,7 @@ class Item(models.Model):
     allergen = MultiSelectField(
         choices=ALLERGEN_CHOICES, null=True, blank=False)
     note = models.TextField(max_length=80, null=True, blank=True)
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(max_digits=4, decimal_places=2, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):

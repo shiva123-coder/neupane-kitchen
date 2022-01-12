@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block header_main %}
-    <div class="container header-container">
+    <div class="container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+<section class="car">
+    <div class="container-fluid main-container">
         <div class="row carousel-row">
             <div class="col pr-0 pl-0 pt-0">
                 <div class="container-fluid container-carousel">
@@ -28,21 +29,18 @@
                                 <h1 class="text-center text-uppercase display-3 sign">Opening Soon !</h1>
                                 <p class="banner-sub-text text-center h3 text-white open-text">Save the date <strong> : Friday, 4 Feb 2022</strong></p>
                             </div>
-                            <!-- <img class="d-block w-100"  src="/media/logo.jpg" alt="First slide"> -->
                         </div>
                         <div class="carousel-item carousel-item2">
                             <div class="banner-text">
                                 <h1 class="text-center text-uppercase display-3 banner-text-main"><span><i class="fas fa-truck h3 truck1 "></i></span> Free Delivery <span><i class="fas fa-truck h3"></i></span></h1>
                                 <p class="banner-sub-text text-center">*within 3 miles radius only, £2 extra per additional mile</p>
                             </div>
-                            <!-- <img class="d-block w-100"  src="/media/opening-image.jpg" alt="Second slide"> -->
                         </div>
                         <div class="carousel-item carousel-item3">
                             <div class="banner-text">
                                 <h1 class="text-center font-weight-bold">Grand Opening Discount >>>> 20% discount on all orders</h1>
                                 <p class="text-center mt-3"><a href="{% url 'all_menu' %}" class="btn btn-primary btn-sm"><strong class="h4"> Pre-order now !</strong></a></p>
                             </div>
-                            <!-- <img class="d-block w-100"  src="/media/infused-water.jpg" alt="Third slide"> -->
                         </div>
                         <div class="carousel-item carousel-item4">
                             <div class="banner-text">
@@ -50,7 +48,6 @@
                                 <p class="banner-sub-text text-center">Share your idea and won £30 worth free meal</p>
                                 <p class="banner-sub-text text-center text-muted">*T&C apply, <a href="#">Click here to find more</a></p>
                             </div>
-                            <!-- <img class="d-block w-100"  src="/media/infused-water.jpg" alt="Third slide"> -->
                         </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -66,4 +63,5 @@
             </div>
         </div>
     </div>
+</section>
 {% endblock %}
