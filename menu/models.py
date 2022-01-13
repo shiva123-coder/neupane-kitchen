@@ -37,9 +37,9 @@ ALLERGEN_CHOICES = (
         ('Sesame Seeds', 'Sesame Seeds'),
         ('Soya', 'Soya'),
         ('Sulphur Dioxide/Sulphite', 'Sulphur Dioxide/Sulphite'),
-        ('None', 'None'),   
+        ('None', 'None'),
     )
-
+    
 
 class Item(models.Model):
     category = models.ForeignKey('Category', null=True,
@@ -47,6 +47,7 @@ class Item(models.Model):
     name = models.CharField(max_length=170)
     heading = models.TextField(max_length=150, null=True, blank=True)
     description = models.TextField(max_length=270, null=True, blank=True)
+    ingredient = models.TextField(max_length=370, null=True, blank=True)
     allergen = MultiSelectField(
         choices=ALLERGEN_CHOICES, null=True, blank=False)
     note = models.TextField(max_length=80, null=True, blank=True)

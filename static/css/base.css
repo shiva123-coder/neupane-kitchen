@@ -15,11 +15,15 @@ html {
 }
 
 body {
+    
     min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Dosis', sans-serif;
     position: relative;
+    overflow-x: hidden;
+    height: 100%;
+    
 }
 
 :root{
@@ -130,11 +134,12 @@ header {
 }
 
 /*--------------home page-----*/
+
 .container-carousel{
     padding: 0;
 }
 .carousel-item{
-    height: 95vh;
+    height: 100vh;
     width: 100%;
     padding: 0;
 }
@@ -161,14 +166,23 @@ header {
 }
 
 
+.carousel-control-next,
+.carousel-control-prev{
+width: 50%;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon{
-background-color: var(--main);
+display: none;
 }
 
 .carousel-indicators li{
     background-color: var(--main);
 }
+.carousel-indicators{
+    top: 85%;
+}
+
 /*-----1st slide of carousel on homepage---*/
 .banner-text{
     margin: 0;
@@ -187,6 +201,9 @@ background-color: var(--main);
     text-shadow: 0 0 25px var(--dark), 0 0 25px var(--gray-dark), 0 0 25px #fff, 0 0 20px #dde2db, 0 0 25px var(--light), 0 0 25px var(--light), 0 0 50px var(--light), 0 0 50px #e0e5df;
     animation: blinkingText .5s linear infinite;
 }
+
+/*-----1st slide of carousel on homepage---*/
+
 
 @keyframes blinkingText {
     50% {
@@ -270,13 +287,10 @@ background-color: var(--main);
     text-decoration:wavy;
 }
 
-
-
 /*-----item-info page ---*/
 .item-container-sub{
     padding-bottom: 100px;
 }
-
 
 .item-image-info{
     height: 50vh;
@@ -351,6 +365,16 @@ item details on order summary page ---*/
     padding-bottom: 100px;
 }
 
+/*---contact us page-----*/
+.form-center {
+	display:flex;
+	justify-content: center;
+}
+
+.contact-container{
+    margin-bottom: 300%;
+}
+
 /*-----login form---*/
 .login-heading{
     padding-top: 350px;
@@ -381,9 +405,7 @@ item details on order summary page ---*/
 }
 /*-----footer---*/
 .footer-container{
-    /* background: linear-gradient(to right, #bf15158c, #0c5f1f); */
     background: var(--main-mix);
-    position: absolute;
     bottom: 0;
     z-index: 99999999;
 }
@@ -397,9 +419,7 @@ item details on order summary page ---*/
 
 /*------media----------*/
 @media (min-width: 1024px) and (max-width: 1024px){
-    .carousel-item{
-        height: 97vh;
-    }
+    
 }
 
 @media screen and (min-width:992px){
@@ -417,11 +437,16 @@ item details on order summary page ---*/
     }
 }
 
+@media screen and (min-width:576px){
+    .carousel-indicators li{
+        background: var(--main);
+    }
+}
 
 @media screen and (max-width:992px){
-    body{
+    /* body{
         background-position-x: unset;
-    }
+    } */
 
     .main-text{
         left: 6%;
@@ -445,9 +470,6 @@ item details on order summary page ---*/
         padding-top: 65px;
     }
 
-    /* .carousel-item{
-        height: 88vh;
-    } */
 
     .signup-heading{
         padding-top: 200px;
@@ -469,41 +491,48 @@ item details on order summary page ---*/
         font-size: medium;
     }
 
-    /* .basket-container{
-        padding-bottom: 50px;
+    /* .carousel-indicators{
+        margin-bottom: 10%;
     } */
-    /* .carousel-item{
-        height: 88vh;
-    } */
-
-    /* .carousel-indicators li {
-        margin-bottom: 10%; */
 }
-
 @media screen and (max-width:576px){
-    /* .item-container-sub{
-        padding-bottom: 30px;
-    } */
+    .carousel-indicators{
+        top: 85%;
+    }
 
     .navbar{
         margin-top:-25px;
     }
 
-    /* .carousel-item{
-        height: 83vh;
-    } */
-
-    .carousel-indicators li {
-        margin-bottom: 40%;
+    .carousel-item{
+        height: 90vh;
     }
+
+    .sign{
+        font-size: 3.25rem;
+        padding: 0 4px;
+    }
+
+    .open-text{
+        font-size: 1.25rem
+    }
+
     .main-text{
         position: fixed;
         top: 40%;
     }
 
-    .header-container{
-        padding-top: 50px;
+    .banner-text-main{
+        font-size: 2.5rem;
     }
+
+    .banner-sub-text-delivery{
+        font-size: .75rem;
+    }
+
+    /* .header-container{
+        padding-top: 50px;
+    } */
 
     #scroll-icon {
         padding-bottom: 80px;
@@ -531,9 +560,13 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width:315px){
+    /* .carousel-indicators{
+       margin-bottom: 40%;
+    } */
+
     .item-container-sub,
     #scroll-icon {
-        padding-bottom: 80px;
+        padding-bottom: 90px;
     }
 
     .blog-container-main{
@@ -546,9 +579,9 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width:290px){
-    .header-container{
+    /* .header-container{
         padding-top: 180px;
-    }
+    } */
 
     .login-heading{
         padding-top: 180px;

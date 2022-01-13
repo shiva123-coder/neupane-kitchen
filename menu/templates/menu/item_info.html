@@ -35,6 +35,9 @@
                     <p class="display-6 mt-3">£ {{ item.price }}</p>
                     <p class="display-6 mb-0">{{ item.heading }}</p>
                     <p class="display-6">{{ item.description }}</p>
+                    {% if request.user.is_superuser %}
+                        <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
+                    {% endif %}
                     <p class="display-6 font-weight-bold">Allergens: {{ item.allergen }}</p>
                     {% if item.note %}
                         <p class="display-6 text-muted">{{ item.note }}</p>

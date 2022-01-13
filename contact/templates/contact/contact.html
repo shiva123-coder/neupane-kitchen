@@ -12,17 +12,30 @@
 {% endblock %}
 
 {% block content %}
-    <div style="margin:80px">
-        <h1>Contact</h1>
-        <h4>Contact us directly if you have any questions</h4>
-        <p>
-            Please write your name, email address and a message below if you have any questions.
-            One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-        </p>
-        <form method="post">
-        {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit">Submit</button>
-        </form>
+    <div class="container contact-container text-center pt-3 pb-3 mb-5 mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="">Contact Us</h1>
+                <p>
+                    Please fill out the form below, we will be in touch as soon as possible.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-center pb-5">
+                <form method="post">
+                    {% csrf_token %}
+                    <fieldset class="contact-form">
+                        <legend class="h5 text-left">Contact Details</legend>
+                        {{ form.full_name | as_crispy_field }}
+                        {{ form.email | as_crispy_field }}
+                        {{ form.contact_number | as_crispy_field }}
+                        <legend class="h5 text-left pt-2">Message</legend>
+                        {{ form.message | as_crispy_field }}
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock %}
