@@ -159,7 +159,7 @@ header {
     background-position: top;
 }
 .carousel-item2{
-    background: url('/media/ban2.jpg') no-repeat;
+    background: url('/media/ban2.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
