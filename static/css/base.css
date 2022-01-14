@@ -34,7 +34,7 @@ body {
     max-height: 15vh;
 } */
 
-#content{
+.allauth-container{
    padding-bottom: 6rem;
    padding-top: 3rem;
 }
@@ -573,7 +573,7 @@ item details on order summary page ---*/
         padding-bottom: 90px;
     }
 
-    #content{
+    .allauth-container{
         padding-top: 6rem;
     }
      
@@ -606,7 +606,7 @@ item details on order summary page ---*/
         padding-top: 210px;
     }
 
-    #content{
+    .allauth-container{
         padding-top: 9rem;
     }
 }
