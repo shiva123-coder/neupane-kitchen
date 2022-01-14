@@ -388,13 +388,11 @@ item details on order summary page ---*/
 }
 
 /*-----login form---*/
-.login-heading{
-    padding-top: 20rem;
+.allauth-form-inner-content{
+    padding-top: 12rem;
 }
+
 /*-----signup form---*/
-.signup-heading{
-    padding-top: 15rem;
-}
 /* #signup_form{
     margin-bottom: 150px;
 } */
@@ -476,16 +474,11 @@ item details on order summary page ---*/
     .nav-item-home{
         padding-top: 40px;
     }
-
+/* 
     .header-container{
         padding-top: 65px;
-    }
-
-
-    .signup-heading{
-        padding-top: 200px;
-    }
-
+    } */
+  
     .btn-add{
         padding-top: 20px;
         padding-bottom: 20px;
@@ -541,18 +534,6 @@ item details on order summary page ---*/
         padding-bottom: 80px;
     }
 
-    .signup-heading{
-        padding-top: 100px;
-    }
-
-    /* .login-heading{
-        padding-top: 5rem;
-    } */
-
-    /* .login-form{
-        padding-bottom: 100px;
-    } */
-
     .post-container {
         padding-top: 100px;
     }
@@ -562,10 +543,6 @@ item details on order summary page ---*/
     }
 
     .btn-contact{
-        margin-bottom: 30%;
-    }
-
-    .btn-sign-in{
         margin-bottom: 30%;
     }
 
@@ -598,22 +575,6 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width:290px){
-    /* .header-container{
-        padding-top: 180px;
-    } */
-
-    .login-heading{
-        padding-top: 180px;
-    }
-
-    .login-form{
-        padding-bottom: 150px;
-    }
-
-    .signup-heading{
-        padding-top: 150px;
-    }
-
     .btn-add{
         padding-bottom: 30px;
     }
@@ -628,14 +589,6 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width: 198px){
-    .signup-heading {
-        padding-top: 220px;
-    }
-
-    .login-heading{
-        padding-top: 220px;
-    }
-
     .btn-add{
         padding-bottom: 30px;
     }
