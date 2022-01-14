@@ -3,9 +3,9 @@
     box-sizing: border-box;
 }
 
-/* :root {
+:root {
     scroll-behavior: smooth;
-} */
+}
 
 
 html{
@@ -16,13 +16,10 @@ html{
 }
 
 body { 
-    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Dosis', sans-serif;
-    position: relative;
-    overflow-x: hidden;
-    
+    position: relative;    
 }
 
 :root{
@@ -35,20 +32,21 @@ body {
 
 /* .fixed-top{
     max-height: 15vh;
-}
+} */
 
 #content{
-    max-height: 80vh;
+   padding-bottom: 6rem;
+   padding-top: 3rem;
 }
 
-#footer{
+/* #footer{
     max-height: 5vh;
 } */
 
 /*---------specials--*/
-.header-container {
+/* .header-container {
     padding-top: 120px;
-}
+} */
 
 /*----------block-divider--*/
 .block-divider{
@@ -494,6 +492,7 @@ item details on order summary page ---*/
     .text-nav{
         font-size: medium;
     }
+}
 
 @media screen and (max-width:576px){
     .carousel-indicators{
@@ -546,6 +545,11 @@ item details on order summary page ---*/
         margin-bottom: 30%;
     }
 
+    .allauth-form-inner-content {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
     .social-icon{
         font-size: 2rem;
     }
@@ -556,10 +560,6 @@ item details on order summary page ---*/
 }
 
 @media screen and (max-width:315px){
-    /* .carousel-indicators{
-       margin-bottom: 40%;
-    } */
-
     .item-container-sub,
     #scroll-icon {
         padding-bottom: 90px;
@@ -572,6 +572,11 @@ item details on order summary page ---*/
     .basket-container{
         padding-bottom: 90px;
     }
+
+    #content{
+        padding-top: 6rem;
+    }
+     
 }
 
 @media screen and (max-width:290px){
@@ -599,5 +604,9 @@ item details on order summary page ---*/
 
     .post-container {
         padding-top: 210px;
+    }
+
+    #content{
+        padding-top: 9rem;
     }
 }
