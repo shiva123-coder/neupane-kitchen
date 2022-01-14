@@ -149,14 +149,14 @@
 
         {% block header_main %}
         {% endblock %}      
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
+    
+        {% block content %}
+        {% endblock %}
+
 
         <!--footer -->
-        <div id="footer">
-            {% include 'includes/footer.html' %}
+    
+        {% include 'includes/footer.html' %}
         </div>
         {% block postloadjs %}
             <script>

@@ -44,9 +44,9 @@ body {
 } */
 
 /*---------specials--*/
-/* .header-container {
+.header-container {
     padding-top: 120px;
-} */
+}
 
 /*----------block-divider--*/
 .block-divider{
@@ -472,10 +472,10 @@ item details on order summary page ---*/
     .nav-item-home{
         padding-top: 40px;
     }
-/* 
+
     .header-container{
         padding-top: 65px;
-    } */
+    }
   
     .btn-add{
         padding-top: 20px;
