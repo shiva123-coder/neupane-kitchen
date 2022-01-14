@@ -149,12 +149,15 @@
 
         {% block header_main %}
         {% endblock %}      
-
-        {% block content %}
-        {% endblock %}
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
 
         <!--footer -->
-        {% include 'includes/footer.html' %}
+        <div id="footer">
+            {% include 'includes/footer.html' %}
+        </div>
         {% block postloadjs %}
             <script>
                 $('.toast').toast('show');

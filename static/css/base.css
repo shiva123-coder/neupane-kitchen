@@ -3,26 +3,25 @@
     box-sizing: border-box;
 }
 
-:root {
+/* :root {
     scroll-behavior: smooth;
-}
+} */
 
 
-html {
+html{
     height: 100%;
     top: 0;
     bottom: 0;
+    
 }
 
-body {
-    
+body { 
     min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: 'Dosis', sans-serif;
     position: relative;
     overflow-x: hidden;
-    height: 100%;
     
 }
 
@@ -33,6 +32,18 @@ body {
     --main-mix: linear-gradient(to right, #760b14, #b35860);
     --main: #760b14;
 }
+
+/* .fixed-top{
+    max-height: 15vh;
+}
+
+#content{
+    max-height: 80vh;
+}
+
+#footer{
+    max-height: 5vh;
+} */
 
 /*---------specials--*/
 .header-container {
@@ -139,10 +150,11 @@ header {
     padding: 0;
 }
 .carousel-item{
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     padding: 0;
 }
+
 .carousel-item1{
     background: url('/media/ban1.jpg') no-repeat;
     background-size: cover;
@@ -372,22 +384,20 @@ item details on order summary page ---*/
 }
 
 .contact-container{
-    margin-bottom: 300%;
+    margin-bottom: 20%;
 }
 
 /*-----login form---*/
 .login-heading{
-    padding-top: 350px;
+    padding-top: 20rem;
 }
-
-.signup-heading{
-    padding-top: 250px;
-}
-
 /*-----signup form---*/
-#signup_form{
-    margin-bottom: 150px;
+.signup-heading{
+    padding-top: 15rem;
 }
+/* #signup_form{
+    margin-bottom: 150px;
+} */
 
 /*----admin page---*/
 .admin-container{
@@ -408,6 +418,7 @@ item details on order summary page ---*/
     background: var(--main-mix);
     bottom: 0;
     z-index: 99999999;
+    position: fixed;
 }
 
 .social-icon{
@@ -491,10 +502,6 @@ item details on order summary page ---*/
         font-size: medium;
     }
 
-    /* .carousel-indicators{
-        margin-bottom: 10%;
-    } */
-}
 @media screen and (max-width:576px){
     .carousel-indicators{
         top: 85%;
@@ -530,10 +537,6 @@ item details on order summary page ---*/
         font-size: .75rem;
     }
 
-    /* .header-container{
-        padding-top: 50px;
-    } */
-
     #scroll-icon {
         padding-bottom: 80px;
     }
@@ -542,13 +545,13 @@ item details on order summary page ---*/
         padding-top: 100px;
     }
 
-    .login-heading{
-        padding-top: 180px;
-    }
+    /* .login-heading{
+        padding-top: 5rem;
+    } */
 
-    .login-form{
+    /* .login-form{
         padding-bottom: 100px;
-    }
+    } */
 
     .post-container {
         padding-top: 100px;
@@ -556,6 +559,22 @@ item details on order summary page ---*/
 
     .existing-review-container{
         padding-bottom: 120px;
+    }
+
+    .btn-contact{
+        margin-bottom: 30%;
+    }
+
+    .btn-sign-in{
+        margin-bottom: 30%;
+    }
+
+    .social-icon{
+        font-size: 2rem;
+    }
+
+    .footer-text{
+        font-size: 0.75rem;
     }
 }
 
