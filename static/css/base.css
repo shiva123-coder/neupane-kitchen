@@ -151,28 +151,31 @@ header {
     height: 95vh;
     width: 100%;
     padding: 0;
-    position: fixed;
 }
 
 .carousel-item1{
     background: url('/media/ban1.jpg') no-repeat;
     background-size: cover;
     background-position: top;
+    background-attachment: fixed;
 }
 .carousel-item2{
     background: url('/media/ban2.png') no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 .carousel-item3{
     background: url('/media/ban3.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 .carousel-item4{
     background: url('/media/ban4.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 
 }
 
