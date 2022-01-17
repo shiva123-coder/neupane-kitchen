@@ -21,16 +21,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Dosis', sans-serif;
-    position: relative;
-    height: 100%;
-}
-
-main{
-    margin: 0 auto;
     min-height: 100vh;
-
 }
-
 
 :root{
     --white: #FFFFFF;
@@ -40,26 +32,24 @@ main{
     --main: #760b14;
 }
 
-
-/* .fixed-top{
-    max-height: 15vh;
-} */
-
-.allauth-container{
-   padding-bottom: 6rem;
-   padding-top: 3rem;
-}
-
-/* #footer{
-    max-height: 5vh;
-} */
-
-/*---------specials--*/
+/*---------header--*/
 .header-container {
     padding-top: 120px;
 }
 
-/*----------block-divider--*/
+header {
+    background:  var(--main-mix);
+    height: auto;
+}
+
+/*---------specials----------*/
+
+.content{
+    margin: 0 auto;
+    min-height: calc(100vh - 128px - 54px);
+}
+
+/*--block-divider--*/
 .block-divider{
  width: 150px;
  margin-top: -40px;
@@ -70,7 +60,7 @@ main{
 margin-top: -20px;
 }
 
-/*--------buttons-----*/
+/*--buttons--*/
 .btn-signout{
     width: 160px;
     height: 30px;
@@ -78,9 +68,19 @@ margin-top: -20px;
     line-height: 1.5;
     padding: 2px;
     border-radius: 0;
-
 }
 
+.search-btn{
+    background: white;
+}
+
+.btn-order{
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
 /*--------form----*/
 .textarea.form-control {
     resize: none;
@@ -108,9 +108,6 @@ img.main-logo{
     background: var(--main-mix);
     
 }
-header {
-    background:  var(--main-mix);
-}
 
 .side-nav{
     padding-left: 90px;
@@ -135,9 +132,7 @@ header {
     background: top;
 }
 
-.search-btn{
-    background: white;
-}
+
 
 .search-item{
     margin-top: -30px;
@@ -248,15 +243,6 @@ display: none;
 
 .truck1{
     transform: scaleX(-1);
-}
-
-/*---3rd slide of carousel on the homepage--*/
-.btn-order{
-    position: absolute;
-    top: 160%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
 }
 /*----------all menu page -----*/
 
@@ -401,8 +387,17 @@ item details on order summary page ---*/
 }
 
 /*-----login form---*/
+.allauth-container{
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+ } 
+
 .allauth-form-inner-content{
     padding-top: 12rem;
+}
+
+.wrapper{
+    min-height: 58vh;
 }
 
 /*-----signup form---*/
@@ -434,6 +429,7 @@ footer{
     bottom: 0;
     z-index: 99999999;
     clear: both;
+    position: relative;
 }
 
 .social-icon{
@@ -449,6 +445,10 @@ footer{
 }
 
 @media screen and (min-width:992px){
+    .content{
+        margin: 0 auto;
+        min-height: calc(100vh - 64px - 54.38px);
+    }
     .flash-notice{
         padding-top: 5px;
         font-style: italic;
@@ -473,6 +473,11 @@ footer{
     /* body{
         background-position-x: unset;
     } */
+
+    .content{
+        margin: 0 auto;
+        min-height: calc(100vh - 64px - 54.38px);
+    }
 
     .main-text{
         left: 6%;
@@ -560,9 +565,9 @@ footer{
         padding-bottom: 120px;
     }
 
-    .btn-contact{
-        /* margin-bottom: 30%; */
-    }
+    /* .btn-contact{
+        margin-bottom: 30%;
+    } */
 
     .allauth-form-inner-content {
         padding-top: 4rem;
@@ -594,8 +599,7 @@ footer{
 
     .allauth-container{
         padding-top: 6rem;
-    }
-     
+    } 
 }
 
 @media screen and (max-width:290px){
