@@ -39,11 +39,11 @@
     <body>
         <div id="scroll-icon"><i class="far fa-arrow-alt-circle-up"></i></div>
         <header class="container-fluid fixed-top">
-            <div class="my-auto d-sm-block d-lg-none">
-                {% include 'includes/side_nav_main.html' %}
-            </div>
+            <!-- <div class="my-auto d-sm-block d-lg-none">
+               (include side_nav_main inside this div inorder to display accound, basket and blog in the navbar on small/medium device)
+            </div> -->
             <!--navbar brand-->
-            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <div id="topnav" class="row bg-wite pt-lg-2 d-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link">
                         <div class="container brand-logo">
@@ -54,7 +54,7 @@
                     </a>
                 </div>
                 <!--search field-->
-                <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="col-6 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-block">
                     <form method="GET" action="{% url 'all_menu' %}">
                         <div class="input-group w-100">
                             <input class="form-control border border-black search-field" type="text" name="q1" placeholder="Search">
@@ -69,9 +69,9 @@
                     </form>
                 </div>
                 <!--account options with if/else to check users and superusers-->
-                <div class="col-12 col-lg-4 my-auto d-none d-md-block">
+                <div class="col-12 col-lg-4 my-auto d-none d-lg-block">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                        <li class="list-inline-item">
+                        <li class="list-inline-item ">
                             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
@@ -118,7 +118,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row bg-white">
+            <div class="row bg-wite">
                 <!--main nav-->
                 <nav class="navbar navbar-expand-lg navbar-light w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">

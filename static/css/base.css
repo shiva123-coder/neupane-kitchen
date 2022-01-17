@@ -43,22 +43,10 @@ header {
 }
 
 /*---------specials----------*/
-
 .content{
     margin: 0 auto;
     min-height: calc(100vh - 128px - 54px);
 }
-
-/*--block-divider--*/
-/* .block-divider{
- width: 150px;
- margin-top: -40px;
- border: 0.25px solid #c3b0b0;
-}
-
-.block-divider-checkout{
-margin-top: -20px;
-} */
 
 /*--buttons--*/
 .btn-signout{
@@ -93,7 +81,7 @@ input .form-control{
 /*--navbar --*/
 img.main-logo{
     height: 100%;
-    padding: 5px;
+    padding: 0px;
 }
 
 .brand-logo{
@@ -104,9 +92,8 @@ img.main-logo{
     padding-top: 30px;
 }
 
-.bg-white{
-    background: var(--main-mix);
-    
+.bg-wite{
+    background: var(--green);
 }
 
 .side-nav{
@@ -124,7 +111,6 @@ img.main-logo{
 }
 
 
-
 .search-item{
     margin-top: -30px;
 }
@@ -132,11 +118,6 @@ img.main-logo{
 .text-black{
     color: #000;
     font-weight: bold;
-}
-
-/*--navbar icon (mobile device only)--*/
-.navbar-light .navbar-toggler-icon{
-    background-color: #724141;
 }
 
 /*--------------home page-----*/
@@ -416,7 +397,7 @@ footer{
     height: auto;
 }
 .footer-container{
-    background: var(--main-mix);
+    background: var(--green);
     bottom: 0;
     z-index: 99999999;
     clear: both;
@@ -481,9 +462,9 @@ footer{
         left: 6%;
     }
 
-    .navbar{
+    /* .navbar{
         margin-top:-40px;
-    }
+    } */
 
     .navbar-toggler {
         position: fixed;
@@ -491,9 +472,9 @@ footer{
         left: 1%;
     }
 
-    .nav-item-home{
+    /* .nav-item-home{
         padding-top: 40px;
-    }
+    } */
 
     .header-container{
         padding-top: 65px;
@@ -521,9 +502,9 @@ footer{
         top: 85%;
     }
 
-    .navbar{
+    /* .navbar{
         margin-top:-25px;
-    }
+    } */
 
     .carousel-item{
         height: 90vh;
