@@ -50,7 +50,7 @@ header {
 }
 
 /*--block-divider--*/
-.block-divider{
+/* .block-divider{
  width: 150px;
  margin-top: -40px;
  border: 0.25px solid #c3b0b0;
@@ -58,7 +58,7 @@ header {
 
 .block-divider-checkout{
 margin-top: -20px;
-}
+} */
 
 /*--buttons--*/
 .btn-signout{
@@ -117,15 +117,6 @@ img.main-logo{
     background: var(--main-mix);
     color: #FFFFFF;
     font-weight: bold;
-}
-
-
-#menu-link{
-    border: 1px solid var(--light);
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-left: -13px;
 }
 
 .search-field{
@@ -445,6 +436,13 @@ footer{
 }
 
 @media screen and (min-width:992px){
+    #menu-link{
+    border: 1px solid var(--light);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-left: -13px;
+    }
     .content{
         margin: 0 auto;
         min-height: calc(100vh - 64px - 54.38px);

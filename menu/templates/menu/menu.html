@@ -18,7 +18,9 @@
                     <h2 class="item item-heading font-weight-bold">
                         {% if existing_categories %}
                         {% for c in existing_categories %}
-                            <a class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.display_name }}</a>
+                            <a class="p-2 mb-1 badge badge-white text-black">{{ c.display_name }}
+                                <hr class="block-divider">
+                            </a>
                         {% endfor %}
                         {% else %}
                         <h2 class="item item-heading font-weight-bold">

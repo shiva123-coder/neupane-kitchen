@@ -1,12 +1,14 @@
     <!--search bar on navbar-->
     <li class="list-inline-item search-item">
       <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="">
-              <div><i class="fas fa-search fa-lg text-white"></i></div>
-              <p class="my-0 text-white search-all">Search</p>
+          <div class="nav-link text-white">
+              <div>
+                  <i class="fas fa-search fa-lg text-white mr-2"></i>
+                  <span class="">Search</span>
+              </div>
           </div>
       </a>
-      <div class="dropdown-menu border-0 w-100 p-3 rounded-0 mx-auto" aria-labelledby="mobile-search">
+      <div class="dropdown-menu border-0 w-100 rounded-0 mx-auto" aria-labelledby="mobile-search">
           <form class="form" method="GET" action="{% url 'all_menu' %}">
               <div class="input-group w-100">
                   <input class="form-control border border-black search-field" type="text" name="q1" placeholder="Search">

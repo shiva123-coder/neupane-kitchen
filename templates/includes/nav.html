@@ -3,19 +3,34 @@
         <!--home-->
         <li class="nav-item nav-item-home">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
-                Home
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-lg fa-home mr-3 d-inline d-lg-none"></i>
+                        <span class="nav-item">Home</span>
+                    </div>
+                </div>
             </a>
         </li>
         <!--about-->
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="about-link" aria-haspopup="true" aria-expanded="false">
-                About Us
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-lg fa-info-circle mr-3 d-inline d-lg-none"></i>
+                        <span class="nav-item">About Us</span>
+                    </div>
+                </div>
             </a>
         </li>
         <!--all menu-->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Our Menu  <span><i class="fas fa-caret-down"></i></span>
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-lg fa-utensils mr-3 d-inline d-lg-none"></i>
+                        <span class="nav-item mr-2">Our Menu</span><span><i class="fas fa-caret-down"></i></span>
+                    </div> 
+                </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="menu-link">
                 <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item item-list">Vegeterian & Vegan</a>
@@ -26,10 +41,64 @@
                 <a href="{% url 'all_menu' %}"class="dropdown-item">All </a>
             </div>
         </li>
-        <!--contact us-->
-        <li class="nav-item">
+         <!--contact us-->
+         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'contact' %}" id="contact-link" aria-haspopup="true" aria-expanded="false">
-                Contact Us
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-lg fa-headset mr-3 d-inline d-lg-none"></i>
+                        <span class="nav-item "> Contact Us</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+         <!--account-->
+        <li class="nav-item dropdown d-md-block d-lg-none">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-user fa-lg mr-3"></i><span class="nav-item">Account</span>
+                    </div>
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'add_item' %}" class="dropdown-item">Admin</a>
+                    {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+         <!--basket-->
+         <li class="nav-item d-md-block d-lg-none">
+            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
+                <div class="nav-link text-white">
+                    <div><i class="fas fa-shopping-basket text-nav mr-3"></i>
+                    <span class="nav-item ">
+                        {% if sum_total %}
+                            £{{ sum_total|floatformat:2 }}
+                        {% else %}
+                            £0.00
+                        {% endif %}
+                    </span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <!--blog-->
+        <li class="nav-item d-md-block d-lg-none">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'blog' %}">
+                <div class="nav-link text-white">
+                    <div>
+                        <i class="fas fa-blog mr-3"></i>
+                        <span class="nav-item ">Blog</span>
+                    </div>
+                </div>
             </a>
         </li>
         <!--search field-->
@@ -40,5 +109,3 @@
         </li>
     </ul>
 </div>
-
-<!---->
