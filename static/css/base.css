@@ -556,7 +556,7 @@ item details on order summary page ---*/
     }
 
     .btn-contact{
-        margin-bottom: 30%;
+        /* margin-bottom: 30%; */
     }
 
     .allauth-form-inner-content {
