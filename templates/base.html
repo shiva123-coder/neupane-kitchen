@@ -150,14 +150,17 @@
         {% block header_main %}
         {% endblock %}      
         
+        <main>
         {% block content %}
         {% endblock %}
+        </main>
         
 
 
         <!--footer -->
-    
+        <footer>
         {% include 'includes/footer.html' %}
+        </footer>
         {% block postloadjs %}
             <script>
                 $('.toast').toast('show');
