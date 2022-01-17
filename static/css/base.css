@@ -1,6 +1,8 @@
 
  *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -11,6 +13,7 @@
 html{
     top: 0;
     bottom: 0;
+    height: 100%;
     
 }
 
@@ -19,8 +22,14 @@ body {
     padding: 0;
     font-family: 'Dosis', sans-serif;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
 }
+
+main{
+    margin: 0 auto;
+}
+
 
 :root{
     --white: #FFFFFF;
@@ -29,6 +38,7 @@ body {
     --main-mix: linear-gradient(to right, #760b14, #b35860);
     --main: #760b14;
 }
+
 
 /* .fixed-top{
     max-height: 15vh;
@@ -148,7 +158,7 @@ header {
     padding: 0;
 }
 .carousel-item{
-    height: 95vh;
+    height: 100vh;
     width: 100%;
     padding: 0;
 }
@@ -418,7 +428,6 @@ item details on order summary page ---*/
     background: var(--main-mix);
     bottom: 0;
     z-index: 99999999;
-   
     clear: both;
 }
 
