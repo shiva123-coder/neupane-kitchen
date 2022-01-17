@@ -418,7 +418,8 @@ item details on order summary page ---*/
     background: var(--main-mix);
     bottom: 0;
     z-index: 99999999;
-    position: fixed;
+    position: absolute;
+    clear: both;
 }
 
 .social-icon{
