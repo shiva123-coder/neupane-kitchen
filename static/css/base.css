@@ -83,7 +83,7 @@ input .form-control{
 }
 
 /*--navbar --*/
-.brand-logo{
+img.main-logo{
     height: 100%;
     padding: 0px;
 }
@@ -473,7 +473,7 @@ footer{
     margin-top: 5px;
     }
 
-    .brand-logo{
+    img.main-logo{
         height: 6.25rem;
         padding: 0px;
         margin-left: -2.5rem;
@@ -483,6 +483,7 @@ footer{
         margin: 0 auto;
         min-height: calc(100vh - 64px - 54.38px);
     }
+    
     .flash-notice{
         padding-top: 5px;
         font-style: italic;
