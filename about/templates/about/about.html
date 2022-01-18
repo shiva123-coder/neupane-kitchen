@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_main %}
+<div class="overlay"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container contact-container text-center pt-3 pb-3 mb-5 mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="pt-3">Our Begining and Motto</h1>
+                <hr class="block-divider">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt iaculis orci, at gravida
+                    libero egestas eget. Suspendisse hendrerit, lorem lacinia sagittis bibendum, odio magna auctor
+                    neque, vitae venenatis risus ipsum congue augue. Mauris in tortor augue. Ut vitae tincidunt nisi.
+                    Sed fringilla, sem quis bibendum molestie, turpis tortor tristique mi, vehicula pellentesque justo
+                    neque quis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt ante vel
+                    vulputate accumsan. Nullam vel sapien mollis, dignissim mi eget, vulputate nisl. Cras semper aliquet
+                    diam, ac imperdiet felis sollicitudin et. Aliquam pharetra quam sit amet nulla finibus, at viverra
+                    sapien bibendum.
+                </h2>
+            </div>
+        </div>
+        <a href="{% url 'blog' %}">
+            <div class="btn btn-success btn-lg mt-4">Visit our Blog</div>
+        </a>
+    </div>
+{% endblock %}

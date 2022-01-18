@@ -106,16 +106,23 @@ img.main-logo{
 }
 
 .bg-wite{
-    background: var(--green);
+    background: var(--main-mix);
 }
 
 .side-nav{
     padding-left: 90px;
 }
 
+.item-list,
+.dropdown-account{
+        color: #000000;
+        font-weight: bold;
+} 
+
 .item-list:hover,
 .dropdown-account:hover{
-background: var(--green);
+background: var(--main-mix);
+color: var(--white);
 }
 
 .search-field{
@@ -277,9 +284,9 @@ display: none;
 }
 
 /*-----item-info page ---*/
-/* .item-container-sub{
-    padding-bottom: 100px;
-} */
+.item-container-sub{
+    padding-bottom: 3rem;
+}
 
 .item-image-info{
     height: 50vh;
@@ -355,6 +362,25 @@ item details on order summary page ---*/
 }
 
 /*---contact us page-----*/
+.col-contact-form{
+    background: turquoise;
+}
+
+.col-contact-details{
+    background: yellow;
+}
+
+.contact-form::before{
+    content: "";
+    position: absolute;
+    background-color:  yellow;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    top: 38px;
+    left: 98%;
+}
+
 .form-center {
 	display:flex;
 	justify-content: center;
@@ -362,6 +388,11 @@ item details on order summary page ---*/
 
 .contact-container{
     margin-bottom: 20%;
+}
+
+.insta-promo{
+    font-style: italic;
+
 }
 
 /*-----login form---*/
@@ -403,7 +434,7 @@ footer{
     height: auto;
 }
 .footer-container{
-    background: var(--green);
+    background: var(--main-mix);
     bottom: 0;
     z-index: 99999999;
     clear: both;
@@ -412,11 +443,11 @@ footer{
 
 .footer-text{
    font-weight: bold;
-    color: #000000;
+   color: var(--white);
 }
 
 .footer-text a{
-    color: #000000;
+    color: var(--white);
 }
 
 .footer-text a:hover{
@@ -426,7 +457,7 @@ footer{
 .social-icon{
     font-weight: 400;
     font-size: 40px;
-    color:#343a40ad;
+    color: var(--white);
 }
 
 
@@ -434,7 +465,7 @@ footer{
 
 @media screen and (min-width:992px){
     #menu-link{
-    border: 1px solid black;
+    border: 1px solid var(--white);
     display: inline-block;
     padding: 0;
     border-radius: 20px;
@@ -523,13 +554,27 @@ footer{
     .text-nav{
         font-size: medium;
     }
+    .contact-form::after {
+        content: "";
+        position: absolute;
+        background-color: yellow;
+        width: 30px;
+        height: 30px;
+        transform: rotate(45deg);
+        top: 98%;
+        left: 85%;
+    }
+
+    .contact-form::before{
+        display: none;
+    }
 }
 
 @media screen and (max-width:576px){
     .navbar{
         margin-top:-1.25rem;
     }
-
+/* 
     .nav-item{
         font-size: 0.75rem;
         margin-bottom: -0.25rem;
@@ -538,6 +583,10 @@ footer{
     .item-list,
     .dropdown-account{
         font-size: 0.75rem;
+    } */
+    .card-item{
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .carousel-indicators{
@@ -605,7 +654,6 @@ footer{
 
     .footer-text{
         font-size: 0.75rem;
-        color: #000000;
     }
 }
 

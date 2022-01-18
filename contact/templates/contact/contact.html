@@ -18,24 +18,59 @@
                 <h1 class="pt-3">Contact Us</h1>
                 <hr class="block-divider">
                 <p>
-                    Please fill out the form below, we will be in touch as soon as possible.
+                    Please fill out the form below, we will be in touch as soon as possible. Alternatively, please use our contact details to contact us directly
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col form-center pb-5">
+            <div class="col-sm-12 col-md-6 form-center pb-5 col-contact-form order-md-first">
                 <form method="post">
                     {% csrf_token %}
                     <fieldset class="contact-form">
-                        <legend class="h5 text-left">Contact Details</legend>
+                        <legend class="h5 text-left pt-5 font-weight-bold">Contact Details</legend>
                         {{ form.full_name | as_crispy_field }}
                         {{ form.email | as_crispy_field }}
                         {{ form.contact_number | as_crispy_field }}
-                        <legend class="h5 text-left pt-2">Message</legend>
+                        <legend class="h5 text-left pt-2 font-weight-bold">Message</legend>
                         {{ form.message | as_crispy_field }}
                     </fieldset>
                     <button type="submit" class="btn-contact p-1">Submit</button>
                 </form>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-contact-details pt-5 text-center font-weight-bold">
+               <h4 class="contact-info font-weight-bold">Our details</h4>
+               <hr class="block-divider">
+               <div class="row">
+                   <div class="col">
+                    <p>Email : info.neupanekitchen.co.uk</p>
+                   </div>
+               </div>
+               <div class="row">
+                <div class="col">
+                    <p>Contact no : 07470381691 </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Website : www.neupanekitchen.co.uk</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="font-weight-bold insta-promo">Our Instagram Page gets updated frequently, dont forgot to check our new menu and discounts</h6>
+                    <p>
+                        <a href="https://instagram.com/neupanes.kitchen?utm_medium=copy_link">
+                            <i class="fab fa-instagram-square social-icon text-primary"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
             </div>
         </div>
     </div>

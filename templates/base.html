@@ -39,9 +39,6 @@
     <body>
         <div id="scroll-icon"><i class="far fa-arrow-alt-circle-up"></i></div>
         <header class="container-fluid fixed-top">
-            <!-- <div class="my-auto d-sm-block d-lg-none">
-               (include side_nav_main inside this div inorder to display accound, basket and blog in the navbar on small/medium device)
-            </div> -->
             <!--navbar brand-->
             <div id="topnav" class="row bg-wite pt-lg-2 d-flex">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -50,16 +47,15 @@
                             <img class="card-img-top img-fluid main-logo " src="/media/logo1.png"
                             alt="Neupane's Kitchen Logo">
                         </div>
-                        <!-- <h2 class="logo-font text-white my-0 text-nav">Neupane Kitchen</h2> -->
                     </a>
                 </div>
                 <!--search field-->
                 <div class="col-6 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-block">
                     <form method="GET" action="{% url 'all_menu' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border border-dark search-field" type="text" name="q1" placeholder="Search">
-                            <div class="input-group-append border border-dark">
-                                <button class="form-control btn btn-black border border-black search-btn" type="submit">
+                            <input class="form-control border borderwhite search-field" type="text" name="q1" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-white search-btn" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
@@ -70,9 +66,9 @@
                 </div>
                 <!--account options with if/else to check users and superusers-->
                 <div class="col-12 col-lg-4 my-auto d-none d-lg-block">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <ul class="list-inline list-unstyled text-center text-lg-right my-0 pr-2">
                         <li class="list-inline-item ">
-                            <a class="text-dark font-weight-bold nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-white font-weight-bold nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0 text-nav">Account</p>
@@ -93,7 +89,7 @@
                         </li>
                         <!--basket-->
                         <li class="list-inline-item">
-                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-dark font-weight-bold" href="{% url 'view_basket' %}">
+                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-white font-weight-bold" href="{% url 'view_basket' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket text-nav"></i></div>
                                     <p class="my-0 text-nav">
@@ -107,14 +103,16 @@
                             </a>
                         </li>
                         <!--blog-->
+                        {% if request.user.is_superuser %}
                         <li class="list-inline-item">
-                            <a class="text-dark font-weight-bold nav-link" href="{% url 'blog' %}">
+                            <a class="text-white font-weight-bold nav-link" href="{% url 'blog' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-blog"></i></div>
                                     <p class="my-0">Blog</p>
                                 </div>
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -154,9 +152,6 @@
         {% block content %}
         {% endblock %}
         </div>
-        
-
-
         <!--footer -->
         <footer>
         {% include 'includes/footer.html' %}

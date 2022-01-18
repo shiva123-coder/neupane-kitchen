@@ -16,7 +16,7 @@
             <div class="row item-row">
                 <div class="col text-center">
                     {% if existing_categories %}
-                        <h2 class="item item-heading font-weight-bold">
+                        <h2 class="item item-heading font-weight-bold pb-0">
                             {% for c in existing_categories %}
                             <a class="badge badge-white text-black">{{ c.display_name }}
                                 <hr class="block-divider">
@@ -32,9 +32,30 @@
                     {% endif %}
                 </div>
             </div>
+            <!--search box, only visible on small and medium devices-->
+            <div class="row">
+                <div class="col">
+                    <div class="col-6 col-lg-4 mx-auto py-1 py-lg-0 d-block d-lg-none pb-2 pt-0">
+                        <form method="GET" action="{% url 'all_menu' %}">
+                            <div class="input-group w-100">
+                                <input class="form-control border borderwhite search-field" type="text" name="q1" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="form-control btn btn-black border border-white search-btn" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <div class="item-container col-10 offset-1">
                 <div class="row">
-                    <div class="col-10 offset-1 d-flex justify-content-center justify-content-md-end">
+                    <!--sort option-->
+                    <div class="col-10 offset-1 d-flex justify-content-center justify-content-md-center">
                         <div class="sort-option w-40 ">
                             <select id="sort-selection"
                                 class="custom-select -{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -51,6 +72,7 @@
                             </select>
                         </div>
                     </div>
+                    <!--item category heading-->
                     <div class="col-12 col-md-6">
                         <p class="text-muted text-center text-md-left">
                             {% if search_term or existing_categories or existing_sorting != 'None_None' %}
@@ -61,11 +83,12 @@
                     </div>
                 </div>
             </div>
+            <!--bootstrap card with item image, price and category-->
             <div class="item-container-sub col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                     <div class="row">
                         {% for item in items %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-item">
                             <div class="card menu-card">
                                 <div class="item-image">
                                     {% if item.image %}
@@ -109,8 +132,6 @@
                                                 </a>
                                             </p>
                                             {% endif %}
-
-
                                             <!--edit/delete button for admin to edit/delet item from the page-->
                                             {% if request.user.is_superuser %}
                                                 <small class="badges">

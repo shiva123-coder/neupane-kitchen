@@ -2,8 +2,8 @@
     <ul class="navbar-nav w-auto mx-auto">
         <!--home-->
         <li class="nav-item nav-item-home">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white font-weight-bold">
                     <div>
                         <i class="fas fa-home mr-3 d-inline d-lg-none"></i>
                         <span class="nav-item">Home</span>
@@ -13,8 +13,8 @@
         </li>
         <!--about-->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="#" id="about-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'about' %}" id="about-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white font-weight-bold">
                     <div>
                         <i class="fas fa-info-circle mr-3 d-inline d-lg-none"></i>
                         <span class="nav-item">About Us</span>
@@ -24,8 +24,8 @@
         </li>
         <!--all menu-->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white font-weight-bold">
                     <div>
                         <i class="fas fa-utensils mr-3 d-inline d-lg-none"></i>
                         <span class="nav-item mr-2">Our Menu</span><span><i class="fas fa-caret-down"></i></span>
@@ -33,18 +33,18 @@
                 </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="menu-link">
-                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item item-list text-dark">Vegeterian & Vegan</a>
-                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item item-list text-dark">Non Vegeterian</a>
-                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item item-list text-dark">Rice & Noodles</a>
-                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item item-list text-dark">House Specials</a>
-                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item item-list text-dark">Beverages</a>
+                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item item-list">Vegeterian & Vegan</a>
+                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item item-list">Non Vegeterian</a>
+                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item item-list">Rice & Noodles</a>
+                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item item-list">House Specials</a>
+                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item item-list">Beverages</a>
                 <a href="{% url 'all_menu' %}"class="dropdown-item item-list">All </a>
             </div>
         </li>
          <!--contact us-->
          <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="{% url 'contact' %}" id="contact-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'contact' %}" id="contact-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white font-weight-bold">
                     <div>
                         <i class="fas fa-headset mr-3 d-inline d-lg-none"></i>
                         <span class="nav-item mr-2">Contact Us</span>
@@ -54,8 +54,8 @@
         </li>
          <!--account-->
         <li class="nav-item dropdown d-md-block d-lg-none">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-white font-weight-bold">
                     <div>
                         <i class="fas fa-user mr-3"></i><span class="nav-item mr-3">Account</span><span><i class="fas fa-caret-down"></i></span>
                     </div>
@@ -64,20 +64,20 @@
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="{% url 'add_item' %}" class="dropdown-item dropdown-account text-dark">Admin</a>
+                        <a href="{% url 'add_item' %}" class="dropdown-item dropdown-account">Admin</a>
                     {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item dropdown-account text-dark">My Account</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-account text-dark">Logout</a>
+                        <a href="{% url 'profile' %}" class="dropdown-item dropdown-account">My Account</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-account">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-account text-dark">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item dropdown-account text-dark">Login</a>
+                    <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-account">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item dropdown-account">Login</a>
                 {% endif %}
             </div>
         </li>
          <!--basket-->
          <li class="nav-item d-md-block d-lg-none">
-            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-dark font-weight-bold" href="{% url 'view_basket' %}">
-                <div class="nav-link text-dark font-weight-bold">
+            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-white font-weight-bold" href="{% url 'view_basket' %}">
+                <div class="nav-link text-white font-weight-bold">
                     <div><i class="fas fa-shopping-basket text-nav mr-3"></i>
                     <span class="nav-item ">
                         {% if sum_total %}
@@ -91,15 +91,6 @@
             </a>
         </li>
         <!--blog-->
-        <li class="nav-item d-md-block d-lg-none">
-            <a class="logo-font font-weight-bold nav-link text-dark font-weight-bold mr-5" href="{% url 'blog' %}">
-                <div class="nav-link text-dark font-weight-bold">
-                        <i class="fas fa-blog mr-3"></i>
-                        <span class="nav-item ">Blog</span>
-                </div>
-            </a>
-        </li>
         <!--search field-->
-        {% include 'includes/side_nav_search.html' %}
     </ul>
 </div>
