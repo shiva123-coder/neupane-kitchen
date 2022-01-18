@@ -57,8 +57,8 @@
                 <div class="col-6 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-block">
                     <form method="GET" action="{% url 'all_menu' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black search-field" type="text" name="q1" placeholder="Search">
-                            <div class="input-group-append">
+                            <input class="form-control border border-dark search-field" type="text" name="q1" placeholder="Search">
+                            <div class="input-group-append border border-dark">
                                 <button class="form-control btn btn-black border border-black search-btn" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
@@ -72,7 +72,7 @@
                 <div class="col-12 col-lg-4 my-auto d-none d-lg-block">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item ">
-                            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-dark font-weight-bold nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0 text-nav">Account</p>
@@ -81,19 +81,19 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="{% url 'add_item' %}" class="dropdown-item">Admin</a>
+                                        <a href="{% url 'add_item' %}" class="dropdown-item dropdown-account">Admin</a>
                                     {% endif %}
-                                        <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        <a href="{% url 'profile' %}" class="dropdown-item dropdown-account">My Account</a>
+                                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-account">Logout</a>
                                 {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-account">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item dropdown-account">Login</a>
                                 {% endif %}
                             </div>
                         </li>
                         <!--basket-->
                         <li class="list-inline-item">
-                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-white" href="{% url 'view_basket' %}">
+                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-dark font-weight-bold" href="{% url 'view_basket' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket text-nav"></i></div>
                                     <p class="my-0 text-nav">
@@ -108,7 +108,7 @@
                         </li>
                         <!--blog-->
                         <li class="list-inline-item">
-                            <a class="text-white nav-link" href="{% url 'blog' %}">
+                            <a class="text-dark font-weight-bold nav-link" href="{% url 'blog' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-blog"></i></div>
                                     <p class="my-0">Blog</p>

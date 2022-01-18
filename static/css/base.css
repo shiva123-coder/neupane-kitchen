@@ -48,6 +48,10 @@ header {
     min-height: calc(100vh - 128px - 54px);
 }
 
+.text-dark{
+    font-size: 1.25rem;
+}
+
 /*--buttons--*/
 .btn-signout{
     width: 160px;
@@ -84,6 +88,15 @@ img.main-logo{
     padding: 0px;
 }
 
+.navbar-nav{
+    padding-left: 1rem;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+}
+
 .brand-logo{
     height: 100px;
     width: fit-content;
@@ -100,10 +113,9 @@ img.main-logo{
     padding-left: 90px;
 }
 
-.item-list:hover{
-    background: var(--main-mix);
-    color: #FFFFFF;
-    font-weight: bold;
+.item-list:hover,
+.dropdown-account:hover{
+background: var(--green);
 }
 
 .search-field{
@@ -113,11 +125,6 @@ img.main-logo{
 
 .search-item{
     margin-top: -30px;
-}
-
-.text-black{
-    color: #000;
-    font-weight: bold;
 }
 
 /*--------------home page-----*/
@@ -250,7 +257,6 @@ display: none;
     z-index: 999999;
 }
 
-
 /*--menu & blog page (for card and image)--*/
 .menu-card{
     max-height: 450px;
@@ -271,9 +277,9 @@ display: none;
 }
 
 /*-----item-info page ---*/
-.item-container-sub{
+/* .item-container-sub{
     padding-bottom: 100px;
-}
+} */
 
 .item-image-info{
     height: 50vh;
@@ -404,26 +410,44 @@ footer{
     position: relative;
 }
 
+.footer-text{
+   font-weight: bold;
+    color: #000000;
+}
+
+.footer-text a{
+    color: #000000;
+}
+
+.footer-text a:hover{
+    color: blue;
+}
+
 .social-icon{
     font-weight: 400;
     font-size: 40px;
-    color: #FFFFFF;
+    color:#343a40ad;
 }
 
 
 /*------media----------*/
-@media (min-width: 1024px) and (max-width: 1024px){
-    
-}
 
 @media screen and (min-width:992px){
     #menu-link{
-    border: 1px solid var(--light);
+    border: 1px solid black;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 0;
     border-radius: 20px;
     margin-left: -13px;
+    margin-top: 5px;
     }
+
+    img.main-logo{
+        height: 6.25rem;
+        padding: 0px;
+        margin-left: -2.5rem;
+    }
+
     .content{
         margin: 0 auto;
         min-height: calc(100vh - 64px - 54.38px);
@@ -435,6 +459,10 @@ footer{
 
     .message-container{
         top: 20%;
+    }
+
+    .item-heading{
+        padding-top: 1.5rem;
     }
 
     .review-row{
@@ -449,9 +477,9 @@ footer{
 }
 
 @media screen and (max-width:992px){
-    /* body{
-        background-position-x: unset;
-    } */
+    img.main-logo{
+        padding-bottom: 0.75rem;
+    }
 
     .content{
         margin: 0 auto;
@@ -462,9 +490,9 @@ footer{
         left: 6%;
     }
 
-    /* .navbar{
-        margin-top:-40px;
-    } */
+    .navbar{
+        padding: 0;
+    }
 
     .navbar-toggler {
         position: fixed;
@@ -498,13 +526,23 @@ footer{
 }
 
 @media screen and (max-width:576px){
+    .navbar{
+        margin-top:-1.25rem;
+    }
+
+    .nav-item{
+        font-size: 0.75rem;
+        margin-bottom: -0.25rem;
+    }
+
+    .item-list,
+    .dropdown-account{
+        font-size: 0.75rem;
+    }
+
     .carousel-indicators{
         top: 85%;
     }
-
-    /* .navbar{
-        margin-top:-25px;
-    } */
 
     .carousel-item{
         height: 90vh;
@@ -530,6 +568,14 @@ footer{
 
     .banner-sub-text-delivery{
         font-size: .75rem;
+    }
+
+    .discount-text{
+        font-size: 1.5rem;
+    }
+
+    .menu-text{
+        font-size: 2.5rem;
     }
 
     #scroll-icon {
@@ -559,11 +605,11 @@ footer{
 
     .footer-text{
         font-size: 0.75rem;
+        color: #000000;
     }
 }
 
 @media screen and (max-width:315px){
-    .item-container-sub,
     #scroll-icon {
         padding-bottom: 90px;
     }

@@ -12,21 +12,24 @@
 {% endblock %}
 
 {% block content %}
-        <div class="container-fluid mt-4">
-            <div class="row mt-4 item-row">
-                <div class="col text-center mt-4">
-                    <h2 class="item item-heading font-weight-bold">
-                        {% if existing_categories %}
-                        {% for c in existing_categories %}
-                            <a class="p-2 mb-1 badge badge-white text-black">{{ c.display_name }}
+        <div class="container-fluid pt-5">
+            <div class="row item-row">
+                <div class="col text-center">
+                    {% if existing_categories %}
+                        <h2 class="item item-heading font-weight-bold">
+                            {% for c in existing_categories %}
+                            <a class="badge badge-white text-black">{{ c.display_name }}
                                 <hr class="block-divider">
                             </a>
-                        {% endfor %}
-                        {% else %}
+                            {% endfor %}
+                        </h2>
+                    {% else %}
                         <h2 class="item item-heading font-weight-bold">
-                            <a class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">All Items</a>
-                        {% endif %}
-                    </h2>
+                            <a class="badge badge-white text-black">All Items
+                                <hr class="block-divider">
+                            </a>
+                        </h2>
+                    {% endif %}
                 </div>
             </div>
             <div class="item-container col-10 offset-1">
@@ -37,7 +40,7 @@
                                 class="custom-select -{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if existing_sorting == 'None_None' %}selected{% endif %}>Sort
                                     by...</option>
-                                <option value="price_asc" {% if existing_sorting == 'price_asc' %}selected{% endif %}>
+                                <option value="price_asc" class="sortitem" {% if existing_sorting == 'price_asc' %}selected{% endif %}>
                                     Price (low to high)</option>
                                 <option value="price_desc" {% if existing_sorting == 'price_desc' %}selected{% endif %}>
                                     Price (high to low)</option>
