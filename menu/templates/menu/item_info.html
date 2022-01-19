@@ -47,7 +47,7 @@
                         <p class="display-6 text-muted">{{ item.note2 }}</p>
                     {% endif %}
                     {% if item.note3 %}
-                        <p class="display-6 text-muted">{{ item.note3 }}</p>
+                        <p class="display-6 text-muted pt-0">{{ item.note3 }}</p>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_basket' item.id %}" method="POST">
                         {% csrf_token %}
