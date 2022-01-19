@@ -40,8 +40,14 @@
                         <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
                     {% endif %}
                     <p class="display-6 font-weight-bold">Allergens: {{ item.allergen }}</p>
-                    {% if item.note %}
-                        <p class="display-6 text-muted">{{ item.note }}</p>
+                    {% if item.note1 %}
+                        <p class="display-6 text-muted">{{ item.note1 }}</p>
+                    {% endif %}
+                    {% if item.note2 %}
+                        <p class="display-6 text-muted">{{ item.note2 }}</p>
+                    {% endif %}
+                    {% if item.note3 %}
+                        <p class="display-6 text-muted">{{ item.note3 }}</p>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_basket' item.id %}" method="POST">
                         {% csrf_token %}

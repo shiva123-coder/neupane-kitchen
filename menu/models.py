@@ -50,7 +50,9 @@ class Item(models.Model):
     ingredient = models.TextField(max_length=700, null=True, blank=True)
     allergen = MultiSelectField(
         choices=ALLERGEN_CHOICES, null=True, blank=False)
-    note = models.TextField(max_length=280, null=True, blank=True)
+    note1 = models.TextField(max_length=280, null=True, blank=True)
+    note2 = models.TextField(max_length=280, null=True, blank=True)
+    note3 = models.TextField(max_length=280, null=True, blank=True)
     price = models.DecimalField(max_digits=4, decimal_places=2, blank=True)
     image = models.ImageField(null=True, blank=True)
 
