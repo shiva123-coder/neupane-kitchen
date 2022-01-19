@@ -76,7 +76,7 @@
                     <div class="col-12 col-md-6">
                         <p class="text-muted text-center text-md-left">
                             {% if search_term or existing_categories or existing_sorting != 'None_None' %}
-                                <span class="primary"><a href="{% url 'all_menu' %}">All Items</a> | </span>
+                                <span class="text-main"><a href="{% url 'all_menu' %}">All Items</a> | </span>
                             {% endif %}
                             {{ items|length }} Items {% if search_term %}<strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
@@ -106,10 +106,10 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="display-5 text-left">{{ item.name }}</p>
+                                            <p class="display-5 text-left text-main font-weight-bold">{{ item.name }}</p>
                                         </div>
                                         <div class="col">
-                                            <p class="diaplay-3 text-right">£{{ item.price }}</p>
+                                            <p class="diaplay-3 text-right text-main font-weight-bold">£{{ item.price }}</p>
                                         </div>
                                     </div>
                                     
@@ -119,8 +119,8 @@
                                         <div class="col">
                                             {% if item.category %}
                                             <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'all_menu' %}?category={{ item.category.name }}">
-                                                    <i class="fas fa-utensils mr-1"></i>{{ item.category.display_name }}
+                                                <a class="text-main" href="{% url 'all_menu' %}?category={{ item.category.name }}">
+                                                    <i class="fas fa-utensils mr-1 text-main"></i>{{ item.category.display_name }}
                                                 </a>
                                             </p>
                                             {% endif %}

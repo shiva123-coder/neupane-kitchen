@@ -91,8 +91,8 @@
                         <li class="list-inline-item">
                             <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-main font-weight-bold" href="{% url 'view_basket' %}">
                                 <div class="text-center">
-                                    <div><i class="fas fa-shopping-basket text-nav"></i></div>
-                                    <p class="my-0 text-nav">
+                                    <div><i class="fas fa-shopping-basket text-nav text-main"></i></div>
+                                    <p class="my-0 text-nav text-main">
                                         {% if sum_total %}
                                             £ {{ sum_total|floatformat:2 }}
                                         {% else %}

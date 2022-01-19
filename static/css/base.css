@@ -22,6 +22,7 @@ body {
     padding: 0;
     font-family: 'Dosis', sans-serif;
     min-height: 100vh;
+    color: #6c0707;;
 }
 
 :root{
@@ -77,6 +78,10 @@ header {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.btn-order-more:hover{
+    color: #FFFFFF;
 }
 /*--------form----*/
 .textarea.form-control {
@@ -245,11 +250,17 @@ display: none;
 .truck1{
     transform: scaleX(-1);
 }
+
+/*----about us page--*/
+.text-about{
+    font-size: 1.75rem;
+}
+
 /*----------all menu page -----*/
 
 /*code taken from walkthrough project of CI and modified as per project requirements(start) */
 .overlay{
-    background: rgb(243, 240, 236);
+    background: honeydew;
     z-index: -1;
     height: 100%;
     width: 100%;
@@ -525,7 +536,7 @@ footer{
     }
 }
 
-@media screen and (min-width:576px){
+@media screen and (min-width:576px){    
     .carousel-indicators li{
         background: var(--main);
     }
@@ -533,12 +544,14 @@ footer{
 
 @media screen and (max-width:992px){
     img.main-logo{
-        padding-bottom: 0.75rem;
+        margin-top: -0.75rem;
+        padding-left: 1rem;
     }
 
     .content{
         margin: 0 auto;
         min-height: calc(100vh - 64px - 54.38px);
+        margin-top: -20px;
     }
 
     .main-text{

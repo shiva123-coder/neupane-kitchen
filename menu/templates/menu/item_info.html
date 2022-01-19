@@ -17,11 +17,12 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container item-image-info my-4 ">
                     {% if item.image %}
-                        <p class="h4 font-weight-bold d-sm-block d-md-none">{{ item.name }}</p>
+                        <p class="h4 text-main font-weight-bold d-sm-block d-md-none">{{ item.name }}</p>
                         <a href="{% url 'item_info' item.id %}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
                         </a>
                     {% else %}
+                        <p class="h4 text-main font-weight-bold d-sm-block d-md-none">{{ item.name }}</p>
                         <a href="{% url 'item_info' item.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.name }}">
                         </a>
@@ -32,7 +33,7 @@
                 <div class="item-info mb-4 mt-md-5">
                     <p class="h4 font-weight-bold pb-0 d-none d-md-block">{{ item.name }}</p>
                     <p class="display-6 pt-3 mt-3"></p>
-                    <p class="display-6 mt-3">£ {{ item.price }}</p>
+                    <p class="display-6 mt-3 font-weight-bold">£ {{ item.price }}</p>
                     <p class="display-6 mb-0">{{ item.heading }}</p>
                     <p class="display-6">{{ item.description }}</p>
                     {% if request.user.is_superuser %}
@@ -70,11 +71,11 @@
                             <div class="col-12">
                                 <a href="{% url 'all_menu' %}" class="btn btn-outline-dark mt-5">
                                     <span>
-                                        <i class="fas fa-arrow-circle-left"></i>
+                                        <i class="fas fa-arrow-circle-left btn-order-more"></i>
                                     </span>
-                                    <span class="text-uppercase">Order more</span>
+                                    <span class="text-uppercase text-main btn-order-more">Order more</span>
                                 </a>
-                                <input type="submit" class="btn btn-outline-dark text-uppercase mt-5" value="Add to basket">
+                                <input type="submit" class="btn btn-outline-dark text-uppercase mt-5 text-main" value="Add to basket">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
