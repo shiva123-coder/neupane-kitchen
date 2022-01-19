@@ -2,33 +2,33 @@
     <ul class="navbar-nav w-auto mx-auto">
         <!--home-->
         <li class="nav-item nav-item-home">
-            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-white font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
                     <div>
-                        <i class="fas fa-home mr-3 d-inline d-lg-none"></i>
-                        <span class="nav-item">Home</span>
+                        <i class="fas fa-home mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item text-main">Home</span>
                     </div>
                 </div>
             </a>
         </li>
         <!--about-->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'about' %}" id="about-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-white font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'about' %}" id="about-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
                     <div>
-                        <i class="fas fa-info-circle mr-3 d-inline d-lg-none"></i>
-                        <span class="nav-item">About Us</span>
+                        <i class="fas fa-info-circle mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item text-main">About Us</span>
                     </div>
                 </div>
             </a>
         </li>
         <!--all menu-->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-white font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'all_menu' %}" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
                     <div>
-                        <i class="fas fa-utensils mr-3 d-inline d-lg-none"></i>
-                        <span class="nav-item mr-2">Our Menu</span><span><i class="fas fa-caret-down"></i></span>
+                        <i class="fas fa-utensils mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item mr-2 text-main">Our Menu</span><span><i class="fas fa-caret-down text-main"></i></span>
                     </div> 
                 </div>
             </a>
@@ -43,21 +43,21 @@
         </li>
          <!--contact us-->
          <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="{% url 'contact' %}" id="contact-link" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-white font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'contact' %}" id="contact-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
                     <div>
-                        <i class="fas fa-headset mr-3 d-inline d-lg-none"></i>
-                        <span class="nav-item mr-2">Contact Us</span>
+                        <i class="fas fa-headset mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item mr-2 text-main">Contact Us</span>
                     </div>
                 </div>
             </a>
         </li>
          <!--account-->
         <li class="nav-item dropdown d-md-block d-lg-none">
-            <a class="logo-font font-weight-bold nav-link text-white font-weight-bold mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="nav-link text-white font-weight-bold">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
                     <div>
-                        <i class="fas fa-user mr-3"></i><span class="nav-item mr-3">Account</span><span><i class="fas fa-caret-down"></i></span>
+                        <i class="fas fa-user mr-3 text-main"></i><span class="nav-item mr-3 text-main">Account</span><span><i class="fas fa-caret-down text-main"></i></span>
                     </div>
                 </div>
             </a>
@@ -76,10 +76,10 @@
         </li>
          <!--basket-->
          <li class="nav-item d-md-block d-lg-none">
-            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-white font-weight-bold" href="{% url 'view_basket' %}">
-                <div class="nav-link text-white font-weight-bold">
-                    <div><i class="fas fa-shopping-basket text-nav mr-3"></i>
-                    <span class="nav-item ">
+            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-main font-weight-bold" href="{% url 'view_basket' %}">
+                <div class="nav-link text-main font-weight-bold">
+                    <div><i class="fas fa-shopping-basket text-nav mr-3 text-main"></i>
+                    <span class="nav-item text-main">
                         {% if sum_total %}
                             £{{ sum_total|floatformat:2 }}
                         {% else %}

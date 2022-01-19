@@ -52,7 +52,7 @@
                 <!--search field-->
                 <div class="col-6 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-block">
                     <form method="GET" action="{% url 'all_menu' %}">
-                        <div class="input-group w-100">
+                        <div class="input-group w-100 border border-secondary">
                             <input class="form-control border borderwhite search-field" type="text" name="q1" placeholder="Search">
                             <div class="input-group-append">
                                 <button class="form-control btn btn-black border border-white search-btn" type="submit">
@@ -68,7 +68,7 @@
                 <div class="col-12 col-lg-4 my-auto d-none d-lg-block">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0 pr-2">
                         <li class="list-inline-item ">
-                            <a class="text-white font-weight-bold nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-main font-weight-bold nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0 text-nav">Account</p>
@@ -89,7 +89,7 @@
                         </li>
                         <!--basket-->
                         <li class="list-inline-item">
-                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-white font-weight-bold" href="{% url 'view_basket' %}">
+                            <a class="{% if sum_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-main font-weight-bold" href="{% url 'view_basket' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket text-nav"></i></div>
                                     <p class="my-0 text-nav">

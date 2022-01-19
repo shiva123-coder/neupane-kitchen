@@ -28,8 +28,9 @@ body {
     --white: #FFFFFF;
     --yellow: #f8d90f;
     --green: #d3dd18;
-    --main-mix: linear-gradient(to right, #760b14, #b35860);
-    --main: #760b14;
+    --main: #6c0707;
+    /* --main-mix: linear-gradient(to right, #760b14, #b35860);
+    --main: #760b14; */
 }
 
 /*---------header--*/
@@ -38,11 +39,15 @@ body {
 }
 
 header {
-    background:  var(--main-mix);
+    background:  gold;
     height: auto;
 }
 
 /*---------specials----------*/
+.text-main{
+    color: var(--main);
+}
+
 .content{
     margin: 0 auto;
     min-height: calc(100vh - 128px - 54px);
@@ -97,6 +102,10 @@ img.main-logo{
     float: none;
 }
 
+.nav-item{
+    font-size: 1.25rem;
+}
+
 .brand-logo{
     height: 100px;
     width: fit-content;
@@ -106,23 +115,29 @@ img.main-logo{
 }
 
 .bg-wite{
-    background: var(--main-mix);
+    background: gold;
 }
 
 .side-nav{
     padding-left: 90px;
 }
 
+#menu-link{
+    border: 1px solid var(--main);
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 20px;
+}
 .item-list,
 .dropdown-account{
-        color: #000000;
-        font-weight: bold;
+    color: var(--main);
+    font-weight: bold;
 } 
 
 .item-list:hover,
 .dropdown-account:hover{
-background: var(--main-mix);
-color: var(--white);
+background: gold;
+color: var(--main);
 }
 
 .search-field{
@@ -363,22 +378,22 @@ item details on order summary page ---*/
 
 /*---contact us page-----*/
 .col-contact-form{
-    background: turquoise;
+    background: seagreen;
 }
 
 .col-contact-details{
-    background: yellow;
+    background: salmon;
 }
 
-.contact-form::before{
+.col-contact-details::before{
     content: "";
     position: absolute;
-    background-color:  yellow;
+    background-color: salmon;
     width: 30px;
     height: 30px;
     transform: rotate(45deg);
     top: 38px;
-    left: 98%;
+    left: -2%;
 }
 
 .form-center {
@@ -434,7 +449,7 @@ footer{
     height: auto;
 }
 .footer-container{
-    background: var(--main-mix);
+    background: gold;
     bottom: 0;
     z-index: 99999999;
     clear: both;
@@ -442,12 +457,12 @@ footer{
 }
 
 .footer-text{
-   font-weight: bold;
-   color: var(--white);
+   /* font-weight: bold; */
+   color: var(--main);
 }
 
 .footer-text a{
-    color: var(--white);
+    color: var(--main);
 }
 
 .footer-text a:hover{
@@ -457,7 +472,7 @@ footer{
 .social-icon{
     font-weight: 400;
     font-size: 40px;
-    color: var(--white);
+    color: var(--main);
 }
 
 
@@ -465,12 +480,12 @@ footer{
 
 @media screen and (min-width:992px){
     #menu-link{
-    border: 1px solid var(--white);
-    display: inline-block;
-    padding: 0;
-    border-radius: 20px;
-    margin-left: -13px;
-    margin-top: 5px;
+        border: 1px solid var(--main);
+        display: inline-block;
+        padding: 0;
+        border-radius: 20px;
+        margin-left: -13px;
+        margin-top: 5px;
     }
 
     img.main-logo{
@@ -495,6 +510,14 @@ footer{
 
     .item-heading{
         padding-top: 1.5rem;
+    }
+
+    .contact-row{
+        margin-bottom: 3rem;
+    }
+
+    .contact-heading{
+        padding-top: 1.75rem;
     }
 
     .review-row{
@@ -526,20 +549,19 @@ footer{
         padding: 0;
     }
 
-    .navbar-toggler {
+    .navbar-toggler,
+    .fa-bars {
         position: fixed;
         top: 1%;
         left: 1%;
     }
 
-    /* .nav-item-home{
-        padding-top: 40px;
-    } */
-
+    
     .header-container{
         padding-top: 65px;
     }
-  
+
+
     .btn-add{
         padding-top: 20px;
         padding-bottom: 20px;
@@ -555,18 +577,18 @@ footer{
     .text-nav{
         font-size: medium;
     }
-    .contact-form::after {
+    .col-contact-details::after {
         content: "";
         position: absolute;
-        background-color: yellow;
+        background-color: salmon;
         width: 30px;
         height: 30px;
         transform: rotate(45deg);
-        top: 98%;
+        top: -3%;
         left: 85%;
     }
 
-    .contact-form::before{
+    .col-contact-details::before{
         display: none;
     }
 }
@@ -575,16 +597,16 @@ footer{
     .navbar{
         margin-top:-1.25rem;
     }
-/* 
-    .nav-item{
-        font-size: 0.75rem;
-        margin-bottom: -0.25rem;
-    }
 
     .item-list,
     .dropdown-account{
         font-size: 0.75rem;
-    } */
+    }
+
+    .nav-item {
+        font-size: 1rem;
+    }
+
     .card-item{
         padding-right: 0;
         padding-left: 0;
@@ -653,6 +675,11 @@ footer{
         font-size: 2rem;
     }
 
+    .contact-row{
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
     .footer-text{
         font-size: 0.75rem;
     }
@@ -672,7 +699,7 @@ footer{
     }
 
     .allauth-container{
-        padding-top: 6rem;
+        padding-top: 2rem;
     } 
 }
 
