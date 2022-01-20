@@ -252,10 +252,13 @@ display: none;
 }
 
 /*----about us page--*/
-.text-about{
+.text-about-heading{
     font-size: 1.75rem;
 }
 
+.text-about-sub-heading{
+    font-size:1.2rem;
+}
 /*----------all menu page -----*/
 
 /*code taken from walkthrough project of CI and modified as per project requirements(start) */
@@ -752,7 +755,8 @@ footer{
 }
 
 /*--landscape view--*/
-@media (orientation: landscape) {
+
+@media screen and (max-width: 844px) and (orientation : landscape){
     .navbar-nav {
       flex-direction: row;
       margin-top: 1rem;
