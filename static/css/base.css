@@ -127,7 +127,7 @@ img.main-logo{
     padding-left: 90px;
 }
 
-#menu-link{
+#menlink{
     border: 1px solid var(--main);
     display: inline-block;
     padding: 0 5px;
@@ -750,3 +750,16 @@ footer{
         padding-top: 9rem;
     }
 }
+
+/*--landscape view--*/
+@media (orientation: landscape) {
+    .navbar-nav {
+      flex-direction: row;
+      margin-top: 1rem;
+    }
+
+    #menu-link{
+        border: none;
+    }
+  }
+  
