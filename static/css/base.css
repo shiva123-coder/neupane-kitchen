@@ -756,7 +756,7 @@ footer{
 
 /*--landscape view--*/
 
-@media screen and (max-width: 844px) and (orientation : landscape){
+@media (max-width: 844px) and (orientation : landscape){
     .navbar-nav {
       flex-direction: row;
       margin-top: 1rem;
