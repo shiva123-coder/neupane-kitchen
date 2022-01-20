@@ -34,7 +34,7 @@
                     <p class="h4 font-weight-bold pb-0 d-none d-md-block">{{ item.name }}</p>
                     <p class="display-6 pt-3 mt-3"></p>
                     <p class="display-6 mt-3 font-weight-bold">£ {{ item.price }}</p>
-                    <p class="display-6 mb-0">{{ item.heading }}</p>
+                    <p class="display-6 mb-0 font-weight-bold">{{ item.heading }}</p>
                     <p class="display-6">{{ item.description }}</p>
                     {% if request.user.is_superuser %}
                         <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
