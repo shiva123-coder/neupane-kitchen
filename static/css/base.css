@@ -83,6 +83,10 @@ header {
 .btn-order-more:hover{
     color: #FFFFFF;
 }
+
+.btn-banner{
+    margin-top: -1.25rem;
+}
 /*--------form----*/
 .textarea.form-control {
     resize: none;
@@ -194,7 +198,7 @@ color: var(--main);
 
 .carousel-control-next,
 .carousel-control-prev{
-width: 50%;
+width: 30%;
 }
 
 .carousel-control-prev-icon,
@@ -207,6 +211,12 @@ display: none;
 }
 .carousel-indicators{
     top: 85%;
+}
+
+.small-text{
+    font-size: 1.15rem;
+    font-style: italic;
+    margin-top: -0.5rem;
 }
 
 /*-----1st slide of carousel on homepage---*/

@@ -396,6 +396,11 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
       - <img class="card-img-top img-fluid main-logo " src="{{ MEDIA_URL }}logo1.png"
     ```
 
+- Django kept throwing an unexpected erron on several occasion such as : no-table found 
+  - Issue solved after migrating the change to database by running commands below,
+    - python3 manage.py makemigrations --dry-run
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate
 
 ## Testing 
  -Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)

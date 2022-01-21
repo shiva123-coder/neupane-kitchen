@@ -15,12 +15,12 @@
             <div class="col pr-0 pl-0 pt-0">
                 <div class="container-fluid container-carousel">
                     <!---------------------------Bootstrap Carousel used for image slider----------------------------->
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="300000">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="40000">
                         <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> -->
                         </ol>
                         <div class="carousel-inner">
                         <div class="carousel-item carousel-item1 active">
@@ -37,17 +37,25 @@
                         </div>
                         <div class="carousel-item carousel-item3">
                             <div class="banner-text">
-                                <h1 class="text-center font-weight-bold discount-text">Grand Opening Discount >>>> 20% discount on all orders</h1>
-                                <p class="text-center mt-3 discount-text"><a href="{% url 'all_menu' %}" class="btn btn-primary btn-sm"><strong class="h4"> Pre-order now !</strong></a></p>
+                                <h1 class="text-center font-weight-bold discount-text">Grand Opening Discount >>>> 20% discount on all orders <br>
+                                    <span class="text-muted small-text">*T&Cs  apply, order must be over £20 in order to get discount</span>
+                                <p class="btn-banner mt-3">
+                                    <a href="{% url 'all_menu' %}" class="btn btn-secondary mt-3">
+                                        <strong class="h4"><i class="fas fa-eye mr-2"></i>Our Menu!</strong></a>
+                                    <span>
+                                        <a href="tel:07470381691" class="btn btn-secondary mt-3">
+                                            <strong class="h4"><i class="fas fa-mobile-alt mr-2"></i>Call Us to Pre-order now</strong></a>
+                                    </span>
+                                </p>
                             </div>
                         </div>
-                        <div class="carousel-item carousel-item4">
+                        <!-- <div class="carousel-item carousel-item4">
                             <div class="banner-text">
                                 <h1 class="text-center display-3 menu-text">Menu on mind?</h1>
                                 <p class="banner-sub-text text-center">Share your idea and won £30 worth free meal</p>
                                 <p class="banner-sub-text text-center text-muted">*T&C apply, <a href="#">Click here to find more</a></p>
                             </div>
-                        </div>
+                        </div> -->
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

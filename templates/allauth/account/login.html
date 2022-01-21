@@ -47,7 +47,7 @@
         <input type="hidden" name="next" value="{{ request.GET.next }}" />
     {% endif %}
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        <button class="primaryAction btn-secondary ml-2 btn-sign-in" type="submit">{% trans "Sign In" %}</button>
+        <button class="primaryAction btn-secondary ml-2 p-1 btn-sign-in" type="submit">{% trans "Sign In" %}</button>
     </form>
 </div>
 {% endblock %}

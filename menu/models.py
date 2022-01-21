@@ -56,5 +56,8 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
         return self.name
