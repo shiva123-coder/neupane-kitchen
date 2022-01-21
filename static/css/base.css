@@ -94,7 +94,7 @@ input .form-control{
 
 /*--navbar --*/
 img.main-logo{
-    height: 100%;
+    height: 5rem;
     padding: 0px;
 }
 
@@ -258,6 +258,10 @@ display: none;
 
 .text-about-sub-heading{
     font-size:1.2rem;
+}
+
+.image-about{
+    height: 3rem;
 }
 /*----------all menu page -----*/
 
@@ -621,6 +625,11 @@ footer{
 
     .nav-item {
         font-size: 1rem;
+    }
+
+    img.main-logo{
+        height: 4rem;
+        margin-top: 0.15rem;
     }
 
     .card-item{
