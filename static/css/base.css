@@ -341,11 +341,19 @@ display: none;
     padding-bottom: 3rem;
 }
 
+.vegan-icon-info{
+    height: 2rem;
+}
+
+.vegan-icon-info-sub{
+    width: 2rem;
+}
+
 .item-image-info{
     height: 50vh;
 }
 
-.item-image-info img{
+.img-sub{
     height: 100%;
     width: 100%;
     object-fit: cover;
