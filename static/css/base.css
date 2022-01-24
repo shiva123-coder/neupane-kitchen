@@ -326,6 +326,16 @@ display: none;
     text-decoration:wavy;
 }
 
+.item-details{
+    position: relative;
+}
+
+.vegan-icon{
+    position: absolute;
+    height: 80%;
+    right: 0;
+}
+
 /*-----item-info page ---*/
 .item-container-sub{
     padding-bottom: 3rem;

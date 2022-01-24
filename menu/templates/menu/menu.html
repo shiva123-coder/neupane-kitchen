@@ -106,7 +106,9 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="display-5 text-left text-main font-weight-bold">{{ item.name }}</p>
+                                            <p class="display-5 text-left text-main font-weight-bold">
+                                                {{ item.name }}
+                                            </p>
                                         </div>
                                         <div class="col">
                                             <p class="diaplay-3 text-right text-main font-weight-bold">£{{ item.price }}</p>
@@ -114,13 +116,18 @@
                                     </div>
                                     
                                 </div>
-                                <div class="card-footer border-0 text-left">
+                                <div class="card-footer border-0 text-left item-details">
                                     <div class="row">
                                         <div class="col">
                                             {% if item.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-main" href="{% url 'all_menu' %}?category={{ item.category.name }}">
                                                     <i class="fas fa-utensils mr-1 text-main"></i>{{ item.category.display_name }}
+                                                    {% if item.vegan %}
+                                                    <span>
+                                                        <img class="vegan-icon" src="{{ MEDIA_URL }}vegan.png" alt="dfdfh">
+                                                    </span>
+                                                    {% endif %}
                                                 </a>
                                             </p>
                                             {% endif %}

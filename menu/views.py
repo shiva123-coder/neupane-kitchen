@@ -45,7 +45,7 @@ def all_menu(request):
             categories = request.GET['category'].split(',')
             items = items.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-
+            
         if request.GET:
             if 'q1' in request.GET:
                 query = request.GET['q1']
@@ -58,6 +58,7 @@ def all_menu(request):
 
     existing_sorting = f'{sort}_{direction}'
     # code taken from walktrough project of CI and modified (End)
+    
     context = {
         'items': items,
         'search_term': query,
