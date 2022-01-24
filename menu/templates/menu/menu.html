@@ -120,22 +120,23 @@
                                     <div class="row">
                                         <div class="col">
                                             {% if item.category %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-main" href="{% url 'all_menu' %}?category={{ item.category.name }}">
-                                                    <i class="fas fa-utensils mr-1 text-main"></i>{{ item.category.display_name }}
-                                                    {% if item.vegan %}
-                                                    <span>
-                                                        <img class="vegan-icon" src="{{ MEDIA_URL }}vegan.png" alt="dfdfh">
-                                                    </span>
-                                                    {% endif %}
-                                                </a>
-                                            </p>
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-main" href="{% url 'all_menu' %}?category={{ item.category.name }}">
+                                                        <i class="fas fa-utensils mr-1 text-main"></i>{{ item.category.display_name }}
+                                                        {% if item.vegan %}
+                                                        <span>
+                                                            <img class="vegan-icon" src="{{ MEDIA_URL }}vegan.png" alt="dfdfh">
+                                                        </span>
+                                                        {% endif %}
+                                                    </a>
+                                                </p>
+                                                {% else %}
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'all_menu' %}">
+                                                        <i class="fas fa-utensils mr-1"></i>
+                                                    </a>
+                                                </p>
                                             {% endif %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" href="{% url 'all_menu' %}?category={{ item.category.name }}">
-                                                    <i class="fas fa-utensils mr-1"></i>
-                                                </a>
-                                            </p>
                                             <!--edit/delete button for admin to edit/delet item from the page-->
                                             {% if request.user.is_superuser %}
                                                 <small class="badges">
