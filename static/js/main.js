@@ -44,8 +44,9 @@ $('#scroll-icon').click(function(e){
     window.scrollTo(0,0)
 });
 
-
+//  Diasble mouse right click and cut, copy and paste from web content
 $(document).ready(function () { 
+    // Disable mouse click
     //Disable full page 
     $("body").on("contextmenu",function(e){ 
         return false; 
@@ -56,6 +57,7 @@ $(document).ready(function () {
         return false; 
     }); 
 
+    // Disable Cut Copy & Paste
      //Disable full page 
      $('body').bind('cut copy paste', function (e) { 
         e.preventDefault(); 
@@ -66,6 +68,7 @@ $(document).ready(function () {
         e.preventDefault(); 
     }); 
 
+    // Disable Mouse Right Click, Cut, Copy & Paste
      //Disable cut copy paste 
      $('body').bind('cut copy paste', function (e) { 
         e.preventDefault(); 
