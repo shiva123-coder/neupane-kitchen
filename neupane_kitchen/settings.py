@@ -133,8 +133,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation
@@ -200,6 +200,7 @@ if 'USE_AWS' in os.environ:
 
 # valiables for delivery option
 FREE_DELIVERY_OUTSET = 20
+DISCOUNT_PERCTENTAGE = 20
 # stripe
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
