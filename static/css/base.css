@@ -680,6 +680,7 @@ footer{
     img.main-logo{
         height: 4rem;
         margin-top: 0.15rem;
+        margin-left: 2rem;
     }
 
     .card-item{
