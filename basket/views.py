@@ -3,6 +3,7 @@ from django.shortcuts import (
 
 from menu.models import Item
 from django.contrib import messages
+from django.conf import settings
 
 
 def view_basket(request):

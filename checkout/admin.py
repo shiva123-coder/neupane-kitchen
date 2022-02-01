@@ -32,6 +32,7 @@ class OrderAdmin(admin.ModelAdmin):
         "street_address",
         "postal_code",
         "delivery_cost",
+        "discount_percent"
         "total",
         "sum_total",
         "original_basket",

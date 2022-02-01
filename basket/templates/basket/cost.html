@@ -1,4 +1,5 @@
 <h5>Basket Total : £{{ total|floatformat:2 }}</h5>
+<h6>Discount : -£{{ discount_percent|floatformat:2 }}</h6>
 <h6>Delivery Charge : £{{ delivery_cost|floatformat:2 }}</h6>
 <h4 class="mt-4"><strong>Sub Total : £{{ sum_total|floatformat:2 }}</strong></h4>
 {% if free_delivery_eligibility > 0 %}

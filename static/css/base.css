@@ -214,7 +214,7 @@ display: none;
 }
 
 .small-text{
-    font-size: 1.15rem;
+    font-size: 0.75rem;
     font-style: italic;
     margin-top: -0.5rem;
 }
@@ -332,14 +332,15 @@ display: none;
 
 .vegan-icon{
     position: absolute;
-    height: 80%;
+    height: 2rem;
     right: 0;
+    top: 0;
 }
 
 /*-----item-info page ---*/
-.item-container-sub{
+/* .item-container-sub{
     padding-bottom: 3rem;
-}
+} */
 
 .vegan-icon-info{
     height: 2rem;
@@ -360,9 +361,9 @@ display: none;
 }
 
 /*------review section---*/
-.existing-review-container{
+/* .existing-review-container{
     padding-bottom: 80px;
-}
+} */
 
 .review-row{
     padding-top: 150px;
@@ -412,14 +413,14 @@ item details on order summary page ---*/
   }
 
 /*-----basket summary page ---*/
-.basket-container{
+/* .basket-container{
     padding-bottom: 120px;
-}
+} */
 
 /*-----checkout page---*/
 .checkout-container{
     padding-top: 50px;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 /*---contact us page-----*/
@@ -462,7 +463,7 @@ item details on order summary page ---*/
 
 /*-----login form---*/
 .allauth-container{
-    padding-bottom: 6rem;
+    /* padding-bottom: 6rem; */
     padding-top: 3rem;
  } 
 
@@ -480,23 +481,25 @@ item details on order summary page ---*/
 } */
 
 /*----admin page---*/
-.admin-container{
+/* .admin-container{
     padding-bottom: 100px;
-}
+} */
 
 /*-----blog page---*/
 .post-container{
     padding-top: 240px;
-    padding-bottom: 120px;
+    /* padding-bottom: 120px; */
 }
 
-.blog-container-main{
+/* .blog-container-main{
     padding-bottom: 80px;
-}
+} */
 /*-----footer---*/
 
 footer{
     height: auto;
+    /* margin-top: 88px; */
+   
 }
 .footer-container{
     background: gold;
@@ -575,6 +578,16 @@ footer{
     }
 }
 
+@media screen and (min-width:768px){
+    .allauth-form-inner-content {
+        padding-bottom: 7.5rem;
+    }
+    .allauth-form-email-verification{
+        margin-top: 12.5rem;
+        padding-bottom: 13.25rem;
+    }
+}
+
 @media screen and (min-width:576px){    
     .carousel-indicators li{
         background: var(--main);
@@ -589,7 +602,7 @@ footer{
 
     .content{
         margin: 0 auto;
-        min-height: calc(100vh - 64px - 54.38px);
+        min-height: calc(100vh - 68px - 54.38px);
         margin-top: -20px;
     }
 
@@ -625,7 +638,7 @@ footer{
 
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
     .text-nav{
         font-size: medium;
     }
@@ -642,6 +655,11 @@ footer{
 
     .col-contact-details::before{
         display: none;
+    }
+
+    #scroll-icon {
+        position: fixed;
+        bottom: 175px;
     }
 }
 
@@ -707,17 +725,17 @@ footer{
         font-size: 2.5rem;
     }
 
-    #scroll-icon {
-        padding-bottom: 80px;
-    }
+    /* #scroll-icon {
+        padding-bottom: 172px;
+    } */
 
     .post-container {
         padding-top: 100px;
     }
 
-    .existing-review-container{
+    /* .existing-review-container{
         padding-bottom: 120px;
-    }
+    } */
 
     /* .btn-contact{
         margin-bottom: 30%;
@@ -725,7 +743,7 @@ footer{
 
     .allauth-form-inner-content {
         padding-top: 4rem;
-        padding-bottom: 2rem;
+        /* padding-bottom: 2rem; */
     }
 
     .contact-row{
@@ -743,17 +761,17 @@ footer{
     img.main-logo {
         padding-left: 2rem;
     }
-    #scroll-icon {
+    /* #scroll-icon {
         padding-bottom: 90px;
-    }
+    } */
 
-    .blog-container-main{
+    /* .blog-container-main{
         padding-bottom: 110px;
-    }
+    } */
 
-    .basket-container{
+    /* .basket-container{
         padding-bottom: 90px;
-    }
+    } */
 
     .allauth-container{
         padding-top: 2rem;
@@ -769,9 +787,9 @@ footer{
         padding-top: 210px;
     }
 
-    .checkout-container{
+    /* .checkout-container{
         padding-bottom: 160px;
-    }
+    } */
 }
 
 @media screen and (max-width: 198px){
@@ -787,9 +805,9 @@ footer{
         padding-top: 210px;
     }
 
-    .allauth-container{
+    /* .allauth-container{
         padding-top: 9rem;
-    }
+    } */
 }
 
 /*--landscape view--*/
