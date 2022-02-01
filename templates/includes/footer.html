@@ -1,33 +1,48 @@
     <div class="container-fluid footer-container">
+        <!--footer -row-->
         <div class="row">
-            <div class="col-sm-6 col-md-4 text-center pt-2">
-                <h6 class="footer-text">
-                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
-                        <i class="fas fa-mail-bulk mr-2"> : </i>
-                        <span>info.neupanekitchen@gmail.com</span>
-                    </a>
-                   <br>
-                   <i class="fas fa-phone-alt mr-2"> : </i>
-                   <span>07470381691</span>
+            <!--download menu-->
+            <div class="col-md-3">
+                <h6 class="footer-text text-center pt-2">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <a href="{{ MEDIA_URL }}/docs/menu.pdf" target="_blank">Download our Menu</a>
                 </h6>
             </div>
-            <div class="col-sm-6 col-md-4 text-center pt-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <a href="https://instagram.com/neupanes.kitchen?utm_medium=copy_link">
-                                <i class="fab fa-instagram-square social-icon"></i>
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="https://wa.me/whatsappphonenumber/?text=Hi Neupane's Kitchen" target="_blank">
-                                <i class="fab fa-whatsapp-square social-icon"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <!--mail and phone icon-->
+            <div class="col-md-2">
+                <h6 class="footer-text text-center pt-2">
+                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                        <i class="fas fa-mail-bulk social-icon"></i>
+                    </a>
+                    <span>
+                    <a href="tel:07470381691">
+                        <i class="fas fa-phone-alt social-icon pl-3"></i>
+                    </a>
+                    </span>
+                </h6>
             </div>
-            <div class="col-sm-6 col-md-4 text-center pt-2">
-                <h6 class="footer-text">
+            <!--term & condition-->
+            <div class="col-md-2">
+                <h6 class="footer-text text-center pt-2">
+                    <a href="{{ MEDIA_URL }}/docs/t&c.pdf" target="_blank">Terms and Conditions</a>
+                </h6>
+            </div>
+            <!--social icon-->
+            <div class="col-md-2">
+                <h6 class="footer-text text-center pt-2">
+                    <a href="https://wa.me/whatsappphonenumber/?text=Hi Neupane's Kitchen" target="_blank">
+                        <i class="fab fa-whatsapp-square social-icon"></i>
+                    </a>
+                    <span>
+                    <a href="https://instagram.com/neupanes.kitchen?utm_medium=copy_link">
+                        <i class="fab fa-instagram-square social-icon pl-3"></i>
+                    </a>
+                    </span>
+                </h6>
+            </div>
+            <!--copyright text-->
+            <div class="col-md-3">
+                <h6 class="footer-text text-center pt-2">
                     All Rights Reserved &copy; Neupane's Kitchen
                 </h6>
             </div>

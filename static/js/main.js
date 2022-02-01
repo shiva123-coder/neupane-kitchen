@@ -44,39 +44,39 @@ $('#scroll-icon').click(function(e){
     window.scrollTo(0,0)
 });
 
-//  Diasble mouse right click and cut, copy and paste from web content
-$(document).ready(function () { 
-    // Disable mouse click
-    //Disable full page 
-    $("body").on("contextmenu",function(e){ 
-        return false; 
-    }); 
+// //  Diasble mouse right click and cut, copy and paste from web content
+// $(document).ready(function () { 
+//     // Disable mouse click
+//     //Disable full page 
+//     $("body").on("contextmenu",function(e){ 
+//         return false; 
+//     }); 
      
-    //Disable part of page 
-    $("#id").on("contextmenu",function(e){ 
-        return false; 
-    }); 
+//     //Disable part of page 
+//     $("#id").on("contextmenu",function(e){ 
+//         return false; 
+//     }); 
 
-    // Disable Cut Copy & Paste
-     //Disable full page 
-     $('body').bind('cut copy paste', function (e) { 
-        e.preventDefault(); 
-    }); 
+//     // Disable Cut Copy & Paste
+//      //Disable full page 
+//      $('body').bind('cut copy paste', function (e) { 
+//         e.preventDefault(); 
+//     }); 
      
-    //Disable part of page 
-    $('#id').bind('cut copy paste', function (e) { 
-        e.preventDefault(); 
-    }); 
+//     //Disable part of page 
+//     $('#id').bind('cut copy paste', function (e) { 
+//         e.preventDefault(); 
+//     }); 
 
-    // Disable Mouse Right Click, Cut, Copy & Paste
-     //Disable cut copy paste 
-     $('body').bind('cut copy paste', function (e) { 
-        e.preventDefault(); 
-    }); 
+//     // Disable Mouse Right Click, Cut, Copy & Paste
+//      //Disable cut copy paste 
+//      $('body').bind('cut copy paste', function (e) { 
+//         e.preventDefault(); 
+//     }); 
     
-    //Disable mouse right click 
-    $("body").on("contextmenu",function(e){ 
-        return false; 
-    }); 
+//     //Disable mouse right click 
+//     $("body").on("contextmenu",function(e){ 
+//         return false; 
+//     }); 
 
-}); 
+// }); 

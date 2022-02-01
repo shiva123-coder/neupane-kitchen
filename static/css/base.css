@@ -451,9 +451,13 @@ item details on order summary page ---*/
     margin-bottom: 20%;
 }
 
+.social-icon-contact{
+    color: var(--main);
+    font-size: 1.75rem;
+}
+
 .insta-promo{
     font-style: italic;
-
 }
 
 /*-----login form---*/
@@ -517,7 +521,7 @@ footer{
 
 .social-icon{
     font-weight: 400;
-    font-size: 40px;
+    font-size: 1.25rem;
     color: var(--main);
 }
 
@@ -724,17 +728,14 @@ footer{
         padding-bottom: 2rem;
     }
 
-    .social-icon{
-        font-size: 2rem;
-    }
-
     .contact-row{
         padding-left: 0.75rem;
         padding-right: 0.75rem;
     }
 
-    .footer-text{
-        font-size: 0.75rem;
+    .footer-text,
+    .social-icon{
+        font-size: 1rem;
     }
 }
 
