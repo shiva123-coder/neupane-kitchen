@@ -36,7 +36,7 @@ body {
 
 /*---------header--*/
 .header-container {
-    padding-top: 130px;
+    padding-top: 10.5rem;
 }
 
 header {
@@ -51,7 +51,7 @@ header {
 
 .content{
     margin: 0 auto;
-    min-height: calc(100vh - 150px - 38px);
+    min-height: calc(100vh - 150px - 55px);
 }
 
 .text-dark{
@@ -343,7 +343,7 @@ display: none;
 
 /*-----item-info page ---*/
 .item-container-sub{
-    padding-bottom: 3.30rem;
+    padding-bottom: 2rem;
 }
 
 .vegan-icon-info{
@@ -489,9 +489,9 @@ item details on order summary page ---*/
 } */
 
 /*-----blog page---*/
- .blog-container-main{
+ /*.blog-container-main{
     margin-bottom: 20rem;
-} 
+}  */
 
 .post-row{
     margin-bottom: 20px;
