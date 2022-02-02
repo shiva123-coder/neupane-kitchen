@@ -28,7 +28,7 @@
             <div class="row no-gutter text-center">
                 <!---- customer details/payment form-->
                 <div class="col-sm-12 col-md-6">
-                    <p class="text-dark h4 font-weight-bold">Please Call us on 07411786691 to Complete your Order</p>
+                    <p class="text-dark h4 font-weight-bold">Please Call us on 07470381691 to Complete your Order</p>
                         <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
                             {% csrf_token %}
                             <fieldset class="mb-2">
@@ -130,12 +130,16 @@
                             <div class="col-7 offset-2">
                                 <p class="my-0">Basket Total:</p>
                                 <p class="my-0">Delivery Charge:</p>
+                                <p class="my-0">Discount:</p>
                                 <p class="my-0">Sub-total:</p>
                             </div>
                             <div class="col-3">
                                 <p class="my-0">£{{ total | floatformat:2 }}</p>
                                 <p class="my-0"></p>
                                 <p class="my-0">£{{ delivery_cost | floatformat:2 }}</p>
+                                <!--remove d-none class if discount % need to be shown -->
+                                <p class="d-none">Discount : {{ discount_percent|floatformat:0 }}%</p>
+                                <p class="my-0">- £{{ discount_amount | floatformat:2 }}</p>
                                 <p class="my-0"><strong>£{{ sum_total | floatformat:2 }}</strong></p>
                             </div>
                         </div>

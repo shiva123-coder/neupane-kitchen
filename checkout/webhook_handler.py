@@ -103,12 +103,9 @@ class StripeWebhookHandler:
                 content=f'Webhook received: {event["type"]} | SUCCESS: \
                     Verified order already in database',
                 status=200)
-
         else:
-
             order = None
             try:
-
                 order = Order.objects.create(
                         full_name=delivery_details.name,
                         user_profile=profile,

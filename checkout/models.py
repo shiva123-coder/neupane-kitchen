@@ -27,6 +27,9 @@ class Order(models.Model):
     discount_percent = models.DecimalField(max_digits=8,
                                            decimal_places=2, null=False,
                                            default=0)
+    discount_amount = models.DecimalField(max_digits=8,
+                                          decimal_places=2, null=False,
+                                          default=0)
     total = models.DecimalField(max_digits=8,
                                 decimal_places=2, null=False, default=0)
     sum_total = models.DecimalField(max_digits=8,
@@ -57,8 +60,7 @@ class Order(models.Model):
         self.total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.total < settings.FREE_DELIVERY_OUTSET:
-            self.delivery_cost = 30000
-            self.discount_percent = 0
+            self.delivery_cost = 3
         else:
             self.delivery_cost = 0
         self.sum_total = self.total + self.delivery_cost

@@ -1,1 +1,1 @@
-Neupane Kitchen Order confirmation for Order: {{ order.order_number }}
+Neupane's Kitchen Order confirmation for Order: {{ order.order_number }}

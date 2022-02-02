@@ -16,6 +16,8 @@ class OrderAdmin(admin.ModelAdmin):
         "order_number",
         "date",
         "delivery_cost",
+        "discount_percent",
+        "discount_amount",
         "total",
         "sum_total",
         "original_basket",
@@ -32,7 +34,8 @@ class OrderAdmin(admin.ModelAdmin):
         "street_address",
         "postal_code",
         "delivery_cost",
-        "discount_percent"
+        "discount_percent",
+        "discount_amount",
         "total",
         "sum_total",
         "original_basket",
@@ -45,6 +48,8 @@ class OrderAdmin(admin.ModelAdmin):
         "full_name",
         "total",
         "delivery_cost",
+        "discount_percent",
+        "discount_amount",
         "sum_total",
     )
 
