@@ -57,13 +57,11 @@ class Order(models.Model):
         self.total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.total < settings.FREE_DELIVERY_OUTSET:
-            self.delivery_cost = 3
+            self.delivery_cost = 30000
             self.discount_percent = 0
         else:
             self.delivery_cost = 0
-            self.discount_percent = 20
-        self.sum_total = self.total - (
-            self.total * self.discount_percent / 100) + self.delivery_cost
+        self.sum_total = self.total + self.delivery_cost
         self.save()
 
     def __str__(self):
