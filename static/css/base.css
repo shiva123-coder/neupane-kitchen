@@ -36,7 +36,7 @@ body {
 
 /*---------header--*/
 .header-container {
-    padding-top: 120px;
+    padding-top: 130px;
 }
 
 header {
@@ -51,7 +51,7 @@ header {
 
 .content{
     margin: 0 auto;
-    min-height: calc(100vh - 128px - 54px);
+    min-height: calc(100vh - 150px - 38px);
 }
 
 .text-dark{
@@ -86,6 +86,10 @@ header {
 
 .btn-banner{
     margin-top: -1.25rem;
+}
+
+.btn-add{
+    margin-bottom: 3rem;
 }
 /*--------form----*/
 .textarea.form-control {
@@ -313,7 +317,7 @@ display: none;
 }
 
 .item-image{
-    height: 320px;
+    height: 300px;
 }
 
 .item-image img{
@@ -338,9 +342,9 @@ display: none;
 }
 
 /*-----item-info page ---*/
-/* .item-container-sub{
-    padding-bottom: 3rem;
-} */
+.item-container-sub{
+    padding-bottom: 3.30rem;
+}
 
 .vegan-icon-info{
     height: 2rem;
@@ -413,14 +417,14 @@ item details on order summary page ---*/
   }
 
 /*-----basket summary page ---*/
-/* .basket-container{
-    padding-bottom: 120px;
-} */
+.basket-container{
+    padding-bottom: 2.5rem;
+}
 
 /*-----checkout page---*/
 .checkout-container{
     padding-top: 50px;
-    /* padding-bottom: 100px; */
+    padding-bottom: 2.5rem;
 }
 
 /*---contact us page-----*/
@@ -463,13 +467,12 @@ item details on order summary page ---*/
 
 /*-----login form---*/
 .allauth-container{
-    /* padding-bottom: 6rem; */
-    padding-top: 3rem;
+    padding-top: 1rem;
  } 
 
-.allauth-form-inner-content{
+/* .allauth-form-inner-content{
     padding-top: 12rem;
-}
+} */
 
 .wrapper{
     min-height: 58vh;
@@ -486,14 +489,14 @@ item details on order summary page ---*/
 } */
 
 /*-----blog page---*/
-.post-container{
-    padding-top: 240px;
-    /* padding-bottom: 120px; */
+ .blog-container-main{
+    margin-bottom: 20rem;
+} 
+
+.post-row{
+    margin-bottom: 20px;
 }
 
-/* .blog-container-main{
-    padding-bottom: 80px;
-} */
 /*-----footer---*/
 
 footer{
@@ -549,7 +552,7 @@ footer{
 
     .content{
         margin: 0 auto;
-        min-height: calc(100vh - 64px - 54.38px);
+        min-height: calc(100vh - 150px - 54.38px);
     }
     
     .flash-notice{
@@ -579,13 +582,13 @@ footer{
 }
 
 @media screen and (min-width:768px){
-    .allauth-form-inner-content {
+    /* .allauth-form-inner-content {
         padding-bottom: 7.5rem;
     }
     .allauth-form-email-verification{
         margin-top: 12.5rem;
         padding-bottom: 13.25rem;
-    }
+    } */
 }
 
 @media screen and (min-width:576px){    
@@ -603,7 +606,7 @@ footer{
     .content{
         margin: 0 auto;
         min-height: calc(100vh - 68px - 54.38px);
-        margin-top: -20px;
+        /* margin-top: -20px; */
     }
 
     .main-text{
@@ -621,11 +624,9 @@ footer{
         left: 1%;
     }
 
-    
-    .header-container{
-        padding-top: 65px;
+    .header-container {
+        padding-top: 72px;
     }
-
 
     .btn-add{
         padding-top: 20px;
@@ -639,6 +640,10 @@ footer{
 }
 
 @media screen and (max-width:767px){
+    .content{
+        min-height: calc(100vh - 68px - 180px);
+    }
+
     .text-nav{
         font-size: medium;
     }
@@ -678,8 +683,8 @@ footer{
     }
 
     img.main-logo{
-        height: 4rem;
-        margin-top: 0.15rem;
+        /* height: 4rem; */
+        /* margin-top: 0.15rem; */
         margin-left: 2rem;
     }
 
@@ -742,10 +747,10 @@ footer{
         margin-bottom: 30%;
     } */
 
-    .allauth-form-inner-content {
+    /* .allauth-form-inner-content {
         padding-top: 4rem;
-        /* padding-bottom: 2rem; */
-    }
+        padding-bottom: 2rem;
+    } */
 
     .contact-row{
         padding-left: 0.75rem;
@@ -770,13 +775,13 @@ footer{
         padding-bottom: 110px;
     } */
 
-    /* .basket-container{
+    .basket-container{
         padding-bottom: 90px;
-    } */
+    }
 
-    .allauth-container{
+    /* .allauth-container{
         padding-top: 2rem;
-    } 
+    }  */
 }
 
 @media screen and (max-width:290px){
@@ -788,9 +793,9 @@ footer{
         padding-top: 210px;
     }
 
-    /* .checkout-container{
+    .checkout-container{
         padding-bottom: 160px;
-    } */
+    }
 }
 
 @media screen and (max-width: 198px){

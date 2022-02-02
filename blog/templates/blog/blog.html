@@ -13,8 +13,12 @@
 
 {% block content %}
 <div class="container pt-4 blog-container-main">
-    <h1 class="text-center font-weight-bold pt-4"></h1>
-    <hr>
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center font-weight-bold pt-4">Welcome To Our Blog </h1>
+            <hr>
+        </div>
+    </div>
     <div class="row">
         <div class="col text-center">
         {% if request.user.is_superuser %}
@@ -22,7 +26,7 @@
         {% endif %}    
         </div>
     </div>
-    <div class="row">
+    <div class="row post-row">
         {% for post in posts %}
             <div class="col-sm-12 col-lg-6 p-4">
                 <div class="card menu-card">
