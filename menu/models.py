@@ -58,7 +58,7 @@ class Item(models.Model):
     ingredient = models.TextField(max_length=700, null=True, blank=True)
     vegan = models.BooleanField(null=True, blank=False)
     allergen = MultiSelectField(
-        choices=ALLERGEN_CHOICES, null=True, blank=False)
+        choices=ALLERGEN_CHOICES, null=True, blank=True)
     note1 = models.TextField(max_length=280, null=True, blank=True)
     note2 = models.TextField(max_length=280, null=True, blank=True)
     note3 = models.TextField(max_length=280, null=True, blank=True)
