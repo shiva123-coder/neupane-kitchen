@@ -174,7 +174,7 @@ color: var(--main);
 }
 
 .carousel-item1{
-    background: url('/media/ban1.jpg') no-repeat;
+    background: url('/media/ban5.jpg') no-repeat;
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
@@ -242,7 +242,9 @@ display: none;
     animation: blinkingText .5s linear infinite;
 }
 
-/*-----1st slide of carousel on homepage---*/
+.font-style{
+    font-style: italic;
+}
 
 
 @keyframes blinkingText {
@@ -702,7 +704,7 @@ footer{
     }
 
     .sign{
-        font-size: 3.25rem;
+        font-size: 2.5rem;
         padding: 0 4px;
     }
 
