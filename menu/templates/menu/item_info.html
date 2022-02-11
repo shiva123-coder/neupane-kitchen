@@ -57,7 +57,9 @@
                     <p class="display-6 mb-0 font-weight-bold">{{ item.heading }}</p>
                     <p class="display-6">{{ item.description }}</p>
                     {% if request.user.is_superuser %}
-                        <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
+                        {% if item.ingredient %}
+                            <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
+                        {% endif %}
                     {% endif %}
                     {% if item.allergen %}
                     <p class="display-6 font-weight-bold">Allergens: {{ item.allergen }}</p>
