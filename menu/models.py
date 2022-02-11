@@ -77,8 +77,6 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2, blank=True)
     image = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(default=timezone.now, blank=True)
-    added_by = models.ForeignKey(
-        UserProfile, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         ordering = ['date', 'name']
