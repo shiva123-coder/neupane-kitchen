@@ -74,8 +74,8 @@
                         <p class="display-6 text-muted pt-0">{{ item.note3 }}</p>
                     {% endif %}
                     {% if request.user.is_superuser %}
-                        <p class="display-6 font-weight-bold">Added-date: {{ item.date }}</p>
-                        <p class="display-6 font-weight-bold">Item added by: {{ user }}</p>
+                        <p class="display-6">Added-date: {{ item.date }}</p>
+                        <p class="display-6">Item added by: {{ user }}</p>
                     {% endif %}
                     <form class="form" action="{% url 'add_to_basket' item.id %}" method="POST">
                         {% csrf_token %}
