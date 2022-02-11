@@ -52,7 +52,7 @@ class Item(models.Model):
                                  blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=170)
     chillies = models.CharField(
-        choices=CHILLI_CHOICES, default='1', max_length=1,  null=True, blank=False)
+        choices=CHILLI_CHOICES, default='1', max_length=1,  null=True, blank=True)
     heading = models.TextField(max_length=250, null=True, blank=True)
     description = models.TextField(max_length=370, null=True, blank=True)
     ingredient = models.TextField(max_length=700, null=True, blank=True)
