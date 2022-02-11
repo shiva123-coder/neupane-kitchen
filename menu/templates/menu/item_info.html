@@ -59,6 +59,8 @@
                     {% if request.user.is_superuser %}
                         {% if item.ingredient %}
                             <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
+                            <p class="display-6 font-weight-bold">Added-date: {{ item.date }}</p>
+                            <p class="display-6 font-weight-bold">Item added by: {{ item.added_by }}</p>
                         {% endif %}
                     {% endif %}
                     {% if item.allergen %}
