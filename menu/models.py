@@ -61,8 +61,8 @@ class Item(models.Model):
     vegan = models.BooleanField(null=True, blank=False)
     allergen = MultiSelectField(
         choices=ALLERGEN_CHOICES, null=True, blank=True)
-    note1 = models.TextField(max_length=280, null=True, blank=True)
-    note2 = models.TextField(max_length=280, null=True, blank=True)
+    note1 = models.TextField(max_length=11000, null=True, blank=True)
+    note2 = models.TextField(max_length=1000, null=True, blank=True)
     note3 = models.TextField(default='Please note that we handle all allergens\
                             in our kitchen therefore we\
                             cannot guarantee that our\
@@ -73,7 +73,7 @@ class Item(models.Model):
                             we can provide you with\
                             information to help you make\
                             a safe and informed choice.',
-                             max_length=780, null=True, blank=True)
+                             max_length=1180, null=True, blank=True)
     price = models.DecimalField(max_digits=4, decimal_places=2, blank=True)
     image = models.ImageField(null=True, blank=True)
     date = models.DateTimeField(default=timezone.now, blank=True)
