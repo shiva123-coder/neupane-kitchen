@@ -61,19 +61,18 @@
                             </p>
                             {% endif %}
                         </div>
-                        <!--card payment only for non-superuser-->
-                        <!--users on site able to make card payment only, superuser can process the order without entering card details, which is alternative for cash-->
-                        {% if user.is_not_superuser %}
-                            <fieldset class="mt-4">
-                                <legend class="pay-heading">Please enter your Card details</legend>
-                                <!----stripe card element---->
-                                <div id="card-element"></div>
-                                <!-- For card errors -->
-                                <div class="text-danger" id="card-errors" role="alert"></div>
-                                <!-- hiden value to pass client secret to view -->
-                                <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                            </fieldset>
-                        {% endif %}
+                        <!--card payment-->
+                       
+                        <fieldset class="mt-4">
+                            <legend class="pay-heading">Please enter your Card details</legend>
+                            <!----stripe card element---->
+                            <div id="card-element"></div>
+                            <!-- For card errors -->
+                            <div class="text-danger" id="card-errors" role="alert"></div>
+                            <!-- hiden value to pass client secret to view -->
+                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        </fieldset>
+                      
                         <div class="row">
                             <div class="col-6">
                                 <a href="{% url 'view_basket' %}" class="btn btn-light border-secondary mt-4 mx-3 p-1">
