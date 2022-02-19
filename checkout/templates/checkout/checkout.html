@@ -24,7 +24,7 @@
             </div>
         </div>
          <!--Checkout page, visible for superuser only-->
-        {% if user.is_superuser %}
+        <!--if user.is_superuser-->
             <div class="row no-gutter text-center">
                 <!---- customer details/payment form-->
                 <div class="col-sm-12 col-md-6">
@@ -149,7 +149,7 @@
                         </div>
                 </div>
             </div>
-        {% else %}
+        <!--else--> 
             <!--Checkout page, visible for non superuser only-->
             <div class="row no-gutter text-center">
                 <!---- customer details/payment form-->
