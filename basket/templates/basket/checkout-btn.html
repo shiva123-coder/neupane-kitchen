@@ -4,12 +4,12 @@
     </span>
 </a>
 
-<!--if request.user.is_superuser-->
+{% if request.user.is_superuser %}
 <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
     <span class="text-uppercase btn btn-outline-dark">Secure Checkout<span class="icon">
         <i class="fas fa-lock"></i>
     </span></span>
 </a>
-<!--else-->
-<!-- <a href="tel:07470381691" class="btn btn-primary btn-lg">Please Call us to complete your order now</a> -->
-<!--endif-->>
+{% else %}
+<a href="tel:07470381691" class="btn btn-primary btn-lg">Please Call us to complete your order now</a>
+{% endif %}
