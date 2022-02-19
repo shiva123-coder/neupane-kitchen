@@ -62,6 +62,7 @@
                             {% endif %}
                         </div>
                         <!--card payment only for non-superuser-->
+                        <!--users on site able to make card payment only, superuser can process the order without entering card details-->
                         {% if user.is_not_superuser %}
                             <fieldset class="mt-4">
                                 <legend class="pay-heading">Please enter your Card details</legend>
