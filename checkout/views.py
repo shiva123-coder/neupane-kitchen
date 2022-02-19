@@ -116,11 +116,8 @@ def checkout(request):
         try:
             profile = UserProfile.objects.get(user=request.user)
 
-            name_of_user = profile.user_full_name
-            address_of_user = profile.user_address
-
-            print(f'profile name: {name_of_user}')
-            print(f'profile address: {address_of_user}')
+            # name_of_user = profile.user_full_name
+            # address_of_user = profile.user_address
 
             order_form = OrderForm(initial={
                 'full_name': profile.user_full_name,

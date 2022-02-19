@@ -7,8 +7,11 @@ from django.conf import settings
 from menu.models import Item
 from profiles.models import UserProfile
 
-
 class Order(models.Model):
+    PAYMENT_CHOICES = (
+        ("card payment", "card payment"),
+        ("cash on delivery", "cash on delivery"),
+    )
     """ create order model"""
     order_number = models.CharField(max_length=32,
                                     null=False, editable=False)
@@ -30,6 +33,9 @@ class Order(models.Model):
     discount_amount = models.DecimalField(max_digits=8,
                                           decimal_places=2, null=False,
                                           default=0)
+    payment_method = models.CharField(
+        choices=PAYMENT_CHOICES, max_length=20, default='card payment',
+        null=False, blank=False) 
     total = models.DecimalField(max_digits=8,
                                 decimal_places=2, null=False, default=0)
     sum_total = models.DecimalField(max_digits=8,
