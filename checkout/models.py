@@ -69,12 +69,15 @@ class Order(models.Model):
             self.delivery_cost = 3
         else:
             self.delivery_cost = 0
-        self.sum_total = self.total + self.delivery_cost
+
+        self.discount_amount = self.total * settings.DISCOUNT_PERCTENTAGE / 100
+        # self.total = self.total - self.discount_amount
+
+        self.sum_total = self.total + self.delivery_cost - self.discount_amount
         self.save()
 
     def __str__(self):
         return self.order_number
-
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(

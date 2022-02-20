@@ -34,11 +34,11 @@ class OrderAdmin(admin.ModelAdmin):
         "contact_number",
         "street_address",
         "postal_code",
-        "delivery_cost",
         "payment_method",
+        "total",
+        "delivery_cost",
         "discount_percent",
         "discount_amount",
-        "total",
         "sum_total",
         "original_basket",
         "stripe_payment_intent_id"
