@@ -5,11 +5,11 @@
 </a>
 
 {% if request.user.is_superuser %}
-<a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-    <span class="text-uppercase btn btn-outline-dark">Secure Checkout<span class="icon">
-        <i class="fas fa-lock"></i>
-    </span></span>
+<a class="btn btn-black rounded-0 btn-lg">
+    <span class="text-uppercase btn btn-outline-dark btn-payment">Pay Now !</span>
 </a>
+    <a href="{% url 'checkout_cash' %}"><input type="button" class="cash-pay-option p-1 mr-3" value="Cash payment"></a>
+    <a href="{% url 'checkout_card' %}"><input type="button" class="card-pay-option p-1" value="Card payment"></a>
 {% else %}
 <a href="tel:07470381691" class="btn btn-primary btn-lg">Please Call us to complete your order now</a>
 {% endif %}

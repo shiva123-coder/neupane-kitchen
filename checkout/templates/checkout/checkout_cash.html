@@ -19,7 +19,7 @@
     <div class="container checkout-container">
         <div class="row text-center">
             <div class="col">
-                <h1 class="checkout-title mt-3 mb-4">Checkout</h1>
+                <h1 class="checkout-title mt-3 mb-4">Checkout <span class="h5">(Pay by Cash)</span></h1>
                 <hr class="block-divider block-divider-checkout">
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <!---- customer details/payment form-->
                 <div class="col-sm-12 col-md-6">
                     <p class="text-dark h4 font-weight-bold">Please Call us on 07470381691 to Complete your Order</p>
-                    <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
+                    <form id="checkout-form" action="{% url 'checkout_cash' %}" method="POST">
                         {% csrf_token %}
                         <fieldset class="mb-2">
                             <legend class="h5">Contact Details</legend>
@@ -61,19 +61,11 @@
                             </p>
                             {% endif %}
                         </div>
-                        <!--card payment-->
-                       <input type="button" class="cash-pay p-1 mr-3" value="Cash payment">
-                       <input type="button" class="card-pay p-1" value="Card payment">
-                        <fieldset class="mt-4">
-                            <legend class="pay-heading">Please enter your Card details</legend>
-                            <!----stripe card element---->
-                            <div id="card-element"></div>
-                            <!-- For card errors -->
-                            <div class="text-danger" id="card-errors" role="alert"></div>
-                            <!-- hiden value to pass client secret to view -->
-                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                        </fieldset>
-                      
+                        <p class="mt-3 text-center">You have choosen to pay by cash, please pay
+                            <strong>£{{ sum_total|floatformat:2 }}</strong> at the point of delivery 
+                            <br>
+                            Pay by card ? <a href="{% url 'checkout_card' %}"><strong class="text-secondary">Click here</strong></a>
+                        </p>
                         <div class="row">
                             <div class="col-6">
                                 <a href="{% url 'view_basket' %}" class="btn btn-light border-secondary mt-4 mx-3 p-1">
@@ -85,9 +77,6 @@
                                     id="checkout-btn">Complete Order</button>
                             </div>
                         </div>
-                        <p class="mt-3 text-right">Your card will be charged
-                            <strong>£{{ sum_total|floatformat:2 }}</strong>
-                        </p>
                     </form>
                 </div>
                 <!----order summary---->
@@ -155,7 +144,7 @@
                 <!---- customer details/payment form-->
                 <div class="col-sm-12 col-md-6">
                     <p class="text-dark h4 font-weight-bold">Please Call us on 07470381691 to Complete your Order</p>
-                        <form id="checkout-form" action="{% url 'checkout' %}" method="POST">
+                        <form id="checkout-form" action="{% url 'checkout_cash' %}" method="POST">
                             {% csrf_token %}
                             <fieldset class="mb-2">
                                 <legend class="h5">Contact Details</legend>
@@ -270,3 +259,4 @@
     {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
+

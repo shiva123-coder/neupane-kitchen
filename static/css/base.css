@@ -91,6 +91,11 @@ header {
 .btn-add{
     margin-bottom: 3rem;
 }
+
+.cash-pay-option,
+.card-pay-option{
+    background-color: gold;
+}
 /*--------form----*/
 .textarea.form-control {
     resize: none;

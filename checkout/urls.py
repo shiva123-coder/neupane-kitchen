@@ -4,7 +4,8 @@ from .webhooks import webhook
 
 
 urlpatterns = [
-    path('', views.checkout, name='checkout'),
+    path('', views.checkout_card, name='checkout_card'),
+    path('checkout_cash/', views.checkout_cash, name='checkout_cash'),
     path('checkout_success/<order_number>', views.checkout_success,
          name='checkout_success'),
     path('cache_checkout_data/', views.cache_checkout_data,

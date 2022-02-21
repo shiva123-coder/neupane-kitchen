@@ -96,7 +96,7 @@
                 <div class="col-3">
                     <p class="my-0">£{{ order.total | floatformat:2 }}</p>
                     <p class="my-0">£{{ order.delivery_cost | floatformat:2 }}</p>
-                    <p class="my-0">£{{ order.discount_amount | floatformat:2 }}</p>
+                    <p class="my-0">-£{{ order.discount_amount | floatformat:2 }}</p>
                     <p class="my-0"><strong>£{{ order.sum_total | floatformat:2 }}</strong></p>
                 </div>
             </div>

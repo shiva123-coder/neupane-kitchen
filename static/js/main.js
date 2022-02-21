@@ -81,30 +81,13 @@ $('#scroll-icon').click(function(e){
 // }); 
 
 
-$('#card-element').hide();
-$('.pay-heading').hide();
+$('.card-pay-option').hide();
+$('.cash-pay-option').hide();
 
-$('.card-pay').click(function(){
-    $('.pay-heading').show();
-    $('#card-element').show();
-    $(this).css({
-        'background-color': '#cd8a8a',
-    });
-    $('.cash-pay').css({
-        'background-color': '#fafafa',
-    });
-});
-
-
-$('.cash-pay').click(function(){
-    $(this).css({
-        'background-color': '#cd8a8a',
-    });
-    $('.card-pay').css({
-        'background-color': '#fafafa',
-    });
-    $('#card-element').hide();
-    $('.pay-heading').hide();    
+$('.btn-payment').click(function(){
+    $('.btn-payment').hide();
+    $('.card-pay-option').show();
+    $('.cash-pay-option').show();
 });
 
 

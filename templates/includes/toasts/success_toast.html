@@ -40,11 +40,6 @@
                     <a href="{% url 'view_basket' %}" class="btn btn-success">View
                         basket
                     </a>
-                    {% if request.user.is_superuser %}
-                        <a href="{% url 'checkout' %}" class="btn btn-info">
-                            Checkout <span><i class="fas fa-lock"></i></span>
-                        </a>
-                    {% endif %}
                 </div>
             </div>
         {% endif %}        
