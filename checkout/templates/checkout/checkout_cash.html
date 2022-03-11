@@ -60,6 +60,12 @@
                                 </a> to save this information
                             </p>
                             {% endif %}
+                            <!--delivery date and time-->
+                            <div class="container">
+                                <div class="row">
+                                   
+                                </div>
+                            </div>
                         </div>
                         <p class="mt-3 text-center">You have choosen to pay by cash, please pay
                             <strong>£{{ sum_total|floatformat:2 }}</strong> at the point of delivery 
@@ -251,12 +257,19 @@
             Please Wait .......
         </h1> 
     </div>
+
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
 {% endblock %}
 

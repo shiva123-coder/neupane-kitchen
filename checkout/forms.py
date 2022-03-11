@@ -10,7 +10,8 @@ class OrderForm(forms.ModelForm):
             'email',
             'contact_number',
             'street_address',
-            'postal_code',)
+            'postal_code',
+            )
 
     def __init__(self, *args, **kwargs):
         """
@@ -34,3 +35,9 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+
+
+class PaymentMethodForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['payment_method']

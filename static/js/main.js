@@ -1,13 +1,15 @@
 
+// $('#error_qty').hide();
+
 // + and - sign to increase and decrease the quantity once clicked
 // + buttton to increase the quantity
 $('.increase-qty').click(function(e) {
     e.preventDefault();
     var newInput = $(this).closest('.input-group').find('.qty_input');
     var newValue = parseInt($(newInput).val());
-// + button disable once input value reach 50
+// + button disable once input value reach 4
     if( newValue > 3 ){
-        $('increase-qty').disabled = true;
+        $('.increase-qty').disabled = true;
         }
     else {
         $(newInput).val(newValue + 1);

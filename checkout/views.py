@@ -12,6 +12,7 @@ from profiles.forms import UserProfileForm
 from menu.models import Item
 from basket.contexts import basket_contents
 
+
 import stripe
 import json
 
@@ -255,3 +256,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+

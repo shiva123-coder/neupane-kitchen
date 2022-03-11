@@ -7,10 +7,11 @@ from django.conf import settings
 from menu.models import Item
 from profiles.models import UserProfile
 
+
 class Order(models.Model):
-    PAYMENT_CHOICES = (
-        ("card payment", "card payment"),
-        ("cash on delivery", "cash on delivery"),
+    PAYMENT_METHOD = (
+        ('Cash on Delivery', 'Cash on Delivery'),
+        ('Card', 'Card'),
     )
     """ create order model"""
     order_number = models.CharField(max_length=32,
@@ -33,9 +34,6 @@ class Order(models.Model):
     discount_amount = models.DecimalField(max_digits=8,
                                           decimal_places=2, null=False,
                                           default=0)
-    payment_method = models.CharField(
-        choices=PAYMENT_CHOICES, max_length=20, default='card payment',
-        null=False, blank=False) 
     total = models.DecimalField(max_digits=8,
                                 decimal_places=2, null=False, default=0)
     sum_total = models.DecimalField(max_digits=8,
@@ -43,6 +41,10 @@ class Order(models.Model):
     original_basket = models.TextField(null=False, blank=False, default="")
     stripe_payment_intent_id = models.CharField(max_length=254,
                                                 blank=False, default="")
+    payment_method = models.CharField(
+                                    max_length=30, choices=PAYMENT_METHOD,
+                                    default='Cash on Delivery')
+   
 
     def _make_order_number(self):
         """
@@ -79,6 +81,7 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
         Order, null=False, blank=False,
@@ -97,3 +100,4 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f"Item: {self.item.name} on order {self.order.order_number}"
+

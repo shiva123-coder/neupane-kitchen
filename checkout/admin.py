@@ -20,7 +20,6 @@ class OrderAdmin(admin.ModelAdmin):
         "discount_amount",
         "total",
         "sum_total",
-        "payment_method",
         "original_basket",
         "stripe_payment_intent_id"
     )
@@ -34,7 +33,6 @@ class OrderAdmin(admin.ModelAdmin):
         "contact_number",
         "street_address",
         "postal_code",
-        "payment_method",
         "total",
         "delivery_cost",
         "discount_percent",

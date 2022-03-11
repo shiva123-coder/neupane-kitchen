@@ -10,7 +10,7 @@
             </div>
             <!-------qty input field--->
             <input class="form-control qty-form qty_input border-dark" type="number"
-                name="quantity" value="{{ ib.quantity }}" min="1" max="50" data-item_id="{{ ib.item_id }}"
+                name="quantity" value="{{ ib.quantity }}" min="1" max="4" data-item_id="{{ ib.item_id }}"
                 id="id_qty_{{ ib.item_id }}">
             <!---- button to increase the qty(+)-->
             <div class="input-group-append">
@@ -19,6 +19,7 @@
                 </button>
             </div>
         </div>
+        <small class="center-align red-text" id="error_qty"></small>
     </div>
 </form>
 <a class="update-qty"><small>Update </small>|</a>
