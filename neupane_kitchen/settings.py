@@ -28,14 +28,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-if "IN_DEVELOPMENT" in os.environ:
-    DEBUG = True
-else:
-    DEBUG = False
+# if "IN_DEVELOPMENT" in os.environ:
+#     DEBUG = True
+# else:
+#     DEBUG = False
 
-# DEBUG = True
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'neupane-kitchen.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['www.neupanekitchen.co.uk', 'neupanekitchen.co.uk', 'https://neupane-kitchen.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -130,10 +130,10 @@ if 'DATABASE_URL' in os.environ:
     }
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
     }
 
 
