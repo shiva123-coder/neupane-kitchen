@@ -402,6 +402,19 @@ Top left of the page show the numbers of the items on the page. Aditionally edit
     - python3 manage.py makemigrations
     - python3 manage.py migrate
 
+- Heroku Application Error while opening deployed App, which solved as below :
+  - select app from heroku profile and select Overview option on dashboard, upon checking on the Dyno information, below status noticed
+  ```
+  gunicorn neupane_kitchen.wsgi:application           OFF 
+  ```
+  whcich meand no dynos were added
+  - select Resource option on dashboard and dynos appeared there, clicked on pencil on the right hand side and select toggle to active dyno and confirm
+  - Back to Overview and below were shown, this means dynos active and issue now ressolved.
+    ```
+  gunicorn neupane_kitchen.wsgi:application           ON
+  ```
+
+
 ## Testing 
  -Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
 
