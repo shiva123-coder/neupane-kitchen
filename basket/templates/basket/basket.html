@@ -45,8 +45,8 @@
                             {% include "basket/item_info.html" %}
                         </div>
                         <div class="col-12 order-sm-last">
-                            <p class="text-center">Price Each: £ {{ ib.item.price }}</p>
-                            <p><strong>Item Total: </strong>£ {{ ib.item.price | calculate_total:ib.quantity }}</p>
+                            <p class="text-center">Price Each: Rs {{ ib.item.price }}</p>
+                            <p><strong>Item Total: </strong>Rs {{ ib.item.price | calculate_total:ib.quantity }}</p>
                         </div>
                         <div class="col-12">
                             {% include "basket/quantity.html" %}
@@ -78,13 +78,13 @@
                                 {% include "basket/item_info.html" %}
                             </td>
                             <td class="py-3">
-                                <p class="my-0">£ {{ ib.item.price }}</p>
+                                <p class="my-0">Rs {{ ib.item.price }}</p>
                             </td>
                             <td class="py-3">
                                 {% include "basket/quantity.html" %}
                             </td>
                             <td class="py-3">
-                                <p class="my-0">£ {{ ib.item.price | calculate_total:ib.quantity }}</p>
+                                <p class="my-0">Rs {{ ib.item.price | calculate_total:ib.quantity }}</p>
                             </td>
                         </tr>
                     {% endfor %}

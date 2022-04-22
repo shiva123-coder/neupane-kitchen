@@ -122,18 +122,19 @@
                                             {% if item.category %}
                                                 <p class="small mt-1 mb-0">
                                                     <a class="text-main" href="{% url 'all_menu' %}?category={{ item.category.name }}">
-                                                        <i class="fas fa-utensils mr-1 text-main"></i>{{ item.category.display_name }}
-                                                        {% if item.vegan %}
+                                                        <!-- <i class="fas fa-utensils mr-1 text-main"></i> -->
+                                                        {{ item.category.display_name }}
+                                                        <!-- {% if item.vegan %}
                                                         <span>
                                                             <img class="vegan-icon" src="{{ MEDIA_URL }}vegan.png" alt="dfdfh">
                                                         </span>
-                                                        {% endif %}
+                                                        {% endif %} -->
                                                     </a>
                                                 </p>
-                                                {% else %}
+                                            {% else %}
                                                 <p class="small mt-1 mb-0">
                                                     <a class="text-muted" href="{% url 'all_menu' %}">
-                                                        <i class="fas fa-utensils mr-1"></i>
+                                                        <!-- <i class="fas fa-utensils mr-1"></i> -->
                                                     </a>
                                                 </p>
                                             {% endif %}

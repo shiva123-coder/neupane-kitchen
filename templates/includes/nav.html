@@ -28,18 +28,18 @@
                 <div class="nav-link text-main font-weight-bold">
                     <div>
                         <i class="fas fa-utensils mr-3 d-inline d-lg-none text-main"></i>
-                        <span class="nav-item mr-2 text-main">Our Menu</span><span><i class="fas fa-caret-down text-main"></i></span>
+                        <span class="nav-item mr-2 text-main">Our Products</span><span><i class="fas fa-caret-down text-main"></i></span>
                     </div> 
                 </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="menu-link">
-                <a href="{% url 'all_menu' %}?category=vegeterian and vegan" class="dropdown-item item-list">Vegeterian & Vegan</a>
-                <a href="{% url 'all_menu' %}?category=non-veg" class="dropdown-item item-list">Non Vegeterian</a>
-                <a href="{% url 'all_menu' %}?category=rice and noodles" class="dropdown-item item-list">Rice & Noodles</a>
-                <a href="{% url 'all_menu' %}?category=specialities" class="dropdown-item item-list">House Specials</a>
-                <a href="{% url 'all_menu' %}?category=beverages" class="dropdown-item item-list">Beverages</a>
+                <a href="{% url 'all_menu' %}?category=electronic" class="dropdown-item item-list">Electronics</a>
+                <a href="{% url 'all_menu' %}?category=health and beauty" class="dropdown-item item-list">Health & Beauty</a>
+                <a href="{% url 'all_menu' %}?category=decorations" class="dropdown-item item-list">Decorations</a>
+                <a href="{% url 'all_menu' %}?category=environmentally friendly" class="dropdown-item item-list">Environmentally Friendly</a>
+                <a href="{% url 'all_menu' %}?category=new arrivals" class="dropdown-item item-list">New Arrivals !</a>
                 <a href="{% url 'all_menu' %}"class="dropdown-item item-list">All </a>
-                <a href="{{ MEDIA_URL}}menu.pdf" target="_blank" class="dropdown-item item-list">Download PDF Menu</a>
+                <!-- <a href="{{ MEDIA_URL}}menu.pdf" target="_blank" class="dropdown-item item-list">Download PDF Menu</a> -->
             </div>
         </li>
          <!--contact us-->

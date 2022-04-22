@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <p class="mt-3 text-center">You have choosen to pay by cash, please pay
-                            <strong>£{{ sum_total|floatformat:2 }}</strong> at the point of delivery 
+                            <strong>RRs{{ sum_total|floatformat:2 }}</strong> at the point of delivery 
                             <br>
                             Pay by card ? <a href="{% url 'checkout_card' %}"><strong class="text-secondary">Click here</strong></a>
                         </p>
@@ -119,7 +119,7 @@
                                         <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
                                     </div>
                                     <div class="col-3 text-right">
-                                        <p class="my-0 small text-muted">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                                        <p class="my-0 small text-muted">RRs{{ ib.item.price | calculate_total:ib.quantity }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -133,13 +133,13 @@
                                 <p class="my-0">Sub-total:</p>
                             </div>
                             <div class="col-3">
-                                <p class="my-0">£{{ total | floatformat:2 }}</p>
+                                <p class="my-0">RRs{{ total | floatformat:2 }}</p>
                                 <p class="my-0"></p>
-                                <p class="my-0">£{{ delivery_cost | floatformat:2 }}</p>
+                                <p class="my-0">RRs{{ delivery_cost | floatformat:2 }}</p>
                                 <!--remove d-none class if discount % need to be shown -->
                                 <p class="d-none">Discount : {{ discount_percent|floatformat:0 }}%</p>
-                                <p class="my-0">- £{{ discount_amount | floatformat:2 }}</p>
-                                <p class="my-0"><strong>£{{ sum_total | floatformat:2 }}</strong></p>
+                                <p class="my-0">- RRs{{ discount_amount | floatformat:2 }}</p>
+                                <p class="my-0"><strong>RRs{{ sum_total | floatformat:2 }}</strong></p>
                             </div>
                         </div>
                 </div>
@@ -228,7 +228,7 @@
                                         <p class="my-0 small text-muted">Qty: {{ ib.quantity }}</p>
                                     </div>
                                     <div class="col-3 text-right">
-                                        <p class="my-0 small text-muted">£{{ ib.item.price | calculate_total:ib.quantity }}</p>
+                                        <p class="my-0 small text-muted">Rs{{ ib.item.price | calculate_total:ib.quantity }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -241,9 +241,9 @@
                                 <p class="my-0">Sub-total:</p>
                             </div>
                             <div class="col-3">
-                                <p class="my-0">£{{ total | floatformat:2 }}</p>
-                                <p class="my-0">£{{ delivery_cost | floatformat:2 }}</p>
-                                <p class="my-0"><strong>£{{ sum_total | floatformat:2 }}</strong></p>
+                                <p class="my-0">Rs{{ total | floatformat:2 }}</p>
+                                <p class="my-0">Rs{{ delivery_cost | floatformat:2 }}</p>
+                                <p class="my-0"><strong>Rs{{ sum_total | floatformat:2 }}</strong></p>
                             </div>
                         </div>
                 </div>

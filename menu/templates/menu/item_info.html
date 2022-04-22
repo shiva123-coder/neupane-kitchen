@@ -18,22 +18,22 @@
                 <div class="image-container item-image-info my-4 ">
                     {% if item.image %}
                         <p class="h4 text-main font-weight-bold d-sm-block d-md-none">{{ item.name }}
-                            <span>
+                            <!-- <span>
                                 {% if item.vegan %}
                                     <img class="vegan-icon-info-sub ml-2 mb-2" src="{{ MEDIA_URL }}vegan.png" alt="vegan-icon">
                                 {% endif %}
-                             </span>
+                             </span> -->
                         </p>
                         <a href="{% url 'item_info' item.id %}" target="_blank">
                             <img class="card-img-top img-fluid img-sub" src="{{ item.image.url }}" alt="{{ item.name }}">
                         </a>
                     {% else %}
                         <p class="h4 text-main font-weight-bold d-sm-block d-md-none">{{ item.name }}
-                            <span>
+                            <!-- <span>
                                 {% if item.vegan %}
                                     <img class="vegan-icon-info-sub ml-2 mb-2" src="{{ MEDIA_URL }}vegan.png" alt="vegan-icon">
                                 {% endif %}
-                             </span>
+                             </span> -->
                         </p>
                         <a href="{% url 'item_info' item.id %}">
                             <img class="card-img-top img-fluid img-sub" src="{{ MEDIA_URL }}image-coming-soon.jpg" alt="{{ item.name }}">
@@ -43,35 +43,32 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="item-info mb-4 mt-md-5">
-                    {% if item.vegan %}
+                    <!-- {% if item.vegan %}
                         <p class="h4 font-weight-bold pb-0 d-none d-md-block">{{ item.name }}
                             <span>
                                 <img class="vegan-icon-info ml-2 mb-2" src="{{ MEDIA_URL }}vegan.png" alt="dfdfh">
                             </span>
                         </p>
-                    {% else %}
+                    {% else %} -->
                         <p class="h4 font-weight-bold pb-0 d-none d-md-block">{{ item.name }}</p>
-                    {% endif %}
+                    <!-- {% endif %} -->
                     <p class="display-6 pt-3 mt-3"></p>
-                    <p class="display-6 mt-3 font-weight-bold">£ {{ item.price }}</p>
+                    <p class="display-6 mt-3 font-weight-bold">Rs {{ item.price }}</p>
                     <p class="display-6 mb-0 font-weight-bold">{{ item.heading }}</p>
                     <p class="display-6">{{ item.description }}</p>
                     {% if request.user.is_superuser %}
                         {% if item.ingredient %}
-                            <p class="display-6 font-italic">Ingredients: {{ item.ingredient }}</p>
+                            <p class="display-6 font-italic">Materials: {{ item.materials }}</p>
                         {% endif %}
                     {% endif %}
-                    {% if item.allergen %}
+                    <!-- {% if item.allergen %}
                     <p class="display-6 font-weight-bold">Allergens: {{ item.allergen }}</p>
-                    {%endif %}
+                    {% endif %} -->
                     {% if item.note1 %}
                         <p class="display-6 text-muted">{{ item.note1 }}</p>
                     {% endif %}
                     {% if item.note2 %}
                         <p class="display-6 text-muted">{{ item.note2 }}</p>
-                    {% endif %}
-                    {% if item.note3 %}
-                        <p class="display-6 text-muted pt-0">{{ item.note3 }}</p>
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <p class="display-6">Added-date: {{ item.date }}</p>
